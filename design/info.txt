@@ -1,0 +1,22 @@
+- Colores (Por ahora)
+[Fondo]
+	• Negro carbón - #1B1B1B
+        o
+        • Gris oscuro- #2C2C2C
+
+[Texto]
+        • Blanco apagado - #E5E5E5
+	• Gris metálico - #4D4D4D
+
+[Botones y Links]
+	• Verde neón - #00FF66
+	• Azul eléctrico - #0D99FF
+	• Magenta - #FF00CC
+	• Azul grisáceo - #8C9EFF
+
+[Detalles y Animaciones]
+        • Magenta - #FF00CC
+
+- Tipografías (Google Fonts)
+	• Monserrat - Títulos (Tal vez)
+	• Inter - Párrafos y demás (Totalmente y probablemente sea de título también)
