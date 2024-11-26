@@ -4,9 +4,13 @@ El sitio ofrece cursos de capacitación sobre Ciberseguridad, cada curso abarca 
 Mi nombre es Oscar Federico Gimenez, tengo 25 años y me gusta el mundo de la tecnología y la programación. Me fascina la infinidad de cosas que se pueden crear en código.
     
 *Sitios de referencia:
-    https://ekoparty.org/trainings/
-    https://www.khanacademy.org/
-    https://www.udemy.com/
-    https://www.offsec.com/courses/
-    https://pll.harvard.edu/course/cs50-introduction-computer-science
+* [Ekoparty](https://ekoparty.org/)
+* [Khan Academy](https://www.khanacademy.org/)
+* [Udemy](https://www.udemy.com/)
+* [Offsec](https://www.offsec.com/)
+* [Harvard's CS50 Course](https://pll.harvard.edu/course/cs50-introduction-computer-science)
+    
+    
+    
+   
 
