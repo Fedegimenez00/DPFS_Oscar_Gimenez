@@ -1,9 +1,17 @@
 # DPFS_Oscar_Gimenez
-El sitio ofrece cursos de capacitación sobre Ciberseguridad, cada curso abarca distintos sectores de lo que se llama la Ciberseguridad tales cómo Penta testing, Ingeniería Social, etc. El sitio apunta a jóvenes de 17 a 25 años interesados en el mundo de la Tecnología y el Hacking Ético.
-
+## Breve descripción personal
 Mi nombre es Oscar Federico Gimenez, tengo 25 años y me gusta el mundo de la tecnología y la programación. Me fascina la infinidad de cosas que se pueden crear en código.
+
+## Descripción del sitio web
+El sitio ofrece cursos de capacitación sobre Ciberseguridad, cada curso abarca distintos sectores dentro de la Ciberseguridad, tales cómo Penta testing, Ingeniería Social, etc. El sitio apunta a jóvenes de 17 a 25 años interesados en el mundo de la Tecnología y el Hacking Ético.
+### Identidad del sitio:
+* Logo: <img alt="Logo" src="https://github.com/UnknownN00N/DPFS_Oscar_Gimenez/blob/main/design/Logo_Completo.png" width="300px" align="center">
+
+* Nombre: ZeroTrust Lab
+* Eslogan: Dominio Total, Confianza Cero
+
     
-*Sitios de referencia:
+### Sitios de referencia:
 * [Ekoparty](https://ekoparty.org/)
 * [Khan Academy](https://www.khanacademy.org/)
 * [Udemy](https://www.udemy.com/)
