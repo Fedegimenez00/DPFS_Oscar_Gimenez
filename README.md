@@ -17,7 +17,9 @@ El sitio ofrece cursos de capacitación sobre Ciberseguridad, cada curso abarca 
 * [Udemy](https://www.udemy.com/)
 * [Offsec](https://www.offsec.com/)
 * [Harvard's CS50 Course](https://pll.harvard.edu/course/cs50-introduction-computer-science)
-    
+  
+### Tablero de trabajo:
+* [Trello](https://trello.com/b/0mG0WveY/proyecto-zerotrust-lab)
     
     
    
