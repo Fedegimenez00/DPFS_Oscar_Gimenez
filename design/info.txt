@@ -13,6 +13,7 @@
 	• Azul eléctrico - #0D99FF
 	• Magenta - #FF00CC
 	• Azul grisáceo - #8C9EFF
+	• Azul oscuro - #2F4FFF
 
 [Detalles y Animaciones]
         • Magenta - #FF00CC
