@@ -1,3 +1,6 @@
+-Font Awesome
+<script src="https://kit.fontawesome.com/8b20537db2.js" crossorigin="anonymous"></script>
+
 - Colores
 [Fondo]
 	• Negro carbón - #1B1B1B
