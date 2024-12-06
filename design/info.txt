@@ -31,6 +31,26 @@
 - Tipografías (Google Fonts)
 	• Inter - Párrafos y demás (Totalmente y probablemente sea de título también)
 
+- Corner radius y transparencia [Tal vez reducir la opacidad del header]
+
+(Cursos)
+20 arriba a los dos lados
+
+(Noticias y testimonios)
+20 en todo
+Imagen con sólo 20 arriba
+
+(Categorías y bloque de precio en carrito)
+35% de opacidad
+
+(Bloques Detalle del producto )
+5% de opacidad
+
+(Añadir carrito)
+10% de opacidad
+
+(Bloque de login/register)
+90% de opacidad
 
 - Texto 
 ----------------------------
