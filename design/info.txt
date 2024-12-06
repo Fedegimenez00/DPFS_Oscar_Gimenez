@@ -1,23 +1,126 @@
-- Colores (Por ahora)
+- Colores
 [Fondo]
 	• Negro carbón - #1B1B1B
-        o
-        • Gris oscuro- #2C2C2C
+        • Gris oscuro - #2C2C2C
+        • Negro rojizo - #0C0202
+
+[Borde]
+       • Gris metálico - #4D4D4D
 
 [Texto]
         • Blanco apagado - #E5E5E5
-	• Gris metálico - #4D4D4D
-
+	• Rosa claro - #FF75E3
+	
 [Botones y Links]
-	• Verde neón - #00FF66
+	• Púrpura oscuro - #473481
 	• Azul eléctrico - #0D99FF
-	• Magenta - #FF00CC
 	• Azul grisáceo - #8C9EFF
-	• Azul oscuro - #2F4FFF
+	• Azul violeta - #2F4FFF
+
+[Colores-Inicio]
+	• Magenta - #FF00CC
+	• Rojo - #E90B30
+	• Celeste - #00D4E3
+	• Amarillo nube - #E8D610
+	• Verde - #5DD227
+	• Amarillo dorado - #F69C08
 
 [Detalles y Animaciones]
-        • Magenta - #FF00CC
+
 
 - Tipografías (Google Fonts)
-	• Monserrat - Títulos (Tal vez)
 	• Inter - Párrafos y demás (Totalmente y probablemente sea de título también)
+
+
+- Texto 
+----------------------------
+****Inicio****
+----------------------------
+(Recomendados)
+Seguridad informática desde Cero
+Josué Argañaraz
+
+(Categorías) 
+Fundamentos de Ciberseguridad
+Conceptos básicos para iniciar en ciberseguridad
+
+Hacking de Aplicaciones Web
+Descubre y explota fallos en aplicaciones web
+
+Pentesting
+Evalúa sistemas simulando ataques reales
+
+Explotación de Vulnerabilidades
+Diseña y ejecuta exploits avanzados
+
+Fortificación de Redes
+Protege sistemas mediante configuraciones seguras
+
+Respuesta a incidentes
+Actúa ante ciberataques en tiempo real
+
+Análisis de Malware
+Detecta y desarma software malicioso
+
+Gestión de Identidades y Accesos (IAM)
+Controla accesos y permisos en la nube
+
+Arquitectura Segura en la Nube
+Diseña infraestructuras cloud resistentes
+
+Respuesta a Incidentes en Cloud
+Mitiga amenazas específicas de entornos cloud
+
+Técnicas de Ingeniería Social
+Aprende estrategias de manipulación y engaño
+
+Concienciación y Educación
+Fortalece seguridad con capacitación preventiva
+
+(Detalles del footer)
+“Dominio Total, Confianza Cero”
+
+ZeroTrust Lab
+Av Boedo 1235
+Capital Federal, Argentina
+11 2564-1142
+Zerotrust@gmail.com
+© 2024 ZeroTrust Lab. Todos los derechos reservados
+
+----------------------------------
+****Detalle al producto****
+----------------------------------
+
+Fundamentos de Ciberseguridad  > Redes y seguridad
+Una introducción al mundo de la ciberseguridad
+
+Última actualización 11.2024
+
+Los 3 principios fundamentales de ciberseguridad
+Identificar ataques más comunes
+Métodos y algoritmos de encriptación
+Identificar los tipos de cibercriminales
+Seguridad física, de servidores y de sistemas
+
+Introducción al curso
+Bienvenida
+Bienvenida al curso
+Prueba de conocimientos
+
+Conceptos fundamentales
+Amenazas, Vulnerabilidades y  Ataques
+Asegurando la Protección de Datos
+
+Conceptos básicos de redes
+Tener ganas de aprender
+
+Los riesgos y amenazas de ciberseguridad están presentes y ahora más  que nunca. La infraestructura de las redes e Internet son cada vez más  vulnerables a una amplia variedad de ataques físicos y cibernéticos. Los ciberdelincuentes sofisticados, así como las naciones, aprovechan estas vulnerabilidades para robar información y dinero. 
+
+César Doapelli
+Profesional en Milanesas
+Soy un profesional que labora en el área de Cyber Risk, con el cargo de  Cybersecurity Consultant, con conocimientos en el marco normativo de  certificaciones PCI DSS.     
+
+4,5 Valoración del Curso | 3k  Valoraciones
+José Daldo Roca
+Hasta el momento ha sido un buen
+
