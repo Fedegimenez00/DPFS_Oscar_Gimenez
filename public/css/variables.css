@@ -1,0 +1,28 @@
+:root{
+     /* Fondo */
+    --color-negroCarbon : #1B1B1B;
+    --color-grisOscuro : #2C2C2C;
+    --color-negroRojizo : #0C0202;
+
+     /* Borde*/
+    --color-grisMetalico : #4D4D4D;
+
+     /* Texto */
+    --color-blancoApagado : #E5E5E5;
+    --color-rosaClaro : #FF75E3;
+
+     /* Botones y links*/
+     --color-purpuraOscuro : #473481;
+     --color-azulElectrico : #0D99FF;
+     --color-azulGrisaceo : #8C9EFF;
+     --color-azulVioleta : #2F4FFF;
+     --color-amarilloDorado : #F69C08;
+
+     /* Colores categóricos*/
+     --color-magenta : #FF00CC;
+     --color-rojoAtaque : #E90B30;
+     --color-celesteDefensa : #00D4E3;
+     --color-amarilloNube : #E8D610;
+     --color-verdeSocial : #5DD227;
+
+}
