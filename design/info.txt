@@ -1,5 +1,46 @@
--Font Awesome
+- Font Awesome
 <script src="https://kit.fontawesome.com/8b20537db2.js" crossorigin="anonymous"></script>
+
+
+- Iconos
+Shopping cart:
+<i class="fa-solid fa-cart-shopping"></i>
+
+Star Completed:
+<i class="fa-solid fa-star"></i>
+
+Star Half-completed:
+<i class="fa-regular fa-star-half-stroke"></i>
+
+Star Empty:
+<i class="fa-regular fa-star"></i>
+
+Instagram:
+<i class="fa-brands fa-instagram"></i>
+
+Youtube:
+<i class="fa-brands fa-youtube"></i>
+
+Linkedin:
+<i class="fa-brands fa-linkedin-in"></i>
+
+Facebook:
+<i class="fa-brands fa-facebook-f"></i>
+
+Twitter/X:
+<i class="fa-brands fa-x-twitter"></i>
+
+Light Bulb:
+<i class="fa-regular fa-lightbulb"></i>
+
+Download:
+<i class="fa-solid fa-download"></i>
+
+Trophy:
+<i class="fa-solid fa-trophy"></i>
+
+Award/Ribbon:
+<i class="fa-solid fa-award"></i>
 
 - Colores
 [Fondo]
