@@ -1,0 +1,14 @@
+.aboutUs--card{
+
+}
+
+.aboutUs{
+    width: 320px;
+}
+.aboutUs__button{
+background-color: var(--color-azulVioleta);
+color: var(--color-blancoApagado);
+font-weight: 300;
+border: none;
+border-radius: 10px;
+}

@@ -1,3 +1,19 @@
 *{
     margin: 0px
 }
+
+body{
+    background-color: var(--color-negroCarbon);
+    font-family: 'Inter', serif;
+    font-weight: 300;
+    font-style: normal;
+    font-optical-sizing: auto;
+    color: var(--color-blancoApagado);
+}
+a{
+    text-decoration: none;
+
+}
+a:link, :visited, :hover, :active{
+    color: #fff;
+}

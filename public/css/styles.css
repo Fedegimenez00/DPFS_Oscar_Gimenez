@@ -1,7 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url(./general.css);
 @import url(./variables.css);
+@import url(./index.css);
 
-.main{
-    background-color: var(--color-negroCarbon);
+/* Header */
+.header--body{
+    background-color: var(--color-grisOscuro);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.header--body_card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    
+}
+.header--body img{
+    width: 220px;
+}
+
+.fa-bars{
+    font-size: 38px;
+    margin-right: 10px;
+
+}
+.fa-cart-shopping{
+    
+    font-size: 33px;
+}
+
+
+/* Footers */
+
+.footer--body{
+background-color: var(--color-grisOscuro);
+
+}
+.footer--section{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer--section__card{
+
+}
+
+.footer--body img{
+    width: 200px;
 }
