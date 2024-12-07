@@ -17,3 +17,7 @@ a{
 a:link, :visited, :hover, :active{
     color: #fff;
 }
+h1{
+    font-weight: 400;
+    margin-left: 20px;
+}
