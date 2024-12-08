@@ -5,12 +5,14 @@
 
 /* Header */
 .header--body{
-    background-color: var(--color-grisOscuro);
+    background-color: rgba(44, 44, 44, 0.8);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position:sticky;
+    top: 0;
 
     
 }
