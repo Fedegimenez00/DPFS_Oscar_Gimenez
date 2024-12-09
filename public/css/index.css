@@ -294,6 +294,81 @@ font-size: 0.9rem;
 
 /* Noticias */
 
+.news--title{
+margin-left: 10px;
+font-size: 2.1rem;
+font-weight: 300;
+margin-bottom: 20px;
+}
 
+.section--news{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.news--card{
+background-color: var(--color-grisOscuro);
+width: 300px;
+border-radius: 20px;
+border: solid var(--color-grisMetalico);
+    border-width: 1px;
+    margin: 15px 0px;
+
+}
+
+.news--card__image{
+    width: 300px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+}
+
+.news--cardInside{
+margin-left: 10px;
+margin-top: 2px;
+}
+
+.news--card__category{
+color: var(--color-azulGrisaceo);
+font-weight: 700;
+font-size: 0.9rem;
+background-color: var(--color-azulGrisaceoTranslucido);
+border-radius: 5px;
+padding: 4px 5px;
+
+}
+.news--card__title{
+font-weight: 400;
+font-size: 1.6rem;
+margin-top: 2px;
+}
+
+.news--card__description{
+font-weight: 300;
+font-size: 1.0rem;
+margin-bottom: 30px;
+}
+
+.news--card__date{
+display: flex;
+justify-content: flex-end;
+margin-right: 10px;
+margin-bottom: 5px;
+font-weight: 200;
+}
+
+.news--seeMoreButton{
+border: solid var(--color-azulGrisaceo);
+border-width: 2px;
+background-color: var(--color-negroCarbon);
+color: var(--color-blancoApagado);
+font-size: 1rem;
+font-weight: 500;
+border-radius: 20px;
+padding: 7px 8px;
+margin-top: 20px;
+}
 
 /* Trusted by */

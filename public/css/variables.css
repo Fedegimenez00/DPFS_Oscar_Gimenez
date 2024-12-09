@@ -15,7 +15,9 @@
      --color-purpuraOscuro : #473481;
      --color-azulElectrico : #0D99FF;
      --color-azulGrisaceo : #8C9EFF;
+     --color-azulGrisaceoTranslucido: rgba(140, 158, 255, 0.35);
      --color-azulVioleta : #2F4FFF;
+     --color-azulVioletaTranslucido: rgba(47, 79, 255, 0.35);
      --color-amarilloDorado : #F69C08;
 
      /* Colores categóricos*/
