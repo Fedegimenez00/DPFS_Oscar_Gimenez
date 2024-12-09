@@ -1,7 +1,10 @@
 /* About Us */
 .aboutUs--card{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 .aboutUs{
     width: 320px;
@@ -15,6 +18,12 @@ border-radius: 10px;
 }
 
 /* Course card */
+.courses-title{
+    display: flex;
+    justify-content: center;
+    margin-right: 45px;
+    margin-left: 0px;
+}
 .section--courseCards{
 display: flex;
 justify-content: center;
@@ -109,15 +118,16 @@ font-weight: 530;
     display: flex;
     align-items: center;
     flex-direction: row;
-    background: rgba(255, 0, 204, 0.35);
+    background: var(--color-magentaTranslucido);
     border: 1px solid var(--color-magenta);
     border-radius: 15px;
     padding: 10px 0px;
-    margin: 0px 10px;
+    margin: 20px 10px;
 }
-.categoriesMain--Fundamental img{
+.categoriesCard--icon{
     width: 50px;
     margin-left: 10px;
+    margin-bottom: 5px;
 }
 .categoriesMain--Fundamental h3{
     font-weight: 500;
@@ -128,3 +138,162 @@ font-weight: 530;
     margin-bottom: 20px;
     margin-right: 12px;
 }
+
+.categoriesMain--Attack{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background: var(--color-rojoAtaqueTranslucido);
+    border: 1px solid var(--color-rojoAtaque);
+    border-radius: 15px;
+    padding: 10px 0px;
+    margin: 15px 10px;
+}
+.categories--cardInside{
+    margin-left: 10px;
+}
+
+.categories--cardUpper{
+
+}
+
+.card--categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 64px;
+    margin-bottom: 15px;
+}
+.card--categories i{
+    margin-bottom: 0px;
+}
+.categoriesCard--title{
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.categories--cardLine{
+    padding: 0px 15px;
+    border-bottom-width: 0px;
+    margin-bottom: 10px;
+    margin-top: 7px;
+    width: 0px;
+}
+
+.categories--cardDown{
+
+}
+.subcategories--title{
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+
+.categoriesMain--Defense{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background: var(--color-celesteDefensaTranslucido);
+    border: 1px solid var(--color-celesteDefensa);
+    border-radius: 15px;
+    padding: 10px 0px;
+    margin: 15px 10px;
+}
+
+.categoriesMain--cloudSecurity{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background: var(--color-amarilloNubeTranslucido);
+    border: 1px solid var(--color-amarilloNube);
+    border-radius: 15px;
+    padding: 10px 0px;
+    margin: 15px 10px;
+}
+
+.categoriesMain--Social{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background: var(--color-verdeSocialTranslucido);
+    border: 1px solid var(--color-verdeSocial);
+    border-radius: 15px;
+    padding: 10px 0px;
+    margin: 15px 10px;
+}
+/* Línea de separación */
+
+.separationLine{
+margin-top: 70px;
+margin-bottom: 15px;
+width: 300px;
+margin-left: 10px;
+}
+
+/* Testimonios */
+
+.testimonies--title{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-size: 1.9rem;
+    font-weight: 300;
+}
+
+.section--testimonies{
+    display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.testimonies--body{
+background-color: var(--color-grisOscuro);
+border-radius: 20px;
+width: 300px;
+border: solid var(--color-grisMetalico);
+border-width: 1px;
+margin: 10px 0px;;
+
+
+}
+.testimonie--inside{
+    margin-left: 10px;
+    margin-top: 7px;
+    margin-bottom: 30px;
+}
+
+.testimonies--Upperbody{
+display: flex;
+flex-direction: row;
+gap: 7px;
+align-items: center;
+}
+
+.testimonie--image{
+width: 60px;
+}
+
+.testimonie-identity{
+
+}
+
+.testimonie--name{
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.testimonie--charge{
+
+}
+
+.testimonie-description{
+margin-top: 15px;
+font-size: 0.9rem;
+}
+
+/* Noticias */
+
+
+
+/* Trusted by */

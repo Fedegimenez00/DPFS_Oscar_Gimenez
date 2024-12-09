@@ -20,9 +20,14 @@
 
      /* Colores categóricos*/
      --color-magenta : #FF00CC;
+     --color-magentaTranslucido: rgba(255, 0, 204, 0.35);
      --color-rojoAtaque : #E90B30;
+     --color-rojoAtaqueTranslucido: rgba(233, 11, 48, 0.35);
      --color-celesteDefensa : #00D4E3;
+     --color-celesteDefensaTranslucido :rgba(0, 212, 227, 0.35);
      --color-amarilloNube : #E8D610;
+     --color-amarilloNubeTranslucido: rgba(232, 214, 16, 0.35);
      --color-verdeSocial : #5DD227;
+     --color-verdeSocialTranslucido: rgba(93, 210, 39, 0.35);
 
 }
