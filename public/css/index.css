@@ -133,9 +133,15 @@ font-weight: 530;
     font-weight: 500;
     margin-left: 2px;
 }
+.categories--cardInsideFirst{
+display: flex;
+flex-direction: row;
+align-items: center;
+width: 100%;
+}
 
 .fa-plus{
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-right: 12px;
 }
 
@@ -151,6 +157,7 @@ font-weight: 530;
 }
 .categories--cardInside{
     margin-left: 10px;
+    width: 100%;
 }
 
 .categories--cardUpper{
@@ -158,14 +165,11 @@ font-weight: 530;
 }
 
 .card--categories{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 64px;
     margin-bottom: 15px;
 }
 .card--categories i{
     margin-bottom: 0px;
+    margin-right: 10px;
 }
 .categoriesCard--title{
     font-size: 0.9rem;
@@ -181,6 +185,10 @@ font-weight: 530;
 }
 
 .categories--cardDown{
+width: 100%;
+display: flex;
+justify-content: space-between;
+gap:60px
 
 }
 .subcategories--title{
@@ -188,6 +196,15 @@ font-weight: 530;
     font-size: 1.2rem;
 }
 
+.categories--plusButton{
+display: flex;
+flex-direction: column;
+margin-right: 10px;
+gap: 20px;
+}
+.categories--cardDownInside{
+
+}
 
 .categoriesMain--Defense{
     display: flex;
