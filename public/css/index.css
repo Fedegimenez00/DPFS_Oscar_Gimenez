@@ -355,7 +355,7 @@ margin-bottom: 30px;
 display: flex;
 justify-content: flex-end;
 margin-right: 10px;
-margin-bottom: 5px;
+margin-bottom: 7px;
 font-weight: 200;
 }
 
@@ -372,3 +372,31 @@ margin-top: 20px;
 }
 
 /* Trusted by */
+
+.section--trustedClients{
+    display: flex;
+    flex-direction: column;
+}
+
+.trustedBy--text{
+    display: flex;
+justify-content: center;
+font-size: 0.9rem;
+font-weight: 300;
+margin-top: 30px;
+}
+
+.trustedBy--logos{
+    margin-top: 20px;
+    margin-bottom: 60px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+
+}
+
+.trustedBy--logos img{
+    width: 60px;
+    
+}
