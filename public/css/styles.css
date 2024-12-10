@@ -2,6 +2,10 @@
 @import url(./general.css);
 @import url(./variables.css);
 @import url(./index.css);
+@import url(./productDetail.css);
+@import url(./productCart.css);
+@import url(./register.css);
+@import url(./login.css);
 
 /* Header */
 .header--body{
