@@ -1,0 +1,319 @@
+.productDetail--main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productDetail--category{
+
+}
+
+/* Carta principal del detalle de Producto [Identidad y precio] */
+
+.section--productDetail{
+border: solid var(--color-magenta) 1px;
+background-color: var(--color-magentaMuyTranslucido);
+width: 98%;
+
+}
+.productDetail--preview{
+    position: relative;
+
+}
+.productDetail--preview img{
+    width: 100%;
+    border-bottom: solid var(--color-magenta) 1px;
+   
+}
+
+.productDetail--preview__Items{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+.productDetail--preview__Items i{
+    font-size: 6.0rem;
+}
+
+.productDetail--preview__Items p{
+width: 100%;
+font-size: 1.5rem;
+text-align: center;
+margin-top: 10px;
+font-weight: 400;
+}
+.productDetail__Inside{
+    margin-left: 10px;
+}
+
+.productDetail--title{
+margin-left: 0px;
+font-weight: 500;
+margin-top: 5px;
+font-size: 1.6rem;
+}
+
+.productDetail--title__underLine{
+width: 90%;
+
+border-width: 0px 0px 1px;
+border-color: var(--color-magenta);
+}
+
+.productDetail--quickDescription{
+font-size: 1.2rem;
+margin-top: 5px;
+}
+
+.productDetail--score{
+display: flex;
+gap: 15px;
+align-items: flex-end;
+margin: 5px 0px;
+
+}
+
+.productDetail--rating{
+    color: var(--color-amarilloDorado);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 6px;
+    font-size: 1.2rem;
+}
+
+
+.product--rating__number{
+font-size: 1.4rem;
+font-weight: 600;
+}
+
+.productDetail--rating__votes{
+ font-size: 0.9rem;
+}
+
+.productDetail--author{
+font-size: 1.0rem;
+}
+
+.productDetail--authorName{
+
+}
+
+.productDetail--properties{
+
+}
+
+.productDetail--propertiesIcons{
+
+}
+
+.productDetail--propertiesTexts{
+
+}
+
+.productDetail--Includes{
+
+}
+
+.productDetail--Includes__Icons{
+
+}
+
+.productDetail--Includes__Text{
+
+}
+
+.productDetail--priceCard{
+
+}
+
+.priceCard__price{
+
+}
+
+.priceCard__buttonCart{
+
+}
+
+.priceCard__buttonBuy{
+
+}
+
+.priceCard--line{
+
+}
+
+.priceCard--shareBox{
+
+}
+
+.priceCard--discountBox{
+
+}
+
+.discountBox__discount{
+
+}
+
+/* Sección: Lo que aprenderás  */
+
+.productDetail--learning{
+
+}
+
+.learningBox{
+
+}
+
+.learningBox--title{
+
+}
+
+/* Sección: Contenido del curso */
+
+.productDetail--contents{
+
+}
+
+.productDetail--contentsCard{
+
+}
+
+.contentsCard--section{
+
+}
+
+.contentsCard--sections__Button{
+
+}
+
+/* Caja: Requerimientos */
+
+.productDetail--requirementCard{
+
+}
+
+.requirementCard--title{
+
+}
+
+/* Sección: Descripción del curso */
+
+.productDetail--description{
+
+}
+
+.productDetail--description__title{
+
+}
+
+.productDetail--description p{
+
+}
+
+/* Sección: Caja del mentor*/
+
+.productDetail--mentor{
+
+}
+
+.productDetail--mentorCard{
+
+}
+
+.mentorCard--identity{
+
+}
+
+.mentorCard--Inside{
+
+}
+
+.mentorCard--Inside__inside{
+
+}
+
+.mentorCard--Inside__ratings{
+
+}
+
+.mentorCard--description{
+
+}
+
+/* Reseñas del producto*/
+
+.productDetail--review{
+
+}
+
+.productDetail--review__totalScore{
+
+}
+
+.review--card{
+
+}
+
+.review--card__inside{
+
+}
+
+.review--card__inside__title{
+
+}
+
+.review--card__description{
+
+}
+
+.review__buttonMore{
+
+}
+
+/* Línea de separación */
+
+.productDetail--separationLine{
+
+}
+
+/* Recomendaciones */ 
+
+.productDetail--recommendations{
+
+}
+
+.recommendations--card{
+
+}
+
+.recommendations--card__title{
+
+}
+
+.recommendations--card__rating{
+
+}
+
+.recommendations--card__rating-Stars{
+
+}
+
+.recommendations--card__rating-Reviews{
+
+}
+
+.recommendations--card__price{
+
+}
+
+.productDetail--recommendations__button{
+
+}

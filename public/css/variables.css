@@ -2,6 +2,7 @@
      /* Fondo */
     --color-negroCarbon : #1B1B1B;
     --color-grisOscuro : #2C2C2C;
+    --color-grisOscuroNiebla: rgba(44, 44, 44, 0.3);
     --color-negroRojizo : #0C0202;
 
      /* Borde*/
@@ -23,6 +24,7 @@
      /* Colores categóricos*/
      --color-magenta : #FF00CC;
      --color-magentaTranslucido: rgba(255, 0, 204, 0.35);
+     --color-magentaMuyTranslucido : rgba(255, 0, 204, 0.05);
      --color-rojoAtaque : #E90B30;
      --color-rojoAtaqueTranslucido: rgba(233, 11, 48, 0.35);
      --color-celesteDefensa : #00D4E3;
