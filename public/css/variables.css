@@ -4,12 +4,14 @@
     --color-grisOscuro : #2C2C2C;
     --color-grisOscuroNiebla: rgba(44, 44, 44, 0.3);
     --color-negroRojizo : #0C0202;
+    --color-blancoApagadoTranslucido: rgba(229, 229, 229, 0.1);
 
      /* Borde*/
     --color-grisMetalico : #4D4D4D;
 
      /* Texto */
     --color-blancoApagado : #E5E5E5;
+
     --color-rosaClaro : #FF75E3;
 
      /* Botones y links*/
