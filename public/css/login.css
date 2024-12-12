@@ -1,0 +1,60 @@
+/* Sección del Ingreso */
+
+.main--register-login{
+    background-image: url(/imgs/Images/login-wallpaper.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+/* Cuerpo del Ingreso */
+.loginCard--title{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+    flex-direction: column;
+}
+.loginCard--title h1{
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-left: 0px
+}
+.loginCard--title hr{
+    
+}
+
+.loginCard--body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginCard--body__button {
+    border: none;
+    background-color: var(--color-azulVioleta);
+    color: var(--color-blancoApagado);
+    font-size: 1.4rem;
+    padding: 10px 50px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.loginCard--footer {
+    margin-bottom: 40px;
+}
+
+.loginCard--footer small{
+font-size:0.9rem;
+}
+
+.loginCard--footer a{
+font-weight: 700;
+font-size: 1.1rem;
+}
