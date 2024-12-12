@@ -4,10 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
-    <link rel = "stylesheet" href="/public/css/styles.css">
+    <link rel = "stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/8b20537db2.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header class="header--body"><div class="header--body_card">
+        <i class="fa-solid fa-bars"></i>
+        <a href="/">
+<img src="/imgs/pageLogo/Logo_Completo.png" alt="ZeroTrust Logo"></a>
+
+    <div class="cart--pending">
+        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+<p>1</p>
+</div>
+</div>
+
+    </header>
+
+    <main>
+<section>
+    <h1>Cesta</h1>
+    <h2>2 cursos en la cesta</h2>
+</section>
+
+<section>
+    <article>
+        <img src="/imgs/Images/materializacion-de-las-ventajas-de-la-tecnologia-en-la-educacion 3.png" alt="">
+        <div>
+            <h3>Seguridad de la información</h3>
+            <small>por César Doapelli</small>
+            <div>
+            <div>
+                <p>4.0</p>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-users"></i>
+                <p>(11.000)</p>
+            </div>
+            </div>
+            <div>
+            <i class="fa-solid fa-trash"></i>
+            <p>Eliminar</p>
+            </div>
+        </div>
+        </article>
+</section>
+
+<section>
+  <article>
+    <div>
+        <p>Total</p>
+        <p>$19.000</p>
+    </div>
+    <div>
+        <p>Promociones</p>
+        <form action="/product-detail">
+            <input  type="text" name="discount" id="discount" placeholder="Introducir el cupón">
+            <label for="discount"></label>
+            <button class="discountBox__button" type="button">Aplicar</button>
+        </form>
+        <hr>
+        <button>Pagar</button>
+    </div>
+  </article>
+
+</section>
+
+<section>
+    <h2>También podría interesarte</h2>
+
+        <article class="recommendations--card"> <div class="recommendations--cardInsider">
+            <img src="/imgs/Images/CourseExample 2.png" alt="">
+            <div class="recommendations--card__inside">
+            <div class="recommendations--card__title">
+            <h3>Título</h3>
+            <h4>Mentor</h4>
+            </div>
+        <div class="recommendations--card__rating">
+            <div class="recommendations--card__rating-Stars">
+                <p>4,5</p> 
+                <i class="fa-solid fa-star"></i>
+            </div>
     
+            <div class="recommendations--card__rating-Reviews">
+                <i class="fa-solid fa-users"></i>
+                <p>11.000</p> 
+            </div>
+        
+        </div>
+    <p class="recommendations--card__price">$4.500</p>
+    <button>Añadir a la cesta</button>
+    </div>
+
+
+    </article>
+</section>
+    </main>
+
+    <footer class="footer--body">
+        <div class="footer--info">
+<div class="footer--info__card">
+<h3>Información</h3>
+<p>LinkInstructivo 1</p>
+<p>LinkInstructivo 2</p>
+<p>LinkInstructivo 3</p>
+</div>
+
+<div class="footer--info__card">
+    <h3>Contáctanos</h3>
+    <h4>ZeroTrust Lab</h4>
+    <p>Av Boedo 1235</p>
+    <p>Capital Federal, Argentina</p>
+    <p>11 2564-1142</p>
+    <p>Zerotrust@gmail.com</p>
+</div>
+</div>
+<img class="footer--logo" src="/imgs/pageLogo/Logo_Completo.png">
+<p>“Dominio Total, Confianza Cero”</p>
+<div class="footer--down">
+    <hr class="footer--line">
+<div class="footer--socialMedia">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-linkedin-in"></i>
+    <i class="fa-brands fa-facebook-f"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+
+</div>
+<small>© 2024 ZeroTrust Lab. Todos los derechos reservados</small></div>
+    </footer>
 </body>
 </html>

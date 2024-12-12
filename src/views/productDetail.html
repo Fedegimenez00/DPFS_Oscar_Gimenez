@@ -83,19 +83,27 @@
 
     <article class="productDetail--priceCard">
         <p class="priceCard__price">$19.000</p>
+
+        <div class="priceCard--buttons">
         <button class="priceCard__buttonCart">Añadir a la cesta</button>
         <button class="priceCard__buttonBuy">Comprar ahora</button>
+    </div>
         <hr class="priceCard--line">
         <div class="priceCard--shareBox">
+            <div class="priceCard--shareBox__Sub-container">
             <i class="fa-solid fa-share-nodes"></i> <p>Compartir</p>
+        </div>
+        <div class="priceCard--shareBox__Sub-container">
             <i class="fa-solid fa-gift"></i> <p>Regalar este curso</p>
+        </div>
+
         </div>
         <div class="priceCard--discountBox">
             <p>Aplicar el cupón</p>
             <div class="discountBox__discount">
             <form action="/product-detail">
-                <input  type="text" name="discount" id="discount" placeholder=" ">
-                <label for="discount">Introducir el cupón</label>
+                <input  type="text" name="discount" id="discount" placeholder="Introducir el cupón">
+                <label for="discount"></label>
                 <button class="discountBox__button" type="button">Aplicar</button>
             </form>
         </div>
@@ -111,7 +119,9 @@
 
 <section class="productDetail--learning">
 <article class="learningBox">
+    <div class="learningBox__Inside">
 <h2 class="learningBox--title">Lo que aprenderás</h2>
+<div class="learningBox__Inside--Inside">
 <div class="learningBox--item">
     <i class="fa-solid fa-check"></i>
     <p>Los 3 principios fundamentales de ciberseguridad</p>
@@ -132,15 +142,19 @@
     <i class="fa-solid fa-check"></i>
     <p>Seguridad física, de servidores y de sistemas</p>
 </div>
+</div>
+</div>
 
 </article>
 
 </section>
 
 <section class="productDetail--contents">
+    <div class="productDetail--contents__titles">
 <h2>Contenido del curso</h2>
 <hr>
 <p>14 secciones | 20 clases | 5h 20 minutos de duración total</p>
+</div>
 
 <article class="productDetail--contentsCard">
     <div class="contentsCard--section">
@@ -174,38 +188,48 @@
 
 <article class="productDetail--requirementCard">
     <div class="requirementCard--title">
-    <div><h2>Requisitos</h2> <hr>
+    <div><h2>Requisitos</h2> 
+        <i class="fa-solid fa-chevron-down"></i>
     </div>
-    <i class="fa-solid fa-chevron-down"></i>
+    <hr>
 </article>
 
 <section class="productDetail--description">
-    
+    <div class="productDetail--description__inside">
     <div class="productDetail--description__title">
     <h2>Descripción</h2><hr>
 </div>
-<p></p>
+<p>Los riesgos y amenazas de ciberseguridad están presentes y ahora más  que nunca. La infraestructura de las redes e Internet son cada vez más  vulnerables a una amplia variedad de ataques físicos y cibernéticos. Los ciberdelincuentes sofisticados, así como las naciones, aprovechan estas vulnerabilidades para robar información y dinero. 
+</p>
+</div>
 </section>
 <section class="productDetail--mentor">
     <article class="productDetail--mentorCard">
+        <div class="productDetail--mentorCard__inside">
+        <h2>Mentor</h2>
         <div class="mentorCard--identity">
         <h3>Cesar Doapelli</h3>
         <h4>Profesional en milanesas</4></div>
         <div class="mentorCard--Inside">
-        <img src="/imgs/Images/user-png" alt="">
+            <div class="mentorCard--Inside__Image-Awards">
+        <img src="/imgs/Images/user.png" alt="">
         <div class="mentorCard--Inside__inside">
             <div class="mentorCard--Inside__ratings">
-            <i class="fa-solid fa-star"></i> <small>Calificación: 4.7</small>
+            <i class="fa-solid fa-star"></i> 
+            <i class="fa-solid fa-award"></i>
+            <i class="fa-solid fa-circle-play"></i>
+                </div>
+                <div class="mentorCard--Inside__ratingsText">
+                    <small>Calificación: 4.7</small>
+                    <small>73 Reseñas</small>
+                    <small>5 cursos</small>
+                
             </div>
-            <div class="mentorCard--Inside__ratings"><i class="fa-solid fa-award"></i> <small>73 Reseñas</small>
-            </div>
-            <div class="mentorCard--Inside__ratings">
-                <i class="fa-solid fa-circle-play"></i>
-                <small>5 cursos</small>
-            </div>
+        </div>
         </div>
         <p class="mentorCard--description">Soy un profesional que labora en el área de Cyber Risk, con el cargo de  Cybersecurity Consultant, con conocimientos en el marco normativo de  certificaciones PCI DSS.     
         </p>
+    </div>
     </div>
     </article>
 </section>
@@ -214,22 +238,27 @@
     <div class="productDetail--review__totalScore"><i class="fa-solid fa-star"></i><h2>4,5 | 3k Valoraciones</h2>
     </div>
     <article class="review--card">
+        <div class="review--card__insideMargins">
     <div class="review--card__inside">
         <div class="review--card__inside__title">
             <h3>José Daldo Roca</h3>
             <small>Hace 2 semanas</small>
         </div>
-    <img src="/imgs/Images/pngegg 7-png" alt="">
+    <img src="/imgs/Images/pngegg 7.png" alt="">
     </div>
     <p class="review--card__description">Hasta el momento, ha sido un buen curso.</p>
+</div>
     </article>
     <button class="review__buttonMore">Mostrar todas las Reseñas</button>
-    <hr class="productDetail--separationLine">
+   
 </section>
-
+<hr class="productDetail--separationLine">
 <section class="productDetail--recommendations">
+    <div class=" productDetail--recommendations__inside">
     <h2>Recomendaciones</h2>
-    <article class="recommendations--card">
+    <article class="recommendations--card"> <div class="recommendations--cardInsider">
+        <img src="/imgs/Images/CourseExample 2.png" alt="">
+        <div class="recommendations--card__inside">
         <div class="recommendations--card__title">
         <h3>Título</h3>
         <h4>Mentor</h4>
@@ -244,10 +273,13 @@
             <i class="fa-solid fa-users"></i>
             <p>11.000</p> 
         </div>
+    
     </div>
 <p class="recommendations--card__price">$4.500</p>
+</div>
 </article>
 <button class="productDetail--recommendations__button">Ver más</button>
+</div>
 </section>
 </main>
 
