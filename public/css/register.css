@@ -12,40 +12,71 @@
 
 /* Cuerpo del Registro */
 .registerCard{
-    background-color: rgb(12 2 2 / 40%);
+    background-color: var(--color-negroRojizoTranslucido);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 10px;
 
 }
 
 .registerCard--title{
-
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
-
+.registerCard--title h1{
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 0px
+}
+.registerCard--title hr{
+    
+}
 .registerCard--body{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 15px;
 }
 
 .registerCard--bodyInputs{
 
 }
 
+.registerCard--bodyInputs input{
+    padding: 15px 50px 15px 5px;
+    font-size: 1rem;
+    border: none;
+    margin-bottom: 15px;
+}
+
 
 /* Pie del registro */
 .registerCard--body__button{
-
+    border: none;
+    background-color: var(--color-azulVioleta);
+    color: var(--color-blancoApagado);
+    font-size: 1.4rem;
+    padding: 10px 50px;
+    font-weight: 500;
 }
 
 .registerCard--footer{
-
+margin-bottom: 30px;
 }
 
 .registerCard--footer small{
-
+font-size:0.9rem;
 }
 
 .registerCard--footer a{
-
+font-weight: 700;
+font-size: 1.1rem;
 }
