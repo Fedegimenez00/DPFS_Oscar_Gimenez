@@ -39,6 +39,8 @@ padding: 5px 10px;
 }
 .section--courseCards{
 display: flex;
+align-items: center;
+flex-direction: column;
 justify-content: center;
 }
 .course--card{
@@ -125,7 +127,7 @@ font-weight: 530;
     margin-bottom: 100px;
     font-weight: 400;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 .categoriesMain--Fundamental{
     display: flex;
@@ -151,6 +153,17 @@ display: flex;
 flex-direction: row;
 align-items: center;
 width: 100%;
+}
+
+.categories--cardInsideFirst__down{
+display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.categories--cardInsideFirst__down i{
+    font-size: 1.2rem;
 }
 
 .fa-plus{
@@ -183,12 +196,13 @@ width: 100%;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 40px;
+    gap: 60px;
 
 }
 .card--categories i{
     margin-bottom: 0px;
-    margin-right: 10px;
+    margin-right: 20px;
+    font-size: 1.2rem;
 }
 .categoriesCard--title{
     font-size: 0.9rem;
@@ -203,27 +217,13 @@ width: 100%;
     width: 0px;
 }
 
-.categories--cardDown{
-width: 100%;
-display: flex;
-justify-content: space-between;
-
-}
 .subcategories--title{
     font-weight: 400;
     font-size: 1.2rem;
 }
 
-.categories--plusButton{ /* Ver cómo corregir el alineado de por acá*/
-display: flex;
-flex-direction: column;
-margin-right: 10px;
-margin-top: 5px;
-margin-bottom: 10px;
-gap: 21px
-}
 .categories--cardDownInside{
-
+width: 100%;
 }
 
 .categoriesMain--Defense{
@@ -263,8 +263,7 @@ gap: 21px
 .separationLine{
 margin-top: 70px;
 margin-bottom: 15px;
-width: 90%;
-margin-left: 10px;
+width: 92%;
 }
 
 /* Testimonios */
@@ -288,7 +287,8 @@ align-items: center;
 .testimonies--body{
 background-color: var(--color-grisOscuro);
 border-radius: 20px;
-width: 300px;
+padding-right: 55px;
+padding-bottom: 35px;
 border: solid var(--color-grisMetalico);
 border-width: 1px;
 margin: 10px 0px;;
