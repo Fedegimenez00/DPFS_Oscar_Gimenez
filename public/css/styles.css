@@ -111,10 +111,41 @@ font-weight: 500;
     font-size: 0.7rem;
 }
 
-/* Podría ver cómo  quedaría en un width de 420 y subir hasta el máximo*/
+
 
 @media (min-width: 600px) and (max-width: 1024px) {
-    /* Estilos para tablets */
+
+    /* Header */
+    .header--body_card{
+        margin-left: 20px;
+        margin-right: 25px;
+    }
+    .fa-bars{
+        font-size: 2.6rem;
+        margin-right: 10px;
+    
+    }
+    .header--body img{
+        width: 240px;
+    }
+    .fa-cart-shopping{
+        
+        font-size: 2.4rem;
+    }
+    
+
+    /* Footer */
+    .footer--info{
+        display: flex;
+        flex-direction: row;
+        gap: 30%;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: space-around;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
 }
 
 
