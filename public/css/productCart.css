@@ -1,7 +1,7 @@
 /*Icono de cantidad en carrito en el header  */
 
 .cart--pending{
-
+position: relative;
 }
 
 .cart--pending p{
@@ -13,6 +13,9 @@
     font-weight: 600;
     width: 25px;
     height: 25px;
+    position: absolute;
+    top: -8px;
+    left: 16px;
 }
 
 /* Titulo  del carrito*/
@@ -242,4 +245,14 @@ margin-bottom:10px
     color: var(--color-blancoApagado);
     font-weight: 500;
     padding: 10px 30px;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+/*Icono de cantidad en carrito en el header  */
+.cart--pending p{
+top: -9px;
+left: 25px;
+}
+
 }
