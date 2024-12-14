@@ -28,11 +28,14 @@ padding: 5px 10px;
 }
 
 /* Course card */
+.courses--title__container{
+    width: 100%;
+}
+
 .courses-title{
     display: flex;
-    justify-content: center;
-    margin-right: 45px;
-    margin-left: 0px;
+    justify-content: flex-start;
+    margin-left: 4%;
     font-size: 1.9rem;
     margin-bottom: 10px;
     font-weight: 300;
@@ -45,7 +48,7 @@ justify-content: center;
 }
 .course--card{
 background-color: var(--color-grisOscuro);
-width: 270px;
+width: 70%;
 display: flex;
 flex-direction: column;
 margin-top: 10px;
@@ -69,7 +72,7 @@ font-weight: 400;
 }
 
 .course--card__photo{
-    width: 270px;
+    width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border: solid var(--color-grisMetalico);
@@ -107,6 +110,7 @@ font-size: 1.5rem;
 .course--cardDown{
     display: flex;
     justify-content: flex-end;
+    padding-top: 15%;
 }
 
 .course--card__previewButton{
@@ -116,9 +120,11 @@ border-radius: 20px;
 border: none;
 background-color: var(--color-azulElectrico);
 color: var(--color-blancoApagado);
-padding: 5px;
-padding-left: 10px;
-padding-right: 10px;
+padding-left: 10%;
+padding-right: 10%;
+padding-top: 2%;
+padding-bottom: 2%;
+font-size: 1.1rem;
 font-weight: 530;
 }
 
@@ -270,10 +276,10 @@ width: 92%;
 
 .testimonies--title{
     display: flex;
-    justify-content: start;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 20px;
-    
-    margin-right: 140px;
+    margin-left: 7%;
     font-size: 1.9rem;
     font-weight: 300;
 }
@@ -287,11 +293,11 @@ align-items: center;
 .testimonies--body{
 background-color: var(--color-grisOscuro);
 border-radius: 20px;
-padding-right: 55px;
-padding-bottom: 35px;
+padding-right: 20%;
+padding-bottom: 10%;
 border: solid var(--color-grisMetalico);
 border-width: 1px;
-margin: 10px 0px;;
+margin: 10px 3%;;
 
 
 }
@@ -299,6 +305,7 @@ margin: 10px 0px;;
     margin-left: 10px;
     margin-top: 7px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .testimonies--Upperbody{
@@ -309,7 +316,7 @@ align-items: center;
 }
 
 .testimonie--image{
-width: 60px;
+width: 25%;
 }
 
 .testimonie-identity{
@@ -333,11 +340,15 @@ font-size: 0.9rem;
 /* Noticias */
 
 .news--title{
-margin-right: 170px;
-font-size: 2.1rem;
-font-weight: 300;
-margin-bottom: 20px;
+display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-left: 8%;
+    font-size: 2.1rem;
+    font-weight: 300;
 }
+
 
 .section--news{
 display: flex;
@@ -348,7 +359,7 @@ align-items: center;
 
 .news--card{
 background-color: var(--color-grisOscuro);
-width: 300px;
+width: 85%;
 border-radius: 20px;
 border: solid var(--color-grisMetalico);
     border-width: 1px;
@@ -357,7 +368,7 @@ border: solid var(--color-grisMetalico);
 }
 
 .news--card__image{
-    width: 300px;
+    width: 100%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 

@@ -1,6 +1,7 @@
 *{
-    margin: 0px
+    margin: 0px;
 }
+
 
 body{
     background-color: var(--color-negroCarbon);
@@ -9,6 +10,10 @@ body{
     font-style: normal;
     font-optical-sizing: auto;
     color: var(--color-blancoApagado);
+    padding:0px;
+    margin: 0px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 a{
     text-decoration: none;
