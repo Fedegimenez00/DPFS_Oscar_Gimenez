@@ -48,7 +48,8 @@ justify-content: center;
 }
 .course--card{
 background-color: var(--color-grisOscuro);
-width: 70%;
+width: 80%;
+max-width: 280px;
 display: flex;
 flex-direction: column;
 margin-top: 10px;
@@ -110,7 +111,7 @@ font-size: 1.5rem;
 .course--cardDown{
     display: flex;
     justify-content: flex-end;
-    padding-top: 15%;
+    padding-top: 5%;
 }
 
 .course--card__previewButton{
@@ -449,4 +450,71 @@ justify-content: space-evenly;
 .trustedBy--logos img{
     width: 20%;
     
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+/* About us */
+
+.aboutUs__button{
+    font-size: 1.6rem;
+    top: 89%;
+}
+
+
+/* Course card */
+
+.course--card{
+    width: 45%;
+    max-width: 300px;
+}
+
+
+/* Categorias */
+
+.categoriesMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categoriesMain article{
+    width: 90%;
+}
+
+.categories--title{
+    font-size: 1.8rem;
+}
+
+
+/* Testimonios */
+
+.testimonies title{
+    margin-left: 5%;
+    font-size: 2.0rem;
+}
+
+.testimonies--body{
+    width: 60%;
+    max-width: 500px;
+}
+
+
+/* Noticias */
+
+.news--card{
+    width: 80%;
+    max-width: 700px;
+}
+.news--seeMoreButton{
+    font-size: 1.4rem;
+}
+
+
+/* Trusted by */
+
+.trustedBy--text{
+    font-size: 1.2rem;
+}
 }
