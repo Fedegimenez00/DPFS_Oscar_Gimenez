@@ -67,7 +67,7 @@ font-size: 1.4rem;
 }
 
 .productDetail--title__underLine{
-width: 90%;
+width: 285px;
 
 border-width: 0px 0px 1px;
 border-color: var(--color-magenta);
@@ -318,7 +318,7 @@ margin-top: 20px
 }
 
 .productDetail--contents__titles hr{
-    width: 75%;
+    width: 220px;
     border-width: 0px 0px 1px;
     border-color: var(--color-magenta);
     margin-bottom: 15px;
@@ -405,7 +405,7 @@ margin-top: 20px
 }
 
 .requirementCard--title hr{
-    width: 40%;
+    width: 120px;
     border-width: 0px 0px 1px;
     border-color: var(--color-magenta);
     margin-bottom: 15px;
