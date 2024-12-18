@@ -110,7 +110,9 @@
     font-weight: 500;
 }
 
-.cart--bodyCard--rating i {}
+.cart--bodyCard--rating i {
+
+}
 
 .cart--bodyCard--score {
     display: flex;
@@ -150,7 +152,9 @@
     align-items: cente
 }
 
-.cart--resultCard__total {}
+.cart--resultCard__total {
+
+}
 
 .cart--total {
     font-size: 1.5rem;
@@ -169,7 +173,37 @@
     margin-bottom: 30px;
 }
 
-.cart--resultCard__discount {
+/* Discount box */
+
+.discountBox__cartDiscount{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.discountBox__cartDiscount form{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.discountBox__cartDiscount input{
+    padding: 13px 5px 13px 10px;
+    font-size: 1.0rem;
+    border: none;
+    width: 75%;
+}
+
+.discountBox__cartDiscount button{
+    border: none;
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: var(--color-blancoApagado);
+    background-color: var(--color-azulVioleta);
+    padding: 13px 10px;
+    width: 30%;
+    max-width: 100px;
+}
+
+.cart--resultCard__cartDiscount {
     margin-top: 20px;
     margin-bottom: 30px;
 }
@@ -178,7 +212,7 @@
     margin: 20px 10px;
 }
 
-.cart--resultCard__discount p {
+.cart--resultCard__cartDiscount p {
     font-weight: 600;
     margin-bottom: 10px
 }
@@ -214,14 +248,20 @@
 /* Recomendaciones en el carrito */
 
 .cart--recommendations {
-    border-top: solid 1px;
+   
+}
+
+.cart-recommendations__inside{
+     border-top: solid 1px;
     margin-bottom: 100px;
 }
 
 .cart--recommendations h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-top: 20px;
+    margin-bottom:25px;
     font-weight: 500;
+    margin-left: 1%;
 }
 
 
@@ -264,14 +304,27 @@
     margin-left: 2.3%;
     }
 
+    /* Cuerpo del  carrito */
+
     .cart--body{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    /* Tarjeta de producto en el carrito */
+
     .cart--bodyCard{
     width: 95%;
     margin-left: 0px;
+    }
+
+    .cart--bodyCard img{
+        margin-left: 0px;
+    }
+
+    .cart--bodyCard__inside{
+        margin-left:10px;
     }
 
     
@@ -280,32 +333,15 @@
 }
 
 
-.cart--bodyCard__inside small {
+    .cart--bodyCard__inside small {
     font-weight: 400;
     font-size: 0.9rem;
 }
+
     .bodyCard__solePrice p{
         font-size: 1.2rem;
-}
-
-    .cart--result{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-
-    .cart--resultCard{
-    width: 95%;
-    }
-
-    .cart--total{
-    font-size: 1.6rem;
-    }
-
-    .cart--totalPrice{
-    font-size: 1.9rem;
-}
-
+        margin-right: 0px;
+}  
 
 .cart--bodyCard--rating__extra{
     gap: 3px;
@@ -334,6 +370,30 @@
 
 }
 
+    /* Total del carrito */
+
+    .cart--result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .cart--resultCard{
+    width: 95%;
+    }
+
+    .cart--total{
+    font-size: 1.6rem;
+    }
+
+    .cart--totalPrice{
+    font-size: 1.9rem;
+}
+
+
+
+    /* Discount Box */
+
     .cart--resultCard__discount{
     display: flex;
     align-items: center;
@@ -347,25 +407,10 @@
     font-size: 1.3rem;
 
     }
-    .discountBox__discount{
-        width: 100%;
-
+  
+    .cart--resultCard__cartDiscount{
+        margin-left: 20px;
     }
-
-    .discountBox__discount form{
-    justify-content: flex-start;  /* CUIDADO CON ESTAS CLASES Y SUB-CLASES: Deberé de cambiarlas para que no choquen con otras vistas: 6% padding y además, añadir los títulos a cada sección de por acá*/
-}
-
-    .discountBox__discount input{
-        padding: 13px 100px 13px 10px;
-        width: 35%;
-        margin-left: 14px;
-    }
-
-    .discountBox__discount button{
-    padding: 13px 25px;
-    }
-
     .cart--buttonOrder{
     width: 100%;
 }
@@ -374,6 +419,7 @@
     max-width: 420px;
     }
 
+    /* Recomendaciones en el carrito */
 
     .cart--recommendations{
     display: flex;
@@ -381,20 +427,25 @@
     align-items: center;
 
 }
-
-.recommendations--card__inside{
-width: 100%;
-}
+    .cart-recommendations__inside{
+        width: 95%;
+    }
 
     .cart--recommendations h2{
     font-size: 1.7rem;
     width: 100%;
-    margin-left: 5%;
+    margin-left: 0px;
+        margin-top: 15px;
+        margin-bottom: 25px;
 }
 
 .recommendationCart--card{
 width: 90%;
 margin: 5px 0px;
+}
+
+.recommendations--card__inside{
+    width: 100%;
 }
 
 .recommendations--cardCartInsider{
