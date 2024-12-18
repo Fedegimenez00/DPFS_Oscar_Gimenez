@@ -176,7 +176,7 @@ margin-top: 10px;
 
 .priceCard__price{
 font-size: 1.6rem;
-    margin-left: 10px;
+    margin-left: 5%;
     font-weight: 400;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -196,6 +196,8 @@ font-size: 1.6rem;
     font-size: 1.2rem;
     color: var(--color-blancoApagado);
     font-weight: 300;
+    width: 75%;
+    max-width: 500px;
 }
 
 .priceCard__buttonBuy{
@@ -205,6 +207,8 @@ font-size: 1.6rem;
     padding: 10px 53px;
     color: var(--color-blancoApagado);
     font-weight: 300;
+    width: 75%;
+    max-width: 500px;
 }
 
 .priceCard--line{
@@ -241,17 +245,23 @@ font-size: 1.6rem;
 .discountBox__discount{
     margin-top: 10px;
     margin-bottom: 40px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
 }
 .discountBox__discount form{
     display: flex;
     align-items: center;
     margin-top: 10px;
+    width: 100%;
+    justify-content: center;
 }
 
 .discountBox__discount input{
     padding: 10px 5px 10px 10px;
     font-size: 1.0rem;
     border: none;
+    width: 60%;
 }
 
 .discountBox__discount button{
@@ -261,6 +271,8 @@ font-size: 1.6rem;
     color: var(--color-blancoApagado);
     background-color: var(--color-azulVioleta);
     padding: 10px;
+    width: 25%;
+    max-width: 95px;
 }
 
 /* Sección: Lo que aprenderás  */
@@ -545,9 +557,10 @@ width: 90%;
 .review--card{
     border: solid var(--color-magenta) 1px;
     margin-bottom: 20px;
-    width: 250px;
     height: 140px;
-    width: 65%;
+    width: 80%;
+    max-width: 800px;
+    padding-bottom: 40px;
 }
 
 .review--card__inside{
@@ -630,6 +643,7 @@ margin-bottom: 80px;
 border: solid var(--color-grisMetalico) 1px;
 margin: 15px 0px;
 background-color: var(--color-grisOscuro);
+width: 100%;
 }
 .recommendations--cardInsider{
     margin:15px;
@@ -640,6 +654,7 @@ background-color: var(--color-grisOscuro);
 
 .recommendations--card img{
     width: 50%;
+    max-width: 270px;
 }
 .recommendations--card__inside{
     display: flex;
@@ -695,4 +710,57 @@ gap: 10px;
     border: solid var(--color-grisMetalico) 1px;
     padding: 10px 116px;
     margin-bottom: 30px;
+    width: 100%;
+    max-width: 360px;
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+
+
+/* Carta principal del detalle de Producto [Identidad y precio] */
+
+
+
+
+
+/* Sección: Lo que aprenderás  */
+
+
+
+
+
+/* Sección: Contenido del curso */
+
+
+
+
+
+/* Caja: Requerimientos */
+
+
+
+
+/* Sección: Descripción del curso */
+
+
+
+
+/* Sección: Caja del mentor*/
+
+
+
+
+/* Reseñas del producto*/
+
+
+
+/* Línea de separación */
+
+
+
+/* Recomendaciones */ 
+
+
 }
