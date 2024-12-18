@@ -19,7 +19,7 @@ margin-bottom:10px;
 .section--productDetail{
 border: solid var(--color-magenta) 1px;
 background-color: var(--color-magentaMuyTranslucido);
-width: 98%;
+width: 99%;
 margin-bottom: 40px;
 }
 .productDetail--preview{
@@ -266,7 +266,8 @@ font-size: 1.6rem;
 /* Sección: Lo que aprenderás  */
 
 .productDetail--learning{
-margin-top: 20px
+margin-top: 20px;
+width: 99%;
 }
 
 .learningBox{
@@ -307,10 +308,12 @@ margin-top: 20px
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 99%;
 }
 
 .productDetail--contents__titles{
     margin-left: 10px;
+    width: 100%;
 }
 
 .productDetail--contents__titles h2{
@@ -331,6 +334,7 @@ margin-top: 20px
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .contentsCard--section{
@@ -364,6 +368,7 @@ margin-top: 20px
     font-weight: bold;
     padding: 15px 50px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 /* Caja: Requerimientos */
@@ -481,6 +486,7 @@ margin-bottom: 20px;
 }
 .mentorCard--Inside img{
  width: 30%;
+ max-width: 125px;
 }
 
 .mentorCard--Inside__inside{
@@ -506,6 +512,7 @@ margin-bottom: 20px;
 .mentorCard--description{
 margin-right: 10px;
 margin-bottom: 40px;
+width: 90%;
 }
 
 /* Reseñas del producto*/
@@ -514,7 +521,9 @@ margin-bottom: 40px;
     margin-top: 70px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 10%;
 }
 
 .productDetail--review__totalScore{
@@ -538,6 +547,7 @@ margin-bottom: 40px;
     margin-bottom: 20px;
     width: 250px;
     height: 140px;
+    width: 65%;
 }
 
 .review--card__inside{
@@ -552,6 +562,7 @@ margin-bottom: 40px;
 }
 .review--card__inside img{
     width: 20%;
+    max-width: 60px;
 }
 
 .review--card__inside__title{
@@ -578,6 +589,9 @@ margin-bottom: 40px;
     font-weight: 200;
     padding: 10px 5px;
     margin-bottom: 20px;
+    align-self: center;
+    width: 70%;
+    max-width: 310px;
 }
 
 /* Línea de separación */

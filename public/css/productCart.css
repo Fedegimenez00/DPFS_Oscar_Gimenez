@@ -102,7 +102,11 @@
     color: var(--color-amarilloDorado);
 }
 
-.cart--bodyCard--rating p {
+.cart--bodyCard--rating__extra{
+    display:none
+}
+
+.cart--bodyCard--rating__text {
     font-weight: 500;
 }
 
@@ -119,6 +123,10 @@
 
 .cart--bodyCard--score p {
     font-weight: 500;
+}
+
+.score--quantity{
+    display: none;
 }
 
 .cart--bodyCard--delete {
@@ -298,6 +306,34 @@
     font-size: 1.9rem;
 }
 
+
+.cart--bodyCard--rating__extra{
+    gap: 3px;
+    display:flex;
+    align-items: center;
+    color: var(--color-amarilloDorado);
+}
+
+.cart--bodyCard--score {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.cart--bodyCard--score i {
+    display: none;
+}
+
+.cart--bodyCard--rating__text {
+    display: none
+}
+
+.score--quantity{
+    display:block;
+    font-weight: 500;
+
+}
+
     .cart--resultCard__discount{
     display: flex;
     align-items: center;
@@ -317,7 +353,7 @@
     }
 
     .discountBox__discount form{
-    justify-content: flex-start;
+    justify-content: flex-start;  /* CUIDADO CON ESTAS CLASES Y SUB-CLASES: Deberé de cambiarlas para que no choquen con otras vistas: 6% padding y además, añadir los títulos a cada sección de por acá*/
 }
 
     .discountBox__discount input{
