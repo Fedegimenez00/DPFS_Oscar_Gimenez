@@ -282,12 +282,11 @@ font-size: 1.6rem;
 /* Sección: Lo que aprenderás  */
 
 .productDetail--learning{
-
+width: 100%;
 }
 
 .productDetail--learning__inside{
     margin-top: 20px;
-    width: 99%;
 }
 
 .learningBox{
@@ -325,13 +324,12 @@ font-size: 1.6rem;
 /* Sección: Contenido del curso */
 
 .productDetail--contents{
-   
+   width: 100%;
 }
 .productDetail--contents__inside{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 99%;
 }
 
 .productDetail--contents__titles{
@@ -441,7 +439,8 @@ font-size: 1.6rem;
 /* Sección: Descripción del curso */
 
 .productDetail--description{
-margin-bottom: 40px
+margin-bottom: 40px;
+width: 100%;
 }
 .productDetail--description__inside{
 
@@ -472,7 +471,8 @@ margin-bottom: 40px
 /* Sección: Caja del mentor*/
 
 .productDetail--mentor{
-margin-bottom: 20px
+margin-bottom: 20px;
+width: 100%;
 }
 
 .productDetail--mentor__inside{
@@ -547,7 +547,7 @@ width: 90%;
 /* Reseñas del producto*/
 
 .productDetail--review{
-    
+    width: 100%;
 }
 
 .productDetail--review__inside{
@@ -555,7 +555,6 @@ width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
     margin-left: 10%;
 }
 
