@@ -17,10 +17,14 @@ margin-bottom:10px;
 /* Carta principal del detalle de Producto [Identidad y precio] */
 
 .section--productDetail{
-border: solid var(--color-magenta) 1px;
-background-color: var(--color-magentaMuyTranslucido);
-width: 99%;
-margin-bottom: 40px;
+
+}
+
+.section--productDetail__inside{
+    border: solid var(--color-magenta) 1px;
+    background-color: var(--color-magentaMuyTranslucido);
+    width: 99%;
+    margin-bottom: 40px;
 }
 .productDetail--preview{
     position: relative;
@@ -278,8 +282,12 @@ font-size: 1.6rem;
 /* Sección: Lo que aprenderás  */
 
 .productDetail--learning{
-margin-top: 20px;
-width: 99%;
+
+}
+
+.productDetail--learning__inside{
+    margin-top: 20px;
+    width: 99%;
 }
 
 .learningBox{
@@ -317,6 +325,9 @@ width: 99%;
 /* Sección: Contenido del curso */
 
 .productDetail--contents{
+   
+}
+.productDetail--contents__inside{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -433,8 +444,11 @@ width: 99%;
 margin-bottom: 40px
 }
 .productDetail--description__inside{
-    margin-left: 10px;
 
+}
+
+.productDetail--descriptionBox{
+    margin-left: 10px;
 }
 
 .productDetail--description__title{
@@ -461,6 +475,9 @@ margin-bottom: 40px
 margin-bottom: 20px
 }
 
+.productDetail--mentor__inside{
+
+}
 .productDetail--mentorCard{
     border: solid var(--color-magenta) 1px;
     background-color: var(--color-magentaMuyTranslucido);
@@ -530,6 +547,10 @@ width: 90%;
 /* Reseñas del producto*/
 
 .productDetail--review{
+    
+}
+
+.productDetail--review__inside{
     margin-top: 70px;
     display: flex;
     flex-direction: column;
