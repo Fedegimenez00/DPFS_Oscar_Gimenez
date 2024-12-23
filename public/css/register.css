@@ -44,10 +44,19 @@
     align-items: center;
     margin-bottom: 10px;
     gap: 15px;
+    width: 100%;
+}
+
+.registerCard--body form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .registerCard--bodyInputs{
-
+    text-align: center;
+    width: 100%;
 }
 
 .registerCard--bodyInputs input{
@@ -55,6 +64,7 @@
     font-size: 1rem;
     border: none;
     margin-bottom: 15px;
+    width: 60%;
 }
 
 
@@ -64,12 +74,13 @@
     background-color: var(--color-azulVioleta);
     color: var(--color-blancoApagado);
     font-size: 1.4rem;
-    padding: 10px 50px;
+    padding: 10px 15%;
     font-weight: 500;
 }
 
 .registerCard--footer{
-margin-bottom: 30px;
+margin-bottom: 45px;
+text-align: center;
 }
 
 .registerCard--footer small{
@@ -79,4 +90,50 @@ font-size:0.9rem;
 .registerCard--footer a{
 font-weight: 700;
 font-size: 1.1rem;
+}
+
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+/* Sección de Registro */
+.register--section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Cuerpo del Registro */
+.registerCard {
+width: 85%;
+margin: 45px 10px;
+margin-bottom: 80px
+ }
+
+ .registerCard--title h1 {
+    font-size: 2.2rem;
+ }
+
+ .registerCard--bodyInputs input {
+    font-size: 1.2rem;
+    padding: 15px 90px 15px 10px;
+ }
+/* Pie del registro */
+
+
+.registerCard--body__button {
+font-size: 1.5rem;
+padding: 10px 14%;
+
+}
+
+.registerCard--footer small {
+    font-size: 1.2rem;
+}
+
+
+.registerCard--footer a {
+font-size: 1.3rem;
+}
 }
