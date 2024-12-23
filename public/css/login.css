@@ -21,7 +21,7 @@
     flex-direction: column;
 }
 .loginCard--title h1{
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-left: 0px
 }
@@ -33,18 +33,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
+.loginCard--body form{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.loginCard__inside{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginCard--bodyInputs{
+    width: 100%;
+}
+
+.loginCard--bodyInputs input{
+    padding: 15px 65px 15px 5px;
+    font-size: 1rem;
+    border: none;
+    margin-bottom: 15px;
+    width: 70%;
+}
+
+
+.loginCard__checkBox{
+width: 100%;
+}
 .loginCard--body__button {
     border: none;
     background-color: var(--color-azulVioleta);
     color: var(--color-blancoApagado);
     font-size: 1.4rem;
-    padding: 10px 50px;
+    padding: 10px 15%;
     font-weight: 500;
     margin-top: 30px;
     margin-bottom: 15px;
 }
+
+/* Pie del Ingreso */
+
 
 .loginCard--footer {
     margin-bottom: 40px;
@@ -57,4 +92,14 @@ font-size:0.9rem;
 .loginCard--footer a{
 font-weight: 700;
 font-size: 1.1rem;
+}
+
+
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+
+
+
 }
