@@ -66,7 +66,16 @@
 
 .loginCard__checkBox{
 width: 100%;
+display: flex;
+    align-items: center;
+    gap: 5px;
 }
+
+.loginCard__checkBox input{
+width: 16px;
+height: 16px;
+}
+
 .loginCard--body__button {
     border: none;
     background-color: var(--color-azulVioleta);
@@ -99,7 +108,39 @@ font-size: 1.1rem;
 
 @media (min-width: 600px) and (max-width: 1024px) {
 
+/* Cuerpo del Ingreso */
+
+.loginCard--title h1 {
+font-size: 2.2rem;
+
+}
+
+.loginCard--bodyInputs input {
+font-size: 1.2rem;
+padding: 15px 90px 15px 10px;
+ }
 
 
+ .loginCard__checkBox input {
+    width: 18px;
+    height: 18px;
+}
 
+.loginCard__checkBox label{
+    font-size: 1.2rem;
+}
+ .loginCard--body__button {
+font-size: 1.5rem;
+ }
+
+ /* Pie del Ingreso */
+
+
+ .loginCard--footer small {
+    font-size: 1.2rem;
+}
+
+.loginCard--footer a {
+    font-size: 1.3rem;
+}
 }
