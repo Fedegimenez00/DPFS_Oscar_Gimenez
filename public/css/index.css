@@ -144,6 +144,14 @@ font-weight: 530;
     align-items: center;
 }
 
+.categoriesMain__insideDown{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .categoriesMain--Fundamental{
     display: flex;
     align-items: center;
@@ -153,6 +161,8 @@ font-weight: 530;
     border-radius: 15px;
     padding: 10px 0px;
     margin: 20px 10px;
+    width: 95%;
+
 }
 
 .categoriesCard--firstIcon{
@@ -202,6 +212,8 @@ display: flex;
     border-radius: 15px;
     padding: 10px 0px;
     margin: 15px 10px;
+    width: 95%;
+
 }
 
 .categoriesMain--Attack i{
@@ -229,6 +241,10 @@ display: flex;
 
 }
 
+.subCategorie--Attack__line{
+    display: none;
+}
+
 .card--categories--Defense{
     margin-bottom: 15px;
     display: flex;
@@ -237,6 +253,10 @@ display: flex;
     justify-content: space-between;
     gap: 60px;
 
+}
+
+.subCategorie--Defense__line{
+    display: none;
 }
 
 .card--categories--cloudSecurity{
@@ -249,6 +269,10 @@ display: flex;
 
 }
 
+.subCategorie--cloudSecurity__line{
+    display: none;
+}
+
 .card--categories--Social{
     margin-bottom: 15px;
     display: flex;
@@ -259,7 +283,9 @@ display: flex;
 
 }
 
-
+.subCategorie--Social__line{
+display: none;
+}
 .subCategoriesCard--icon{
     display: none;
 }
@@ -319,6 +345,8 @@ width: 100%;
     border-radius: 15px;
     padding: 10px 0px;
     margin: 15px 10px;
+    width: 95%;
+
 }
 
 .categoriesMain--Defense i{
@@ -336,6 +364,8 @@ width: 100%;
     border-radius: 15px;
     padding: 10px 0px;
     margin: 15px 10px;
+    width: 95%;
+
 }
 
 .categoriesMain--cloudSecurity i{
@@ -353,6 +383,8 @@ width: 100%;
     border-radius: 15px;
     padding: 10px 0px;
     margin: 15px 10px;
+    width: 95%;
+
 }
 
 .categoriesMain--Social i{
@@ -685,6 +717,21 @@ justify-content: space-evenly;
 
 }
 
+.categoriesMain__inside{
+    flex-direction: row;
+    align-items: center;
+}
+
+.categories--cardDownInside{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.categoriesMain--Fundamental{
+    width: 29%;
+}
+
 .categoriesMain--Attack{
     background: none;
     border: none;
@@ -726,6 +773,14 @@ display: none;
     display: flex;
     flex-direction: column;
     gap: 0px;
+    width: 30%;
+}
+
+.subCategorie--Attack__line{
+    display: inline-block;
+    border: solid var(--color-rojoAtaque) 1px;
+    border-top: 0px;
+    width:30px;
 }
 
 .card--categories--Defense{
@@ -736,6 +791,14 @@ display: none;
     display: flex;
     flex-direction: column;
     gap: 0px;
+    width: 30%;
+}
+
+.subCategorie--Defense__line{
+    display: inline-block;
+    border: solid var(--color-celesteDefensa) 1px;
+    border-top: 0px;
+    width: 30px;
 }
 
 .card--categories--cloudSecurity{
@@ -746,6 +809,15 @@ display: none;
     display: flex;
     flex-direction: column;
     gap: 0px;
+    width: 30%;
+
+}
+
+.subCategorie--cloudSecurity__line{
+    display: inline-block;
+    border: solid var(--color-amarilloNube) 1px;
+    border-top: 0px;
+    width: 30px;
 }
 
 .card--categories--Social{
@@ -756,6 +828,15 @@ display: none;
     display: flex;
     flex-direction: column;
     gap: 0px;
+    width: 30%;
+
+}
+
+.subCategorie--Social__line{
+    display: inline-block;
+    border: solid var(--color-verdeSocial) 1px;
+    border-top: 0px;
+    width: 30px;
 }
 
 .categoriesMain__inside i {
