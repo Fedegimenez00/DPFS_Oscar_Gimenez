@@ -136,6 +136,14 @@ font-weight: 530;
     text-align: center;
     font-size: 1.5rem;
 }
+
+.categoriesMain__inside{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .categoriesMain--Fundamental{
     display: flex;
     align-items: center;
@@ -517,4 +525,145 @@ justify-content: space-evenly;
 .trustedBy--text{
     font-size: 1.2rem;
 }
+}
+
+@media (min-width: 1025px) {
+
+/* About Us */
+.aboutUs--card{
+    margin-top: 30px;
+}
+
+.aboutUs {
+    width: 80%;
+}
+
+.aboutUs__button{
+    top: 89%;
+    font-size: 1.7rem;
+    padding: 8px 12px;
+}
+
+
+/* Course card */
+
+.courses-title{
+    margin-left: 7%;
+    font-size: 2.5rem;
+}
+
+.course--card{
+    max-width: 390px;
+}
+
+.course--card h3 {
+    margin-left: 15px;
+    font-size: 1.8rem;
+    margin-top: 10px;
+
+}
+
+.course--card small {
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+.course--card__rating{
+    margin-left: 15px;
+}
+
+.course--card__rating p {
+    font-size: 1.7rem;
+
+}
+
+.course--card__rating i{
+    font-size: 1.5rem;
+}
+
+.course--card__price {
+    font-size: 1.9rem;
+    margin-left: 15px;
+
+}
+
+.course--card__previewButton {
+    font-size: 1.6rem;
+}
+/* Categorias */
+
+.categories--title{
+    font-size: 2.5rem;
+
+}
+
+/* Línea de separación */
+
+
+
+
+/* Testimonios */
+.testimonies--title {
+    margin-left: 4%;
+    font-size: 2.5rem;
+}
+
+.testimonies--body{
+    padding-right: 10%;
+    padding-bottom: 7%;
+
+}
+
+.testimonie--name {
+    font-size: 1.7rem;
+
+}
+
+.testimonie--charge {
+    font-size: 1.2rem;
+}
+
+.testimonie-description {
+    font-size: 1.4rem;
+
+}
+
+/* Noticias */
+.news--title {
+    margin-left: 4%;
+    font-size: 2.5rem;
+}
+
+.news--card{
+    width: 40%;
+}
+
+.news--card__category {
+    font-size: 1.1rem;
+}
+
+.news--card__title {
+    font-size: 1.8rem;
+}
+
+.news--card__description {
+    font-size: 1.2rem;
+    margin-bottom: 80px;
+}
+
+.news--card__date{
+    font-size: 1.2rem;
+}
+
+
+.news--seeMoreButton {
+    font-size: 1.4rem;
+}
+
+/* Trusted by */
+
+.trustedBy--text {
+    font-size: 1.4rem;
+}
+
 }
