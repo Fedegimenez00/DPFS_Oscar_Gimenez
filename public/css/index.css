@@ -154,11 +154,18 @@ font-weight: 530;
     padding: 10px 0px;
     margin: 20px 10px;
 }
+
+.categoriesCard--firstIcon{
+    width: 50px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
 .categoriesCard--icon{
     width: 50px;
     margin-left: 10px;
     margin-bottom: 5px;
 }
+
 .categoriesMain--Fundamental h3{
     font-weight: 500;
     margin-left: 2px;
@@ -196,6 +203,13 @@ display: flex;
     padding: 10px 0px;
     margin: 15px 10px;
 }
+
+.categoriesMain--Attack i{
+    margin-bottom: 0px;
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
 .categories--cardInside{
     margin-left: 10px;
     width: 100%;
@@ -205,6 +219,55 @@ display: flex;
 
 }
 
+.card--categories--Attack{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+
+}
+
+.card--categories--Defense{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+
+}
+
+.card--categories--cloudSecurity{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+
+}
+
+.card--categories--Social{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+
+}
+
+
+.subCategoriesCard--icon{
+    display: none;
+}
+.subCategories--cardLine{
+    display: none;
+}
+
+/*
 .card--categories{
     margin-bottom: 15px;
     display: flex;
@@ -214,11 +277,17 @@ display: flex;
     gap: 60px;
 
 }
+
+/*
+/*
 .card--categories i{
     margin-bottom: 0px;
     margin-right: 20px;
     font-size: 1.2rem;
 }
+
+*/
+
 .categoriesCard--title{
     font-size: 0.9rem;
     margin-bottom: 5px;
@@ -252,6 +321,12 @@ width: 100%;
     margin: 15px 10px;
 }
 
+.categoriesMain--Defense i{
+    margin-bottom: 0px;
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
 .categoriesMain--cloudSecurity{
     display: flex;
     align-items: flex-start;
@@ -261,6 +336,12 @@ width: 100%;
     border-radius: 15px;
     padding: 10px 0px;
     margin: 15px 10px;
+}
+
+.categoriesMain--cloudSecurity i{
+    margin-bottom: 0px;
+    margin-right: 20px;
+    font-size: 1.2rem;
 }
 
 .categoriesMain--Social{
@@ -273,6 +354,13 @@ width: 100%;
     padding: 10px 0px;
     margin: 15px 10px;
 }
+
+.categoriesMain--Social i{
+    margin-bottom: 0px;
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
 /* Línea de separación */
 
 .separationLine{
@@ -596,6 +684,106 @@ justify-content: space-evenly;
     font-size: 2.5rem;
 
 }
+
+.categoriesMain--Attack{
+    background: none;
+    border: none;
+}
+
+.categoriesMain--Defense{
+    background: none;
+    border: none;
+}
+
+.categoriesMain--cloudSecurity{
+    background: none;
+    border: none;
+}
+
+.categoriesMain--Social{
+    background: none;
+    border: none;
+}
+
+.categoriesCard--icon {
+display: none;
+}
+
+.categoriesCard--title {
+display: none;
+}
+
+.categories--cardLine {
+    display: none;
+
+}
+
+.card--categories--Attack{
+    background: var(--color-rojoAtaqueTranslucido);
+    border: solid var(--color-rojoAtaqueTranslucido) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.card--categories--Defense{
+    background: var(--color-celesteDefensaTranslucido);
+    border: solid var(--color-celesteDefensa) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.card--categories--cloudSecurity{
+    background: var(--color-amarilloNubeTranslucido);
+    border: solid var(--color-amarilloNube) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.card--categories--Social{
+    background: var(--color-verdeSocialTranslucido);
+    border: solid var(--color-verdeSocial) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.categoriesMain__inside i {
+    display: none;
+}
+
+.card--subCategories__inside{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subCategoriesCard--icon{
+    display: block;
+    width: 50px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.subCategories--cardLine{
+    display: inline-block;
+    padding: 0px 15px;
+    border-bottom-width: 0px;
+    margin-bottom: 10px;
+    margin-top: 7px;
+    margin-left: 15px;
+    width: 0px;
+}
+
 
 /* Línea de separación */
 
