@@ -55,15 +55,27 @@
     <h2 class="categories--title">Descubre el área en Ciberseguridad que te gustaría formarte</h2>
 <div class="categoriesMain__inside">
 <article class="categoriesMain--Fundamental">
+    <div class="categories--cardDownInside__Inside--fundamental">
+
         <div class="categories--cardInsideFirst">
 
     <img class="categoriesCard--firstIcon" src="/imgs/Icons/Classroom.png" alt="Icono Fundamentos en Ciberseguridad">
     <div class="categories--cardInsideFirst__down">
     <h3>Fundamentos de la Ciberseguridad</h3> 
-    <i class="fa-solid fa-plus"></i>
-</div>
+    <button type="button" class="subCategories__collapsible"  data-target="fundamentalContent-1"><i class="fa-solid fa-plus"></i></button>
 </div>
 
+
+
+</div>
+
+<hr class="subCategories--cardLine">
+
+    </div>
+    
+    <div id="fundamentalContent-1" class="subCategories__content">
+    <p class="subCategorie--fundamental__content">Conceptos básicos para iniciar en ciberseguridad</p>
+  </div>  
 </article>
 
 <div class="categoriesMain__insideDown"> 
@@ -77,6 +89,7 @@
 
 <hr class="categories--cardLine">
     <div class="categories--cardDownInside">
+        <div class="categories--cardDownInside__Inside--Attack">
     <div class="card--categories--Attack">
         <div class="card--subCategories__inside">
         <img class="subCategoriesCard--icon" src="/imgs/Icons/Accuracy.png" alt="Icono Fundamentos en Ciberseguridad">
@@ -85,22 +98,35 @@
 
     <hr class="subCategories--cardLine">
 
-    <i class="fa-solid fa-plus"></i>
+<button type="button" class="subCategories__collapsible"  data-target="attackContent-1"><i class="fa-solid fa-plus"></i></button>
+
+
     </div>
+    
+    <div id="attackContent-1" class="subCategories__content">
+        <p>Descubre y explota fallos en aplicaciones web</p>
+      </div>    
+</div>
+<hr class="subCategorie--Attack__line">
 
-    <hr class="subCategorie--Attack__line">
-
+<div class="categories--cardDownInside__Inside--Attack">
     <div class="card--categories--Attack">
         <div class="card--subCategories__inside">
         <img class="subCategoriesCard--icon" src="/imgs/Icons/Accuracy.png" alt="Icono Fundamentos en Ciberseguridad">
     <h4 class="subcategories--title">Pentesting</h4>
         </div>
     <hr class="subCategories--cardLine">
-
-    <i class="fa-solid fa-plus"></i>
+    <button type="button" class="subCategories__collapsible"  data-target="attackContent-2"><i class="fa-solid fa-plus"></i></button>
 
 </div>
+<div id="attackContent-2" class="subCategories__content">
+    <p>Evalúa sistemas simulando ataques reales</p>
+  </div>    
+</div>
+
 <hr class="subCategorie--Attack__line">
+
+<div class="categories--cardDownInside__Inside--Attack">
 
 <div class="card--categories--Attack">
     <div class="card--subCategories__inside">
@@ -110,8 +136,12 @@
     </div>
 
     <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+    <button type="button" class="subCategories__collapsible"  data-target="attackContent-3"><i class="fa-solid fa-plus"></i></button>
 
+</div>
+<div id="attackContent-3" class="subCategories__content">
+    <p>Diseña y ejecuta exploits avanzados</p>
+  </div> 
 </div>
 
 </div>
@@ -127,6 +157,8 @@
 
 <hr class="categories--cardLine">
     <div class="categories--cardDownInside">
+        <div class="categories--cardDownInside__Inside--Defense">
+
     <div class="card--categories--Defense">
         <div class="card--subCategories__inside">
         <img class="subCategoriesCard--icon" src="/imgs/Icons/Security Lock.png" alt="Icono Fundamentos en Ciberseguridad">
@@ -134,13 +166,16 @@
         </div>    
 
         <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+        <button type="button" class="subCategories__collapsible"  data-target="defenseContent-1"><i class="fa-solid fa-plus"></i></button>
 
     </div>
-
+    <div id="defenseContent-1" class="subCategories__content">
+        <p>Protege sistemas mediante configuraciones seguras</p>
+      </div>   
+        </div>
     <hr class="subCategorie--Defense__line">
 
-
+    <div class="categories--cardDownInside__Inside--Defense">
     <div class="card--categories--Defense">
         <div class="card--subCategories__inside">
             <img class="subCategoriesCard--icon" src="/imgs/Icons/Security Lock.png" alt="Icono Fundamentos en Ciberseguridad">
@@ -148,13 +183,16 @@
             </div>    
             
             <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+            <button type="button" class="subCategories__collapsible"  data-target="defenseContent-2"><i class="fa-solid fa-plus"></i></button>
 
 </div>
-
+<div id="defenseContent-2" class="subCategories__content">
+    <p>Actúa ante ciberataques en tiempo real</p>
+  </div>   
+    </div>
 <hr class="subCategorie--Defense__line">
 
-
+<div class="categories--cardDownInside__Inside--Defense">
 <div class="card--categories--Defense">
     <div class="card--subCategories__inside">
         <img class="subCategoriesCard--icon" src="/imgs/Icons/Security Lock.png" alt="Icono Fundamentos en Ciberseguridad">
@@ -162,8 +200,12 @@
         </div>    
         
     <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+    <button type="button" class="subCategories__collapsible"  data-target="defenseContent-3"><i class="fa-solid fa-plus"></i></button>
 
+</div>
+<div id="defenseContent-3" class="subCategories__content">
+    <p>Detecta y desarma software malicioso</p>
+  </div>  
 </div>
 
 </div>
@@ -178,6 +220,7 @@
     <h3 class="categoriesCard--title">Seguridad de Nube</h3>
 <hr class="categories--cardLine">
     <div class="categories--cardDownInside">
+        <div class="categories--cardDownInside__Inside--cloudSecurity">
 
     <div class="card--categories--cloudSecurity">
         <div class="card--subCategories__inside">
@@ -186,13 +229,18 @@
             </div>    
             
             <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+            <button type="button" class="subCategories__collapsible"  data-target="cloudSecurityContent-1"><i class="fa-solid fa-plus"></i></button>
     
 </div>
+<div id="cloudSecurityContent-1" class="subCategories__content">
+    <p>Controla accesos y permisos en la nube</p>
+  </div>  
+
+        </div>
 
 <hr class="subCategorie--cloudSecurity__line">
 
-
+<div class="categories--cardDownInside__Inside--cloudSecurity">
     <div class="card--categories--cloudSecurity">
         <div class="card--subCategories__inside">
             <img class="subCategoriesCard--icon" src="/imgs/Icons/Cloud Development.png" alt="Icono Fundamentos en Ciberseguridad">
@@ -200,13 +248,18 @@
             </div>    
             
             <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+            <button type="button" class="subCategories__collapsible"  data-target="cloudSecurityContent-2"><i class="fa-solid fa-plus"></i></button>
+
+</div>
+<div id="cloudSecurityContent-2" class="subCategories__content">
+    <p>Diseña infraestructuras cloud resistentes</p>
+  </div>  
 
 </div>
 
 <hr class="subCategorie--cloudSecurity__line">
 
-
+<div class="categories--cardDownInside__Inside--cloudSecurity">
 <div class="card--categories--cloudSecurity">
     <div class="card--subCategories__inside">
         <img class="subCategoriesCard--icon" src="/imgs/Icons/Cloud Development.png" alt="Icono Fundamentos en Ciberseguridad">
@@ -214,11 +267,16 @@
         </div>    
         
         <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+        <button type="button" class="subCategories__collapsible"  data-target="cloudSecurityContent-3"><i class="fa-solid fa-plus"></i></button>
 
 </div>
+<div id="cloudSecurityContent-3" class="subCategories__content">
+    <p>Mitiga amenazas específicas de entornos cloud</p>
+  </div>  
+
 </div>
 
+    </div>
 </div>
 </article>
 
@@ -229,6 +287,7 @@
     <hr class="categories--cardLine">
 
     <div class="categories--cardDownInside">
+        <div class="categories--cardDownInside__Inside--Social">
 
     <div class="card--categories--Social">
         <div class="card--subCategories__inside">
@@ -237,13 +296,18 @@
             </div>    
             
             <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+            <button type="button" class="subCategories__collapsible"  data-target="SocialContent-1"><i class="fa-solid fa-plus"></i></button>
     
 </div>
+<div id="SocialContent-1" class="subCategories__content">
+    <p>Aprende estrategias de manipulación y engaño</p>
+  </div> 
+
+        </div>
 
       <hr class="subCategorie--Social__line">
 
-
+      <div class="categories--cardDownInside__Inside--Social">
     <div class="card--categories--Social">
         <div class="card--subCategories__inside">
             <img class="subCategoriesCard--icon" src="/imgs/Icons/Safety Collection Place.png" alt="Icono Fundamentos en Ciberseguridad">
@@ -251,9 +315,13 @@
             </div>    
             
             <hr class="subCategories--cardLine">
-    <i class="fa-solid fa-plus"></i>
+            <button type="button" class="subCategories__collapsible"  data-target="SocialContent-2"><i class="fa-solid fa-plus"></i></button>
 
 </div>
+<div id="SocialContent-2" class="subCategories__content">
+    <p>Fortalece seguridad con capacitación preventiva</p>
+  </div> 
+      </div>
 </div>
 
 </div>
@@ -350,5 +418,6 @@
 </div>
 <small>© 2024 ZeroTrust Lab. Todos los derechos reservados</small></div>
     </footer>
+    <script src="/js/collapsableCategories.js"></script>
 </body>
 </html>

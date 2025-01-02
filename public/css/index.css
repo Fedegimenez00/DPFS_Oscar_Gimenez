@@ -154,8 +154,8 @@ font-weight: 530;
 
 .categoriesMain--Fundamental{
     display: flex;
-    align-items: center;
-    flex-direction: row;
+    align-items: flex-start;
+    flex-direction: column;
     background: var(--color-magentaTranslucido);
     border: 1px solid var(--color-magenta);
     border-radius: 15px;
@@ -163,6 +163,11 @@ font-weight: 530;
     margin: 20px 10px;
     width: 95%;
 
+}
+
+.subCategorie--fundamental__content{
+margin-left: 15px;
+margin-bottom: 15px;
 }
 
 .categoriesCard--firstIcon{
@@ -232,7 +237,7 @@ display: flex;
 }
 
 .card--categories--Attack{
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -241,12 +246,37 @@ display: flex;
 
 }
 
+/* Style the button that is used to open and close the collapsible content */
+.subCategories__collapsible {
+    background: none;
+    color: var(--color-blancoApagado);
+    cursor: pointer;
+    padding: 0px;
+    border: none;
+    text-align: left;
+    outline: none;
+}
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .subCategories__collapsible:hover {
+    background-color: none;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .subCategories__content {
+    
+    display: none;
+    overflow: hidden;
+    background-color: none;
+    flex-direction: column;
+  }
+
 .subCategorie--Attack__line{
     display: none;
 }
 
 .card--categories--Defense{
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -260,7 +290,7 @@ display: flex;
 }
 
 .card--categories--cloudSecurity{
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -274,7 +304,7 @@ display: flex;
 }
 
 .card--categories--Social{
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -334,6 +364,29 @@ display: none;
 
 .categories--cardDownInside{
 width: 100%;
+}
+
+
+.categories--cardDownInside__Inside--fundamental{
+    width: 100%;
+
+}
+    
+
+.categories--cardDownInside__Inside--Attack{
+margin-bottom: 15px;
+}
+
+.categories--cardDownInside__Inside--Defense{
+    margin-bottom: 15px;
+}
+
+.categories--cardDownInside__Inside--cloudSecurity{
+    margin-bottom: 15px;
+}
+
+.categories--cardDownInside__Inside--Social{
+   margin-bottom: 15px;
 }
 
 .categoriesMain--Defense{
@@ -728,8 +781,69 @@ justify-content: space-evenly;
     flex-direction: row;
 }
 
+.subCategorie--fundamental__content {
+margin-left: 0px;
+}
+
+.categories--cardDownInside__Inside--Attack{
+    background: var(--color-rojoAtaqueTranslucido);
+    border: solid var(--color-rojoAtaque) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 30%;
+    height: 150px;
+}
+
+.categories--cardDownInside__Inside--Defense{
+    background: var(--color-celesteDefensaTranslucido);
+    border: solid var(--color-celesteDefensa) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 30%;
+    height: 150px;
+}
+
+.categories--cardDownInside__Inside--cloudSecurity{
+    background: var(--color-amarilloNubeTranslucido);
+    border: solid var(--color-amarilloNube) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 30%;
+    height: 150px;
+}
+
+
+.categories--cardDownInside__Inside--Social{
+    background: var(--color-verdeSocialTranslucido);
+    border: solid var(--color-verdeSocial) 1px;
+    border-radius: 15px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 30%;
+    height: 150px;
+}
+
+
+.subCategories__content{
+    display: block;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
 .categoriesMain--Fundamental{
     width: 29%;
+    height: 145px;
 }
 
 .categoriesMain--Attack{
@@ -766,14 +880,8 @@ display: none;
 }
 
 .card--categories--Attack{
-    background: var(--color-rojoAtaqueTranslucido);
-    border: solid var(--color-rojoAtaqueTranslucido) 1px;
-    border-radius: 15px;
-    padding: 0px 0px;
-    display: flex;
     flex-direction: column;
     gap: 0px;
-    width: 30%;
 }
 
 .subCategorie--Attack__line{
@@ -784,14 +892,8 @@ display: none;
 }
 
 .card--categories--Defense{
-    background: var(--color-celesteDefensaTranslucido);
-    border: solid var(--color-celesteDefensa) 1px;
-    border-radius: 15px;
-    padding: 0px 0px;
-    display: flex;
     flex-direction: column;
     gap: 0px;
-    width: 30%;
 }
 
 .subCategorie--Defense__line{
@@ -802,14 +904,8 @@ display: none;
 }
 
 .card--categories--cloudSecurity{
-    background: var(--color-amarilloNubeTranslucido);
-    border: solid var(--color-amarilloNube) 1px;
-    border-radius: 15px;
-    padding: 0px 0px;
-    display: flex;
     flex-direction: column;
     gap: 0px;
-    width: 30%;
 
 }
 
@@ -821,14 +917,8 @@ display: none;
 }
 
 .card--categories--Social{
-    background: var(--color-verdeSocialTranslucido);
-    border: solid var(--color-verdeSocial) 1px;
-    border-radius: 15px;
-    padding: 0px 0px;
-    display: flex;
     flex-direction: column;
     gap: 0px;
-    width: 30%;
 
 }
 
@@ -859,7 +949,7 @@ display: none;
     display: inline-block;
     padding: 0px 15px;
     border-bottom-width: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-top: 7px;
     margin-left: 15px;
     width: 0px;
