@@ -16,6 +16,10 @@ margin-bottom:10px;
     border-color: var(--color-magenta);
 }
 
+.section--productDetail__Desktop{
+    display: none;
+}
+
 /* Carta principal del detalle de Producto [Identidad y precio] */
 
 .section--productDetail{
@@ -31,6 +35,8 @@ margin-bottom:10px;
     width: 99%;
     margin-bottom: 40px;
 }
+
+
 .productDetail--preview{
     position: relative;
 
@@ -64,8 +70,13 @@ text-align: center;
 margin-top: 10px;
 font-weight: 400;
 }
-.productDetail__Inside{
+
+.productDetail__upperInside{
     margin-left: 10px;
+}
+
+.productDetail__downInside{
+margin-left: 10px;
 }
 
 .productDetail--title{
@@ -1100,4 +1111,89 @@ font-size: 1.2rem;
 
 
 
+}
+
+@media (min-width: 1025px) {
+
+/* Apartado categórico del producto */
+
+.productDetail--category{
+    display: none;
+}
+
+
+
+/* Carta principal del detalle de Producto [Identidad y precio] */
+
+.section--productDetail__inside{
+    width: 380px;
+}
+
+.section--productDetail__Desktop{
+    display: block;
+}
+
+.productDetail__upperInside {
+display: none;
+}
+
+.productDetail__justUpperInside{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.productDetail--priceCard {
+    border-top: none;
+}
+
+
+/* Sección: Lo que aprenderás  */
+
+.productDetail--learning {
+width: 600px;
+}
+
+.productDetail--learning__Inside {
+width: 100%;
+
+}
+
+/* Sección: Contenido del curso */
+
+.productDetail--contents{
+    width: 600px;
+}
+
+.productDetail--contents__inside{
+    width: 100%;
+}
+
+/* Sección: Descripción del curso */
+
+.productDetail--description {
+width: 600px;
+}
+/* Caja: Requerimientos */
+
+
+/* Sección: Caja del mentor*/
+
+.productDetail--mentor {
+width: 380px;
+ }
+
+/* Reseñas del producto*/
+
+
+/* Línea de separación */
+
+
+/* Recomendaciones */ 
+
+.review--card {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 30%;
+}
 }
