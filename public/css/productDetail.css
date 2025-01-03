@@ -406,9 +406,43 @@ display: flex;
     font-weight: 600;
 }
 
+.productDetail__collapsible{
+    background: none;
+    color: var(--color-blancoApagado);
+    cursor: pointer;
+    padding: 0px;
+    border: none;
+    text-align: left;
+    outline: none;
+}
+
 .contentsCard--section__contents{
     display: none;
 }
+
+.productDetail__collapsibleContents {
+    display: none;
+    overflow: hidden;
+    background-color: none;
+    flex-direction: column;
+    border-bottom: solid var(--color-magenta) 1px;
+    background: var(--color-magentaMuyTranslucido);
+    width: 100%;
+  }
+
+.productDetail__collapsibleContents__inside{
+    display: flex;
+    gap: 15px;
+    margin-left: 10px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.productDetail__collapsibleContents__inside i{
+    font-size: 1.2rem;
+}
+
 .contentsCard--sections__Button{
     font-size: 1.17em;
     border: solid var(--color-magenta) 1px;
@@ -445,18 +479,18 @@ display: flex;
     
 }
 
-.requirementCard--title div{
+.requirementCard--titleInside{
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
     align-items: center;
 }
 
-.requirementCard--title div h3{
+.requirementCard--titleInside h3{
     font-size: 1.5rem;
     font-weight: 600;
 }
-.requirementCard--title div i{
+.requirementCard--titleInside i{
     font-size: 1.3rem;
 }
 
@@ -465,6 +499,25 @@ display: flex;
     border-width: 0px 0px 1px;
     border-color: var(--color-magenta);
     margin-bottom: 15px;
+}
+
+.productDetail__requirementCollapsibleContents{
+    display: none;
+    overflow: hidden;
+    background-color: none;
+    flex-direction: column;
+}
+
+.requirementCollapsible__inside{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+
+}
+
+.requirementCollapsible__inside i{
+    font-size: 1rem;
 }
 /* Sección: Descripción del curso */
 
@@ -608,6 +661,14 @@ width: 90%;
 
 .productDetail--review__totalScore h2{
     font-weight: 600;
+}
+
+.review__totalScore--title{
+
+}
+
+.review__totalScore--titleDesktop{
+    display: none;
 }
 
 .review--card{
@@ -779,6 +840,9 @@ display: none;
     max-width: 360px;
 }
 
+.course--card__recommendations{
+    display: none;
+}
 
 @media (min-width: 600px) and (max-width: 1024px) {
 
@@ -983,12 +1047,12 @@ font-size: 1.2rem;
     font-size: 1.2rem;
 }
 /* Caja: Requerimientos */
-.requirementCard--title div h2{
+.requirementCard--titleInside h2{
 font-size: 1.6rem;
 font-weight: 500;
 }
 
-.requirementCard--title div i{
+.requirementCard--titleInside i{
 font-size: 1.5rem;
 }
 
@@ -1115,6 +1179,45 @@ font-size: 1.2rem;
 
 @media (min-width: 1025px) {
 
+
+   
+/* Ajustes individuales para el diseño */
+/* A, C, D y E en la columna izquierda */
+.section--productDetail__Desktop:nth-child(1) { 
+    flex: 0 0 auto; /* Evita que se estire */
+    align-self: flex-start; /* Mantiene su posición en la fila */
+    width: calc(45% - 10px); /* Ajusta el ancho */
+    
+} /* A */
+.productDetail--learning:nth-child(3) {
+    flex: 0 0 auto; /* Evita que se estire */
+    align-self: flex-start; /* Mantiene su posición en la fila */
+    width: calc(45% - 10px); /* Ajusta el ancho */
+} /* C */
+.productDetail--contents:nth-child(4) { 
+    flex: 0 0 auto; /* Evita que se estire */
+    align-self: flex-start; /* Mantiene su posición en la fila */
+    width: calc(45% - 10px); /* Ajusta el ancho */
+} /* D */
+.productDetail--description:nth-child(5) {  flex: 0 0 auto; /* Evita que se estire */
+    align-self: flex-start; /* Mantiene su posición en la fila */
+    width: calc(45% - 10px); /* Ajusta el ancho */
+} /* E */
+
+/* B y F en la columna derecha */
+.section--productDetail:nth-child(2) { 
+    flex: 0 0 auto; /* Evita que se estire */
+    align-self: flex-start; /* Mantiene su posición en la fila */
+    width: calc(45% - 10px); /* Ajusta el ancho */
+    height: calc(100% - 70px); 
+} /* B ocupa el espacio de A, C, y D */
+.productDetail--mentor:nth-child(6) {
+    flex: 0 0 auto; /* Evita que se estire */
+    align-self: flex-start; /* Mantiene su posición en la fila */
+    width: calc(45% - 10px); /* Ajusta el ancho */
+} /* F */
+
+
 /* Apartado categórico del producto */
 
 .productDetail--category{
@@ -1125,12 +1228,29 @@ font-size: 1.2rem;
 
 /* Carta principal del detalle de Producto [Identidad y precio] */
 
+.productDetail--main{
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section--productDetail{
+    flex: 0 0 calc(45% - 10px); /* Ajusta ancho sin alterar altura */
+
+    box-sizing: border-box;
+
+}
+
 .section--productDetail__inside{
     width: 380px;
 }
 
 .section--productDetail__Desktop{
     display: block;
+    flex: 0 0 calc(45% - 10px); /* Ajusta ancho sin alterar altura */
+
+    box-sizing: border-box;
+
 }
 
 .productDetail__upperInside {
@@ -1151,6 +1271,11 @@ display: none;
 
 .productDetail--learning {
 width: 600px;
+flex: 0 0 calc(45% - 10px); /* Ajusta ancho sin alterar altura */
+
+box-sizing: border-box;
+
+
 }
 
 .productDetail--learning__Inside {
@@ -1162,6 +1287,10 @@ width: 100%;
 
 .productDetail--contents{
     width: 600px;
+    flex: 0 0 calc(45% - 10px); /* Ajusta ancho sin alterar altura */
+
+    box-sizing: border-box;
+
 }
 
 .productDetail--contents__inside{
@@ -1172,23 +1301,42 @@ width: 100%;
 
 .productDetail--description {
 width: 600px;
+flex: 0 0 calc(45% - 10px); /* Ajusta ancho sin alterar altura */
+box-sizing: border-box;
+
 }
 /* Caja: Requerimientos */
+.productDetail--requirementCard{
+    border: none;
+}
+
+.requirementCard--titleInside i{
+    display: none;
+}
+
+.productDetail__requirementCollapsibleContents{
+display: block;
+}
 
 
 /* Sección: Caja del mentor*/
 
 .productDetail--mentor {
 width: 380px;
+flex: 0 0 calc(45% - 10px); /* Ajusta ancho sin alterar altura */
+
+box-sizing: border-box;
+
  }
 
 /* Reseñas del producto*/
+.review__totalScore--title{
+    display: none;
+}
 
-
-/* Línea de separación */
-
-
-/* Recomendaciones */ 
+.review__totalScore--titleDesktop{
+display: block;
+}
 
 .review--card {
     border-bottom: none;
@@ -1196,4 +1344,43 @@ width: 380px;
     border-right: none;
     width: 30%;
 }
+/* Línea de separación */
+
+
+/* Recomendaciones */ 
+
+.recommendations--card{
+    display: none;
+}
+
+.productDetail--recommendations__button{
+    display: none;
+}
+
+.course--card__recommendations{
+    background-color: var(--color-grisOscuro);
+    width: 80%;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: solid var(--color-grisMetalico);
+    border-width: 1px;
+    }
+    
+    .course--card__recommendations h3{
+        margin-left: 7px;
+        margin-top: 5px;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .course--card__recommendations small{
+    margin-left: 7px;
+    margin-top:3px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    }
+    
 }

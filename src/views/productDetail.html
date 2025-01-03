@@ -209,38 +209,58 @@
 <article class="productDetail--contentsCard">
     <div class="contentsCard--section">
         <div>
-        <i class="fa-solid fa-chevron-down"></i>
+            <button type="button" class="productDetail__collapsible"  data-target="Content-1"><i class="fa-solid fa-chevron-down"></i></button>
         <h3>Introducción al curso</h3>
     </div>
         <p class="contentsCard--section__contents">1 clase | 1 min</p>
         
     </div>
+    <div id="Content-1" class="productDetail__collapsibleContents"> 
+       <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
+       <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
+    </div>
     <div class="contentsCard--section">
         <div>
-        <i class="fa-solid fa-chevron-down"></i>
-        <h3>Conceptos fundamentales</h3> 
+            <button type="button" class="productDetail__collapsible"  data-target="Content-2"><i class="fa-solid fa-chevron-down"></i></button>
+
+            <h3>Conceptos fundamentales</h3> 
         </div>
 
         <p class="contentsCard--section__contents">5 clases | 10 min</p>
     </div>
+
+    <div id="Content-2" class="productDetail__collapsibleContents"> 
+        <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
+        <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
+     </div>
     <div class="contentsCard--section">
         <div>
-        <i class="fa-solid fa-chevron-down"></i>
-        <h3>Amenazas, Vulnerabilidades y Ataques</h3>
+            <button type="button" class="productDetail__collapsible"  data-target="Content-3"><i class="fa-solid fa-chevron-down"></i></button>
+
+            <h3>Amenazas, Vulnerabilidades y Ataques</h3>
         </div>
 
         <p class="contentsCard--section__contents">4 clases | 15 min</p>
         
     </div>
+    <div id="Content-3" class="productDetail__collapsibleContents"> 
+        <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
+        <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
+     </div>
     <div class="contentsCard--section">
         <div>
-        <i class="fa-solid fa-chevron-down"></i>
-        <h3>Asegurando la Protección de Datos</h3>
+            <button type="button" class="productDetail__collapsible"  data-target="Content-4"><i class="fa-solid fa-chevron-down"></i></button>
+
+            <h3>Asegurando la Protección de Datos</h3>
         </div>
         
         <p class="contentsCard--section__contents">2 clases | 5 min</p>
         
     </div>
+    <div id="Content-4" class="productDetail__collapsibleContents"> 
+        <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
+        <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
+     </div>
 </article>
 
 <button class="contentsCard--sections__Button" type="button">10 Secciones más</button>
@@ -253,10 +273,16 @@
     <div class="productDetail--description__inside">
         <article class="productDetail--requirementCard">
             <div class="requirementCard--title">
-            <div><h2>Requisitos</h2> 
-                <i class="fa-solid fa-chevron-down"></i>
+            <div class="requirementCard--titleInside"><h2>Requisitos</h2> 
+                <button type="button" class="productDetail__collapsible"  data-target="requirementContent-1"><i class="fa-solid fa-chevron-down"></i></button>
+
             </div>
             <hr>
+            <div id="requirementContent-1" class="productDetail__requirementCollapsibleContents">
+                <div class="requirementCollapsible__inside"> <i class="fa-solid fa-circle"></i> <p>Conceptos básicos de redes</p></div>
+                <div class="requirementCollapsible__inside"> <i class="fa-solid fa-circle"></i> <p>Tener ganas de aprender</p></div>
+
+            </div>
         </article>
 
         <article class="productDetail--descriptionBox">
@@ -303,7 +329,7 @@
 
 <section class="productDetail--review">
     <div class="productDetail--review__inside">
-    <div class="productDetail--review__totalScore"><i class="fa-solid fa-star"></i><h2>4,5 | 3k Valoraciones</h2>
+    <div class="productDetail--review__totalScore"><i class="fa-solid fa-star"></i><h2 class="review__totalScore--title">4,5 | 3k Valoraciones</h2> <h2 class="review__totalScore--titleDesktop">4,5 Valoración del Curso | 3k Valoraciones</h2>
     </div>
     <article class="review--card">
         <div class="review--card__insideMargins">
@@ -353,6 +379,25 @@
 </article>
 <button class="productDetail--recommendations__button">Ver más</button>
 </div>
+
+<article class="course--card__recommendations">
+   
+    <img class="course--card__photo" src="/imgs/Images/course-image.jpg" alt="Imagen de Curso">
+    <h3>Seguridad Informática desde Cero</h3>
+    <small>Josué Argañaraz</small>
+    <div class="course--card__rating">
+    <p>4.0</p> 
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+</div>
+    <p class="course--card__price">$15.000</p>
+    <div class="course--cardDown">
+    <button class="course--card__previewButton">Ver más</button>
+</div>
+</article>
 </section>
 </main>
 
@@ -389,6 +434,7 @@
 <small>© 2024 ZeroTrust Lab. Todos los derechos reservados</small></div>
 </footer>
    
+<script src="/js/collapsableContents.js"></script>
 
 </body>
 </html>
