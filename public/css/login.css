@@ -144,3 +144,27 @@ font-size: 1.5rem;
     font-size: 1.3rem;
 }
 }
+
+@media (min-width: 1025px){
+
+/* Sección del Ingreso */
+
+.register--section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Cuerpo del Ingreso */
+
+.registerCard {
+    width: 55%;
+    margin: 130px 0px 0px 0px;
+    margin-bottom: 160px;
+
+}
+
+/* Pie del Ingreso */
+
+
+}
