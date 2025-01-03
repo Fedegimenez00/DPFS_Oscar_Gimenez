@@ -1186,22 +1186,32 @@ font-size: 1.2rem;
 .section--productDetail__Desktop:nth-child(1) { 
     flex: 0 0 auto; /* Evita que se estire */
     align-self: flex-start; /* Mantiene su posición en la fila */
-    width: calc(45% - 10px); /* Ajusta el ancho */
+    width: calc(50% - 10px); /* Ajusta el ancho */
     
 } /* A */
 .productDetail--learning:nth-child(3) {
     flex: 0 0 auto; /* Evita que se estire */
     align-self: flex-start; /* Mantiene su posición en la fila */
-    width: calc(45% - 10px); /* Ajusta el ancho */
+    width: calc(50% - 10px); /* Ajusta el ancho */
+            position: relative;
+            bottom: 630px;
+
 } /* C */
 .productDetail--contents:nth-child(4) { 
     flex: 0 0 auto; /* Evita que se estire */
     align-self: flex-start; /* Mantiene su posición en la fila */
     width: calc(45% - 10px); /* Ajusta el ancho */
-} /* D */
+    position: relative;
+        bottom: 313px;
+        right: 49%;
+    }
+ /* D */
 .productDetail--description:nth-child(5) {  flex: 0 0 auto; /* Evita que se estire */
     align-self: flex-start; /* Mantiene su posición en la fila */
-    width: calc(45% - 10px); /* Ajusta el ancho */
+    width: calc(50% - 10px); /* Ajusta el ancho */
+            position: relative;
+        bottom: 315px;
+        height: 20px;
 } /* E */
 
 /* B y F en la columna derecha */
@@ -1210,11 +1220,17 @@ font-size: 1.2rem;
     align-self: flex-start; /* Mantiene su posición en la fila */
     width: calc(45% - 10px); /* Ajusta el ancho */
     height: calc(100% - 70px); 
+
+    align-items: flex-end;
 } /* B ocupa el espacio de A, C, y D */
 .productDetail--mentor:nth-child(6) {
     flex: 0 0 auto; /* Evita que se estire */
     align-self: flex-start; /* Mantiene su posición en la fila */
     width: calc(45% - 10px); /* Ajusta el ancho */
+    position: relative;
+        bottom: 435px;
+                align-items: flex-end;
+                height: 20px;
 } /* F */
 
 
@@ -1232,6 +1248,7 @@ font-size: 1.2rem;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: 50px;
 }
 
 .section--productDetail{
@@ -1283,6 +1300,9 @@ width: 100%;
 
 }
 
+.learningBox{
+    width: 107%;
+}
 /* Sección: Contenido del curso */
 
 .productDetail--contents{
@@ -1297,6 +1317,13 @@ width: 100%;
     width: 100%;
 }
 
+.productDetail--contentsCard{
+width: 117%;
+}
+
+.contentsCard--sections__Button{
+width: 117.5%;
+}
 /* Sección: Descripción del curso */
 
 .productDetail--description {
@@ -1329,7 +1356,13 @@ box-sizing: border-box;
 
  }
 
+ .productDetail--mentorCard{
+    width: 380px;
+ }
 /* Reseñas del producto*/
+.productDetail--review{
+}
+
 .review__totalScore--title{
     display: none;
 }
