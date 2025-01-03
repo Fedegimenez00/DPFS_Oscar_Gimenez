@@ -20,6 +20,9 @@ margin-bottom:10px;
     display: none;
 }
 
+.productDetail--categoryDesktop{
+    display: none;
+}
 /* Carta principal del detalle de Producto [Identidad y precio] */
 
 .section--productDetail{
@@ -1220,7 +1223,7 @@ font-size: 1.2rem;
     align-self: flex-start; /* Mantiene su posición en la fila */
     width: calc(45% - 10px); /* Ajusta el ancho */
     height: calc(100% - 70px); 
-
+    margin-top: 10px;
     align-items: flex-end;
 } /* B ocupa el espacio de A, C, y D */
 .productDetail--mentor:nth-child(6) {
@@ -1240,7 +1243,18 @@ font-size: 1.2rem;
     display: none;
 }
 
+.productDetail--categoryDesktop{
+    display: block;
+    position: relative;
+    height: 0px;
+    bottom: 27px;
+}
 
+.productDetail--categoryDesktop hr{
+    width: 37%;
+    border-width: 0px 0px 1px;
+    border-color: var(--color-magenta);
+}
 
 /* Carta principal del detalle de Producto [Identidad y precio] */
 
