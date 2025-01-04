@@ -4,27 +4,27 @@ const path = require('path');
 const PORT = 3000;
 const app = express();
 
+const indexRouter = require("./routes/index.routes.js");
+const userRouter = require ('./routes/user.routes.js');
+const productRouter = require ('./routes/product.routes.js');
+
+
+//Configuración de motores estáticos
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
-app.get('/', (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'index.html'))
-})
+//Configuración del motor de plantillas
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-app.get('/product-detail', (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'productDetail.html'))
-})
 
-app.get('/cart', (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'productCart.html'))
-})
+//Rutas de navegación
+app
+.use('/', indexRouter)
 
-app.get('/register', (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'register.html'))
-})
+.use('/', productRouter)
 
-app.get('/login', (req,res) => {
-    return res.sendFile(path.join(__dirname, 'views', 'login.html'))
-})
+.use('/', userRouter)
+
 
 app.listen(PORT, () =>
 console.log("Server is running in: " + "http://localhost:" + PORT));
