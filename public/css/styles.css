@@ -112,6 +112,17 @@ flex-direction: column;
 align-items: center;
 
 }
+
+.footer--up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container__footer--logo{
+
+}
 .footer--info{
     display: flex;
     flex-direction: row;
@@ -245,5 +256,30 @@ font-weight: 500;
 
     .cart{
         order: 3;
+    }
+
+    /* Footer */
+
+    .footer--up{
+        flex-direction: row-reverse;
+    }
+    .container__footer--logo{
+
+    }
+
+    .footer--info{
+        width: auto;
+        gap: 285px;
+        justify-content: space-around;
+    }
+
+    .container__footer--logo {
+        width: 40%;
+        align-self: start;
+    }
+
+    .footer--logo{
+        margin-top: 20px;
+        align-self: start;
     }
 }
