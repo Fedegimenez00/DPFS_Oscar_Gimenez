@@ -1,35 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel = "stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/8b20537db2.js" crossorigin="anonymous"></script>
 
-</head>
+<%- include('./partials/head') %>
+
+
 <body>
-    <header class="header--body"><div class="header--body_card">
-       <button id="burgerMenu" class="burger-menu"><i class="fa-solid fa-bars"></i></button> 
-        <nav class="header--navbar" id="nav">
-            <ul class="header--navbar__hub"> 
-                <li>Inicio</li>
-                <li>Cursos</li>
-                <li>Recursos</li>
-            </ul>
-            <ul class="header--navbar__signup">
-                <li>Iniciar Sesión</li>
-            </ul>
-        </nav>
-
-        <a class="logo--image" href="/">
-<img src="/imgs/pageLogo/Logo_Completo.png" alt="ZeroTrust Logo"></a>
-
-<a class="cart" href="#">
-<i class="fa-solid fa-cart-shopping"></i></a>
-</div>
-
-    </header>
+    <%- include('./partials/header') %>
 
     <main>
         <section class="aboutUs--card">
@@ -397,42 +373,7 @@
     </main>
 
 
-    <footer class="footer--body">
-        <div class="footer--up">
-        <div class="footer--info">
-<div class="footer--info__card">
-<h3>Información</h3>
-<p>LinkInstructivo 1</p>
-<p>LinkInstructivo 2</p>
-<p>LinkInstructivo 3</p>
-</div>
-
-<div class="footer--info__card">
-    <h3>Contáctanos</h3>
-    <h4>ZeroTrust Lab</h4>
-    <p>Av Boedo 1235</p>
-    <p>Capital Federal, Argentina</p>
-    <p>11 2564-1142</p>
-    <p>Zerotrust@gmail.com</p>
-</div>
-</div><div class="container__footer--logo">
-<img class="footer--logo" src="/imgs/pageLogo/Logo_Completo.png">
-<p>“Dominio Total, Confianza Cero”</p>
-</div>
-</div>
-<div class="footer--down">
-    <hr class="footer--line">
-<div class="footer--socialMedia">
-    <i class="fa-brands fa-instagram"></i>
-    <i class="fa-brands fa-youtube"></i>
-    <i class="fa-brands fa-linkedin-in"></i>
-    <i class="fa-brands fa-facebook-f"></i>
-    <i class="fa-brands fa-x-twitter"></i>
-
-</div>
-<small>© 2024 ZeroTrust Lab. Todos los derechos reservados</small></div>
-    </footer>
-    <script src="/js/burgerMenu.js"></script>
-    <script src="/js/collapsableCategories.js"></script>
+   <%- include('./partials/footer') %>
+    
 </body>
 </html>
