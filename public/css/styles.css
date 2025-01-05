@@ -33,8 +33,63 @@
     margin-right: 20px;
     
 }
+
+
+
+.header--navbar{
+    opacity: 0;
+    visibility: hidden;
+display: flex;
+flex-direction: column;
+position: absolute;
+top: 84px;
+    left: 0;
+    background-color: var(--color-grisOscuro);
+    padding-top: 20px;
+    padding-bottom: 100%;
+    padding-right: 10%;
+    /* box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5); */
+}
+
+.header--navbar.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+.header--navbar li{
+    
+}
+
+.header--navbar li a{
+    text-decoration: none;
+    color: var(--color-blancoApagado);
+}
+
+.header--navbar__hub{
+display: flex;
+gap: 15px;
+list-style-type: none;
+flex-direction: column ;
+padding-left: 20px;
+margin-bottom: 15px;
+
+}
+
+.header--navbar__signup{
+display: flex;
+list-style-type: none;
+padding-left: 20px;
+
+}
+
 .header--body img{
     width: 220px;
+}
+
+.burger-menu{
+    background: none;
+    border: none;
+    color: var(--color-blancoApagado);
 }
 
 .fa-bars{
@@ -151,5 +206,44 @@ font-weight: 500;
 
 
 @media (min-width: 1025px) {
-    /* Estilos para desktops */
+    /*Header */
+    .burger-menu{
+        display: none;
+    }
+    
+    .header--navbar{
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        background: none;
+        padding-bottom: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        flex-direction: row;
+        gap: 15px;
+        order: 2;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header--navbar__hub{
+        flex-direction: row;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    }
+
+    .header--navbar__signup {
+        padding-left: 0px;
+        margin-right: 20px;
+    }
+
+
+    .logo--image{
+        order: 1;
+    }
+
+    .cart{
+        order: 3;
+    }
 }

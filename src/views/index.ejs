@@ -10,11 +10,22 @@
 </head>
 <body>
     <header class="header--body"><div class="header--body_card">
-        <i class="fa-solid fa-bars"></i>
-        <a href="/">
+       <button id="burgerMenu" class="burger-menu"><i class="fa-solid fa-bars"></i></button> 
+        <nav class="header--navbar" id="nav">
+            <ul class="header--navbar__hub"> 
+                <li>Inicio</li>
+                <li>Cursos</li>
+                <li>Recursos</li>
+            </ul>
+            <ul class="header--navbar__signup">
+                <li>Iniciar Sesión</li>
+            </ul>
+        </nav>
+
+        <a class="logo--image" href="/">
 <img src="/imgs/pageLogo/Logo_Completo.png" alt="ZeroTrust Logo"></a>
 
-<a href="#">
+<a class="cart" href="#">
 <i class="fa-solid fa-cart-shopping"></i></a>
 </div>
 
@@ -418,6 +429,7 @@
 </div>
 <small>© 2024 ZeroTrust Lab. Todos los derechos reservados</small></div>
     </footer>
+    <script src="/js/burgerMenu.js"></script>
     <script src="/js/collapsableCategories.js"></script>
 </body>
 </html>
