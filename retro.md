@@ -15,6 +15,7 @@ Sin embargo, esta compensación me ayudó a recortar potencialmente el tiempo qu
 * Adaptar las vistas para que se puedan ver en resoluciones Desktop, tal y como fue planificado en los Bocetos (Mockups).
 * Añadir animaciones a la hora de pasar el cursor, apretar un botón o desplegar opciones.
 * Añadir sombreados y enrriquecedores visuales a cada vista (Siempre y cuando respete lo planificado).
+* Instalar extensiones al vscode con el fin de optimizar el desarrollo
 
 ### Hacer más:
 
@@ -45,3 +46,51 @@ Sin embargo, esta compensación me ayudó a recortar potencialmente el tiempo qu
 * Tener (y buscar) distracciones mientras estoy trabajando en el proyecto.
 
   
+# Retrospectiva del 2do Sprint
+
+## Autocrítica
+Me preocupé esencialmente en desarrollar el maquetado de las vistas con el fin de que sean responsivas en mobile, tablet y desktop. Pude implementar el motor de vistas .ejs y profundicé la metodología MVC, separando los controladores, las rutas y las vistas en sus sub-carpetas. También añadí funcionalidades que me ayudaron en enfatizar en la resolución de Desktop para el resto de las vistas. Sin embargo, al dedicarle a esto mucho tiempo, no pude progresar como me hubiera gustado en la vista de ProductAdd. Mi error fue no haber diversificado las responsabilidades y no haber trabajado en hacer primero que esté "lo suficientemente bien" y terminar de corregirlo después
+
+
+## [Retrospectiva Estrella]
+
+
+### Comenzar a hacer:
+
+* Terminar de darle los toques finales a las vistas en resolución Desktop.
+
+* Añadir funcionalidades para el carrito y para el carrousel por donde se requiera.
+
+* Añadir enrriquecedores visuales y animaciones (Aquellos que no se han agregado en la retrospección anterior).
+
+* Realizar el maquetado de la vista de ProductAdd.
+
+* Realizar un tablero de horarios con el fin de desarrollar una metodología de trabajo.
+
+### Hacer más:
+
+* Pulir las class del CSS y enfatizar en unificar las generalidades.
+
+* Pulir todas las vistas con el fin de que respeten lo ideado en los mockups.
+
+* Preocuparme en terminar primero las tareas esenciales y pulirlas después, y no hacerlo mientras lo hago.
+
+
+### Continuar haciendo:
+
+* Seguir usando el trello como método de organización.
+
+* Seguir experimentando con el código mientras estoy en desarrollo, hasta poder conseguir lo que busco.
+
+* Seguir subiendo cambios el repositorio conforme realice progresos específicos.
+
+### Hacer menos:
+
+* Ser irregular a la hora de ocuparme de una tarea durante el desarrollo.
+
+* Escuchar podcasts mientras trabajo en el código.
+
+### Dejar de hacer:
+
+* Posponer algunas tareas por creer que son difíciles, en vez de desafiarme a hacerlas.
+
