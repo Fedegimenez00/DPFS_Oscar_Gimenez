@@ -8,9 +8,9 @@
     
 <main>
 
-<section>
-<article>
-    <div>
+<section class="section--selectForms">
+<article class="selectForms--box">
+    <div class="selectForms--box__inside">
         <button>Página de Inicio del curso</button>
         <button>Programa</button>
         <button>Mensajes del Curso</button>
@@ -19,36 +19,34 @@
 </article>
 </section>
 
-<section>
+<section class="section--forms">
 <form>
-    <article>
-    <div>
+    <article class="forms--box">
+    <div class="forms--box__title">
 <h1>Página de Inicio del curso</h1></div>
 
-<div>
+<div class="forms--box__inputContainer">
     <h3>Título del curso</h3>
-    <label>
-    </label>
-    <input type="text">
+    <label for=""></label>
+    <input type="text" name="" id="">
 
 </div>
 
-<div>
+<div class="forms--box__inputContainer">
     <h3>Subtítulo del curso</h3>
-    <label>
-   
-    </label> 
-    <input type="text">
+    <label for=""></label>
+    <input type="text" name="" id="">
+
 </div>
 
-<div>
+<div class="forms--box__inputContainer">
     <h3>Descripción del curso</h3>
-    <label>
-    <input type="text">
-    </label>
+    <label for=""></label>
+    <input type="text" name="" id="">
+
 </div>
 
-<div>
+<div class="forms--box__inputContainer">
     <h3>Información básica</h3>
     <div>
     <div>
@@ -59,7 +57,7 @@
    </select>
 </div>
 
-<div>
+<div class="forms--box__selectContainer">
     <label for=""></label>
    <select name="" id="">
     <option value=""></option>
@@ -67,7 +65,7 @@
    </select>
 </div>
 
-<div>
+<div class="forms--box__selectContainer">
     <label for=""></label>
    <select name="" id="">
     <option value=""></option>
@@ -78,105 +76,109 @@
 </div>
 
 
-<div>
+<div class="forms--box__previewContainer">
     <h3>Imagen del curso</h3>
     <img>
     <p>Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
-<div>
+<div class="forms--box__fileInput">
     <label for=""></label>
 <input type="file" name="" id="">
 </div>
 </div>
 
 
-<div>
+<div class="forms--box__previewContainer">
     <h3>Video promocional</h3>
     <img>
 <p>Carga el video promocional de tu curso, un buen video servirá como un adelanto de lo que se aprenderá.</p>
-    <div>
+    <div class="forms--box__fileInput">
     <label for=""></label>
 <input type="file" name="" id="">
 </div>
 </div>
 
-<div>
+<div class="forms--box__priceContainer">
     <h3>Precio</h3>
-    <div> <label for=""></label>
-    <input type="text"></div>
+    <div class="box--priceInput"> <label for=""></label>
+    <input type="text" name="" id=""></div>
 </div>
 </article>
 
 
-<article>
-    <div>
+<article class="forms--box">
+    <div class="forms--box__title">
     <h2>Índice del curso</h2>
 </div>
 
-<div>
+<div class="forms--boxIndex">
     <h3>¿Qué aprenderán los estudiantes en el curso?</h3>
     <p>Debes de escribir, al menos, 3 objetivos de aprendizaje o resultados que los estudiantes esperen consideguir al finalizar el curso.</p>
 
-    <div>
-<div><label for=""></label>
+    <div class="forms--boxIndex__inside">
+<div class="forms--box__inputContainer">
+    <label for=""></label>
     <input type="text" name="" id="">
 </div>
 
-<div><label for=""></label>
+<div class="forms--box__inputContainer">
+    <label for=""></label>
     <input type="text" name="" id="">
 </div>
 
-<div><label for=""></label>
+<div class="forms--box__inputContainer">
+    <label for=""></label>
     <input type="text" name="" id="">
 </div>
 </div>
-<button>Añadir algo más a tu respuesta</button>
+<button class="forms--normalButton">Añadir algo más a tu respuesta</button>
 </div>
 
 
-<div>
+<div class="forms--boxIndex">
 <h3>¿Cuáles son los requisitos previos para realizar tu curso?</h3>
 <p>Haz una lista de todas las habilidades, herramientas, experiencia y equipos necesarios que los alumnos deberían tener antes de realizar tu curso.Si no hay requisitos, utiliza esto como una oportunidad para bajar la barrera para los principiantes.</p>
 
-<div>
-    <div><label for=""></label>
+<div class="forms--boxIndex__inside">
+    <div class="forms--box__inputContainer"><label for=""></label>
         <input type="text" name="" id="">
     </div>
 </div>
-<button>Añadir algo más a tu respuesta</button>
+<button class="forms--normalButton">Añadir algo más a tu respuesta</button>
 </div>
 </article>
 
-<article>
-    <div><h2>Programa</h2>
+<article class="forms--box">
+    <div class="forms--box__title">
+        <h2>Programa</h2>
     </div>
 
-    <div>
-    <div>
-       <div> <h3>Seccion 1:</h3> <p>Introducción</p></div> <button>+ Contenido</button></div>
-       <div>
+    <div class="boxContent">
+    <div class="boxContent--inside">
+       <div class="boxContent--title"> <h3>Seccion 1:</h3> <p>Introducción</p></div> <button>+ Contenido</button></div>
+       <div class="boxContent__downButtons">
         <button>+ Descripción</button>
         <button>+ Recursos</button>
        </div>
 
     </div>
-    <button>Añadir Elemento</button>
+    <button class="boxContent--newElement">Añadir Elemento</button>
 </div>
-<button>Añadir Sección</button>
+<button class="boxContent--newElement">Añadir Sección</button>
 </article>
 
-<article>
-    <div>
+<article class="forms--box">
+    <div class="forms--box__title">
 <h2>Mensajes del Curso</h2>
 </div>
 
-<div>
-    <div>
+<div class="forms--boxMessages">
+    <div class="forms--box__inputContainer">
 <h3>Mensaje de bienvenida</h3>
 <input type="text">
 <label for=""></label>
 </div>
 
-<div>
+<div class="forms--box__inputContainer">
     <h3>Mensaje de felicitación</h3>
     <input type="text">
     <label for=""></label>
@@ -187,23 +189,23 @@
 </article>
 
 
-<article>
-    <div>
+<article class="forms--box">
+    <div class="forms--box__title">
         <h2>Promociones</h2>
     </div>
 
-    <div><h3>Cupones</h3>
+    <div class="box--couponsList"><h3>Cupones</h3>
     <ul><li>Cupón_1</li></ul>
     </div>
 
-    <button>Crear Cupones</button>
+    <button class="box--newCoupons">Crear Cupones</button>
 </article>
 </form>
 
 </section>
 
-<section>
-   <div> <button>Cancelar</button> <button>Publicar</button></div>
+<section class="section--publish">
+   <div class="publish__inside"> <button class="publish--cancel">Cancelar</button> <button class="publish--send">Publicar</button></div>
 </section>
 </main>
 
