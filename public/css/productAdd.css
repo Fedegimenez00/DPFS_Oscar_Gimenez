@@ -235,6 +235,25 @@ margin-left: 10px;
 
 }
 
+.contentTab--button{
+
+}
+
+.contentMenu{
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+.contentMenu--buttons{
+
+}
+
+
 .boxContent--newElement{
 
 }

@@ -169,10 +169,29 @@
         <div class="boxInnerContent">
     <div class="boxContent--inside">
         
-       <div class="boxContent--title"> <h4>Lectura 1: </h4><p>Introducción</p></div> <button>+ Contenido</button></div>
-       <div class="boxContent__downButtons">
-        <button>+ Descripción</button>
-        <button>+ Recursos</button>
+       <div class="boxContent--title"> <h4>Lectura 1: </h4><p>Introducción</p></div> <button type="button" class="content--toggleButton" data-target="toggleContentPlus">+ Contenido</button> <button type="button" id="toggleContentPlus" class="contentTab--button hidden">Seleccionar el tipo de contenido X</button>
+    <button type="button" class="cancelVideo-button" style="display:none;" id="cancelVideoElementButton">Añadir Video X</button></div>
+       <div id="toggleContentTab" class="boxContent__downButtons">
+        <button type="button">+ Descripción</button>
+        <button type="button">+ Recursos</button>
+        </div>
+        <div id="toggleContentPlus" class="contentMenu hidden">
+            <div class="contentMenu--buttons">
+                <p>Selecciona el tipo de contenido principal. Se pueden añadir archivos y enlaces como recursos.</p>
+                <div>
+                <button type="button" id="addVideoElementButton">Video</button>
+            </div>
+            <div>
+                <button type="button">Diapositivas</button>
+            </div>
+            <div>
+                <button type="button">Artículo</button>
+            </div>
+
+</div>
+<div id="videoFormContainer">
+
+        </div>
        </div>
 
     </div>
@@ -229,5 +248,7 @@
     <%- include('../partials/footer') %>
 
     <script src="/js/toggle.js"></script>
+    <script src="/js/subToggle.js"></script>
+    <script src="/js/addItems.js"></script>
 </body>
 </html>
