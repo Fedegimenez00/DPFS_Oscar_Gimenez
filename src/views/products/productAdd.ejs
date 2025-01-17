@@ -11,17 +11,17 @@
 <section class="section--selectForms">
 <article class="selectForms--box">
     <div class="selectForms--box__inside">
-        <button>Página de Inicio del curso</button>
-        <button>Programa</button>
-        <button>Mensajes del Curso</button>
-        <button>Promociones</button>
+        <button class="toggle-button" data-target="contentForm1" >Página de Inicio del curso</button>
+        <button class="toggle-button" data-target="contentForm2">Programa</button>
+        <button class="toggle-button" data-target="contentForm3">Mensajes del Curso</button>
+        <button class="toggle-button" data-target="contentForm4">Promociones</button>
     </div>
 </article>
 </section>
 
 <section class="section--forms">
 <form>
-    <article class="forms--box">
+    <article id="contentForm1" class="forms--box visible">
     <div class="forms--box__title">
 <h1>Página de Inicio del curso</h1></div>
 
@@ -48,11 +48,16 @@
 
 <div class="forms--box__inputContainer">
     <h3>Información básica</h3>
-    <div>
-    <div>
+    <div class="box--selects">
+    <div class="forms--box__selectContainer">
     <label for=""></label>
-   <select name="" id="">
-    <option value=""></option>
+   <select  name="" id="">
+    <option class="selectGrey" value="default">-- Selecciona idioma --</option>
+    <option value="es">Español</option>
+    <option value="en">Inglés</option>
+    <option value="pr">Portugués</option>
+    <option value="ital">Italiano</option>
+    <option value="fr">Francés</option>
 
    </select>
 </div>
@@ -60,7 +65,13 @@
 <div class="forms--box__selectContainer">
     <label for=""></label>
    <select name="" id="">
-    <option value=""></option>
+    <option class="selectGrey" value="">-- Seleccionar categoría --</option>
+    <option value="">Fundamentos de la Ciberseguridad</option>
+    <option value="">Seguridad Ofensiva</option>
+    <option value="">Seguridad Defensiva</option>
+    <option value="">Seguridad de Nube</option>
+    <option value="">Ingeniería Social</option>
+
 
    </select>
 </div>
@@ -68,7 +79,8 @@
 <div class="forms--box__selectContainer">
     <label for=""></label>
    <select name="" id="">
-    <option value=""></option>
+    <option class="selectGrey" value="">-- Seleccionar subcategoría --</option>
+    <option value="none">WIP</option>
 
    </select>
 </div>
@@ -147,14 +159,17 @@
 </div>
 </article>
 
-<article class="forms--box">
+<article id="contentForm2" class="forms--box">
     <div class="forms--box__title">
         <h2>Programa</h2>
     </div>
 
     <div class="boxContent">
+        <h3>Seccion 1:</h3>
+        <div class="boxInnerContent">
     <div class="boxContent--inside">
-       <div class="boxContent--title"> <h3>Seccion 1:</h3> <p>Introducción</p></div> <button>+ Contenido</button></div>
+        
+       <div class="boxContent--title"> <h4>Lectura 1: </h4><p>Introducción</p></div> <button>+ Contenido</button></div>
        <div class="boxContent__downButtons">
         <button>+ Descripción</button>
         <button>+ Recursos</button>
@@ -162,11 +177,13 @@
 
     </div>
     <button class="boxContent--newElement">Añadir Elemento</button>
+
+</div>
 </div>
 <button class="boxContent--newElement">Añadir Sección</button>
 </article>
 
-<article class="forms--box">
+<article id="contentForm3" class="forms--box">
     <div class="forms--box__title">
 <h2>Mensajes del Curso</h2>
 </div>
@@ -189,7 +206,7 @@
 </article>
 
 
-<article class="forms--box">
+<article id="contentForm4" class="forms--box">
     <div class="forms--box__title">
         <h2>Promociones</h2>
     </div>
@@ -211,5 +228,6 @@
 
     <%- include('../partials/footer') %>
 
+    <script src="/js/toggle.js"></script>
 </body>
 </html>

@@ -17,6 +17,10 @@
 
 }
 
+.toggle-button.selected {
+    background-color: #007bff;
+    color: white;
+  }
 
 /* Sección: Formulario */
 
@@ -32,23 +36,38 @@
 /* Cuerpo general del formulario */
 
 .forms--box{
+background: var(--color-grisOscuro);
+    padding-top: 15px;
+    display: none;
+}
 
+.forms--box.visible{
+    display: block;
 }
 
 .forms--box__title{
+border-bottom: 1px solid;
+    margin-bottom: 25px;
+}
 
+.forms--box__title h1{
+font-size: 1.6rem;
+    margin-bottom: 15px;
+    margin-left: 10px;
 }
 
 .forms--box__inputContainer{
-
+margin-left: 10px;
 }
 
 .forms--box__inputContainer h3{
-
+font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .forms--box__inputContainer input{
-
+    border-radius: 5px;
+    padding: 5px 60px;
 }
 
 .forms--box__inputContainer label{
@@ -56,6 +75,10 @@
 }
 
 /* Seleccionador */
+
+.box--selects{
+
+}
 
 .forms--box__selectContainer{
 
@@ -66,7 +89,14 @@
 }
 
 .forms--box__selectContainer select{
+color: black;
+border-radius: 7px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
 
+.selectGrey{
+    color: grey;
 }
 
 .forms--box__selectContainer option{
@@ -80,11 +110,13 @@
 /* Previews */
 
 .forms--box__previewContainer{
-
+margin-left: 10px;
+margin-bottom: 20px;
 }
 
 .forms--box__previewContainer h3{
-
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .forms--box__previewContainer img{
@@ -92,7 +124,7 @@
 }
 
 .forms--box__previewContainer p{
-
+font-size: 0.9;
 }
 
 .forms--box__fileInput{
@@ -110,11 +142,12 @@
 /* Precio */
 
 .forms--box__priceContainer{
-
+margin-left: 10px;
 }
 
 .forms--box__priceContainer h3{
-
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .box--priceInput{
@@ -126,7 +159,10 @@
 }
 
 .box--priceInput input{
-
+    border-radius: 5px;
+    padding: 5px 0px;
+    width: 100px;
+    margin-bottom: 20px;
 }
 
 
@@ -148,19 +184,51 @@
 /* Programa del formulario */
 
 .boxContent{
-
+    border: solid 1px;
+    margin-bottom: 20px;
 }
 
+.boxContent h3{
+    font-size: 1.0rem;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.boxInnerContent{
+    border: solid 1px;
+    margin-top: 5px;
+    padding: 5px 0px;
+    margin: 10px 5px;
+}
 .boxContent--inside{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: solid 1px;
+    margin-bottom: 10px;
 
 }
 
 .boxContent--title{
+    display: flex;
+    gap: 5px;
+    font-size: 0.9rem;
+}
 
+.boxContent--title h4{
+    font-weight: 500;
 }
 
 .boxContent__downButtons{
-
+    gap: 7px;
+    margin-left: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
 }
 
 .boxContent__downButtons button{
