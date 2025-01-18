@@ -90,3 +90,127 @@ document.addEventListener('DOMContentLoaded', () => {
     contentDescription.style.display = 'block';
   });
 });
+
+
+/* Dynamic example
+
+document.addEventListener('DOMContentLoaded', () => {
+  /**
+   * Configuración dinámica basada en atributos de datos.
+   * Los botones y contenedores se configuran utilizando atributos específicos para mayor flexibilidad.
+  
+  const initializeDynamicHandlers = () => {
+    const addButtons = document.querySelectorAll('[data-add-button]'); // Botones para añadir contenido
+    const cancelButtons = document.querySelectorAll('[data-cancel-button]'); // Botones para cancelar
+    const toggleButtons = document.querySelectorAll('[data-toggle-button]'); // Botones "+ Contenido"
+    const contentMenus = document.querySelectorAll('[data-content-menu]'); // Menús de contenido
+    const containers = document.querySelectorAll('[data-container]'); // Contenedores para partials
+
+    let elementCount = 0; // Contador global para generar IDs únicos para partials
+
+    /**
+     * Manejo de botón "Añadir contenido".
+     * Cada botón "Añadir" obtiene su contenedor y partial asociados a través de los atributos.
+    
+    addButtons.forEach(addButton => {
+      const containerSelector = addButton.dataset.targetContainer;
+      const container = document.querySelector(containerSelector);
+
+      if (!container) {
+        console.error(`Contenedor no encontrado para el selector: ${containerSelector}`);
+        return;
+      }
+
+      addButton.addEventListener('click', async () => {
+        elementCount++;
+        try {
+          // Obtener el partial desde el servidor
+          const partialUrl = addButton.dataset.partialUrl || `/partial?id=${elementCount}`;
+          const response = await fetch(partialUrl);
+
+          if (!response.ok) throw new Error('Error al cargar el partial');
+          const partialHTML = await response.text();
+
+          // Crear y añadir el nuevo elemento
+          const newElement = document.createElement('div');
+          newElement.innerHTML = partialHTML;
+          container.appendChild(newElement.firstElementChild);
+
+          // Gestionar elementos dinámicos
+          handleElementVisibility(addButton, true);
+          attachCancelHandler(newElement, container, addButton);
+        } catch (error) {
+          console.error('Error al cargar el partial:', error);
+        }
+      });
+    });
+
+    /**
+     * Manejo de botón "+ Contenido".
+     * Muestra el menú de contenido y oculta otros elementos asociados.
+     
+    toggleButtons.forEach(toggleButton => {
+      toggleButton.addEventListener('click', () => {
+        const contentMenuSelector = toggleButton.dataset.targetContentMenu;
+        const contentMenu = document.querySelector(contentMenuSelector);
+
+        if (contentMenu) {
+          toggleButton.classList.add('hidden');
+          contentMenu.classList.remove('hidden');
+        } else {
+          console.error(`Menú de contenido no encontrado para el selector: ${contentMenuSelector}`);
+        }
+      });
+    });
+  };
+
+  
+   * Adjunta un manejador al botón "Cancelar" para restaurar el estado inicial.
+   * 
+   * @ param {HTMLElement} element - Elemento que se eliminará.
+   * @ param {HTMLElement} container - Contenedor principal.
+   * @ param {HTMLElement} addButton - Botón "Añadir" asociado.
+   
+  const attachCancelHandler = (element, container, addButton) => {
+    const cancelButtonSelector = addButton.dataset.cancelButton;
+    const cancelButton = document.querySelector(cancelButtonSelector);
+
+    if (!cancelButton) {
+      console.error(`Botón "Cancelar" no encontrado para el selector: ${cancelButtonSelector}`);
+      return;
+    }
+
+    cancelButton.style.display = 'block'; // Mostrar botón "Cancelar"
+
+    cancelButton.addEventListener('click', () => {
+      element.remove(); // Eliminar el elemento añadido
+      handleElementVisibility(addButton, false); // Restaurar visibilidad inicial
+    });
+  };
+
+  
+   * Gestiona la visibilidad de los botones y menús según el estado actual.
+   * 
+   * @ param {HTMLElement} addButton - Botón "Añadir" que activa el flujo.
+   @ param {boolean} isAdding - Indica si se está añadiendo o cancelando contenido.
+   
+  const handleElementVisibility = (addButton, isAdding) => {
+    const toggleElements = document.querySelectorAll(addButton.dataset.toggleElements);
+
+    toggleElements.forEach(el => {
+      el.style.display = isAdding ? 'none' : 'block';
+    });
+
+    const cancelButtonSelector = addButton.dataset.cancelButton;
+    const cancelButton = document.querySelector(cancelButtonSelector);
+
+    if (cancelButton) {
+      cancelButton.style.display = isAdding ? 'block' : 'none';
+    }
+  };
+
+  // Inicializar los manejadores dinámicos
+  initializeDynamicHandlers();
+});
+
+*/

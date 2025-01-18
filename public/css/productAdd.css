@@ -258,6 +258,8 @@ margin-left: 10px;
 
 }
 
+/* Item video */
+
 .itemVideo--button{
 
 }
@@ -270,6 +272,33 @@ display: none;
     display: block;
     }
 
+
+/* Item Diapositiva */
+.itemSlide--button{
+
+}
+
+.itemSlide--formBox{
+display: none;
+}
+
+.itemSlide--formBox.visible{
+    display: block;
+    }
+
+
+/* Item Artículo */
+.itemArticle--button{
+
+}
+
+.itemArticle--formBox{
+display: none;
+}
+
+.itemArticle--formBox.visible{
+    display: block;
+    }
 
 /* Mensajes del curso */
 
