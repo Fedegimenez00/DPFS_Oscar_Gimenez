@@ -258,6 +258,19 @@ margin-left: 10px;
 
 }
 
+.itemVideo--button{
+
+}
+
+.itemVideo--formBox{
+display: none;
+}
+
+.itemVideo--formBox.visible{
+    display: block;
+    }
+
+
 /* Mensajes del curso */
 
 .forms--boxMessages{
