@@ -1,18 +1,20 @@
 <div class="itemVideo" data-id="<%= id %>">
-<div> <button type="button" class="itemVideo--button" data-target="formsVideoContainer1">Cargar video</button><button type="button" class="itemVideo--button" data-target="formsVideoContainer2">Insertar por URL</button></div>
-<div class="forms--box__inputContainer">
-    <div id="formsVideoContainer1" class="itemVideo--formBox visible">
-    <label for=""></label>
-    <input type="file" name="" id="">
-
-    <button>Subir video</button>
-</div>
-
-<div id="formsVideoContainer2" class="itemVideo--formBox">
-    <label for=""></label>
-    <input type="text" name="" id="">
-
-    <button>Añadir enlace</button>
-</div>
-
-</div>
+    <div> 
+      <button type="button" class="itemVideo--button" data-target="formsVideoContainer1">Cargar video</button>
+      <button type="button" class="itemVideo--button" data-target="formsVideoContainer2">Insertar por URL</button>
+    </div>
+    <div class="forms--box__inputContainer">
+      <div id="formsVideoContainer1" class="itemVideo--formBox visible">
+        <label for="">Subir archivo</label>
+        <input type="file" name="videoFile" id="videoFile">
+        <button>Subir video</button>
+      </div>
+  
+      <div id="formsVideoContainer2" class="itemVideo--formBox">
+        <label for="">Enlace de video</label>
+        <input type="text" name="videoUrl" id="videoUrl">
+        <button>Añadir enlace</button>
+      </div>
+    </div>
+  </div>
+  

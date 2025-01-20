@@ -1,216 +1,100 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const addButton = document.getElementById('addVideoElementButton');
-  const cancelButton = document.getElementById('cancelVideoElementButton'); // El botón de "Cancelar"
-  const selectButton = document.getElementById('toggleContentPlus'); // El botón "Seleccionar el tipo de contenido X"
-  const container = document.getElementById('videoFormContainer');
-  const elementsToHide = document.querySelectorAll('.contentMenu--buttons > div'); // Elementos a ocultar
-  const toggleButton = document.querySelector('.content--toggleButton'); // "+ Contenido"
-  const downButtons = document.getElementById('toggleContentTab'); // Botones secundarios
-  const contentMenu = document.querySelector('.contentMenu'); // Content Menu
-  const contentDescription = contentMenu.querySelector('p'); // Párrafo que deseas ocultar
-  let elementCount = 0;
+  let elementCount = 0; // Contador para IDs únicos
+  let lastGeneratedElement = null; // Referencia al último partial generado
 
-  // Inicialmente, ocultamos el botón "Cancelar"
-  cancelButton.style.display = 'none';
+  // Selección de elementos del DOM
+  const toggleButton = document.querySelector('.content--toggleButton'); // Botón "+ Contenido"
+  const toggleContentButton = document.getElementById('toggleContentPlus'); // Botón "Seleccionar el tipo de contenido X"
+  const downButtons = document.getElementById('toggleContentTab'); // Botones "+ Descripción" y "+ Recursos"
+  const contentMenu = document.querySelector('.contentMenu'); // Menú de selección de tipo de contenido
+  const contentMenuButtons = document.querySelector('.contentMenu--buttons'); // Botones Video, Diapositivas, Artículo
+  const cancelButton = document.querySelector('#cancelVideoElementButton'); // Botón "Añadir Video X"
+  const dataContainer = document.querySelector('.data-container'); // Contenedor de partials
+  const contentParagraph = contentMenu.querySelector('p'); // Texto <p>
 
-  // Funcionalidad para el botón de "Añadir Video"
-  addButton.addEventListener('click', async () => {
-    elementCount++;
+  if (
+    !toggleButton ||
+    !toggleContentButton ||
+    !downButtons ||
+    !contentMenu ||
+    !contentMenuButtons ||
+    !cancelButton
+  ) {
+    console.error('Elementos requeridos no encontrados.');
+    return;
+  }
 
-    try {
-      const response = await fetch(`/partial?id=${elementCount}`);
-      if (!response.ok) throw new Error('Error al cargar el partial');
+  // Función para ocultar elementos
+  const hideElements = (...elements) => elements.forEach(el => el.classList.add('hidden'));
+  // Función para mostrar elementos
+  const showElements = (...elements) => elements.forEach(el => el.classList.remove('hidden'));
 
-      const partialHTML = await response.text();
-
-      // Crear un elemento div para insertar el HTML
-      const newElement = document.createElement('div');
-      newElement.innerHTML = partialHTML;
-
-      // Ocultar los elementos previos
-      elementsToHide.forEach(el => el.style.display = 'none');
-      contentDescription.style.display = 'none'; // Oculta el párrafo
-
-
-      // Mostrar el botón "Cancelar"
-      cancelButton.style.display = 'block';
-
-      // Ocultar el botón "Seleccionar el tipo de contenido X"
-      selectButton.style.display = 'none';
-
-      // Agregar el contenido del partial al contenedor
-      container.appendChild(newElement.firstElementChild);
-
-      // Añadir funcionalidad al botón "Cancelar"
-      cancelButton.addEventListener('click', () => {
-        // Eliminar el partial
-        newElement.remove();
-
-        // Restaurar los elementos ocultos
-        elementsToHide.forEach(el => el.style.display = '');
-
-        // Mostrar de nuevo el botón "Seleccionar el tipo de contenido X"
-        selectButton.style.display = 'block';
-
-        // Ocultar el botón "Cancelar"
-        cancelButton.style.display = 'none';
-      });
-
-    } catch (error) {
-      console.error('Error al cargar el partial:', error);
-    }
-  });
-
-  // Manejo de la funcionalidad del botón "+ Contenido"
+  // Mostrar el menú Content Menu y ocultar los botones iniciales
   toggleButton.addEventListener('click', () => {
-    // Ocultar los elementos relacionados con el contenido
-    toggleButton.classList.add('hidden'); // Oculta "+ Contenido"
-    downButtons.classList.add('hidden'); // Oculta botones secundarios
-    contentMenu.classList.remove('hidden'); // Muestra Content Menu
-    selectButton.style.display = 'block'; // Muestra el botón "Seleccionar el tipo de contenido X"
+    hideElements(toggleButton, downButtons); // Oculta "+ Contenido" y botones secundarios
+    showElements(toggleContentButton, contentMenu, contentParagraph); // Muestra "Seleccionar tipo de contenido X", Content Menu y <p>
   });
 
-  // Funcionalidad para el botón de "Seleccionar el tipo de contenido X"
-  selectButton.addEventListener('click', () => {
-    // Solo ocultamos el botón "Seleccionar el tipo de contenido X" cuando se hace clic en él
-    selectButton.style.display = 'none';
+  // Volver al estado inicial desde "Seleccionar tipo de contenido X"
+  toggleContentButton.addEventListener('click', () => {
+    hideElements(toggleContentButton, contentMenu); // Oculta "Seleccionar tipo de contenido X" y Content Menu
+    showElements(toggleButton, downButtons); // Muestra "+ Contenido" y botones secundarios
   });
 
-  // Funcionalidad para el botón de "Cancelar"
-  cancelButton.addEventListener('click', () => {
-    // Eliminar el contenido parcial
-    container.innerHTML = ''; // Eliminar el contenido del contenedor
-    elementsToHide.forEach(el => el.style.display = ''); // Restaurar los elementos ocultos
-    cancelButton.style.display = 'none'; // Ocultar el botón de cancelar
-
-    // Mostrar nuevamente el botón "Seleccionar el tipo de contenido X"
-    selectButton.style.display = 'block';
-
-    // Restaurar el párrafo oculto
-    contentDescription.style.display = 'block';
-  });
-});
-
-
-/* Dynamic example
-
-document.addEventListener('DOMContentLoaded', () => {
-  /**
-   * Configuración dinámica basada en atributos de datos.
-   * Los botones y contenedores se configuran utilizando atributos específicos para mayor flexibilidad.
-  
+  // Función para inicializar manejadores dinámicos
   const initializeDynamicHandlers = () => {
-    const addButtons = document.querySelectorAll('[data-add-button]'); // Botones para añadir contenido
-    const cancelButtons = document.querySelectorAll('[data-cancel-button]'); // Botones para cancelar
-    const toggleButtons = document.querySelectorAll('[data-toggle-button]'); // Botones "+ Contenido"
-    const contentMenus = document.querySelectorAll('[data-content-menu]'); // Menús de contenido
-    const containers = document.querySelectorAll('[data-container]'); // Contenedores para partials
+    const addButtons = document.querySelectorAll('.data-add-button');
 
-    let elementCount = 0; // Contador global para generar IDs únicos para partials
-
-    /**
-     * Manejo de botón "Añadir contenido".
-     * Cada botón "Añadir" obtiene su contenedor y partial asociados a través de los atributos.
-    
-    addButtons.forEach(addButton => {
-      const containerSelector = addButton.dataset.targetContainer;
-      const container = document.querySelector(containerSelector);
-
-      if (!container) {
-        console.error(`Contenedor no encontrado para el selector: ${containerSelector}`);
-        return;
+    // Evento del botón "Añadir Video X"
+    cancelButton.addEventListener('click', () => {
+      if (lastGeneratedElement) {
+        lastGeneratedElement.remove(); // Elimina el último partial generado
+        lastGeneratedElement = null; // Limpia referencia
       }
+      hideElements(cancelButton, contentMenu); // Oculta "Añadir Video X" y el menú de contenido
+      showElements(toggleContentButton, contentMenu); // Muestra el menú con "Seleccionar tipo de contenido X" y botones
+    });
 
+    // Manejo de los botones de contenido (Video, Diapositiva, Artículo)
+    addButtons.forEach(addButton => {
       addButton.addEventListener('click', async () => {
         elementCount++;
+        const containerSelector = addButton.dataset.targetContainer;
+        const container = document.querySelector(containerSelector);
+
+        if (!container) {
+          console.error(`Contenedor no encontrado: ${containerSelector}`);
+          return;
+        }
+
+        const partialType = addButton.dataset.partialType;
+
         try {
-          // Obtener el partial desde el servidor
-          const partialUrl = addButton.dataset.partialUrl || `/partial?id=${elementCount}`;
+          const partialUrl = `/partial?type=${partialType}&id=${elementCount}`;
           const response = await fetch(partialUrl);
 
           if (!response.ok) throw new Error('Error al cargar el partial');
+
           const partialHTML = await response.text();
-
-          // Crear y añadir el nuevo elemento
           const newElement = document.createElement('div');
+          newElement.classList.add('dynamic-partial');
           newElement.innerHTML = partialHTML;
-          container.appendChild(newElement.firstElementChild);
 
-          // Gestionar elementos dinámicos
-          handleElementVisibility(addButton, true);
-          attachCancelHandler(newElement, container, addButton);
+          // Agregar el partial al contenedor
+          container.appendChild(newElement);
+
+          // Actualizar referencia al último elemento generado
+          lastGeneratedElement = newElement;
+
+          // Ocultar el menú principal y mostrar el botón "Añadir Video X"
+          hideElements(toggleContentButton, contentMenu);
+          showElements(cancelButton);
         } catch (error) {
           console.error('Error al cargar el partial:', error);
         }
       });
     });
-
-    /**
-     * Manejo de botón "+ Contenido".
-     * Muestra el menú de contenido y oculta otros elementos asociados.
-     
-    toggleButtons.forEach(toggleButton => {
-      toggleButton.addEventListener('click', () => {
-        const contentMenuSelector = toggleButton.dataset.targetContentMenu;
-        const contentMenu = document.querySelector(contentMenuSelector);
-
-        if (contentMenu) {
-          toggleButton.classList.add('hidden');
-          contentMenu.classList.remove('hidden');
-        } else {
-          console.error(`Menú de contenido no encontrado para el selector: ${contentMenuSelector}`);
-        }
-      });
-    });
   };
 
-  
-   * Adjunta un manejador al botón "Cancelar" para restaurar el estado inicial.
-   * 
-   * @ param {HTMLElement} element - Elemento que se eliminará.
-   * @ param {HTMLElement} container - Contenedor principal.
-   * @ param {HTMLElement} addButton - Botón "Añadir" asociado.
-   
-  const attachCancelHandler = (element, container, addButton) => {
-    const cancelButtonSelector = addButton.dataset.cancelButton;
-    const cancelButton = document.querySelector(cancelButtonSelector);
-
-    if (!cancelButton) {
-      console.error(`Botón "Cancelar" no encontrado para el selector: ${cancelButtonSelector}`);
-      return;
-    }
-
-    cancelButton.style.display = 'block'; // Mostrar botón "Cancelar"
-
-    cancelButton.addEventListener('click', () => {
-      element.remove(); // Eliminar el elemento añadido
-      handleElementVisibility(addButton, false); // Restaurar visibilidad inicial
-    });
-  };
-
-  
-   * Gestiona la visibilidad de los botones y menús según el estado actual.
-   * 
-   * @ param {HTMLElement} addButton - Botón "Añadir" que activa el flujo.
-   @ param {boolean} isAdding - Indica si se está añadiendo o cancelando contenido.
-   
-  const handleElementVisibility = (addButton, isAdding) => {
-    const toggleElements = document.querySelectorAll(addButton.dataset.toggleElements);
-
-    toggleElements.forEach(el => {
-      el.style.display = isAdding ? 'none' : 'block';
-    });
-
-    const cancelButtonSelector = addButton.dataset.cancelButton;
-    const cancelButton = document.querySelector(cancelButtonSelector);
-
-    if (cancelButton) {
-      cancelButton.style.display = isAdding ? 'block' : 'none';
-    }
-  };
-
-  // Inicializar los manejadores dinámicos
-  initializeDynamicHandlers();
+  initializeDynamicHandlers(); // Inicializar manejadores dinámicos
 });
-
-*/
