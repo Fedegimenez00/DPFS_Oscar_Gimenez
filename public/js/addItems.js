@@ -1,25 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   let elementCount = 0; // Contador para IDs únicos
-  let lastGeneratedElement = null; // Referencia al último partial generado
+  let lastGeneratedElements = {}; // Objeto para almacenar referencias a partials por tipo
 
   // Selección de elementos del DOM
   const toggleButton = document.querySelector('.content--toggleButton'); // Botón "+ Contenido"
   const toggleContentButton = document.getElementById('toggleContentPlus'); // Botón "Seleccionar el tipo de contenido X"
   const downButtons = document.getElementById('toggleContentTab'); // Botones "+ Descripción" y "+ Recursos"
   const contentMenu = document.querySelector('.contentMenu'); // Menú de selección de tipo de contenido
-  const contentMenuButtons = document.querySelector('.contentMenu--buttons'); // Botones Video, Diapositivas, Artículo
-  const cancelButton = document.querySelector('#cancelVideoElementButton'); // Botón "Añadir Video X"
-  const dataContainer = document.querySelector('.data-container'); // Contenedor de partials
   const contentParagraph = contentMenu.querySelector('p'); // Texto <p>
+  const dataContainer = document.querySelector('.data-container'); // Contenedor de partials
 
-  if (
-    !toggleButton ||
-    !toggleContentButton ||
-    !downButtons ||
-    !contentMenu ||
-    !contentMenuButtons ||
-    !cancelButton
-  ) {
+  if (!toggleButton || !toggleContentButton || !downButtons || !contentMenu || !dataContainer) {
     console.error('Elementos requeridos no encontrados.');
     return;
   }
@@ -41,33 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
     showElements(toggleButton, downButtons); // Muestra "+ Contenido" y botones secundarios
   });
 
-  // Función para inicializar manejadores dinámicos
-  const initializeDynamicHandlers = () => {
-    const addButtons = document.querySelectorAll('.data-add-button');
+  // Manejo de botones del menú de "+ Contenido"
+  const initializeContentMenuHandlers = () => {
+    const addButtons = document.querySelectorAll('.contentMenu--buttons .data-add-button');
 
-    // Evento del botón "Añadir Video X"
-    cancelButton.addEventListener('click', () => {
-      if (lastGeneratedElement) {
-        lastGeneratedElement.remove(); // Elimina el último partial generado
-        lastGeneratedElement = null; // Limpia referencia
-      }
-      hideElements(cancelButton, contentMenu); // Oculta "Añadir Video X" y el menú de contenido
-      showElements(toggleContentButton, contentMenu); // Muestra el menú con "Seleccionar tipo de contenido X" y botones
-    });
-
-    // Manejo de los botones de contenido (Video, Diapositiva, Artículo)
     addButtons.forEach(addButton => {
       addButton.addEventListener('click', async () => {
         elementCount++;
         const containerSelector = addButton.dataset.targetContainer;
         const container = document.querySelector(containerSelector);
+        const partialType = addButton.dataset.partialType;
+        const cancelButtonSelector = addButton.dataset.cancelButton;
 
-        if (!container) {
-          console.error(`Contenedor no encontrado: ${containerSelector}`);
+        if (!container || !partialType || !cancelButtonSelector) {
+          console.error('Datos del botón no válidos.');
           return;
         }
 
-        const partialType = addButton.dataset.partialType;
+        const cancelButton = document.querySelector(cancelButtonSelector);
 
         try {
           const partialUrl = `/partial?type=${partialType}&id=${elementCount}`;
@@ -82,13 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Agregar el partial al contenedor
           container.appendChild(newElement);
+          lastGeneratedElements[partialType] = newElement; // Asignar al objeto
 
-          // Actualizar referencia al último elemento generado
-          lastGeneratedElement = newElement;
-
-          // Ocultar el menú principal y mostrar el botón "Añadir Video X"
+          // Ocultar el menú principal y mostrar el botón de cancelación correspondiente
           hideElements(toggleContentButton, contentMenu);
           showElements(cancelButton);
+
+          // Evento de cancelación dinámico
+          cancelButton.addEventListener('click', () => {
+            newElement.remove(); // Elimina el partial generado
+            hideElements(cancelButton); // Oculta el botón de cancelación
+            showElements(toggleContentButton, contentMenu); // Regresa al menú de selección
+          });
         } catch (error) {
           console.error('Error al cargar el partial:', error);
         }
@@ -96,5 +83,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  initializeDynamicHandlers(); // Inicializar manejadores dinámicos
+  // Manejo de botones "+ Descripción" y "+ Recursos"
+  const initializeDownButtonsHandlers = () => {
+    const downButtonsAdd = downButtons.querySelectorAll('.data-add-button');
+
+    downButtonsAdd.forEach(addButton => {
+      addButton.addEventListener('click', async () => {
+        elementCount++;
+        const containerSelector = addButton.dataset.targetContainer;
+        const container = document.querySelector(containerSelector);
+        const partialType = addButton.dataset.partialType;
+        const cancelButtonSelector = addButton.dataset.cancelButton;
+
+        if (!container || !partialType || !cancelButtonSelector) {
+          console.error('Datos del botón no válidos.');
+          return;
+        }
+
+        const cancelButton = document.querySelector(cancelButtonSelector);
+
+        try {
+          const partialUrl = `/partial?type=${partialType}&id=${elementCount}`;
+          const response = await fetch(partialUrl);
+
+          if (!response.ok) throw new Error('Error al cargar el partial');
+
+          const partialHTML = await response.text();
+          const newElement = document.createElement('div');
+          newElement.classList.add('dynamic-partial');
+          newElement.innerHTML = partialHTML;
+
+          // Agregar el partial al contenedor
+          container.appendChild(newElement);
+          lastGeneratedElements[partialType] = newElement; // Asignar al objeto
+
+          // Ocultar "+ Contenido" y el menú "+ Descripción / + Recursos"
+          hideElements(toggleButton, downButtons);
+          showElements(cancelButton);
+
+          // Evento de cancelación dinámico
+          cancelButton.addEventListener('click', () => {
+            newElement.remove(); // Elimina el partial generado
+            hideElements(cancelButton); // Oculta el botón de cancelación
+            showElements(toggleButton, downButtons); // Regresa al menú inicial
+          });
+        } catch (error) {
+          console.error('Error al cargar el partial:', error);
+        }
+      });
+    });
+  };
+
+  initializeContentMenuHandlers(); // Inicializar manejadores del menú "+ Contenido"
+  initializeDownButtonsHandlers(); // Inicializar manejadores del menú "+ Descripción / + Recursos"
 });
