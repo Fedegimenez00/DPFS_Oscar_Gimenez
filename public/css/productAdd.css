@@ -286,6 +286,37 @@ display: none;
     display: block;
     }
 
+.itemArticle--formBox{
+display: none;
+}
+
+.itemArticle--formBox.visible{
+    display: block;
+    }
+
+.itemResource--formBox{
+display: none;
+    }
+
+.itemResource--formBox.visible{
+display: block;
+    }
+
+.contentPreview--box{
+    display: none;
+}
+
+.contentPreview--box.visible{
+display: block;
+}
+
+.dynamicForm--box{
+    display: none;
+}
+
+.dynamicForm--box.visible{
+display: block;
+}
 
 /* Item Artículo */
 .itemArticle--button{

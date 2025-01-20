@@ -1,38 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let elementCount = 0; // Contador para IDs únicos
-  let lastGeneratedElements = {}; // Objeto para almacenar referencias a partials por tipo
+  let elementCount = 0;
+  let lastGeneratedElements = {};
 
-  // Selección de elementos del DOM
-  const toggleButton = document.querySelector('.content--toggleButton'); // Botón "+ Contenido"
-  const toggleContentButton = document.getElementById('toggleContentPlus'); // Botón "Seleccionar el tipo de contenido X"
-  const downButtons = document.getElementById('toggleContentTab'); // Botones "+ Descripción" y "+ Recursos"
-  const contentMenu = document.querySelector('.contentMenu'); // Menú de selección de tipo de contenido
-  const contentParagraph = contentMenu.querySelector('p'); // Texto <p>
-  const dataContainer = document.querySelector('.data-container'); // Contenedor de partials
+  const toggleButton = document.querySelector('.content--toggleButton');
+  const toggleContentButton = document.getElementById('toggleContentPlus');
+  const downButtons = document.getElementById('toggleContentTab');
+  const contentMenu = document.querySelector('.contentMenu');
+  const contentParagraph = contentMenu.querySelector('p');
+  const dataContainer = document.querySelector('.data-container');
 
   if (!toggleButton || !toggleContentButton || !downButtons || !contentMenu || !dataContainer) {
     console.error('Elementos requeridos no encontrados.');
     return;
   }
 
-  // Función para ocultar elementos
   const hideElements = (...elements) => elements.forEach(el => el.classList.add('hidden'));
-  // Función para mostrar elementos
   const showElements = (...elements) => elements.forEach(el => el.classList.remove('hidden'));
 
-  // Mostrar el menú Content Menu y ocultar los botones iniciales
   toggleButton.addEventListener('click', () => {
-    hideElements(toggleButton, downButtons); // Oculta "+ Contenido" y botones secundarios
-    showElements(toggleContentButton, contentMenu, contentParagraph); // Muestra "Seleccionar tipo de contenido X", Content Menu y <p>
+    hideElements(toggleButton, downButtons);
+    showElements(toggleContentButton, contentMenu, contentParagraph);
   });
 
-  // Volver al estado inicial desde "Seleccionar tipo de contenido X"
   toggleContentButton.addEventListener('click', () => {
-    hideElements(toggleContentButton, contentMenu); // Oculta "Seleccionar tipo de contenido X" y Content Menu
-    showElements(toggleButton, downButtons); // Muestra "+ Contenido" y botones secundarios
+    hideElements(toggleContentButton, contentMenu);
+    showElements(toggleButton, downButtons);
   });
 
-  // Manejo de botones del menú de "+ Contenido"
   const initializeContentMenuHandlers = () => {
     const addButtons = document.querySelectorAll('.contentMenu--buttons .data-add-button');
 
@@ -62,19 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
           newElement.classList.add('dynamic-partial');
           newElement.innerHTML = partialHTML;
 
-          // Agregar el partial al contenedor
           container.appendChild(newElement);
-          lastGeneratedElements[partialType] = newElement; // Asignar al objeto
+          lastGeneratedElements[partialType] = newElement;
 
-          // Ocultar el menú principal y mostrar el botón de cancelación correspondiente
           hideElements(toggleContentButton, contentMenu);
           showElements(cancelButton);
 
-          // Evento de cancelación dinámico
+          initializePartialHandlers(newElement, cancelButton);
+
           cancelButton.addEventListener('click', () => {
-            newElement.remove(); // Elimina el partial generado
-            hideElements(cancelButton); // Oculta el botón de cancelación
-            showElements(toggleContentButton, contentMenu); // Regresa al menú de selección
+            // Caso de generación de partial dinámico
+            newElement.remove();
+            hideElements(cancelButton);
+            showElements(toggleContentButton, contentMenu);
           });
         } catch (error) {
           console.error('Error al cargar el partial:', error);
@@ -83,7 +77,78 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Manejo de botones "+ Descripción" y "+ Recursos"
+  const initializePartialHandlers = (partialElement, cancelButton) => {
+    const saveButton = partialElement.querySelector('.save-button');
+    const editButton = partialElement.querySelector('.edit-button');
+    const deleteButton = partialElement.querySelector('.delete-button');
+    const form = partialElement.querySelector('.dynamicForm--box');
+    const previewBox = partialElement.querySelector('.contentPreview--box');
+    const titleInput = partialElement.querySelector('input[type="text"]');
+    const previewTitle = previewBox.querySelector('.contentPreview');
+  
+    if (!saveButton || !editButton || !deleteButton || !form || !previewBox || !titleInput || !previewTitle) {
+      console.error('Elementos internos del partial no encontrados.');
+      return;
+    }
+  
+    // Guardar cambios
+    saveButton.addEventListener('click', () => {
+      const titleValue = titleInput.value.trim();
+      if (titleValue) {
+        previewTitle.textContent = titleValue;
+        previewBox.classList.add('visible');
+        form.classList.remove('visible');
+  
+        // Restaurar botones "+ Descripción", "+ Recursos" y "+ Contenido"
+        showElements(toggleButton, downButtons);
+        hideElements(cancelButton);
+
+        partialElement.classList.remove('editing'); // Remover estado de edición
+      } else {
+        alert('El título no puede estar vacío.');
+      }
+    });
+  
+    // Editar contenido
+    editButton.addEventListener('click', () => {
+      previewBox.classList.remove('visible'); // Ocultar la previsualización
+      form.classList.add('visible'); // Mostrar el formulario
+  
+      // Ocultar botones "+ Descripción", "+ Recursos" y "+ Contenido"
+      hideElements(toggleButton, downButtons);
+  
+      
+
+      partialElement.classList.add('editing'); // Marcar como edición
+  
+      // Cancelar la edición: Comportamiento específico
+      const cancelEditHandler = () => {
+        form.classList.remove('visible'); // Ocultar formulario
+        previewBox.classList.add('visible'); // Mostrar previsualización
+        hideElements(cancelButton); // Ocultar el botón cancel-button
+  
+        // Restaurar los botones "+ Descripción", "+ Recursos" y "+ Contenido"
+        showElements(toggleButton, downButtons);
+
+        partialElement.classList.remove('editing'); // Remover estado de edición
+  
+        // Elimina el evento después de ejecutarlo para evitar duplicados
+        cancelButton.removeEventListener('click', cancelEditHandler);
+      };
+  
+      cancelButton.addEventListener('click', cancelEditHandler);
+    });
+  
+    // Eliminar contenido
+    deleteButton.addEventListener('click', () => {
+      partialElement.remove(); // Eliminar el partial del DOM
+      hideElements(cancelButton);
+  
+      // Restaurar botones "+ Descripción", "+ Recursos" y "+ Contenido"
+      showElements(toggleButton, downButtons);
+    });
+  };
+
   const initializeDownButtonsHandlers = () => {
     const downButtonsAdd = downButtons.querySelectorAll('.data-add-button');
 
@@ -113,19 +178,21 @@ document.addEventListener('DOMContentLoaded', () => {
           newElement.classList.add('dynamic-partial');
           newElement.innerHTML = partialHTML;
 
-          // Agregar el partial al contenedor
           container.appendChild(newElement);
-          lastGeneratedElements[partialType] = newElement; // Asignar al objeto
+          lastGeneratedElements[partialType] = newElement;
 
-          // Ocultar "+ Contenido" y el menú "+ Descripción / + Recursos"
           hideElements(toggleButton, downButtons);
           showElements(cancelButton);
 
-          // Evento de cancelación dinámico
+          initializePartialHandlers(newElement, cancelButton);
+
           cancelButton.addEventListener('click', () => {
-            newElement.remove(); // Elimina el partial generado
-            hideElements(cancelButton); // Oculta el botón de cancelación
-            showElements(toggleButton, downButtons); // Regresa al menú inicial
+            // Caso de generación de partial dinámico
+            if (!newElement.classList.contains('editing')) {
+              newElement.remove();
+              hideElements(cancelButton);
+              showElements(toggleButton, downButtons);
+            }
           });
         } catch (error) {
           console.error('Error al cargar el partial:', error);
@@ -134,6 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  initializeContentMenuHandlers(); // Inicializar manejadores del menú "+ Contenido"
-  initializeDownButtonsHandlers(); // Inicializar manejadores del menú "+ Descripción / + Recursos"
+  initializeContentMenuHandlers();
+  initializeDownButtonsHandlers();
 });

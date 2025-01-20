@@ -1,18 +1,19 @@
 <div class="itemArticle" data-id="<%= id %>">
-    <div> <button type="button" class="itemArticle--button" data-target="formsArticleContainer1">Cargar video</button><button type="button" class="itemArticle--button" data-target="formsArticleContainer2">Insertar por URL</button></div>
-    <div class="forms--box__inputContainer">
-        <div id="formsArticleContainer1" class="itemArticle--formBox visible">
-        <label for=""></label>
-        <input type="file" name="" id="">
-    
-        <button>Subir video</button>
+    <div class="contentPreview--box">
+      <p class="contentPreview">Título del Artículo</p>
+      <button type="button" class="edit-button">Editar</button>
+      <button type="button" class="delete-button">Borrar</button>
     </div>
-    
-    <div id="formsArticleContainer2" class="itemArticle--formBox">
-        <label for=""></label>
-        <input type="text" name="" id="">
-    
-        <button>Añadir Articulo</button>
+    <div class="dynamicForm--box visible">
+      <div class="forms--box__inputContainer">
+        <div class="itemArticle--formBox visible">
+          <label for="articleTitle">Título del Artículo</label>
+          <input type="text" name="articleTitle" id="articleTitle">
+          <label for="articleContent">Contenido</label>
+          <textarea name="articleContent" id="articleContent"></textarea>
+          <button type="button" class="save-button">Subir Artículo</button>
+        </div>
+      </div>
     </div>
-    
-    </div>
+  </div>
+  

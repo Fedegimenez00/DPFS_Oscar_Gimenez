@@ -1,9 +1,32 @@
 <div class="forms--box__previewContainer">
-    <h3>Imagen del curso</h3>
-    <img>
-    <p>Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
-<div class="forms--box__fileInput">
-    <label for=""></label>
-<input type="file" name="" id="">
-</div>
+    <div class="contentPreview--box">
+        <p class="contentPreview">Título del recurso</p>
+        
+        <button>Editar</button>
+        <button>Borrar</button>
+      </div>
+    
+      <div> <button type="button" class="itemResource--button" data-target="formsResourceContainer1">Cargar Diapositiva</button><button type="button" class="itemSlide--button" data-target="formsSlideContainer2">Insertar por URL</button></div>
+    <div class="forms--box__inputContainer">
+        <div id="formsResourceContainer1" class="itemResource--formBox visible">
+            <label for="">Título del recurso</label>
+            <input type="text" name="" id="">
+    
+        <label for=""></label>
+        <input type="file" name="" id="">
+    
+        <button>Subir recurso</button>
+    </div>
+    
+    <div id="formsResourceContainer2" class="itemResource--formBox">
+
+        <label for="">Título del recurso</label>
+        <input type="text" name="" id="">
+
+        <label for=""></label>
+        <input type="url" name="" id="">
+    
+        <button>Añadir enlace</button>
+    </div>
+    
 </div>

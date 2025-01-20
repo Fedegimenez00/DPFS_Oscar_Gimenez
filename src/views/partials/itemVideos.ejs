@@ -1,19 +1,35 @@
 <div class="itemVideo" data-id="<%= id %>">
-    <div> 
+  <div class="contentPreview--box">
+    <p class="contentPreview"></p>
+    <button type="button" class="edit-button">Editar</button>
+    <button type="button" class="delete-button">Borrar</button>
+  </div>
+  
+    <div class="dynamicForm--box visible"> 
+      <div>
       <button type="button" class="itemVideo--button" data-target="formsVideoContainer1">Cargar video</button>
       <button type="button" class="itemVideo--button" data-target="formsVideoContainer2">Insertar por URL</button>
     </div>
     <div class="forms--box__inputContainer">
       <div id="formsVideoContainer1" class="itemVideo--formBox visible">
-        <label for="">Subir archivo</label>
+        <label for="videoTitle">Título del video</label>
+        <input type="text" name="videoTitle" id="videoTitle" placeholder="Ingrese el título">
+      
+        <label for="videoFile">Subir archivo</label>
         <input type="file" name="videoFile" id="videoFile">
-        <button>Subir video</button>
+      
+        <button type="button" class="save-button">Subir video</button>
       </div>
+      
   
       <div id="formsVideoContainer2" class="itemVideo--formBox">
+        <label for="">Título del video</label>
+        <input type="text" name="videoTitle" id="videoTitle">
+
         <label for="">Enlace de video</label>
         <input type="text" name="videoUrl" id="videoUrl">
-        <button>Añadir enlace</button>
+        <button type="button" class="save-button">Añadir enlace</button>
+
       </div>
     </div>
   </div>

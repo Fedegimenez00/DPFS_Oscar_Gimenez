@@ -1,18 +1,29 @@
 <div class="itemSlide" data-id="<%= id %>">
-    <div> <button type="button" class="itemSlide--button" data-target="formsSlideContainer1">Cargar Diapositiva</button><button type="button" class="itemSlide--button" data-target="formsSlideContainer2">Insertar por URL</button></div>
-    <div class="forms--box__inputContainer">
+    <div class="contentPreview--box">
+      <p class="contentPreview">Título de la diapositiva</p>
+      <button type="button" class="edit-button">Editar</button>
+      <button type="button" class="delete-button">Borrar</button>
+    </div>
+    <div class="dynamicForm--box visible">
+      <div>
+        <button type="button" class="itemSlide--button" data-target="formsSlideContainer1">Cargar Diapositiva</button>
+        <button type="button" class="itemSlide--button" data-target="formsSlideContainer2">Insertar por URL</button>
+      </div>
+      <div class="forms--box__inputContainer">
         <div id="formsSlideContainer1" class="itemSlide--formBox visible">
-        <label for=""></label>
-        <input type="file" name="" id="">
-    
-        <button>Subir video</button>
+          <label for="slideTitle">Título de la diapositiva</label>
+          <input type="text" name="slideTitle" id="slideTitle">
+          <input type="file" name="slideFile" id="slideFile">
+          <button type="button" class="save-button">Subir Diapositiva</button>
+        </div>
+        <div id="formsSlideContainer2" class="itemSlide--formBox">
+          <label for="slideUrlTitle">Título</label>
+          <input type="text" name="slideUrlTitle" id="slideUrlTitle">
+          <label for="slideUrl">URL</label>
+          <input type="url" name="slideUrl" id="slideUrl">
+          <button type="button" class="save-button">Añadir Enlace</button>
+        </div>
+      </div>
     </div>
-    
-    <div id="formsSlideContainer2" class="itemSlide--formBox">
-        <label for=""></label>
-        <input type="text" name="" id="">
-    
-        <button>Añadir enlace</button>
-    </div>
-    
-    </div>
+  </div>
+  
