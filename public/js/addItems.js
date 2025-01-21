@@ -17,14 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const hideElements = (...elements) => elements.forEach(el => el.classList.add('hidden'));
   const showElements = (...elements) => elements.forEach(el => el.classList.remove('hidden'));
 
+  const restorePreviewBoxes = () => {
+    document.querySelectorAll('.contentPreview--box').forEach(box => {
+      box.classList.add('visible');
+    });
+  };
+
   toggleButton.addEventListener('click', () => {
     hideElements(toggleButton, downButtons);
     showElements(toggleContentButton, contentMenu, contentParagraph);
+
+    // Ocultar todos los contentPreview--box
+    document.querySelectorAll('.contentPreview--box').forEach(box => {
+      box.classList.remove('visible');
+    });
   });
 
   toggleContentButton.addEventListener('click', () => {
     hideElements(toggleContentButton, contentMenu);
     showElements(toggleButton, downButtons);
+
+    // Restaurar todos los contentPreview--box
+    restorePreviewBoxes();
   });
 
   const initializeContentMenuHandlers = () => {
@@ -60,15 +74,27 @@ document.addEventListener('DOMContentLoaded', () => {
           lastGeneratedElements[partialType] = newElement;
 
           hideElements(toggleContentButton, contentMenu);
+
+          // Ocultar todos los contentPreview--box
+          document.querySelectorAll('.contentPreview--box').forEach(box => {
+            box.classList.remove('visible');
+          });
+
           showElements(cancelButton);
 
           initializePartialHandlers(newElement, cancelButton);
 
+          // Asociar el cancelButton con el partial recién generado
           cancelButton.addEventListener('click', () => {
-            // Caso de generación de partial dinámico
-            newElement.remove();
-            hideElements(cancelButton);
-            showElements(toggleContentButton, contentMenu);
+            // Eliminar solo el partial asociado con este botón
+            if (!newElement.classList.contains('editing')) {
+              newElement.remove();
+              hideElements(cancelButton);
+
+              // Restaurar el menú principal y los contentPreview--box
+              showElements(toggleContentButton, contentMenu);
+              restorePreviewBoxes();
+            }
           });
         } catch (error) {
           console.error('Error al cargar el partial:', error);
@@ -85,12 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewBox = partialElement.querySelector('.contentPreview--box');
     const titleInput = partialElement.querySelector('input[type="text"]');
     const previewTitle = previewBox.querySelector('.contentPreview');
-  
+
     if (!saveButton || !editButton || !deleteButton || !form || !previewBox || !titleInput || !previewTitle) {
       console.error('Elementos internos del partial no encontrados.');
       return;
     }
-  
+
     // Guardar cambios
     saveButton.addEventListener('click', () => {
       const titleValue = titleInput.value.trim();
@@ -98,54 +124,46 @@ document.addEventListener('DOMContentLoaded', () => {
         previewTitle.textContent = titleValue;
         previewBox.classList.add('visible');
         form.classList.remove('visible');
-  
+
         // Restaurar botones "+ Descripción", "+ Recursos" y "+ Contenido"
         showElements(toggleButton, downButtons);
         hideElements(cancelButton);
 
         partialElement.classList.remove('editing'); // Remover estado de edición
+
+        // Mostrar todos los previewBox al guardar
+        restorePreviewBoxes();
       } else {
         alert('El título no puede estar vacío.');
       }
     });
-  
+
     // Editar contenido
     editButton.addEventListener('click', () => {
-      previewBox.classList.remove('visible'); // Ocultar la previsualización
+      previewBox.classList.remove('visible'); // Ocultar la previsualización del actual
       form.classList.add('visible'); // Mostrar el formulario
-  
+
+      // Ocultar todos los demás previewBox
+      document.querySelectorAll('.contentPreview--box').forEach(box => {
+        box.classList.remove('visible');
+      });
+
       // Ocultar botones "+ Descripción", "+ Recursos" y "+ Contenido"
       hideElements(toggleButton, downButtons);
-  
-      
 
       partialElement.classList.add('editing'); // Marcar como edición
-  
-      // Cancelar la edición: Comportamiento específico
-      const cancelEditHandler = () => {
-        form.classList.remove('visible'); // Ocultar formulario
-        previewBox.classList.add('visible'); // Mostrar previsualización
-        hideElements(cancelButton); // Ocultar el botón cancel-button
-  
-        // Restaurar los botones "+ Descripción", "+ Recursos" y "+ Contenido"
-        showElements(toggleButton, downButtons);
-
-        partialElement.classList.remove('editing'); // Remover estado de edición
-  
-        // Elimina el evento después de ejecutarlo para evitar duplicados
-        cancelButton.removeEventListener('click', cancelEditHandler);
-      };
-  
-      cancelButton.addEventListener('click', cancelEditHandler);
     });
-  
+
     // Eliminar contenido
     deleteButton.addEventListener('click', () => {
       partialElement.remove(); // Eliminar el partial del DOM
       hideElements(cancelButton);
-  
+
       // Restaurar botones "+ Descripción", "+ Recursos" y "+ Contenido"
       showElements(toggleButton, downButtons);
+
+      // Restaurar contentPreview--box
+      restorePreviewBoxes();
     });
   };
 
@@ -182,6 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
           lastGeneratedElements[partialType] = newElement;
 
           hideElements(toggleButton, downButtons);
+
+          // Ocultar todos los previewBox
+          document.querySelectorAll('.contentPreview--box').forEach(box => {
+            box.classList.remove('visible');
+          });
+
           showElements(cancelButton);
 
           initializePartialHandlers(newElement, cancelButton);
@@ -192,6 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
               newElement.remove();
               hideElements(cancelButton);
               showElements(toggleButton, downButtons);
+
+              // Restaurar contentPreview--box
+              restorePreviewBoxes();
             }
           });
         } catch (error) {

@@ -2,10 +2,11 @@
     <div class="contentPreview--box">
         <p class="contentPreview">Título del recurso</p>
         
-        <button>Editar</button>
-        <button>Borrar</button>
+        <button type="button" class="edit-button">Editar</button>
+    <button type="button" class="delete-button">Borrar</button>
       </div>
     
+      <div class="dynamicForm--box visible"> 
       <div> <button type="button" class="itemResource--button" data-target="formsResourceContainer1">Cargar Diapositiva</button><button type="button" class="itemSlide--button" data-target="formsSlideContainer2">Insertar por URL</button></div>
     <div class="forms--box__inputContainer">
         <div id="formsResourceContainer1" class="itemResource--formBox visible">
@@ -15,7 +16,7 @@
         <label for=""></label>
         <input type="file" name="" id="">
     
-        <button>Subir recurso</button>
+        <button type="button" class="save-button">Subir video</button>
     </div>
     
     <div id="formsResourceContainer2" class="itemResource--formBox">
@@ -26,7 +27,8 @@
         <label for=""></label>
         <input type="url" name="" id="">
     
-        <button>Añadir enlace</button>
+        <button type="button" class="save-button">Subir video</button>
     </div>
     
 </div>
+      </div>

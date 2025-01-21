@@ -302,6 +302,14 @@ display: none;
 display: block;
     }
 
+.itemDescription--formBox{
+    display: none;
+}
+
+.itemDescription--formBox.visible{
+    display: block;
+}
+
 .contentPreview--box{
     display: none;
 }
