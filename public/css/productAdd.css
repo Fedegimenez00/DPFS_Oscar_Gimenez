@@ -302,6 +302,7 @@ display: none;
 display: block;
     }
 
+
 .itemDescription--formBox{
     display: none;
 }
@@ -324,6 +325,14 @@ display: block;
 
 .dynamicForm--box.visible{
 display: block;
+}
+
+.resourcesContainer--title.hidden{
+    display: none;
+}
+
+.resourcesContainer--title{
+    display: block;
 }
 
 /* Item Artículo */

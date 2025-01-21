@@ -186,9 +186,21 @@
           <button type="button" class="cancel-button hidden" id="cancelDescriptionElementButton">Añadir Descripción X</button>
           <button type="button" class="cancel-button hidden" id="cancelResourcesElementButton">Añadir Recursos X</button>
           </div>
+
+          <div class="data-container">
+            <div class="data-contentContainer"></div>
+
+            <div class="data-descriptionContainer">
+            </div>
+
+            <h4 class="resourcesContainer--title hidden">Recursos externos</h4>
+            <div class="data-resourcesContainer">
+               
+            </div>
+
           <div id="toggleContentTab" class="boxContent__downButtons">
-            <button type="button" class="data-add-button" data-target-container=".data-container" data-partial-type="itemDescription" data-cancel-button="#cancelDescriptionElementButton" data-toggle-elements=".contentMenu--buttons > div">+ Descripción</button>
-            <button type="button" class="data-add-button" data-target-container=".data-container" data-partial-type="itemResources" data-cancel-button="#cancelResourcesElementButton" data-toggle-elements=".contentMenu--buttons > div">+ Recursos</button>
+            <button type="button" class="data-add-button" data-target-container=".data-descriptionContainer" data-partial-type="itemDescription" data-cancel-button="#cancelDescriptionElementButton" data-toggle-elements=".contentMenu--buttons > div">+ Descripción</button>
+            <button type="button" class="data-add-button" data-target-container=".data-resourcesContainer" data-partial-type="itemResources" data-cancel-button="#cancelResourcesElementButton" data-toggle-elements=".contentMenu--buttons > div">+ Recursos</button>
           </div>
           
           <div id="toggleContentPlus" class="contentMenu hidden">
@@ -196,20 +208,22 @@
               <p>Selecciona el tipo de contenido principal. Se pueden añadir archivos y enlaces como recursos.</p>
           
               <div>
-                <button type="button" class="data-add-button" data-target-container=".data-container" data-partial-type="itemVideos" data-cancel-button="#cancelVideoElementButton" data-toggle-elements=".contentMenu--buttons > div">Video</button>
+                <button type="button" class="data-add-button" data-target-container=".data-contentContainer" data-partial-type="itemVideos" data-cancel-button="#cancelVideoElementButton" data-toggle-elements=".contentMenu--buttons > div">Video</button>
               </div>
           
               <div>
-                <button type="button" class="data-add-button" data-target-container=".data-container" data-partial-type="itemSlides" data-cancel-button="#cancelSlidesElementButton" data-toggle-elements=".contentMenu--buttons > div">Diapositivas</button>
+                <button type="button" class="data-add-button" data-target-container=".data-contentContainer" data-partial-type="itemSlides" data-cancel-button="#cancelSlidesElementButton" data-toggle-elements=".contentMenu--buttons > div">Diapositivas</button>
               </div>
           
               <div>
-                <button type="button" class="data-add-button" data-target-container=".data-container" data-partial-type="itemArticles" data-cancel-button="#cancelArticleElementButton" data-toggle-elements=".contentMenu--buttons > div">Artículo</button>
+                <button type="button" class="data-add-button" data-target-container=".data-contentContainer" data-partial-type="itemArticles" data-cancel-button="#cancelArticleElementButton" data-toggle-elements=".contentMenu--buttons > div">Artículo</button>
               </div>
             </div>
           </div>
           
-          <div class="data-container"></div>
+          
+
+          </div>
           
        </div>
        <button class="boxContent--newElement">Añadir Elemento</button>
