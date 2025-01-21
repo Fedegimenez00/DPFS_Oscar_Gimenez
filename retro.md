@@ -10,7 +10,7 @@ Sin embargo, esta compensación me ayudó a recortar potencialmente el tiempo qu
 ## [Retrospectiva Estrella]
 
 ### Comenzar a hacer:
-https://puerta18.notion.site/Curso-de-Marketing-Digital-Fundaci-n-Cimientos-1125d2ff5ff480cc8189f1d16b6b6231
+
 * Añadir un Menú desplegable en el burger-menu, con el fin de que se vean los enlaces a las distintas partes de la página.
 * Adaptar las vistas para que se puedan ver en resoluciones Desktop, tal y como fue planificado en los Bocetos (Mockups).
 * Añadir animaciones a la hora de pasar el cursor, apretar un botón o desplegar opciones.
