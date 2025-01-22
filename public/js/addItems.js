@@ -80,22 +80,24 @@ document.addEventListener('DOMContentLoaded', () => {
             box.classList.remove('visible');
           });
 
-          showElements(cancelButton);
+            // Mostrar el botón de cancelación sólo si el tipo no es "itemResources"
+            if (partialType !== "itemResources") {
+              showElements(cancelButton);
+            }
 
           initializePartialHandlers(newElement, cancelButton);
 
-          // Asociar el cancelButton con el partial recién generado
-          cancelButton.addEventListener('click', () => {
-            // Eliminar solo el partial asociado con este botón
-            if (!newElement.classList.contains('editing')) {
-              newElement.remove();
-              hideElements(cancelButton);
+         // Evento de cancelación del botón asociado con el partial
+cancelButton.addEventListener('click', () => {
+  if (!newElement.classList.contains('editing')) {
+    newElement.remove();
+    hideElements(cancelButton);
 
-              // Restaurar el menú principal y los contentPreview--box
-              showElements(toggleContentButton, contentMenu);
-              restorePreviewBoxes();
-            }
-          });
+    // Restaurar el menú principal (sin restaurar los preview-box)
+    showElements(toggleContentButton, contentMenu);
+  }
+});
+
         } catch (error) {
           console.error('Error al cargar el partial:', error);
         }
@@ -154,17 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
       partialElement.classList.add('editing'); // Marcar como edición
     });
 
-    // Eliminar contenido
     deleteButton.addEventListener('click', () => {
       partialElement.remove(); // Eliminar el partial del DOM
       hideElements(cancelButton);
-
+    
       // Restaurar botones "+ Descripción", "+ Recursos" y "+ Contenido"
       showElements(toggleButton, downButtons);
-
-      // Restaurar contentPreview--box
-      restorePreviewBoxes();
     });
+    
   };
 
   const initializeDownButtonsHandlers = () => {
@@ -199,14 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
           container.appendChild(newElement);
           lastGeneratedElements[partialType] = newElement;
 
-          hideElements(toggleButton, downButtons);
+          hideElements(toggleButton, downButtons, cancelButton);
 
           // Ocultar todos los previewBox
           document.querySelectorAll('.contentPreview--box').forEach(box => {
             box.classList.remove('visible');
           });
 
-          showElements(cancelButton);
+          // Mostrar el botón de cancelación sólo si el tipo no es "itemResources"
+          if (partialType !== "itemResources") {
+            showElements(cancelButton);
+          }
+
 
           initializePartialHandlers(newElement, cancelButton);
 
