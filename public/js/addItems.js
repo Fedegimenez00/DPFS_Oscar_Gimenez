@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   let elementCount = 0;
   let lastGeneratedElements = {};
+  let generatedPartials = {}; // Objeto para rastrear los partials activos
 
   const toggleButton = document.querySelector('.content--toggleButton');
   const toggleContentButton = document.getElementById('toggleContentPlus');
@@ -21,6 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.contentPreview--box').forEach(box => {
       box.classList.add('visible');
     });
+  };
+
+  const handleButtonVisibility = (partialType, addButton) => {
+    // Oculta o muestra el botón según si hay partials activos de ese tipo
+    if (generatedPartials[partialType] && generatedPartials[partialType].length > 0) {
+      hideElements(addButton);
+    } else {
+      showElements(addButton);
+    }
   };
 
   toggleButton.addEventListener('click', () => {
@@ -45,11 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const addButtons = document.querySelectorAll('.contentMenu--buttons .data-add-button');
 
     addButtons.forEach(addButton => {
+      const partialType = addButton.dataset.partialType;
+
+      if (!generatedPartials[partialType]) {
+        generatedPartials[partialType] = [];
+      }
+
+      handleButtonVisibility(partialType, addButton);
+
       addButton.addEventListener('click', async () => {
         elementCount++;
         const containerSelector = addButton.dataset.targetContainer;
         const container = document.querySelector(containerSelector);
-        const partialType = addButton.dataset.partialType;
         const cancelButtonSelector = addButton.dataset.cancelButton;
 
         if (!container || !partialType || !cancelButtonSelector) {
@@ -71,33 +88,33 @@ document.addEventListener('DOMContentLoaded', () => {
           newElement.innerHTML = partialHTML;
 
           container.appendChild(newElement);
-          lastGeneratedElements[partialType] = newElement;
+          generatedPartials[partialType].push(newElement);
 
-          hideElements(toggleContentButton, contentMenu);
+          hideElements(toggleContentButton, contentMenu, addButton);
 
           // Ocultar todos los contentPreview--box
           document.querySelectorAll('.contentPreview--box').forEach(box => {
             box.classList.remove('visible');
           });
 
-            // Mostrar el botón de cancelación sólo si el tipo no es "itemResources"
-            if (partialType !== "itemResources") {
-              showElements(cancelButton);
+          if (partialType !== "itemResources") {
+            showElements(cancelButton);
+          }
+
+          initializePartialHandlers(newElement, cancelButton, partialType, addButton);
+
+          cancelButton.addEventListener('click', () => {
+            if (!newElement.classList.contains('editing')) {
+              newElement.remove();
+              const index = generatedPartials[partialType].indexOf(newElement);
+              if (index > -1) {
+                generatedPartials[partialType].splice(index, 1);
+              }
+              handleButtonVisibility(partialType, addButton);
+              hideElements(cancelButton);
+              showElements(toggleContentButton, contentMenu);
             }
-
-          initializePartialHandlers(newElement, cancelButton);
-
-         // Evento de cancelación del botón asociado con el partial
-cancelButton.addEventListener('click', () => {
-  if (!newElement.classList.contains('editing')) {
-    newElement.remove();
-    hideElements(cancelButton);
-
-    // Restaurar el menú principal (sin restaurar los preview-box)
-    showElements(toggleContentButton, contentMenu);
-  }
-});
-
+          });
         } catch (error) {
           console.error('Error al cargar el partial:', error);
         }
@@ -105,7 +122,7 @@ cancelButton.addEventListener('click', () => {
     });
   };
 
-  const initializePartialHandlers = (partialElement, cancelButton) => {
+  const initializePartialHandlers = (partialElement, cancelButton, partialType, addButton) => {
     const saveButton = partialElement.querySelector('.save-button');
     const editButton = partialElement.querySelector('.edit-button');
     const deleteButton = partialElement.querySelector('.delete-button');
@@ -119,7 +136,6 @@ cancelButton.addEventListener('click', () => {
       return;
     }
 
-    // Guardar cambios
     saveButton.addEventListener('click', () => {
       const titleValue = titleInput.value.trim();
       if (titleValue) {
@@ -127,54 +143,61 @@ cancelButton.addEventListener('click', () => {
         previewBox.classList.add('visible');
         form.classList.remove('visible');
 
-        // Restaurar botones "+ Descripción", "+ Recursos" y "+ Contenido"
         showElements(toggleButton, downButtons);
         hideElements(cancelButton);
 
-        partialElement.classList.remove('editing'); // Remover estado de edición
+        partialElement.classList.remove('editing');
 
-        // Mostrar todos los previewBox al guardar
         restorePreviewBoxes();
       } else {
         alert('El título no puede estar vacío.');
       }
     });
 
-    // Editar contenido
     editButton.addEventListener('click', () => {
-      previewBox.classList.remove('visible'); // Ocultar la previsualización del actual
-      form.classList.add('visible'); // Mostrar el formulario
+      previewBox.classList.remove('visible');
+      form.classList.add('visible');
 
-      // Ocultar todos los demás previewBox
       document.querySelectorAll('.contentPreview--box').forEach(box => {
         box.classList.remove('visible');
       });
 
-      // Ocultar botones "+ Descripción", "+ Recursos" y "+ Contenido"
       hideElements(toggleButton, downButtons);
 
-      partialElement.classList.add('editing'); // Marcar como edición
+      partialElement.classList.add('editing');
     });
 
     deleteButton.addEventListener('click', () => {
-      partialElement.remove(); // Eliminar el partial del DOM
+      partialElement.remove();
+
+      const index = generatedPartials[partialType].indexOf(partialElement);
+      if (index > -1) {
+        generatedPartials[partialType].splice(index, 1);
+      }
+
       hideElements(cancelButton);
-    
-      // Restaurar botones "+ Descripción", "+ Recursos" y "+ Contenido"
+      handleButtonVisibility(partialType, addButton);
+
       showElements(toggleButton, downButtons);
     });
-    
   };
 
   const initializeDownButtonsHandlers = () => {
     const downButtonsAdd = downButtons.querySelectorAll('.data-add-button');
 
     downButtonsAdd.forEach(addButton => {
+      const partialType = addButton.dataset.partialType;
+
+      if (!generatedPartials[partialType]) {
+        generatedPartials[partialType] = [];
+      }
+
+      handleButtonVisibility(partialType, addButton);
+
       addButton.addEventListener('click', async () => {
         elementCount++;
         const containerSelector = addButton.dataset.targetContainer;
         const container = document.querySelector(containerSelector);
-        const partialType = addButton.dataset.partialType;
         const cancelButtonSelector = addButton.dataset.cancelButton;
 
         if (!container || !partialType || !cancelButtonSelector) {
@@ -196,31 +219,31 @@ cancelButton.addEventListener('click', () => {
           newElement.innerHTML = partialHTML;
 
           container.appendChild(newElement);
-          lastGeneratedElements[partialType] = newElement;
+          generatedPartials[partialType].push(newElement);
 
-          hideElements(toggleButton, downButtons, cancelButton);
+          hideElements(toggleButton, downButtons, addButton);
 
-          // Ocultar todos los previewBox
           document.querySelectorAll('.contentPreview--box').forEach(box => {
             box.classList.remove('visible');
           });
 
-          // Mostrar el botón de cancelación sólo si el tipo no es "itemResources"
           if (partialType !== "itemResources") {
             showElements(cancelButton);
           }
 
-
-          initializePartialHandlers(newElement, cancelButton);
+          initializePartialHandlers(newElement, cancelButton, partialType, addButton);
 
           cancelButton.addEventListener('click', () => {
-            // Caso de generación de partial dinámico
             if (!newElement.classList.contains('editing')) {
               newElement.remove();
+              const index = generatedPartials[partialType].indexOf(newElement);
+              if (index > -1) {
+                generatedPartials[partialType].splice(index, 1);
+              }
+              handleButtonVisibility(partialType, addButton);
               hideElements(cancelButton);
               showElements(toggleButton, downButtons);
 
-              // Restaurar contentPreview--box
               restorePreviewBoxes();
             }
           });
