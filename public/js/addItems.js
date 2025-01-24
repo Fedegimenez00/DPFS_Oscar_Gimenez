@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleButtonVisibility = (partialType, addButton) => {
     if (partialType === "itemResources") {
-      showElements(addButton); // Asegúrate de que siempre esté visible
+      // Nunca ocultar el botón de "itemResources"
+      showElements(addButton);
     } else if (generatedPartials[partialType] && generatedPartials[partialType].length > 0) {
       hideElements(addButton);
     } else {
@@ -85,45 +86,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const containerSelector = addButton.dataset.targetContainer;
         const container = document.querySelector(containerSelector);
         const cancelButtonSelector = addButton.dataset.cancelButton;
-      
+
         if (!container || !partialType || !cancelButtonSelector) {
           console.error('Datos del botón no válidos.');
           return;
         }
-      
+
         const cancelButton = document.querySelector(cancelButtonSelector);
-      
+
         try {
           const partialUrl = `/partial?type=${partialType}&id=${elementCount}`;
           const response = await fetch(partialUrl);
-      
+
           if (!response.ok) throw new Error('Error al cargar el partial');
-      
+
           const partialHTML = await response.text();
           const newElement = document.createElement('div');
           newElement.classList.add('dynamic-partial');
           newElement.innerHTML = partialHTML;
-      
+
           container.appendChild(newElement);
           generatedPartials[partialType].push(newElement);
-      
+
           hideElements(toggleContentButton, contentMenu);
-      
+
           if (partialType !== "itemResources") {
             hideElements(addButton); // Solo ocultar si no es itemResources
           }
-      
+
           // Ocultar todos los contentPreview--box
           document.querySelectorAll('.contentPreview--box').forEach(box => {
             box.classList.remove('visible');
           });
-      
+
           if (partialType !== "itemResources") {
             showElements(cancelButton);
           }
-      
+
           initializePartialHandlers(newElement, cancelButton, partialType, addButton);
-      
+
           cancelButton.addEventListener('click', () => {
             if (!newElement.classList.contains('editing')) {
               newElement.remove();
@@ -134,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
               handleButtonVisibility(partialType, addButton);
               hideElements(cancelButton);
               showElements(toggleContentButton, contentMenu);
-      
+
               restorePreviewBoxes();
-      
+
               handleToggleButtonVisibility(); // Actualiza visibilidad del toggleButton al eliminar el partial
             }
           });
@@ -144,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error('Error al cargar el partial:', error);
         }
       });
-      
     });
   };
 
@@ -162,15 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-
-
     saveButton.addEventListener('click', () => {
       const titleValue = titleInput.value.trim();
       if (titleValue) {
         previewTitle.textContent = titleValue;
         previewBox.classList.add('visible');
         form.classList.remove('visible');
-       
+
         showElements(toggleButton, downButtons);
         hideElements(cancelButton);
 
@@ -250,9 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
           newElement.innerHTML = partialHTML;
 
           container.appendChild(newElement);
-          generatedPartials[partialType].push(newElement);
 
-          hideElements(toggleButton, downButtons, addButton);
+          generatedPartials[partialType].push(newElement);
+          if (partialType !== "itemResources") {
+            hideElements(addButton); // Solo ocultar si no es itemResources
+          }
+
+          hideElements(toggleButton, downButtons);
 
           document.querySelectorAll('.contentPreview--box').forEach(box => {
             box.classList.remove('visible');
@@ -261,6 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
           if (partialType !== "itemResources") {
             showElements(cancelButton);
           }
+
+          
+          
 
           initializePartialHandlers(newElement, cancelButton, partialType, addButton);
 
