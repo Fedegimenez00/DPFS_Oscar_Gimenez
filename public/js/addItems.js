@@ -1,3 +1,9 @@
+/*
+        updateResourcesTitleVisibility(); // Actualizar visibilidad del título
+Este elemento falta calibrarse para lograr lo que busco
+*/
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let elementCount = 0;
   let lastGeneratedElements = {};
@@ -9,10 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const contentMenu = document.querySelector('.contentMenu');
   const contentParagraph = contentMenu.querySelector('p');
   const dataContainer = document.querySelector('.data-container');
+  const resourcesTitle = document.querySelector('.resourcesContainer--title'); // Selección del título
 
   const relevantPartials = ["itemVideos", "itemSlides", "itemArticles"]; // Partials que afectan al toggleButton
 
-  if (!toggleButton || !toggleContentButton || !downButtons || !contentMenu || !dataContainer) {
+  if (!toggleButton || !toggleContentButton || !downButtons || !contentMenu || !dataContainer || !resourcesTitle) {
     console.error('Elementos requeridos no encontrados.');
     return;
   }
@@ -24,6 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.contentPreview--box').forEach(box => {
       box.classList.add('visible');
     });
+  };
+
+  const updateResourcesTitleVisibility = () => {
+    const hasItemResources = generatedPartials["itemResources"] && generatedPartials["itemResources"].length > 0;
+    if (hasItemResources) {
+      showElements(resourcesTitle);
+    } else {
+      hideElements(resourcesTitle);
+    }
   };
 
   const handleToggleButtonVisibility = () => {
@@ -41,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleButtonVisibility = (partialType, addButton) => {
     if (partialType === "itemResources") {
-      // Nunca ocultar el botón de "itemResources"
       showElements(addButton);
     } else if (generatedPartials[partialType] && generatedPartials[partialType].length > 0) {
       hideElements(addButton);
@@ -50,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     handleToggleButtonVisibility(); // Actualiza la visibilidad del toggleButton
   };
-  
+
   toggleButton.addEventListener('click', () => {
-    hideElements(toggleButton, downButtons);
+    hideElements(toggleButton, downButtons, resourcesTitle);
     showElements(toggleContentButton, contentMenu, contentParagraph);
 
     // Ocultar todos los contentPreview--box
@@ -67,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Restaurar todos los contentPreview--box
     restorePreviewBoxes();
+          updateResourcesTitleVisibility(); // Actualizar visibilidad del título
+
   });
 
   const initializeContentMenuHandlers = () => {
@@ -108,17 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
           container.appendChild(newElement);
           generatedPartials[partialType].push(newElement);
 
-          hideElements(toggleContentButton, contentMenu);
+         
+
+          hideElements(toggleContentButton, contentMenu, resourcesTitle);
 
           if (partialType !== "itemResources") {
-            hideElements(addButton); // Solo ocultar si no es itemResources
+            hideElements(addButton);
           }
 
           // Ocultar todos los contentPreview--box
           document.querySelectorAll('.contentPreview--box').forEach(box => {
             box.classList.remove('visible');
           });
-
           if (partialType !== "itemResources") {
             showElements(cancelButton);
           }
@@ -131,14 +149,17 @@ document.addEventListener('DOMContentLoaded', () => {
               const index = generatedPartials[partialType].indexOf(newElement);
               if (index > -1) {
                 generatedPartials[partialType].splice(index, 1);
+                
+              }
+              if (partialType === "itemResources") {
+                updateResourcesTitleVisibility(); // Actualizar visibilidad del título
               }
               handleButtonVisibility(partialType, addButton);
-              hideElements(cancelButton);
+              hideElements(cancelButton, toggleButton);
               showElements(toggleContentButton, contentMenu);
 
-              restorePreviewBoxes();
+              
 
-              handleToggleButtonVisibility(); // Actualiza visibilidad del toggleButton al eliminar el partial
             }
           });
         } catch (error) {
@@ -176,9 +197,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         restorePreviewBoxes();
         handleToggleButtonVisibility();
+        updateResourcesTitleVisibility(); // Actualizar visibilidad del título
+
       } else {
         alert('El título no puede estar vacío.');
       }
+
+  
+
     });
 
     editButton.addEventListener('click', () => {
@@ -189,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         box.classList.remove('visible');
       });
 
-      hideElements(toggleButton, downButtons);
+      hideElements(toggleButton, downButtons, resourcesTitle);
 
       partialElement.classList.add('editing');
     });
@@ -202,9 +228,12 @@ document.addEventListener('DOMContentLoaded', () => {
         generatedPartials[partialType].splice(index, 1);
       }
 
+      if (partialType === "itemResources") {
+        updateResourcesTitleVisibility(); // Actualizar visibilidad del título
+      }
+
       hideElements(cancelButton);
       handleButtonVisibility(partialType, addButton);
-
       showElements(toggleButton, downButtons);
 
       handleToggleButtonVisibility(); // Actualiza visibilidad del toggleButton al eliminar el partial
@@ -251,20 +280,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
           generatedPartials[partialType].push(newElement);
           if (partialType !== "itemResources") {
-            hideElements(addButton); // Solo ocultar si no es itemResources
+            hideElements(addButton);
           }
 
-          hideElements(toggleButton, downButtons);
+          hideElements(toggleButton, downButtons, resourcesTitle);
 
           document.querySelectorAll('.contentPreview--box').forEach(box => {
             box.classList.remove('visible');
           });
-
           if (partialType !== "itemResources") {
             showElements(cancelButton);
           }
 
-          
           
 
           initializePartialHandlers(newElement, cancelButton, partialType, addButton);
@@ -276,13 +303,18 @@ document.addEventListener('DOMContentLoaded', () => {
               if (index > -1) {
                 generatedPartials[partialType].splice(index, 1);
               }
+              if (partialType === "itemResources") {
+                updateResourcesTitleVisibility(); // Actualizar visibilidad del título
+              }
               handleButtonVisibility(partialType, addButton);
               hideElements(cancelButton);
               showElements(toggleButton, downButtons);
 
               restorePreviewBoxes();
-
               handleToggleButtonVisibility(); // Actualiza visibilidad del toggleButton al eliminar el partial
+              updateResourcesTitleVisibility(); // Actualizar visibilidad del título
+
+
             }
           });
         } catch (error) {
