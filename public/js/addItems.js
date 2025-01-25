@@ -1,9 +1,3 @@
-/*
-        updateResourcesTitleVisibility(); // Actualizar visibilidad del título
-Este elemento falta calibrarse para lograr lo que busco
-*/
-
-
 document.addEventListener('DOMContentLoaded', () => {
   let elementCount = 0;
   let lastGeneratedElements = {};
@@ -177,68 +171,93 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewBox = partialElement.querySelector('.contentPreview--box');
     const titleInput = partialElement.querySelector('input[type="text"]');
     const previewTitle = previewBox.querySelector('.contentPreview');
-
+  
     if (!saveButton || !editButton || !deleteButton || !form || !previewBox || !titleInput || !previewTitle) {
       console.error('Elementos internos del partial no encontrados.');
       return;
     }
-
+  
+    // Evento para el botón "Guardar"
     saveButton.addEventListener('click', () => {
       const titleValue = titleInput.value.trim();
       if (titleValue) {
         previewTitle.textContent = titleValue;
         previewBox.classList.add('visible');
         form.classList.remove('visible');
-
+  
         showElements(toggleButton, downButtons);
-        hideElements(cancelButton);
-
+        hideElements(cancelButton, ...document.querySelectorAll('.realCancel-button')); // Ocultar todos los botones de cancelación
+  
         partialElement.classList.remove('editing');
-
+  
         restorePreviewBoxes();
         handleToggleButtonVisibility();
         updateResourcesTitleVisibility(); // Actualizar visibilidad del título
-
       } else {
         alert('El título no puede estar vacío.');
       }
-
-  
-
     });
-
+  
+    // Evento para el botón "Editar"
     editButton.addEventListener('click', () => {
       previewBox.classList.remove('visible');
       form.classList.add('visible');
-
+  
       document.querySelectorAll('.contentPreview--box').forEach(box => {
         box.classList.remove('visible');
       });
-
+  
       hideElements(toggleButton, downButtons, resourcesTitle);
-
+  
+      // Mostrar el botón de cancelación correspondiente al tipo de partial
+      const specificCancelButton = document.getElementById(`real${partialType[0].toUpperCase()}${partialType.slice(1)}ElementButton`);
+      if (specificCancelButton) {
+        showElements(specificCancelButton);
+      }
+  
       partialElement.classList.add('editing');
     });
-
+  
+    // Evento para el botón "Eliminar"
     deleteButton.addEventListener('click', () => {
       partialElement.remove();
-
+  
       const index = generatedPartials[partialType].indexOf(partialElement);
       if (index > -1) {
         generatedPartials[partialType].splice(index, 1);
       }
-
+  
       if (partialType === "itemResources") {
         updateResourcesTitleVisibility(); // Actualizar visibilidad del título
       }
-
-      hideElements(cancelButton);
+  
+      hideElements(cancelButton, ...document.querySelectorAll('.realCancel-button')); // Ocultar todos los botones de cancelación
       handleButtonVisibility(partialType, addButton);
       showElements(toggleButton, downButtons);
-
+  
       handleToggleButtonVisibility(); // Actualiza visibilidad del toggleButton al eliminar el partial
     });
+  
+    // Evento para el botón global "Cancelar"
+    document.querySelectorAll('.realCancel-button').forEach(globalCancelButton => {
+      globalCancelButton.addEventListener('click', () => {
+        if (partialElement.classList.contains('editing')) {
+          previewBox.classList.add('visible');
+          form.classList.remove('visible');
+          showElements(toggleButton, downButtons);
+          hideElements(...document.querySelectorAll('.realCancel-button')); // Ocultar todos los botones de cancelación
+          partialElement.classList.remove('editing');
+          
+restorePreviewBoxes();
+            handleToggleButtonVisibility();
+            updateResourcesTitleVisibility(); // Actualizar visibilidad del título
+         
+        }
+      });
+    });
   };
+  
+  
 
   const initializeDownButtonsHandlers = () => {
     const downButtonsAdd = downButtons.querySelectorAll('.data-add-button');
