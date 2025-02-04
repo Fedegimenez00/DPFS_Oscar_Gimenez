@@ -20,6 +20,7 @@
      --color-azulElectrico : #0D99FF;
      --color-azulGrisaceo : #8C9EFF;
      --color-azulGrisaceoTranslucido: rgba(140, 158, 255, 0.35);
+     --color-azulGrisaceoMuyTranslucido: rgba(139, 158, 255, 0.15);
      --color-azulVioleta : #2F4FFF;
      --color-azulVioletaTranslucido: rgba(47, 79, 255, 0.35);
      --color-azulVioletaMuyTranslucido: rgb(47 79 255 / 15%);

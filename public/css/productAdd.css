@@ -2,27 +2,44 @@
 /* Sección: Seleccionador de partes del formulario */
 
 .section--selectForms{
-
+    margin-bottom: 40px;
+    margin-top: 20px;
+  
 }
 
 .selectForms--box{
-    background-color: var(--color-azulGrisaceoTranslucido);
+    background-color: var(--color-azulGrisaceoMuyTranslucido);
     border: solid var(--color-azulGrisaceo) 1px;
     border-radius: 5px;
+    padding: 10px 5px;
 }
 
 .selectForms--box__inside{
-
+    display: flex;
+    flex-direction: row;
 }
 
-.selectForms--box__inside button{
+.selectForms--buttonsBox{
+    display: flex;
+    flex-direction: column;
+}
 
+
+.selectForms--box__inside button{
+    background: none;
+    border: none;
+    text-align: left;
+    color: var(--color-blancoApagado);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-left: 5px;
+  
 }
 
 .toggle-button.selected {
-    background-color: #007bff;
-    color: white;
-  }
+    border-left: solid 4px;
+    margin-left: 1px;
+}
 
 /* Sección: Formulario */
 
