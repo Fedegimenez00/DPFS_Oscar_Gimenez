@@ -6,7 +6,9 @@
 }
 
 .selectForms--box{
-
+    background-color: var(--color-azulGrisaceoTranslucido);
+    border: solid var(--color-azulGrisaceo) 1px;
+    border-radius: 5px;
 }
 
 .selectForms--box__inside{
