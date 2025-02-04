@@ -69,6 +69,34 @@ Award/Ribbon:
 	• Verde - #5DD227
 	• Amarillo dorado - #F69C08
 
+
+[Colores nuevos usados en Mockups más recientes]:
+Violeta: #473481 transparencia al 35%
+Azul #2F4FFF transparencia al 40%
+Negro: #000000
+Negro: #000000 transparencia al 70%
+
+Icono de flecha de ir atrás opacidad al 25%
+
+Morado: #8462EB
+Morado: #8462EB transparencia al 35%
+
+Azul grisaceo: #8C9EFF transparencia al 15%
+Azul grisaceo: #8C9EFF tranparencia al 35%
+
+Negro: #1B1B1B transparencia al 85%
+
+Blanco Palido: #D9D9D9 tranparencia al 7%
+
+Gris: #E5E5E5 transparencia al 20%
+
+Borde gris al final de publicar ProductAdd: #F1F0F3
+
+Azul translucido: #2F4FFF al 85%
+
+Negro: #000000 transparencia al 20%
+
+
 [Detalles y Animaciones]
 
 
