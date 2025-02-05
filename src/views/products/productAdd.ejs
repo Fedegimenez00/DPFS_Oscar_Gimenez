@@ -9,11 +9,14 @@
 <main>
 
 <section class="section--selectForms">
+
+<!-- Menú de Navegación del formulario -->
+
 <article class="selectForms--box">
     <div class="selectForms--box__inside">
 
         <div class="selectForms--buttonsBox">
-        <button class="toggle-button" data-target="contentForm1">Página de Inicio del curso</button>
+        <button class="toggle-button selected" data-target="contentForm1">Página de Inicio del curso</button>
         <button class="toggle-button" data-target="contentForm2">Programa</button>
         <button class="toggle-button" data-target="contentForm3">Mensajes del Curso</button>
         </div>
@@ -28,9 +31,12 @@
 
 <section class="section--forms">
 <form>
+
+<!-- Página de inicio del curso -->
+
     <article id="contentForm1" class="forms--box visible">
     <div class="forms--box__title">
-<h1>Página de Inicio del curso</h1></div>
+<h1>Página de inicio del curso</h1></div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Título del curso</h3>
@@ -98,28 +104,39 @@
 <div class="forms--box__previewContainer">
     <h3 class="forms--box__inputTitle">Imagen del curso</h3>
     <img>
-    <p>Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
-<div class="forms--box__fileInput">
-    <label for=""></label>
-<input type="file" name="" id="">
-</div>
+    <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
+    <div class="forms--box__fileInput">
+        <label for=""></label>
+        <div class="pseudoButton">
+            <p class="pseudoButton--title">Subir archivo</p>
+        </div>
+    <input type="file" name="" id="">
+    </div>
 </div>
 
 
 <div class="forms--box__previewContainer">
     <h3 class="forms--box__inputTitle">Video promocional</h3>
     <img>
-<p>Carga el video promocional de tu curso, un buen video servirá como un adelanto de lo que se aprenderá.</p>
+<p class="previewDescription">Carga el video promocional de tu curso, un buen video servirá como un adelanto de lo que se aprenderá.</p>
     <div class="forms--box__fileInput">
     <label for=""></label>
+    <div class="pseudoButton">
+        <p class="pseudoButton--title">Subir archivo</p>
+    </div>
 <input type="file" name="" id="">
 </div>
 </div>
 
 <div class="forms--box__priceContainer">
     <h3 class="forms--box__inputTitle">Precio</h3>
-    <div class="box--priceInput"> <label for=""></label>
-    <input type="text" name="" id=""></div>
+    <div class="box--priceInput"> 
+        <div class="box--priceInput__Inside">
+        <label for=""></label>
+    <input type="text" name="" id="">
+<p>$</p>
+</div>
+</div>
 </div>
 </article>
 
@@ -165,6 +182,9 @@
 <button class="forms--normalButton">Añadir algo más a tu respuesta</button>
 </div>
 </article>
+
+
+ <!-- Programa -->
 
 <article id="contentForm2" class="forms--box">
     <div class="forms--box__title">
@@ -251,20 +271,26 @@
 <button class="boxContent--newElement">Añadir Sección</button>
 </article>
 
+
+<!-- Mensajes del curso -->
+
 <article id="contentForm3" class="forms--box">
     <div class="forms--box__title">
-<h2>Mensajes del Curso</h2>
+<h2>Mensajes del curso</h2>
 </div>
 
 <div class="forms--boxMessages">
+    <p>No es obligatorio añadir un mensaje al curso, ¡Pero será un buen detalle y un motivador
+        para los estudiantes de tu curso!
+    </p>
     <div class="forms--box__inputContainer">
-<h3>Mensaje de bienvenida</h3>
+<h3 class="forms--box__inputTitle">Mensaje de bienvenida</h3>
 <input type="text">
 <label for=""></label>
 </div>
 
 <div class="forms--box__inputContainer">
-    <h3>Mensaje de felicitación</h3>
+    <h3 class="forms--box__inputTitle">Mensaje de felicitación</h3>
     <input type="text">
     <label for=""></label>
     </div>
@@ -273,33 +299,127 @@
 </div>
 </article>
 
+
+<!-- Estudiantes objetivo -->
+
 <article id="contentForm4" class="forms--box">
 
     <div class="forms--box__title">
         <h2>Estudiantes objetivo</h2>
     </div>
 
+    <div class="box--objectives">
+    <h3>¿Qué aprenderán los estudiantes en el curso?</h3>
+
+    <p>Debes escribir, al menos, 3 objetivos de aprendizaje o resultados que los estudiantes
+        esperen conseguir al finalizar tu curso.
+    </p>
+
+    <div class="forms--box__inputContainer">
+        <input type="text">
+        <label for=""></label>
+    </div>
+
+    <div class="forms--box__inputContainer">
+        <input type="text">
+        <label for=""></label>
+    </div>
+
+    <div class="forms--box__inputContainer">
+        <input type="text">
+        <label for=""></label>
+    </div>
+    <div class="objectives--buttonContainer">
+
+    <button type="button"> <i class="fa-solid fa-plus"></i> Añadir algo más a tu respuesta
+    </button>
+</div>
+</div>
+
+<div class="box--objectives">
+    <h3>¿Cuáles son los requisitos previos para realizar tu curso?</h3>
+    
+    <p> Haz una lista de todas las habilidades, herramientas, experiencia y equipos necesarios que
+        los alumnos deberían tener antes de realizar tu curso.
+        Si no hay requisitos, utiliza esto como una oportunidad para bajar la barrera para los
+        principiantes.
+    </p>
+
+    <div class="forms--box__inputContainer">
+        <input type="text">
+        <label for=""></label>
+    </div>
+
+    <div class="objectives--buttonContainer">
+
+    <button type="button"> <i class="fa-solid fa-plus"></i> Añadir algo más a tu respuesta
+    </button>
+    </div>
+</div>
+
 </article>
 
+
+<!-- Promociones -->
 
 <article id="contentForm5" class="forms--box">
     <div class="forms--box__title">
         <h2>Promociones</h2>
     </div>
+    <p class="box--couponsList__description">
+Aquí puedes añadir cupones de descuento si así lo deseas. Esto puede impulsar a que tus futuros
+estudiantes deseen adquirir tus cursos.
+    </p>
 
-    <div class="box--couponsList"><h3>Cupones</h3>
-    <ul><li>Cupón_1</li></ul>
+    <div class="box--couponsList__Top">
+    <div class="box--couponsList"><h3 class="box--couponsList__title">Cupones añadidos</h3>
+    <ul>
+    <div class="couponBox">
+        <div class="couponBox__inside">
+        <li>Cupón_1</li>
+    <p>(??%)</p>
+    </div>
+    <div class="couponBox__insideDown">
+        <button type="button">
+    <i class="fa-solid fa-pen"></i>
+</button>
+    <button type="button">
+    <i class="fa-solid fa-trash"></i>
+</button>
+</div>
+    </div>
+    
+    </ul>
+    </div></div>
+    <div class="box--couponsList__boxLine">
+    <hr class="box--couponsList__line">
+</div>
+    <div class="box--couponsList__Down">
+    <div class="forms--box__inputContainer"><h3 class="forms--box__inputTitle">Crear nuevos cupones</h3>
+        
+        <input type="text">
+        <label for=""></label>
+    </div>
+        <div class="box--couponsPercentage">
+        <input type="text">
+    <label for=""></label> <p>%</p>
+</div>
+<div class="box--coupons__buttonContainer">
+<button type="button" class="box--newCoupons">Añadir cupón</button>
+</div>
+</div>
     </div>
 
-    <button class="box--newCoupons">Crear Cupones</button>
+
 </article>
 </form>
 
 </section>
 
-<section class="section--publish">
-   <div class="publish__inside"> <button class="publish--cancel">Cancelar</button> <button class="publish--send">Publicar</button></div>
-</section>
+ <!-- Botones de publicación -->
+
+<div class="publish__inside"> <button class="publish--cancel">Cancelar</button> <button class="publish--send">Publicar</button></div>
+
 </main>
 
     <%- include('../partials/footer') %>

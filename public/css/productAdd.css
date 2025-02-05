@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 15px;
     
 }
 
@@ -34,7 +35,7 @@
     text-align: left;
     color: var(--color-blancoApagado);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-left: 5px;
   
 }
@@ -78,7 +79,15 @@ border-bottom: 1px solid;
 font-size: 1.8rem;
     margin-bottom: 15px;
     margin-left: 10px;
+    font-weight: 300;
 }
+
+.forms--box__title h2{
+    font-size: 1.8rem;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        font-weight: 300;
+    }
 
 .forms--box__inputContainer{
 margin-left: 10px;
@@ -151,14 +160,33 @@ margin-bottom: 20px;
     
 }
 
-.forms--box__previewContainer p{
-    font-size: 0.8rem;
-    margin-bottom: 15px;
 
+
+.previewDescription{
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
 .forms--box__fileInput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
 
+.pseudoButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-negroPuro);
+    border-radius: 10px;
+    width: 40%;
+    padding: 14px 0px;
+}
+
+.pseudoButton--title{
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .forms--box__fileInput label{
@@ -166,7 +194,11 @@ margin-bottom: 20px;
 }
 
 .forms--box__fileInput input{
-
+    width: 40%;
+    padding: 14px 0px;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0%;
 }
 
 /* Precio */
@@ -181,6 +213,18 @@ margin-left: 10px;
 
 }
 
+.box--priceInput__Inside{
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 25px;
+    gap: 0px;
+}
+
+.box--priceInput p{
+    margin-left: 5px;
+    font-size: 1.6rem;
+}
+
 .box--priceInput label{
 
 }
@@ -190,7 +234,6 @@ margin-left: 10px;
     padding: 13px 0px 13px 10px;
     border: none;
     width: 100px;
-    margin-bottom: 20px;
 }
 
 
@@ -379,18 +422,175 @@ display: none;
 /* Mensajes del curso */
 
 .forms--boxMessages{
+    padding-bottom: 20px;
+}
+
+.forms--boxMessages p{
+    margin-left: 10px;
+    margin-bottom: 35px;
+    font-size: 0.9rem;
+}
+
+/* Estudiantes objetivo */
+
+.box--objectives{
 
 }
 
+.box--objectives h3{
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 7px;
+    margin-left: 10px;
+}
+
+.box--objectives p{
+    font-size: 0.9rem;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.objectives--buttonContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+}
+
+
+.box--objectives button{
+    background: var(--color-purpuraOscuro);
+    border: none;
+    color: var(--color-blancoApagado);
+    font-size: 1.1rem;
+    width: 295px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    margin-left: 10px;
+}
 
 /* Promociones */
 
 .box--couponsList{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 7px;
+    margin-left: 10px;
+}
+
+.box--couponsList__Top{
+    height: 185px;
+}
+
+.box--couponsList__description{
+    margin-left: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.box--couponsList__title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.couponBox{
+    display: flex;
+    align-items: flex-end;
+}
+
+.couponBox i{
 
 }
 
-.box--newCoupons{
+.couponBox__inside{
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+    gap: 7px;
+    margin-right: 10px;
+}
 
+.couponBox__insideDown{
+    gap: 0px;
+    display: flex;
+}
+
+.couponBox__insideDown button{
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    color: var(--color-blancoApagado);
+}
+.couponBox__inside li{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.couponBox__inside p{
+    font-weight: 200;
+}
+
+.box--couponsList__boxLine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+
+}
+
+.box--couponsList__line{
+    width: 93%;
+}
+
+.box--couponsList__Down{
+
+}
+
+.box--couponsList input{
+    border-radius: 8px;
+    padding: 13px 37% 13px 10px;
+    border: none;
+}
+
+.box--couponsPercentage{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.box--couponsPercentage input{
+    border-radius: 8px;
+    padding: 13px 0px 13px 10px;
+    border: none;
+    width: 50px;
+}
+
+.box--couponsPercentage p{
+    font-size: 1.6rem;
+}
+
+.box--coupons__buttonContainer{ 
+display: flex;
+justify-content: flex-end;
+}
+
+.box--newCoupons{
+    background: var(--color-purpuraOscuro);
+    border: none;
+    padding: 13px 7px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    color: var(--color-blancoApagado);
+    margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 
@@ -401,13 +601,34 @@ display: none;
 }
 
 .publish__inside{
+    background-color: var(--color-azulGrisaceoMuyTranslucido);
+    border: solid var(--color-azulGrisaceo) 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 110px;
+    margin-top: 40px;
+}
+
+.publish__inside button{
+    color: var(--color-blancoApagado);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 6px 34px;
+    border-radius: 7px;
+    border: solid var(--color-blancoApagado) 1px;
+    
 
 }
 
 .publish--cancel{
-
+    background-color: var(--color-blancoApagadoTranslucido2);
 }
 
 .publish--send{
-    
+    background-color: var(--color-azulVioleta);    
 }
