@@ -54,10 +54,23 @@
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Descripción del curso</h3>
-    <label for=""></label>
-   
-    <textarea placeholder="Introduce la descripción de tu curso." name="" id=""></textarea>
 
+    <div class="enrichedTextArea--box">
+    <div class="toolbar">
+        <button type="button" onclick="applyStyle('bold', this)"><b>B</b></button>
+        <button type="button" onclick="applyStyle('italic', this)"><i>I</i></button>
+        <button type="button" onclick="applyStyle('underline', this)"><u>U</u></button>
+        <button type="button" onclick="applyStyle('insertUnorderedList', this)"><i class="fa-solid fa-list-ul"></i></button>
+        <button type="button" onclick="applyStyle('insertOrderedList', this)"><i class="fa-solid fa-list-ol"></i></button>
+    </div>
+
+    <div id="editor" class="editor empty" contenteditable="true" onfocus="clearPlaceholder()" onblur="restorePlaceholder()" onkeyup="updateToolbar()">
+        Introduce la descripción de tu curso.
+    </div>
+
+    <!-- Input oculto para enviar el contenido -->
+    <textarea id="hiddenInput" name="content" class="enrichedTexarea"></textarea>
+</div>
 </div>
 
 <div class="forms--box__inputContainer">

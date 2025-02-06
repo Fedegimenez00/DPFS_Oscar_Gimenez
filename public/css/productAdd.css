@@ -126,10 +126,67 @@ margin-bottom: 20px;
   padding: 7px 0% 19px 10px;
   resize: none;
 }
-/* Description Toolbar */
-
 
 .forms--box__inputContainer label{
+
+}
+/* Description Toolbar */
+
+.enrichedTextArea--box{
+    width: 94%;
+}
+.toolbar {
+    background-color: var(--color-negroPuro);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.toolbar button {
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    margin: 2px;
+    background-color: var(--color-negroPuro);
+    color: var(--color-blancoApagado);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.toolbar button:hover {
+    background-color: none;
+}
+
+.toolbar button.active {
+    background-color: #bbb; /* Color cuando está activado */
+}
+
+.editor {
+    height: 95px;
+    padding: 7px 0px 0px 10px;
+    font-size: 16px;
+    text-align: left;
+    outline: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    color: black;
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    max-height: 95px; /* Altura máxima antes de activar el scroll */
+}
+.editor.empty {
+    color: gray;
+}
+
+  /* Evitar que el texto formateado cambie de color al hacer hover */
+  .editor b:hover, 
+  .editor i:hover, 
+  .editor u:hover,
+  .editor ul:hover {
+      color: black !important;
+  }
+
+.enrichedTexarea{
+    display: none; /* Oculto para enviar en el formulario */
 
 }
 
