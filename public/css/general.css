@@ -33,3 +33,16 @@ h1{
     font-weight: 400;
     margin-left: 20px;
 }
+
+select{
+      /*Empezamos eliminando el caret de systema*/
+  -moz-appearance: none; /*Firefox legacy*/
+  -webkit-appearance: none; /* Chromes legacy*/
+  appearance: none;
+  /*Y a continuación añadimos el nuestro como background*/
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='180 -360 600 1200'%3E%3Cpath d='M1015 10q-10-10-23-10t-23 10L512 492 55 10Q45 0 32 0T9 10Q0 20 0 34t9 24l480 506q10 10 23 10t23-10l480-506q9-10 9-24t-9-24z'%20fill%3D%27slateblack%27/%3E%3C/svg%3E");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) center; /*Lo posicionamos a la derecha*/
+  padding-right: 24px; /*le damos algo de espacio para que el caret no se superponga al texto*/
+}

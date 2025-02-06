@@ -17,13 +17,13 @@
 
         <div class="selectForms--buttonsBox">
         <button class="toggle-button selected" data-target="contentForm1">Página de Inicio del curso</button>
-        <button class="toggle-button" data-target="contentForm2">Programa</button>
+        <button class="toggle-button" data-target="contentForm2">Programa (WIP)</button>
         <button class="toggle-button" data-target="contentForm3">Mensajes del Curso</button>
         </div>
        
         <div class="selectForms--buttonsBox">
-        <button class="toggle-button" data-target="contentForm4">Estudiantes objetivo</button>
-        <button class="toggle-button" data-target="contentForm5">Promociones</button>
+        <button class="toggle-button" data-target="contentForm4">Estudiantes objetivo (WIP)</button>
+        <button class="toggle-button" data-target="contentForm5">Promociones (WIP)</button>
         </div>
     </div>
 </article>
@@ -41,21 +41,22 @@
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Título del curso</h3>
     <label for=""></label>
-    <input type="text" name="" id="">
+    <input type="text" placeholder="Inserta el nombre de tu curso." name="" id="">
 
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Subtítulo del curso</h3>
     <label for=""></label>
-    <input type="text" name="" id="">
+    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="" id="">
 
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Descripción del curso</h3>
     <label for=""></label>
-    <input type="text" name="" id="">
+   
+    <textarea placeholder="Introduce la descripción de tu curso." name="" id=""></textarea>
 
 </div>
 
@@ -65,7 +66,7 @@
     <div class="forms--box__selectContainer">
     <label for=""></label>
    <select  name="" id="">
-    <option class="selectGrey" value="default">-- Selecciona idioma --</option>
+    <option class="selectGrey" selected disabled>-- Selecciona idioma --</option>
     <option value="es">Español</option>
     <option value="en">Inglés</option>
     <option value="pr">Portugués</option>
@@ -77,13 +78,13 @@
 
 <div class="forms--box__selectContainer">
     <label for=""></label>
-   <select name="" id="">
-    <option class="selectGrey" value="">-- Seleccionar categoría --</option>
+   <select name="" id="categoria" onchange="actualizarSubcategorias()">
+    <option class="selectGrey" value="" selected disabled>-- Seleccionar categoría --</option>
     <option value="">Fundamentos de la Ciberseguridad</option>
-    <option value="">Seguridad Ofensiva</option>
-    <option value="">Seguridad Defensiva</option>
-    <option value="">Seguridad de Nube</option>
-    <option value="">Ingeniería Social</option>
+    <option value="seguridadOfensiva">Seguridad Ofensiva</option>
+    <option value="seguridadDefensiva">Seguridad Defensiva</option>
+    <option value="seguridadNube">Seguridad de Nube</option>
+    <option value="ingenieriaSocial">Ingeniería Social</option>
 
 
    </select>
@@ -91,9 +92,8 @@
 
 <div class="forms--box__selectContainer">
     <label for=""></label>
-   <select name="" id="">
-    <option class="selectGrey" value="">-- Seleccionar subcategoría --</option>
-    <option value="none">WIP</option>
+   <select name="" id="subcategoria">
+    <option class="selectGrey" value="" selected disabled>-- Seleccionar subcategoría --</option>
 
    </select>
 </div>
@@ -116,7 +116,7 @@
 
 
 <div class="forms--box__previewContainer">
-    <h3 class="forms--box__inputTitle">Video promocional</h3>
+    <h3 class="forms--box__inputTitle">Video promocional (WIP)</h3>
     <img>
 <p class="previewDescription">Carga el video promocional de tu curso, un buen video servirá como un adelanto de lo que se aprenderá.</p>
     <div class="forms--box__fileInput">
@@ -124,7 +124,7 @@
     <div class="pseudoButton">
         <p class="pseudoButton--title">Subir archivo</p>
     </div>
-<input type="file" name="" id="">
+<input type="file" name="" id="" disabled>
 </div>
 </div>
 
@@ -133,7 +133,7 @@
     <div class="box--priceInput"> 
         <div class="box--priceInput__Inside">
         <label for=""></label>
-    <input type="text" name="" id="">
+    <input type="number" min="0" max="100000" step="0" name="" id="">
 <p>$</p>
 </div>
 </div>
@@ -188,7 +188,7 @@
 
 <article id="contentForm2" class="forms--box">
     <div class="forms--box__title">
-        <h2>Programa</h2>
+        <h2>Programa (WIP)</h2>
     </div>
 
     <div class="boxContent">
@@ -285,13 +285,15 @@
     </p>
     <div class="forms--box__inputContainer">
 <h3 class="forms--box__inputTitle">Mensaje de bienvenida</h3>
-<input type="text">
+<textarea placeholder="Introduce un mensaje de bienvenida." name="" id=""></textarea>
+
 <label for=""></label>
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Mensaje de felicitación</h3>
-    <input type="text">
+    <textarea placeholder="Introduce un mensaje de felicitación." name="" id=""></textarea>
+
     <label for=""></label>
     </div>
     
@@ -305,7 +307,7 @@
 <article id="contentForm4" class="forms--box">
 
     <div class="forms--box__title">
-        <h2>Estudiantes objetivo</h2>
+        <h2>Estudiantes objetivo (WIP)</h2>
     </div>
 
     <div class="box--objectives">
@@ -316,17 +318,17 @@
     </p>
 
     <div class="forms--box__inputContainer">
-        <input type="text">
+        <input placeholder="Introduce un objetivo." type="text">
         <label for=""></label>
     </div>
 
     <div class="forms--box__inputContainer">
-        <input type="text">
+        <input placeholder="Introduce un objetivo." type="text">
         <label for=""></label>
     </div>
 
     <div class="forms--box__inputContainer">
-        <input type="text">
+        <input placeholder="Introduce un objetivo." type="text">
         <label for=""></label>
     </div>
     <div class="objectives--buttonContainer">
@@ -346,7 +348,7 @@
     </p>
 
     <div class="forms--box__inputContainer">
-        <input type="text">
+        <input placeholder="Introduce un requisito." type="text">
         <label for=""></label>
     </div>
 
@@ -364,7 +366,7 @@
 
 <article id="contentForm5" class="forms--box">
     <div class="forms--box__title">
-        <h2>Promociones</h2>
+        <h2>Promociones (WIP)</h2>
     </div>
     <p class="box--couponsList__description">
 Aquí puedes añadir cupones de descuento si así lo deseas. Esto puede impulsar a que tus futuros
@@ -397,11 +399,11 @@ estudiantes deseen adquirir tus cursos.
     <div class="box--couponsList__Down">
     <div class="forms--box__inputContainer"><h3 class="forms--box__inputTitle">Crear nuevos cupones</h3>
         
-        <input type="text">
+        <input placeholder="Introduce un nombre para el cupón." type="text">
         <label for=""></label>
     </div>
         <div class="box--couponsPercentage">
-        <input type="text">
+        <input min="1" max="100" step="1" placeholder="" type="number">
     <label for=""></label> <p>%</p>
 </div>
 <div class="box--coupons__buttonContainer">
@@ -423,9 +425,10 @@ estudiantes deseen adquirir tus cursos.
 </main>
 
     <%- include('../partials/footer') %>
-
+    <script src="/js/toolBarDescription.js"></script>
     <script src="/js/toggle.js"></script>
     <script src="/js/subToggle.js"></script>
     <script src="/js/addItems.js"></script>
+    <script src="/js/subcategories.js"></script>
 </body>
 </html>

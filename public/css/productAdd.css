@@ -105,9 +105,29 @@ margin-bottom: 20px;
 
 .forms--box__inputContainer input{
     border-radius: 8px;
-    padding: 13px 37% 13px 10px;
     border: none;
+     padding: 13px 0% 13px 10px;
+    width: 91%;
+    font-size: 1rem;
+    text-shadow: none;
+  opacity: 1;
+  color:black;
 }
+
+.forms--box__inputContainer textarea{
+    border-radius: 8px;
+    border: none;
+    width: 91%;
+    font-size: 1rem;
+    text-shadow: none;
+  opacity: 1;
+  color:black;
+  font-family: inherit;
+  padding: 7px 0% 19px 10px;
+  resize: none;
+}
+/* Description Toolbar */
+
 
 .forms--box__inputContainer label{
 
@@ -130,9 +150,10 @@ margin-bottom: 20px;
 .forms--box__selectContainer select{
     color: black;
     border-radius: 10px;
-    padding: 11px 17% 11px 10px;
+    padding: 11px 10% 11px 10px;
     border: none;
     margin-bottom: 5px;
+    font-size: 1rem;
 }
 
 .selectGrey{
@@ -218,6 +239,13 @@ margin-left: 10px;
     align-items: flex-end;
     padding-bottom: 25px;
     gap: 0px;
+}
+
+.box--priceInput__Inside input{
+    font-size: 1rem;
+    text-shadow: none;
+    opacity: 1;
+    color: black;
 }
 
 .box--priceInput p{
@@ -550,8 +578,10 @@ display: none;
 
 .box--couponsList input{
     border-radius: 8px;
-    padding: 13px 37% 13px 10px;
+    padding: 13px 0% 13px 10px;
+    width: 91%;
     border: none;
+    font-size: 1.1rem;
 }
 
 .box--couponsPercentage{
@@ -570,6 +600,10 @@ display: none;
     padding: 13px 0px 13px 10px;
     border: none;
     width: 50px;
+    font-size: 1.1rem;
+    text-shadow: none;
+    opacity: 1;
+    color:black;
 }
 
 .box--couponsPercentage p{
