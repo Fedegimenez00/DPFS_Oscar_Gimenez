@@ -1,0 +1,255 @@
+/* Cabecera del catálogo */
+
+.catalogHeader{
+
+}
+
+.catalogHeader--box{
+
+}
+
+.catalogHeader--boxInside{
+
+}
+
+.catalogHeader--boxInside img{
+
+}
+
+.catalogHeader__titleContainer{
+
+}
+
+.catalogHeader--title{
+
+}
+
+/* Caja de búsqueda */
+
+.catalogSearch{
+
+}
+
+.catalogSearch--box{
+
+}
+
+.catalogSearch__searchBar{
+
+}
+
+.catalogSearch__searchBar input{
+
+}
+
+.catalogSearch__searchButton{
+
+}
+
+.catalogSearch__searchButton i{
+
+}
+
+.catalogSearch__selectBar{
+
+}
+
+.catalogSearch__filterCategoriesButton{
+
+}
+
+.catalogSearch__filterCategoriesButton i{
+
+}
+
+/* Caja de filtros (Para el Catálogo Browsing) */
+
+.browsingFilters{
+
+}
+
+.browsingFilter--box{
+
+}
+
+.browsingFilter--box i{
+
+}
+
+.browsingFilter__button{
+
+}
+
+.browsingFilterSelection{
+
+}
+
+.browsingFilterSelection h3{
+
+}
+
+.browsingFilterSelection select{
+
+}
+
+.browsingFilterSelection option{
+
+}
+
+
+/* Catálogo de Inicio  */
+
+.startCatalog{
+
+}
+
+.startCatalog--featuredBox{
+
+}
+
+.startCatalog--featuredBox__title{
+
+}
+
+.startCatalog--featuredBox__title h2{
+
+}
+
+.startCatalog--featuredBox__title button{
+
+}
+
+.startCatalog--featuredBox__container{
+
+}
+
+
+.startCatalog--popularBox{
+
+}
+
+.startCatalog--popularBox__title{
+
+}
+
+.startCatalog--popularBox__title h2{
+
+}
+
+.startCatalog--popularBox__title button{
+
+}
+
+.startCatalog--featuredBox__container{
+
+}
+
+.startCatalog--recentBox{
+
+}
+
+.startCatalog--recentBox__title{
+
+}
+
+.startCatalog--recentBox__title h2{
+
+}
+
+.startCatalog--recentBox__container{
+
+}
+
+/* Catálogo en Búsqueda/Browsing */
+
+.browsingCatalog{
+
+}
+
+.browsingCatalog--titleBox{
+
+}
+
+.browsingCatalog--titleBox h2{
+
+}
+
+.browsingCatalog__results{
+
+}
+
+.browsingCatalog--titleBox span{
+
+}
+
+
+/* (Browsing) Búsqueda Encontrada */
+
+.browsingCatalog__foundContainer{
+
+}
+
+/* (Browsing) Búsqueda No Encontrada */
+
+.browsingCatalog--notFoundBox{
+
+}
+
+.notFoundBox--inside{
+
+}
+
+.notFoundContainer__title{
+
+}
+
+.notFoundContainer__title img{
+
+}
+
+.notFoundBox--list{
+
+}
+
+.notFoundBox--list li{
+
+}
+
+
+.notFound--recommendationsBox h3{
+
+}
+
+.notFound--recommendationsBox__container{
+
+}
+
+/* Paginador */
+
+.paginator--box{
+
+}
+
+.paginator__buttonLeft{
+
+}
+
+.paginator__buttonLeft i{
+
+}
+
+.paginator--numbersContainer{
+
+}
+
+.paginator--numbersContainer p{
+
+}
+
+.paginator__buttonRight {
+
+}
+
+.paginator__buttonRight i{
+
+}
