@@ -8,8 +8,124 @@
 <body>
         <%- include('../partials/header') %>
     <main>
+<section>
+    <article>
+        <div>
+<img src="/imgs/Images/Catalogo Header.png">
+<div>
+    <h1>Explora nuestros diversos cursos en Ciberseguridad</h1>
+</div>
+
+</div>
+    </article>
+</section>
+        <section>
+            <article>
+                <div>
+                    <label for=""></label>
+                    <input type="text" name="" id="">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+               
+                <div>
+                <div class="forms--box__selectContainer">
+                    <label for=""></label>
+                   <select name="" id="categoria" onchange="actualizarSubcategorias()">
+                    <option class="selectGrey" value="" selected disabled>-- Seleccionar categoría --</option>
+                    <option value="">Fundamentos de la Ciberseguridad</option>
+                    <option value="seguridadOfensiva">Seguridad Ofensiva</option>
+                    <option value="seguridadDefensiva">Seguridad Defensiva</option>
+                    <option value="seguridadNube">Seguridad de Nube</option>
+                    <option value="ingenieriaSocial">Ingeniería Social</option>
+                
+                
+                   </select>
+                </div>
+                
+                <div class="forms--box__selectContainer">
+                    <label for=""></label>
+                   <select name="" id="subcategoria">
+                    <option class="selectGrey" value="" selected disabled>-- Seleccionar subcategoría --</option>
+                
+                   </select>
+                </div>
+                
+                <button><i class="fa-solid fa-filter"></i></button>
+            </div>
+            </article>
+        </section>
+<section>
+    
+    <div><i class="fa-solid fa-sliders"></i>
+    <button>Filtrar</button> 
+</div>
+
+<div><h3>Ordenar por</h3>
+    <select name="" id="">
+        <option value="">Más populares</option>
+        <option value="">Más recientes</option>
+    </select></div>
+</section>
+        <section>
+        <div>
+            <div><h2>Clases destacadas</h2> <button>Ver todo</button></div>
+            <div>
+                <p>Aquí estarían las clases destacadas</p>
+            </div>
+        </div>
+        
 
         
+        <div>
+            <div><h2>Clases populares</h2> <button>Ver todo</button></div>
+            <div>
+                <p>Aquí estarían las clases populares</p>
+            </div>
+        </div>
+        
+        
+        <div>
+            <div><h2>Clases más recientes</h2></div>
+            <div>
+                <p>Aquí estarían las clases más recientes</p>
+            </div>
+        </div>
+        </section>
+
+        <section>
+            <div>
+<h2>Hacking de Aplicaciones Web</h2>
+<p>18.000</p> <span>Resultados</span>
+</div>
+
+<div>
+<p>Aquí estaría el resultado de la búsqueda</p>
+</div>
+
+<div>
+    <div>
+    <p>En el caso de no haber resultado, aparecería esto:</p>
+    <h2>Ups, no pudimos encontrar lo que buscabas</h2>
+    <img src="/imgs/Images/pixel_art 1 cropped.png" alt="">
+    <ul>
+        <li>Asegúrate de que todas las palabras estés <b>escritas correctamente</b>.</li>
+        <li>Utiliza <b>palabras más genéricas</b> o menos palabras.</li>
+        <li><b>Navega por las categorías</b> para encontrar un curso similar.</li>
+    </ul>
+</div>
+
+<div>
+<h3>Podría interesarte</h3>
+
+<div>
+    <p>Aquía estaría las tarjetas de la recomendación</p>
+</div>
+
+</div>
+</div>
+
+<div> <button><i class="fa-solid fa-chevron-left"></i></button> <p>1</p> <p>2</p> <p>3</p> <button><i class="fa-solid fa-chevron-right"></i></button></div>
+        </section>
     </main>
     
 <%- include('../partials/footer') %>

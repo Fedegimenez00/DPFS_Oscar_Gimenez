@@ -7,6 +7,8 @@
 @import url(./register.css);
 @import url(./login.css);
 @import url(./productAdd.css);
+@import url(./products.css);
+@import url(./adminInterface.css);
 
 /* Header */
 .header--body{
