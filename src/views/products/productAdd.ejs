@@ -115,8 +115,12 @@
 
 
 <div class="forms--box__previewContainer">
-    <h3 class="forms--box__inputTitle">Imagen del curso</h3>
-    <img>
+    <h3 class="forms--box__inputTitle">Imagen del curso (WIP)</h3>
+    <div class="previewContainer">
+    <div class="previewBox">
+    <img src="/imgs/Images/photo preview.webp">
+</div>
+</div>
     <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
     <div class="forms--box__fileInput">
         <label for=""></label>
@@ -130,7 +134,11 @@
 
 <div class="forms--box__previewContainer">
     <h3 class="forms--box__inputTitle">Video promocional (WIP)</h3>
-    <img>
+    <div class="previewContainer">
+        <div class="previewBox">
+        <img src="/imgs/Images/video preview.png">
+    </div>
+    </div>
 <p class="previewDescription">Carga el video promocional de tu curso, un buen video servirá como un adelanto de lo que se aprenderá.</p>
     <div class="forms--box__fileInput">
     <label for=""></label>
@@ -146,7 +154,7 @@
     <div class="box--priceInput"> 
         <div class="box--priceInput__Inside">
         <label for=""></label>
-    <input type="number" min="0" max="100000" step="0" name="" id="">
+    <input type="number" value="0" min="0" max="100000" step="0" name="" id="">
 <p>$</p>
 </div>
 </div>
@@ -416,7 +424,7 @@ estudiantes deseen adquirir tus cursos.
         <label for=""></label>
     </div>
         <div class="box--couponsPercentage">
-        <input min="1" max="100" step="1" placeholder="" type="number">
+        <input value="1" min="1" max="100" step="1" placeholder="" type="number">
     <label for=""></label> <p>%</p>
 </div>
 <div class="box--coupons__buttonContainer">

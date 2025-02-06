@@ -232,11 +232,28 @@ margin-left: 10px;
 margin-bottom: 20px;
 }
 
-
-
-.forms--box__previewContainer img{
-    
+.previewContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
+
+
+.previewBox{
+   
+    background-color: var(--color-blancoApagado);
+    border-radius: 10px;
+    width: 97%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.previewBox img{
+    width: 60%;
+}
+
 
 
 
@@ -303,11 +320,14 @@ margin-left: 10px;
     text-shadow: none;
     opacity: 1;
     color: black;
+    font-size: 1.1rem;
+    width: 70px;
 }
+
 
 .box--priceInput p{
     margin-left: 5px;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
 }
 
 .box--priceInput label{
@@ -615,6 +635,7 @@ display: none;
 
 .couponBox__inside p{
     font-weight: 200;
+    
 }
 
 .box--couponsList__boxLine{
@@ -656,7 +677,7 @@ display: none;
     border-radius: 8px;
     padding: 13px 0px 13px 10px;
     border: none;
-    width: 50px;
+    width: 40px;
     font-size: 1.1rem;
     text-shadow: none;
     opacity: 1;
@@ -664,7 +685,7 @@ display: none;
 }
 
 .box--couponsPercentage p{
-    font-size: 1.6rem;
+    font-size: 1.9rem;
 }
 
 .box--coupons__buttonContainer{ 
