@@ -8,8 +8,93 @@
 <body>
         <%- include('../partials/header') %>
     <main>
+<!-- Menú toggle de Administrador -->
+<section>
+    <article>
+    <div>
+        <button><i class="fa-solid fa-chart-pie"></i></button>
+        <button><i class="fa-solid fa-user"></i></button>
+        <button><i class="fa-solid fa-cube"></i></button>
+        <button><i class="fa-solid fa-newspaper"></i></button>
+        <button><i class="fa-solid fa-quote-left"></i></button>
+        <button><i class="fa-solid fa-database"></i></button>
+    </div>
+</article>
+</section>
 
+<!-- Caja de búsqueda -->
+
+<section class="catalogSearch">
+    <article class="catalogSearch--box">
+        <div class="catalogSearch__searchBar">
+            <label for=""></label>
+            <input placeholder="Buscar cualquier cosa" type="text" name="" id="">
+            <button class="catalogSearch__searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+       
+        <div class="catalogSearch__selectBar">
+        <div class="catalogSearch__selectContainer">
+            <label for=""></label>
+           <select name="" id="categoria" onchange="actualizarSubcategorias()">
+            <option class="catalog-grey" value="" selected disabled>Categorías</option>
+            <option value="">Fundamentos de la Ciberseguridad</option>
+            <option value="seguridadOfensiva">Seguridad Ofensiva</option>
+            <option value="seguridadDefensiva">Seguridad Defensiva</option>
+            <option value="seguridadNube">Seguridad de Nube</option>
+            <option value="ingenieriaSocial">Ingeniería Social</option>
         
+        
+           </select>
+        </div>
+        
+        <div class="catalogSearch__selectContainer">
+            <label for=""></label>
+           <select name="" id="subcategoria">
+            <option class="catalog-grey" value="" selected disabled>Subcate...</option>
+        
+           </select>
+        </div>
+        
+        <button class="catalogSearch__filterCategoriesButton"><i class="fa-solid fa-filter"></i></button>
+    </div>
+    </article>
+</section>
+
+<!-- Container de Lista de Productos -->
+<section>
+<div>
+
+<article>
+    <img src="" alt=""> 
+    <div>
+    <h3>Nombre del curso</h3>
+    <small>Nombre del autor del curso</small>
+    <div>
+        <p>Seguridad Ofensiva</p>
+    </div>
+</div>
+<div>
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button><i class="fa-solid fa-pen"></i></button>
+    <button><i class="fa-solid fa-trash"></i></button>
+</div>
+</article>
+
+</div>
+</section>
+        
+
+<!-- Paginador -->
+
+<div class="paginator--box"> 
+    <div class="paginator--boxInside">
+    <button class="paginator__buttonLeft" disabled><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="paginator--numbersContainer">
+     <p class="selectedNumber">1</p> <p>2</p> <p>3</p> 
+    </div>
+     <button class="paginator__buttonRight"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</div>
     </main>
     
 <%- include('../partials/footer') %>
