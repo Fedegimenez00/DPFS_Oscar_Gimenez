@@ -27,6 +27,12 @@
 </article>
 </section>
 
+<!-- Título de la sección del perfil de admin -->
+
+
+<section class="admin-title">
+<h1>Lista de Productos</h1>
+</section>
 <!-- Caja de búsqueda -->
 
 <section class="productListSearch">
@@ -70,12 +76,14 @@
 <div class="productList--inside">
 
 <article class="productList--card">
-    <img src="" alt=""> 
-    <div class="productList--cardInside">
+    <img src="/imgs/Images/photo preview.webp" alt=""> 
+    <div class="productList--cardStructure">
+    <div class="productList--cardStructureInside">
     <h3 class="productList--card__title">Nombre del curso</h3>
     <small class="productList--card__author">Nombre del autor del curso</small>
     <div class="productList--card__tag">
         <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
+    </div>
     </div>
     
     <div class="productList--card__optionsContainer">
@@ -84,7 +92,69 @@
     <button><i class="fa-solid fa-trash"></i></button>
 </div>
 </div>
+</div>
+</article>
 
+<article class="productList--card">
+    <img src="/imgs/Images/photo preview.webp" alt=""> 
+    <div class="productList--cardStructure">
+    <div class="productList--cardStructureInside">
+    <h3 class="productList--card__title">Nombre del curso</h3>
+    <small class="productList--card__author">Nombre del autor del curso</small>
+    <div class="productList--card__tag">
+        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
+    </div>
+    </div>
+    
+    <div class="productList--card__optionsContainer">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button><i class="fa-solid fa-pen"></i></button>
+    <button><i class="fa-solid fa-trash"></i></button>
+</div>
+</div>
+</div>
+</article>
+
+
+<article class="productList--card">
+    <img src="/imgs/Images/photo preview.webp" alt=""> 
+    <div class="productList--cardStructure">
+    <div class="productList--cardStructureInside">
+    <h3 class="productList--card__title">Nombre del curso</h3>
+    <small class="productList--card__author">Nombre del autor del curso</small>
+    <div class="productList--card__tag">
+        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
+    </div>
+    </div>
+    
+    <div class="productList--card__optionsContainer">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button><i class="fa-solid fa-pen"></i></button>
+    <button><i class="fa-solid fa-trash"></i></button>
+</div>
+</div>
+</div>
+</article>
+
+
+<article class="productList--card">
+    <img src="/imgs/Images/photo preview.webp" alt=""> 
+    <div class="productList--cardStructure">
+    <div class="productList--cardStructureInside">
+    <h3 class="productList--card__title">Nombre del curso</h3>
+    <small class="productList--card__author">Nombre del autor del curso</small>
+    <div class="productList--card__tag">
+        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
+    </div>
+    </div>
+    
+    <div class="productList--card__optionsContainer">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button><i class="fa-solid fa-pen"></i></button>
+    <button><i class="fa-solid fa-trash"></i></button>
+</div>
+</div>
+</div>
 </article>
 
 </div>
@@ -93,7 +163,7 @@
 
 <!-- Paginador -->
 
-<div class="paginator--box"> 
+<div class="adminListPaginator--box"> 
     <div class="paginator--boxInside">
     <button class="paginator__buttonLeft" disabled><i class="fa-solid fa-chevron-left"></i></button>
     <div class="paginator--numbersContainer">
@@ -105,6 +175,8 @@
     </main>
     
 <%- include('../partials/footer') %>
+<script src="/js/subcategories.js"></script>
+
 
     
 </body>
