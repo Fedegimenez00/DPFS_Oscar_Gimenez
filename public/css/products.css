@@ -1,7 +1,10 @@
 /* Cabecera del catálogo */
 
 .catalogHeader{
-
+    margin-top: 30px;
+    margin-bottom: 45px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .catalogHeader--box{
@@ -9,41 +12,72 @@
 }
 
 .catalogHeader--boxInside{
-
+    position: relative;
 }
 
 .catalogHeader--boxInside img{
-
+    width: 100%;
+    border-radius: 10px;
 }
 
 .catalogHeader__titleContainer{
-
+    background-color: var(--color-negroPuroTranslucido);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    bottom: 4px;
+    padding-bottom: 10px;
+    padding-top: 8px;
 }
 
 .catalogHeader--title{
-
+    margin-left: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 /* Caja de búsqueda */
 
 .catalogSearch{
-
+    margin-bottom: 45px;
 }
 
 .catalogSearch--box{
-
+    background-color: var(--color-azulVioletaTranslucido);
+    border: solid var(--color-azulVioleta) 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .catalogSearch__searchBar{
-
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .catalogSearch__searchBar input{
-
+    padding: 10px 0px 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 230px;
+    font-size: 1rem;
+    border: none;
+    text-shadow: none;
+    opacity: 1;
+    color:black;
 }
 
 .catalogSearch__searchButton{
-
+    color: var(--color-blancoApagado);
+    background-color: var(--color-negroPuro);
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.4rem;
+    padding: 6px 19px 6px 19px;
 }
 
 .catalogSearch__searchButton i{
@@ -51,11 +85,50 @@
 }
 
 .catalogSearch__selectBar{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.catalogSearch__selectContainer{
+    width: 40%;
+}
+
+.catalogSearch__selectContainer input{
+
+}
+
+.catalogSearch__selectContainer select{
+    color: black;
+    border-radius: 10px;
+    padding: 11px 10% 11px 10px;
+    border: none;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.selectGrey{
+    color: grey;
+}
+
+.catalogSearch__selectContainer option{
+
+}
+
+.catalogSearch__selectContainer label{
 
 }
 
 .catalogSearch__filterCategoriesButton{
-
+    color: var(--color-blancoApagado);
+    background-color: var(--color-negroPuro);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3rem;
+    padding: 8px;
 }
 
 .catalogSearch__filterCategoriesButton i{
@@ -65,31 +138,82 @@
 /* Caja de filtros (Para el Catálogo Browsing) */
 
 .browsingFilters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+    display: none;
+}
 
+.browsingFilters__inside{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
 }
 
 .browsingFilter--box{
-
+    background-color: var(--color-moradoTranslucido);
+    border: solid var(--color-morado) 1px;
+    border-radius: 10px;
+    padding: 15px 5px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
 
 .browsingFilter--box i{
+    font-size: 1.7rem;
+    margin-right: 3px;
+}
 
+.browsingFilter--box span{
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 3px;
+    display: none;
 }
 
 .browsingFilter__button{
-
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-blancoApagado);
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+    display: flex;
+    align-items: center;
 }
 
 .browsingFilterSelection{
-
+    background-color: var(--color-moradoTranslucido);
+    border: solid var(--color-morado) 1px;
+    border-radius: 10px;
+    width: 212px;
+    padding-left: 8px;
 }
 
 .browsingFilterSelection h3{
-
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 7px 0px;
 }
 
 .browsingFilterSelection select{
-
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--color-blancoApagado);
+         /*Empezamos eliminando el caret de systema*/
+  -moz-appearance: none; /*Firefox legacy*/
+  -webkit-appearance: none; /* Chromes legacy*/
+  appearance: none;
+  /*Y a continuación añadimos el nuestro como background*/
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='180 -360 600 1200'%3E%3Cpath d='M1015 10q-10-10-23-10t-23 10L512 492 55 10Q45 0 32 0T9 10Q0 20 0 34t9 24l480 506q10 10 23 10t23-10l480-506q9-10 9-24t-9-24z'%20fill%3D%27white%27/%3E%3C/svg%3E");
+  background-size: 0.9rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0px) center; /*Lo posicionamos a la derecha*/
+  padding-right: 24px; /*le damos algo de espacio para que el caret no se superponga al texto*/
+  width: 205px;
 }
 
 .browsingFilterSelection option{
@@ -103,79 +227,79 @@
 
 }
 
-.startCatalog--featuredBox{
+.startCatalog--Box{
 
 }
 
-.startCatalog--featuredBox__title{
-
+.startCatalog--Box__title{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 20px;
 }
 
-.startCatalog--featuredBox__title h2{
-
+.startCatalog--Box__title h2{
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
-.startCatalog--featuredBox__title button{
-
-}
-
-.startCatalog--featuredBox__container{
-
-}
-
-
-.startCatalog--popularBox{
-
-}
-
-.startCatalog--popularBox__title{
-
-}
-
-.startCatalog--popularBox__title h2{
-
-}
-
-.startCatalog--popularBox__title button{
-
+.startCatalog--Box__title button{
+    font-weight: 600;
+    font-size: 1rem;
+    width: 115px;
+    padding: 9px 0px;
+    color: var(--color-blancoApagado);
+    border: none;
+    background-color: var(--color-negroPuro);
+    border-radius: 7px;
 }
 
 .startCatalog--featuredBox__container{
-
+    height: 300px;
+    margin-bottom: 50px;
+    padding-left: 5px;
 }
 
-.startCatalog--recentBox{
 
+.startCatalog--popularBox__container{
+    height: 300px;
+    margin-bottom: 50px;
+    padding-left: 5px;
 }
 
-.startCatalog--recentBox__title{
-
-}
-
-.startCatalog--recentBox__title h2{
-
-}
 
 .startCatalog--recentBox__container{
-
+    height: 300px;
+    margin-bottom: 50px;
+    padding-left: 5px;
 }
 
 /* Catálogo en Búsqueda/Browsing */
 
 .browsingCatalog{
-
+    display: none;
+    margin-left: 5px;
 }
 
 .browsingCatalog--titleBox{
-
+    margin-bottom: 35px;
 }
 
 .browsingCatalog--titleBox h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
 
+.resultsContainer{
+    display: flex;
+    gap: 5px;
 }
 
 .browsingCatalog__results{
-
+   
 }
 
 .browsingCatalog--titleBox span{
@@ -186,52 +310,73 @@
 /* (Browsing) Búsqueda Encontrada */
 
 .browsingCatalog__foundContainer{
-
+    height: 1000px;
+    margin-bottom: 40px;
+    display: none;
 }
 
 /* (Browsing) Búsqueda No Encontrada */
 
 .browsingCatalog--notFoundBox{
-
+    display: none;
 }
 
 .notFoundBox--inside{
-
+    margin-bottom: 150px;
 }
 
 .notFoundContainer__title{
-
+    font-weight: 500;
+    font-size: 1.4rem;
 }
 
 .notFoundContainer__title img{
-
+    width: 100%;
 }
 
 .notFoundBox--list{
-
+    padding-left: 20px;
 }
 
 .notFoundBox--list li{
-
+    margin-bottom: 4px;
 }
 
 
 .notFound--recommendationsBox h3{
-
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .notFound--recommendationsBox__container{
-
+    height: 340px;
 }
 
 /* Paginador */
 
 .paginator--box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+    display: none;
+}
 
+.paginator--boxInside{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .paginator__buttonLeft{
-
+    color: var(--color-moradoTranslucido);
+    border: none;
+    font-size: 1.4rem;
+    border-radius: 25px;
+    padding: 4px 10px;
+    background-color: transparent;
+ 
 }
 
 .paginator__buttonLeft i{
@@ -239,15 +384,32 @@
 }
 
 .paginator--numbersContainer{
-
+display: flex;
+gap: 16px;
+font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .paginator--numbersContainer p{
 
 }
 
-.paginator__buttonRight {
+.selectedNumber{
+    border-bottom: solid var(--color-morado);
+    padding: 0px 2px;
+}
 
+.paginator--boxInside button{
+   
+}
+
+.paginator__buttonRight {
+    font-size: 1.4rem;
+    border-radius: 25px;
+    padding: 4px 10px;
+    background-color: transparent;
+    color: var(--color-morado);
+    border: solid var(--color-morado) 1px;
 }
 
 .paginator__buttonRight i{

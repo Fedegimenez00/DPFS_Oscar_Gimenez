@@ -29,15 +29,15 @@
             <article class="catalogSearch--box">
                 <div class="catalogSearch__searchBar">
                     <label for=""></label>
-                    <input type="text" name="" id="">
+                    <input placeholder="Buscar cualquier cosa" type="text" name="" id="">
                     <button class="catalogSearch__searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                
                 <div class="catalogSearch__selectBar">
-                <div class="forms--box__selectContainer">
+                <div class="catalogSearch__selectContainer">
                     <label for=""></label>
                    <select name="" id="categoria" onchange="actualizarSubcategorias()">
-                    <option class="selectGrey" value="" selected disabled>-- Seleccionar categoría --</option>
+                    <option class="catalog-grey" value="" selected disabled>Categorías</option>
                     <option value="">Fundamentos de la Ciberseguridad</option>
                     <option value="seguridadOfensiva">Seguridad Ofensiva</option>
                     <option value="seguridadDefensiva">Seguridad Defensiva</option>
@@ -48,10 +48,10 @@
                    </select>
                 </div>
                 
-                <div class="forms--box__selectContainer">
+                <div class="catalogSearch__selectContainer">
                     <label for=""></label>
                    <select name="" id="subcategoria">
-                    <option class="selectGrey" value="" selected disabled>-- Seleccionar subcategoría --</option>
+                    <option class="catalog-grey" value="" selected disabled>Subcate...</option>
                 
                    </select>
                 </div>
@@ -64,9 +64,9 @@
 <!-- Caja de filtros (Para el Catálogo Browsing)-->
 
 <section class="browsingFilters">
-    
-    <div class="browsingFilter--box"><i class="fa-solid fa-sliders"></i>
-    <button class="browsingFilter__button">Filtrar</button> 
+<div class="browsingFilters__inside">
+    <div class="browsingFilter--box">
+    <button class="browsingFilter__button"><i class="fa-solid fa-sliders"></i>Filtrar</button> <span>(0)</span> 
 </div>
 
 <div class="browsingFilterSelection"><h3>Ordenar por</h3>
@@ -74,13 +74,14 @@
         <option value="">Más populares</option>
         <option value="">Más recientes</option>
     </select></div>
+</div>
 </section>
 
 <!-- Catálogo de Inicio -->
 
         <section class="startCatalog">
-        <div class="startCatalog--featuredBox">
-            <div class="startCatalog--featuredBox__title"><h2>Clases destacadas</h2> <button>Ver todo</button></div>
+        <div class="startCatalog--Box">
+            <div class="startCatalog--Box__title"><h2>Clases destacadas</h2> <button>Ver todo</button></div>
             <div class="startCatalog--featuredBox__container">
                 <p>Aquí estarían las clases destacadas</p>
             </div>
@@ -88,16 +89,16 @@
         
 
         
-        <div class="startCatalog--popularBox">
-            <div class="startCatalog--popularBox__title"><h2>Clases populares</h2> <button>Ver todo</button></div>
+        <div class="startCatalog--Box">
+            <div class="startCatalog--Box__title"><h2>Clases populares</h2> <button>Ver todo</button></div>
             <div class="startCatalog--popularBox__container">
                 <p>Aquí estarían las clases populares</p>
             </div>
         </div>
         
         
-        <div class="startCatalog--recentBox">
-            <div class="startCatalog--recentBox__title"><h2>Clases más recientes</h2></div>
+        <div class="startCatalog--Box">
+            <div class="startCatalog--Box__title"><h2>Clases más recientes</h2></div>
             <div class="startCatalog--recentBox__container">
                 <p>Aquí estarían las clases más recientes</p>
             </div>
@@ -111,7 +112,9 @@
 
             <div class="browsingCatalog--titleBox">
 <h2>Hacking de Aplicaciones Web</h2>
+<div class="resultsContainer">
 <p class="browsingCatalog__results">18.000</p> <span>Resultados</span>
+</div>
 </div>
 
 <!-- (Browsing) Búsqueda Encontrada -->
@@ -148,12 +151,14 @@
 
 
 <div class="paginator--box"> 
-    <button class="paginator__buttonLeft"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="paginator--boxInside">
+    <button class="paginator__buttonLeft" disabled><i class="fa-solid fa-chevron-left"></i></button>
     <div class="paginator--numbersContainer">
-     <p>1</p> <p>2</p> <p>3</p> 
+     <p class="selectedNumber">1</p> <p>2</p> <p>3</p> 
     </div>
      <button class="paginator__buttonRight"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
+</div>
         </section>
     </main>
     

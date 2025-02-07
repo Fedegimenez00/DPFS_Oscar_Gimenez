@@ -17,6 +17,8 @@
     --color-rosaClaro : #FF75E3;
 
      /* Botones y links*/
+     --color-morado: #8462EB ;
+     --color-moradoTranslucido: rgba(132, 98, 235, 0.35) ;
      --color-purpuraOscuro : #473481;
      --color-purpuraClaro: #8462EB;
      --color-azulElectrico : #0D99FF;
@@ -28,6 +30,7 @@
      --color-azulVioletaMuyTranslucido: rgb(47 79 255 / 15%);
      --color-amarilloDorado : #F69C08;
      --color-negroPuro: #000000;
+     --color-negroPuroTranslucido: rgba(0, 0, 0, 0.65);
 
      /* Colores categóricos*/
      --color-magenta : #FF00CC;
