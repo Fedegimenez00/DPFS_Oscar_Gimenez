@@ -6,17 +6,32 @@
 }
 
 .administratorMenu--box{
-
+    background-color: var(--color-moradoTranslucido);
+    border-radius: 7px;
+    border: solid var(--color-morado) 1px;
+    width: 11%;
 }
 
 .administratorMenu--buttonsContainer{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .administratorMenu--buttonsContainer button{
-
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 8px 5px;
+    font-size: 1.2rem;
+    color: var(--color-blancoApagado);
 }
 
+.administratorMenu--buttonsContainer hr{
+    border-width: 0px 0px 1px;
+    border-color: var(--color-morado);
+    width: 100%;
+}
 /* Caja de búsqueda */
 
 .productListSearch{
@@ -129,11 +144,14 @@
 }
 
 .productList--card{
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: solid 1px;
 }
 
 .productList--card img{
-
+    width: 100%;
 }
 
 .productList--cardInside{
@@ -141,19 +159,23 @@
 }
 
 .productList--card__title{
-
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .productList--card__author{
-
+    font-size: 0.8rem;
 }
 
 .productList--card__tag{
-
+    border: solid var(--color-rojoAtaque) 1px;
+    background-color: var(--color-rojoAtaqueTranslucido);
+    border-radius: 3px;
+    margin-top: 20px;
 }
 
 .productList--card__tagTitle{
-
+    font-size: 0.8rem;
 }
 
 
