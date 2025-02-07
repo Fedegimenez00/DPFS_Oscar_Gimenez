@@ -1,0 +1,170 @@
+
+/* Menú toggle de Administrador */
+
+.administratorMenu{
+
+}
+
+.administratorMenu--box{
+
+}
+
+.administratorMenu--buttonsContainer{
+
+}
+
+.administratorMenu--buttonsContainer button{
+
+}
+
+/* Caja de búsqueda */
+
+.productListSearch{
+    margin-bottom: 45px;
+}
+
+.productListSearch--box{
+    background-color: var(--color-azulVioletaTranslucido);
+    border: solid var(--color-azulVioleta) 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productListSearch__searchBar{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.productListSearch__searchBar input{
+    padding: 10px 0px 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 230px;
+    font-size: 1rem;
+    border: none;
+    text-shadow: none;
+    opacity: 1;
+    color:black;
+}
+
+.productListSearch__searchButton{
+    color: var(--color-blancoApagado);
+    background-color: var(--color-negroPuro);
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.4rem;
+    padding: 6px 19px 6px 19px;
+}
+
+.productListSearch__searchButton i{
+
+}
+
+.productListSearch__selectBar{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.productListSearch__selectContainer{
+    width: 40%;
+}
+
+.productListSearch__selectContainer input{
+
+}
+
+.productListSearch__selectContainer select{
+    color: black;
+    border-radius: 10px;
+    padding: 11px 10% 11px 10px;
+    border: none;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.selectGrey{
+    color: grey;
+}
+
+.productListSearch__selectContainer option{
+
+}
+
+.productListSearch__selectContainer label{
+
+}
+
+.productListSearch__filterCategoriesButton{
+    color: var(--color-blancoApagado);
+    background-color: var(--color-negroPuro);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3rem;
+    padding: 8px;
+}
+
+.productListSearch__filterCategoriesButton i{
+
+}
+
+
+
+/* Container de Lista de Productos */
+
+.productList{
+
+}
+
+.productList--inside{
+
+}
+
+.productList--card{
+
+}
+
+.productList--card img{
+
+}
+
+.productList--cardInside{
+
+}
+
+.productList--card__title{
+
+}
+
+.productList--card__author{
+
+}
+
+.productList--card__tag{
+
+}
+
+.productList--card__tagTitle{
+
+}
+
+
+.productList--card__optionsContainer{
+
+}
+
+.productList--card__optionsContainer button{
+
+}
+
+
+
+/* Paginador */

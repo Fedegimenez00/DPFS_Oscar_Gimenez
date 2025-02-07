@@ -9,9 +9,9 @@
         <%- include('../partials/header') %>
     <main>
 <!-- Menú toggle de Administrador -->
-<section>
-    <article>
-    <div>
+<section class="administratorMenu">
+    <article class="administratorMenu--box">
+    <div class="administratorMenu--buttonsContainer">
         <button><i class="fa-solid fa-chart-pie"></i></button>
         <button><i class="fa-solid fa-user"></i></button>
         <button><i class="fa-solid fa-cube"></i></button>
@@ -24,16 +24,16 @@
 
 <!-- Caja de búsqueda -->
 
-<section class="catalogSearch">
-    <article class="catalogSearch--box">
-        <div class="catalogSearch__searchBar">
+<section class="productListSearch">
+    <article class="productListSearch--box">
+        <div class="productListSearch__searchBar">
             <label for=""></label>
             <input placeholder="Buscar cualquier cosa" type="text" name="" id="">
-            <button class="catalogSearch__searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="productListSearch__searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
        
-        <div class="catalogSearch__selectBar">
-        <div class="catalogSearch__selectContainer">
+        <div class="productListSearch__selectBar">
+        <div class="productListSearch__selectContainer">
             <label for=""></label>
            <select name="" id="categoria" onchange="actualizarSubcategorias()">
             <option class="catalog-grey" value="" selected disabled>Categorías</option>
@@ -47,7 +47,7 @@
            </select>
         </div>
         
-        <div class="catalogSearch__selectContainer">
+        <div class="productListSearch__selectContainer">
             <label for=""></label>
            <select name="" id="subcategoria">
             <option class="catalog-grey" value="" selected disabled>Subcate...</option>
@@ -55,25 +55,25 @@
            </select>
         </div>
         
-        <button class="catalogSearch__filterCategoriesButton"><i class="fa-solid fa-filter"></i></button>
+        <button class="productListSearch__filterCategoriesButton"><i class="fa-solid fa-filter"></i></button>
     </div>
     </article>
 </section>
 
 <!-- Container de Lista de Productos -->
-<section>
-<div>
+<section class="productList">
+<div class="productList--inside">
 
-<article>
+<article class="productList--card">
     <img src="" alt=""> 
-    <div>
-    <h3>Nombre del curso</h3>
-    <small>Nombre del autor del curso</small>
-    <div>
-        <p>Seguridad Ofensiva</p>
+    <div class="productList--cardInside">
+    <h3 class="productList--card__title">Nombre del curso</h3>
+    <small class="productList--card__author">Nombre del autor del curso</small>
+    <div class="productList--card__tag">
+        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
     </div>
 </div>
-<div>
+<div class="productList--card__optionsContainer">
     <button><i class="fa-solid fa-magnifying-glass"></i></button>
     <button><i class="fa-solid fa-pen"></i></button>
     <button><i class="fa-solid fa-trash"></i></button>
