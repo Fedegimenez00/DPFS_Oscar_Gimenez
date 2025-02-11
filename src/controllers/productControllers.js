@@ -68,7 +68,21 @@ const productController = {
       let productUpdate = JSON.stringify(productsUpdate, null, 2);
       fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), productUpdate)
       res.redirect('/admin');
+      
+  
     },
+
+    destroy: (req, res) =>{
+      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      const productDeleteId = req.params.courseid;
+      //Se busca el elemento a eliminar y se obtiene el exacto en base a su id
+      const productsFinal = products.filter(product => product.courseid != productDeleteId);
+      let productsSaved = JSON.stringify(productsFinal, null, 2);
+      fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), productsSaved);
+      res.redirect('/admin');
+
+    },
+
 
     cart : (req, res) =>{
         return res.render('products/productCart');

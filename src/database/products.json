@@ -551,33 +551,13 @@
   },
   {
     "courseid": 51,
-    "coursetitle": "Semantica",
-    "coursesubtitle": "subsemantica",
-    "coursedescription": "",
-    "lang": "Ingles",
-    "courseimage": "course1739245903488.png",
-    "price": "111"
-  },
-  {
-    "courseid": 52,
-    "coursetitle": "Título de ejemplo",
-    "coursesubtitle": "subtitulo de ejemplo",
-    "coursedescription": "Lorem ipsum??",
-    "lang": "Ingles",
-    "category": "Seguridad Ofensiva",
-    "subcategory": "reference",
-    "courseimage": "course1739246381040.png",
-    "price": "1111"
-  },
-  {
-    "courseid": 53,
-    "coursetitle": "Curso de ejemplo",
-    "coursesubtitle": "Subtitulo",
-    "coursedescription": "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-    "lang": "Francés",
-    "category": "Seguridad de Nube",
-    "subcategory": "Gestión de Identidades y Accesos (IAM)",
-    "courseimage": "course1739247927536.png",
-    "price": "112"
+    "coursetitle": "Nautilus",
+    "coursesubtitle": "Subtítulo",
+    "coursedescription": "Lorem ipsum lorem ipsum",
+    "lang": "Español",
+    "category": "Seguridad Defensiva",
+    "subcategory": "Respuesta a Incidentes",
+    "courseimage": "course1739268070646.png",
+    "price": "1240"
   }
 ]
