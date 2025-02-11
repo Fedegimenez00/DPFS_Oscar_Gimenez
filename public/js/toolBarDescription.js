@@ -25,7 +25,7 @@ function restorePlaceholder() {
 
 // Guardar el contenido en el textarea antes de enviar
 document.getElementById("textForm").addEventListener("submit", function() {
-    document.getElementById("hiddenInput").value = editor.innerHTML;
+    document.getElementById("coursedescription").value = editor.innerHTML;
 });
 
 // Actualizar el estado de los botones según el formato aplicado

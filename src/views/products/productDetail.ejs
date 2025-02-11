@@ -11,13 +11,13 @@
         <section class="section--productDetail__Desktop">
 
             <div class="productDetail--categoryDesktop">
-                <p>Fundamentos en Ciberseguridad > Redes y Seguridad</p>
+                <p><%= myProduct.category %> > <%= myProduct.subcategory %></p>
                 <hr>
             </div>
 
-            <h1 class="productDetail--title">Seguridad de la información</h1>
+            <h1 class="productDetail--title"><%= myProduct.coursetitle %></h1>
 <hr class="productDetail--title__underLine">
-<p class="productDetail--quickDescription">Una introducción al mundo de la ciberseguridad</p>
+<p class="productDetail--quickDescription"><%= myProduct.coursesubtitle %></p>
 
 <div class="productDetail--score">
 <div class="productDetail--rating">
@@ -30,18 +30,16 @@
 </div>
 <span class="productDetail--rating__votes">(11.000 Calificaciones)</span>
 </div>
-<small class="productDetail--author">Creado por </small> <span class="productDetail--authorName">Cesar Doapelli</span>
+<small class="productDetail--author">Creado por </small> <span class="productDetail--authorName">Author's name</span>
 
 <div class="productDetail--properties">
     <div class="productDetail--propertiesIcons">
         <i class="fa-solid fa-cloud"></i>
         <i class="fa-solid fa-globe"></i>
-        <i class="fa-solid fa-closed-captioning"></i>
     </div>
     <div class="productDetail--propertiesTexts">
         <p>Ultima actualización 11.2024</p>
-        <p>Español</p>
-        <p>Español, Inglés</p>
+        <p><%= myProduct.lang %></p>
     </div>
     </div>
         </section>
@@ -49,24 +47,24 @@
         <section class="section--productDetail">
             
             <div class="productDetail--category">
-                <small>Fundamentos en Ciberseguridad > Redes y Seguridad</small>
+                <small><%= myProduct.category %> > <%= myProduct.subcategory %></small>
                 <hr>
             </div>
 
             <div class="section--productDetail__inside">
             <div class="productDetail--preview">
-<img src="/imgs/Images/3850850_5754_2 2.png" alt="">
+<img src="/database/images/courses/<%= myProduct.courseimage %>" alt="Imagen del curso">
 <div class="productDetail--preview__Items">
-<i class="fa-solid fa-circle-play"></i>
-<p>(Vista previa de este curso)</p>
+<!--   <i class="fa-solid fa-circle-play"></i>
+<p>(Vista previa de este curso)</p>--> 
 </div>
 </div>
 
 <div class="productDetail__justUpperInside">
 <article class="productDetail__upperInside">
-<h1 class="productDetail--title">Seguridad de la información</h1>
+<h1 class="productDetail--title"> <%= myProduct.coursetitle %></h1>
 <hr class="productDetail--title__underLine">
-<p class="productDetail--quickDescription">Una introducción al mundo de la ciberseguridad</p>
+<p class="productDetail--quickDescription"><%= myProduct.coursesubtitle%></p>
 
 <div class="productDetail--score">
 <div class="productDetail--rating">
@@ -79,18 +77,16 @@
 </div>
 <span class="productDetail--rating__votes">(11.000 Calificaciones)</span>
 </div>
-<small class="productDetail--author">Creado por </small> <span class="productDetail--authorName">Cesar Doapelli</span>
+<small class="productDetail--author">Creado por </small> <span class="productDetail--authorName">Author's name</span>
 
 <div class="productDetail--properties">
     <div class="productDetail--propertiesIcons">
         <i class="fa-solid fa-cloud"></i>
         <i class="fa-solid fa-globe"></i>
-        <i class="fa-solid fa-closed-captioning"></i>
     </div>
     <div class="productDetail--propertiesTexts">
         <p>Ultima actualización 11.2024</p>
-        <p>Español</p>
-        <p>Español, Inglés</p>
+        <p><%= myProduct.lang %></p>
     </div>
     </div>
 </article>
@@ -116,7 +112,7 @@
 </article>
 
     <article class="productDetail--priceCard">
-        <p class="priceCard__price">$19.000</p>
+        <p class="priceCard__price">$<%= myProduct.price %></p>
 
         <div class="priceCard--buttons">
         <button class="priceCard__buttonCart">Añadir a la cesta</button>
@@ -276,7 +272,7 @@
     <div class="productDetail--description__title">
     <h2>Descripción</h2><hr>
 </div>
-<p>Los riesgos y amenazas de ciberseguridad están presentes y ahora más  que nunca. La infraestructura de las redes e Internet son cada vez más  vulnerables a una amplia variedad de ataques físicos y cibernéticos. Los ciberdelincuentes sofisticados, así como las naciones, aprovechan estas vulnerabilidades para robar información y dinero. 
+<p><%= myProduct.coursedescription %></p>
 </p>
 </article>
 </div>
@@ -287,7 +283,7 @@
         <div class="productDetail--mentorCard__inside">
         <h2>Mentor</h2>
         <div class="mentorCard--identity">
-        <h3>Cesar Doapelli</h3>
+        <h3>Author's name</h3>
         <h4>Profesional en milanesas</4></div>
         <div class="mentorCard--Inside">
             <div class="mentorCard--Inside__Image-Awards">

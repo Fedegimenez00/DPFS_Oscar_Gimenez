@@ -70,11 +70,12 @@
     </div>
     </article>
 </section>
-
+<a href="products/add">+ Agregar nuevo Producto</a>
 <!-- Container de Lista de Productos -->
 <section class="productList">
 <div class="productList--inside">
 
+    <!--
 <article class="productList--card">
     <img src="/imgs/Images/photo preview.webp" alt=""> 
     <div class="productList--cardStructure">
@@ -94,69 +95,33 @@
 </div>
 </div>
 </article>
+-->
 
+    <% products.forEach(products => { %>
 <article class="productList--card">
-    <img src="/imgs/Images/photo preview.webp" alt=""> 
+    
+
+    <img src="/database/images/courses/<%= products.courseimage %>" alt="imagen del curso"> 
     <div class="productList--cardStructure">
     <div class="productList--cardStructureInside">
-    <h3 class="productList--card__title">Nombre del curso</h3>
-    <small class="productList--card__author">Nombre del autor del curso</small>
+    <h3 class="productList--card__title"><%= products.coursetitle%> </h3>
+    <small class="productList--card__author">Author's name</small>
     <div class="productList--card__tag">
-        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
+        <p class="productList--card__tagTitle"><%= products.category %></p>
     </div>
     </div>
     
     <div class="productList--card__optionsContainer">
-    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-    <button><i class="fa-solid fa-pen"></i></button>
+     <a href="/products/detail/<%= products.courseid  %>"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button></a>
+    <a href="products/edit/<%= products.courseid  %>"><button><i class="fa-solid fa-pen"></i></button></a>
     <button><i class="fa-solid fa-trash"></i></button>
 </div>
 </div>
 </div>
 </article>
+<% }); %>
 
-
-<article class="productList--card">
-    <img src="/imgs/Images/photo preview.webp" alt=""> 
-    <div class="productList--cardStructure">
-    <div class="productList--cardStructureInside">
-    <h3 class="productList--card__title">Nombre del curso</h3>
-    <small class="productList--card__author">Nombre del autor del curso</small>
-    <div class="productList--card__tag">
-        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
-    </div>
-    </div>
     
-    <div class="productList--card__optionsContainer">
-    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-    <button><i class="fa-solid fa-pen"></i></button>
-    <button><i class="fa-solid fa-trash"></i></button>
-</div>
-</div>
-</div>
-</article>
-
-
-<article class="productList--card">
-    <img src="/imgs/Images/photo preview.webp" alt=""> 
-    <div class="productList--cardStructure">
-    <div class="productList--cardStructureInside">
-    <h3 class="productList--card__title">Nombre del curso</h3>
-    <small class="productList--card__author">Nombre del autor del curso</small>
-    <div class="productList--card__tag">
-        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
-    </div>
-    </div>
-    
-    <div class="productList--card__optionsContainer">
-    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-    <button><i class="fa-solid fa-pen"></i></button>
-    <button><i class="fa-solid fa-trash"></i></button>
-</div>
-</div>
-</div>
-</article>
-
 </div>
 </section>
         

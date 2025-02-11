@@ -5,9 +5,7 @@ const userController = {
     register : (req, res) =>{
         return res.render('users/register');
     },
-    admin : (req, res) =>{
-        return res.render('users/adminInterface');
-    }
+   
 };
 
 module.exports = userController;

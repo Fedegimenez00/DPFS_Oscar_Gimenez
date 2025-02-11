@@ -30,7 +30,7 @@
 </section>
 
 <section class="section--forms">
-<form action='/products/add' method="POST" enctype="multipart/form-data">
+<form action='/products/edit/<%= productEdit.courseid%>?_method=PUT' method="POST" enctype="multipart/form-data">
 
 <!-- Página de inicio del curso -->
 
@@ -41,14 +41,14 @@
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Título del curso</h3>
     <label for="coursetitle"></label>
-    <input type="text" placeholder="Inserta el nombre de tu curso." name="coursetitle" id="coursetitle">
+    <input type="text" placeholder="Inserta el nombre de tu curso." name="coursetitle" id="coursetitle" value="<%= productEdit.coursetitle%>">
 
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Subtítulo del curso</h3>
     <label for="coursesubtitle"></label>
-    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="coursesubtitle" id="coursesubtitle">
+    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="coursesubtitle" id="coursesubtitle" value="<%= productEdit.coursesubtitle%>">
 
 </div>
 
@@ -70,7 +70,8 @@
 
     Input oculto para enviar el contenido 
 -->
-    <textarea id="coursedescription" name="coursedescription" class="enrichedTexarea" style="display: block;"></textarea>
+    <textarea id="coursedescription" name="coursedescription" class="enrichedTexarea" style="display: block;"><%= productEdit.coursedescription%> 
+    </textarea>
 </div>
 </div>
 
@@ -79,13 +80,13 @@
     <div class="box--selects">
     <div class="forms--box__selectContainer">
     <label for="lang"></label>
-   <select  name="lang" id="lang">
+   <select  name="lang" id="lang" defaultValue="<%= productEdit.lang%>">
     <option class="selectGrey" selected disabled>-- Selecciona idioma --</option>
-    <option value="Español">Español</option>
-    <option value="Inglés">Inglés</option>
-    <option value="Portugués">Portugués</option>
-    <option value="Italiano">Italiano</option>
-    <option value="Francés">Francés</option>
+    <option value="Español" <%= productEdit.lang === "Español" ? "selected" : "" %>>Español</option>
+    <option value="Inglés" <%= productEdit.lang === "Inglés" ? "selected" : "" %>>Inglés</option>
+    <option value="Portugués" <%= productEdit.lang === "Portugués" ? "selected" : "" %>>Portugués</option>
+    <option value="Italiano" <%= productEdit.lang === "Italiano" ? "selected" : "" %>>Italiano</option>
+    <option value="Francés" <%= productEdit.lang === "Francés" ? "selected" : "" %>>Francés</option>
 
    </select>
 </div>
@@ -93,13 +94,13 @@
 <div class="forms--box__selectContainer">
     <label for="category"></label>
     
-   <select name="category" id="category" onchange="actualizarSubcategorias()">
+   <select name="category" id="category" onchange="actualizarSubcategorias()" value="<%= productEdit.category%>">
     <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
-    <option value="Fundamentos de la Ciberseguridad">Fundamentos de la Ciberseguridad</option>
-    <option value="Seguridad Ofensiva">Seguridad Ofensiva</option>
-    <option value="Seguridad Defensiva">Seguridad Defensiva</option>
-    <option value="Seguridad de Nube">Seguridad de Nube</option>
-    <option value="Ingenieria Social">Ingeniería Social</option>
+    <option value="Fundamentos de la Ciberseguridad" <%= productEdit.category === "Fundamentos de la Ciberseguridad" ? "selected" : "" %>>Fundamentos de la Ciberseguridad</option>
+    <option value="Seguridad Ofensiva" <%= productEdit.category === "Seguridad Ofensiva" ? "selected" : "" %>>Seguridad Ofensiva</option>
+    <option value="Seguridad Defensiva" <%= productEdit.category === "Seguridad Defensiva" ? "selected" : "" %>>Seguridad Defensiva</option>
+    <option value="Seguridad de Nube" <%= productEdit.category === "Seguridad de Nube" ? "selected" : "" %>>Seguridad de Nube</option>
+    <option value="Ingenieria Social" <%= productEdit.category === "Ingenieria Social" ? "selected" : "" %>>Ingeniería Social</option>
 
 
    </select>
@@ -129,7 +130,10 @@
         <div class="pseudoButton">
             <p class="pseudoButton--title">Subir archivo</p>
         </div>
+<!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
+        <input type="hidden"  name="oldImage"  value="<%= productEdit.courseimage%>">
     <input type="file" name="courseimage">
+
     </div>
 </div>
 
@@ -156,7 +160,7 @@
     <div class="box--priceInput"> 
         <div class="box--priceInput__Inside">
         <label for="price"></label>
-    <input type="number" value="0" min="0" max="100000" step="0" name="price" id="price">
+    <input type="number" value="<%= productEdit.price%>" min="0" max="100000" step="0" name="price" id="price">
 <p>$</p>
 </div>
 </div>
@@ -440,7 +444,7 @@ estudiantes deseen adquirir tus cursos.
 
 <!-- Botones de publicación -->
 
-<div class="publish__inside"> <button type="reset" class="publish--cancel">Cancelar</button> <button type="submit" class="publish--send">Publicar</button></div>
+<div class="publish__inside"> <button type="reset" class="publish--cancel">Cancelar</button> <button type="submit" class="publish--send">Guardar cambios</button></div>
 
 </form>
 
