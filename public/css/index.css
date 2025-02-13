@@ -40,16 +40,30 @@ padding: 5px 9px;
     margin-bottom: 10px;
     font-weight: 300;
 }
+
 .section--courseCards{
 display: flex;
 align-items: center;
 flex-direction: column;
 justify-content: center;
 }
+
+.backLeft__button{
+
+}
+
+.nextRight__button{
+    
+}
+
+.productCourses--container{
+    width: 100%;
+}
+
 .course--card{
 background-color: var(--color-grisOscuro);
 width: 80%;
-max-width: 280px;
+max-width: 220px;
 display: flex;
 flex-direction: column;
 margin-top: 10px;
@@ -74,6 +88,7 @@ font-weight: 400;
 
 .course--card__photo{
     width: 100%;
+    height: 140px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border: solid var(--color-grisMetalico);
@@ -111,7 +126,7 @@ font-size: 1.5rem;
 .course--cardDown{
     display: flex;
     justify-content: flex-end;
-    padding-top: 5%;
+    padding-top: 6%;
 }
 
 .course--card__previewButton{
@@ -127,6 +142,7 @@ padding-top: 2%;
 padding-bottom: 2%;
 font-size: 1.1rem;
 font-weight: 530;
+display: none;
 }
 
 /* Categorias */
@@ -651,7 +667,8 @@ justify-content: space-evenly;
 
 .course--card{
     width: 45%;
-    max-width: 300px;
+    max-width: 250px;
+
 }
 
 
@@ -725,11 +742,15 @@ justify-content: space-evenly;
 
 .courses-title{
     margin-left: 7%;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
 .course--card{
-    max-width: 390px;
+    max-width: 375px;
+}
+
+.course--card__photo {
+    height: 210px;
 }
 
 .course--card h3 {
@@ -763,17 +784,29 @@ justify-content: space-evenly;
 
 }
 
+.course--cardDown{
+    padding-top: 5px;
+}
+
 .course--card__previewButton {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+        display: block;
+        padding: 8px 25px;
+        font-weight: 500;
 }
 /* Categorias */
+
+.section--courseCards{
+    margin-bottom: 55px;
+}
 
 .vectorLines{
     display: block;
 }
 
 .categories--title{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 55px;
 
 }
 
@@ -984,7 +1017,7 @@ display: none;
 /* Testimonios */
 .testimonies--title {
     margin-left: 4%;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .testimonies--body{
@@ -1010,7 +1043,7 @@ display: none;
 /* Noticias */
 .news--title {
     margin-left: 4%;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .news--card{
@@ -1040,6 +1073,10 @@ display: none;
 }
 
 /* Trusted by */
+
+.section--trustedClients {
+    margin-bottom: 180px;
+}
 
 .trustedBy--text {
     font-size: 1.4rem;
