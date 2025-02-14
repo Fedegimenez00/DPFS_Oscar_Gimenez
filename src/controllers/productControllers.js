@@ -100,7 +100,11 @@ const productController = {
       },
       
     catalog: (req, res) => {
-      return res.render('products/products');
+      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+
+      return res.render('products/products', {products}); // Aquí enviamos "products" a la vista
+
+      
     }
       
     

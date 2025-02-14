@@ -86,7 +86,47 @@
         <div class="startCatalog--Box">
             <div class="startCatalog--Box__title"><h2>Clases destacadas</h2> <button>Ver todo</button></div>
             <div class="startCatalog--featuredBox__container">
-                <p>Aquí estarían las clases destacadas</p>
+                <!-- Carosel de productos-->
+
+<div class="productCourses--container">
+    <button class="nav-button prev disabled">&#9664;</button>
+
+    <div class="productCourses__carousel">
+    
+
+<%  for (let i = 0; i < Math.min(products.length, 10); i++) { %>    
+        
+<article class="course--card">
+   
+    <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
+    <h3><%= products[i].coursetitle %></h3>
+    <small>Author's name</small>
+    <div class="course--card__rating">
+    <p>4.0</p> 
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+</div>
+    <p class="course--card__price">$<%= products[i].price %></p>
+    <div class="course--cardDown">
+        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
+
+
+</div>
+</article>
+
+
+<% }  %>
+
+
+
+</div>
+
+<button class="nav-button next">&#9654;</button>
+
+</div>
             </div>
         </div>
         
@@ -95,7 +135,38 @@
         <div class="startCatalog--Box">
             <div class="startCatalog--Box__title"><h2>Clases populares</h2> <button>Ver todo</button></div>
             <div class="startCatalog--popularBox__container">
-                <p>Aquí estarían las clases populares</p>
+                
+                
+<%  for (let i = 0; i < Math.min(products.length, 4); i++) { %>    
+        
+<article class="course--card">
+   
+    <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
+    <h3><%= products[i].coursetitle %></h3>
+    <small>Author's name</small>
+    <div class="course--card__rating">
+    <p>4.0</p> 
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+</div>
+    <p class="course--card__price">$<%= products[i].price %></p>
+    <div class="course--cardDown">
+        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
+
+
+</div>
+</article>
+
+
+<% }  %>
+
+               
+                
+                
+                
             </div>
         </div>
         
@@ -103,7 +174,44 @@
         <div class="startCatalog--Box">
             <div class="startCatalog--Box__title"><h2>Clases más recientes</h2></div>
             <div class="startCatalog--recentBox__container">
-                <p>Aquí estarían las clases más recientes</p>
+                <div class="productCourses--container">
+                    <button class="nav-button prev disabled">&#9664;</button>
+                
+                    <div class="productCourses__carousel">
+                
+                
+                        <%  for (let i = 0; i < Math.min(products.length, 10); i++) { %>    
+        
+                            <article class="course--card">
+                               
+                                <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
+                                <h3><%= products[i].coursetitle %></h3>
+                                <small>Author's name</small>
+                                <div class="course--card__rating">
+                                <p>4.0</p> 
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                                <p class="course--card__price">$<%= products[i].price %></p>
+                                <div class="course--cardDown">
+                                    <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
+                            
+                            
+                            </div>
+                            </article>
+                            
+                            
+                            <% }  %>
+                            
+                
+                </div>
+                
+                <button class="nav-button next">&#9654;</button>
+                
+                </div>
             </div>
         </div>
         </section>
@@ -122,7 +230,37 @@
 
 <!-- (Browsing) Búsqueda Encontrada -->
 <div class="browsingCatalog__foundContainer">
-<p>Aquí estaría el resultado de la búsqueda</p>
+   
+    <%  for (let i = 0; i < Math.min(products.length, 7); i++) { %>    
+        
+        <article class="course--card">
+           
+            <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
+            <h3><%= products[i].coursetitle %></h3>
+            <small>Author's name</small>
+            <div class="course--card__rating">
+            <p>4.0</p> 
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+            <p class="course--card__price">$<%= products[i].price %></p>
+            <div class="course--cardDown">
+                <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
+        
+        
+        </div>
+        </article>
+        
+        
+        <% }  %>
+        
+    
+    
+
+    
 </div>
 
 <!-- (Browsing) Búsqueda No Encontrada -->
