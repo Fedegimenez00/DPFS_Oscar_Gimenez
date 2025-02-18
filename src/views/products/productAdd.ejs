@@ -120,7 +120,7 @@
     <h3 class="forms--box__inputTitle">Imagen del curso (WIP)</h3>
     <div class="previewContainer">
     <div class="previewBox">
-    <img src="/imgs/Images/photo preview.webp">
+    <img id="imgPreview" src="/imgs/Images/photo preview.webp">
 </div>
 </div>
     <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
@@ -129,7 +129,7 @@
         <div class="pseudoButton">
             <p class="pseudoButton--title">Subir archivo</p>
         </div>
-    <input type="file" name="courseimage">
+    <input type="file" name="courseimage" id="courseimage">
     </div>
 </div>
 
@@ -456,5 +456,6 @@ estudiantes deseen adquirir tus cursos.
     <script src="/js/toggle.js"></script>
     <script src="/js/subToggle.js"></script>
     <script src="/js/addItems.js"></script>
+    <script src="/js/previewImage.js"></script>
 </body>
 </html>
