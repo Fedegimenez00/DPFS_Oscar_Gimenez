@@ -42,11 +42,13 @@ margin-bottom:10px;
 
 .productDetail--preview{
     position: relative;
+    border-bottom: solid var(--color-magenta) 1px;
+    height: 380px;
 
 }
 .productDetail--preview img{
     width: 100%;
-    border-bottom: solid var(--color-magenta) 1px;
+    
    
 }
 
