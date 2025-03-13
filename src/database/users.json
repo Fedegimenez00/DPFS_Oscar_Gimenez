@@ -1,30 +1,250 @@
-[{"user_id":1,"username":"rtriggle0","email":"jiles0@youtu.be","password":"kA7_grQ4P/36dR","type":"Customer","avatar":"/images/avatars/polloCorazon.jpg"},
-{"user_id":2,"username":"falbert1","email":"fkarim1@youtube.com","password":"eD5$onk9*v<nT\\}4","type":"Admin","avatar":"/images/avatars/pletzale.jpg"},
-{"user_id":3,"username":"ndaskiewicz2","email":"bharrell2@google.cn","password":"lA5__AN?Et~$@HSE","type":"Admin","avatar":"/images/avatars/polloCorazon.jpg"},
-{"user_id":4,"username":"mmccomb3","email":"chopewell3@shop-pro.jp","password":"lE7=aPsgTao+$*","type":"Admin","avatar":"/images/avatars/jala.jpg"},
-{"user_id":5,"username":"cboffin4","email":"lbawme4@statcounter.com","password":"nA7&ZKMp\\","type":"Admin","avatar":"/images/avatars/pletzale.jpg"},
-{"user_id":6,"username":"dchree5","email":"mbohan5@1688.com","password":"wW4.fp&)}5v","type":"Admin","avatar":"/images/avatars/pletzale.jpg"},
-{"user_id":7,"username":"ewitt6","email":"fmosdill6@adobe.com","password":"wG1+L__`p6Q<","type":"Admin","avatar":"/images/avatars/polloCorazon.jpg"},
-{"user_id":8,"username":"cbosenworth7","email":"rkonke7@timesonline.co.uk","password":"iK0%J1{Y$Wxc_'","type":"Customer","avatar":"/images/avatars/pretzel.jpg"},
-{"user_id":9,"username":"bcoldtart8","email":"amcinulty8@pcworld.com","password":"kU1=j>~B=66","type":"Admin","avatar":"/images/avatars/pretzel.jpg"},
-{"user_id":10,"username":"scater9","email":"kiston9@vimeo.com","password":"kN0|_0\\*","type":"Admin","avatar":"/images/avatars/tostada.jpg"},
-{"user_id":11,"username":"smuzzolloa","email":"byesinina@unc.edu","password":"hL9\"Ge3Vwd}K%Li","type":"Admin","avatar":"/images/avatars/tostada.jpg"},
-{"user_id":12,"username":"jturbatb","email":"episcopiellob@shutterfly.com","password":"bE2,Wg#|vnhIY","type":"Customer","avatar":"/images/avatars/kipa.jpg"},
-{"user_id":13,"username":"cchetwindc","email":"ghamptonc@usa.gov","password":"qT0{gKRLYAzpr","type":"Admin","avatar":"/images/avatars/polloCorazon.jpg"},
-{"user_id":14,"username":"sdienesd","email":"jbonifaced@auda.org.au","password":"hG5+si&|(","type":"Customer","avatar":"/images/avatars/pretzel.jpg"},
-{"user_id":15,"username":"kmuriele","email":"moxtone@unesco.org","password":"rZ1*IY6A<\"","type":"Customer","avatar":"/images/avatars/pretzel.jpg"},
-{"user_id":16,"username":"onorvalf","email":"dburtwistlef@tinypic.com","password":"lY6<DlN`}4>ShR0x","type":"Admin","avatar":"/images/avatars/jala.jpg"},
-{"user_id":17,"username":"jgiffautg","email":"ahearseyg@de.vu","password":"mH6@kDk#N?","type":"Admin","avatar":"/images/avatars/pletzale.jpg"},
-{"user_id":18,"username":"hkeuntjeh","email":"mlynetth@skyrock.com","password":"bK9.FE~v?.6Vmsv","type":"Admin","avatar":"/images/avatars/polloCorazon.jpg"},
-{"user_id":19,"username":"asoni","email":"sreali@biblegateway.com","password":"wS4*xs6FbJR","type":"Admin","avatar":"/images/avatars/pletzale.jpg"},
-{"user_id":20,"username":"llockiej","email":"tdefrainej@who.int","password":"zD6%+a\"v=","type":"Admin","avatar":"/images/avatars/kipa.jpg"},
-{"user_id":21,"username":"abasillk","email":"aaustonk@wp.com","password":"cY6$qZ(lv+","type":"Admin","avatar":"/images/avatars/tostada.jpg"},
-{"user_id":22,"username":"wspringl","email":"cpinorl@amazonaws.com","password":"eI4')s_wdacoT/lL","type":"Customer","avatar":"/images/avatars/kipa.jpg"},
-{"user_id":23,"username":"mborrettm","email":"zjoriom@about.me","password":"nY0*r8b#5","type":"Admin","avatar":"/images/avatars/polloCorazon.jpg"},
-{"user_id":24,"username":"wosannen","email":"mwakelamn@prlog.org","password":"fY4`XD(ZS","type":"Admin","avatar":"/images/avatars/jala.jpg"},
-{"user_id":25,"username":"ngautreyo","email":"smillso@qq.com","password":"nU4,uqN_ayMlq=","type":"Admin","avatar":"/images/avatars/kipa.jpg"},
-{"user_id":26,"username":"erutherforthp","email":"coliphantp@addthis.com","password":"yE9\"S!|&!","type":"Customer","avatar":"/images/avatars/kipa.jpg"},
-{"user_id":27,"username":"rgundryq","email":"lmorriartyq@csmonitor.com","password":"nY7@wekgQX","type":"Admin","avatar":"/images/avatars/kipa.jpg"},
-{"user_id":28,"username":"nnewcomr","email":"kbowerbankr@facebook.com","password":"cL6+)sfe$1)%!9","type":"Customer","avatar":"/images/avatars/pretzel.jpg"},
-{"user_id":29,"username":"uneils","email":"mandreopoloss@sphinn.com","password":"aI6<5\"aum","type":"Customer","avatar":"/images/avatars/pletzale.jpg"},
-{"user_id":30,"username":"dminnockt","email":"mpaeckmeyert@t-online.de","password":"zE4?uB=Rg#*DXD","type":"Customer","avatar":""}]
+[
+  {
+    "user_id": 1,
+    "username": "rtriggle0",
+    "email": "jiles0@youtu.be",
+    "password": "kA7_grQ4P/36dR",
+    "type": "Customer",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "user_id": 2,
+    "username": "falbert1",
+    "email": "fkarim1@youtube.com",
+    "password": "eD5$onk9*v<nT\\}4",
+    "type": "Admin",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "user_id": 3,
+    "username": "ndaskiewicz2",
+    "email": "bharrell2@google.cn",
+    "password": "lA5__AN?Et~$@HSE",
+    "type": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "user_id": 4,
+    "username": "mmccomb3",
+    "email": "chopewell3@shop-pro.jp",
+    "password": "lE7=aPsgTao+$*",
+    "type": "Admin",
+    "avatar": "/images/avatars/jala.jpg"
+  },
+  {
+    "user_id": 5,
+    "username": "cboffin4",
+    "email": "lbawme4@statcounter.com",
+    "password": "nA7&ZKMp\\",
+    "type": "Admin",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "user_id": 6,
+    "username": "dchree5",
+    "email": "mbohan5@1688.com",
+    "password": "wW4.fp&)}5v",
+    "type": "Admin",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "user_id": 7,
+    "username": "ewitt6",
+    "email": "fmosdill6@adobe.com",
+    "password": "wG1+L__`p6Q<",
+    "type": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "user_id": 8,
+    "username": "cbosenworth7",
+    "email": "rkonke7@timesonline.co.uk",
+    "password": "iK0%J1{Y$Wxc_'",
+    "type": "Customer",
+    "avatar": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "user_id": 9,
+    "username": "bcoldtart8",
+    "email": "amcinulty8@pcworld.com",
+    "password": "kU1=j>~B=66",
+    "type": "Admin",
+    "avatar": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "user_id": 10,
+    "username": "scater9",
+    "email": "kiston9@vimeo.com",
+    "password": "kN0|_0\\*",
+    "type": "Admin",
+    "avatar": "/images/avatars/tostada.jpg"
+  },
+  {
+    "user_id": 11,
+    "username": "smuzzolloa",
+    "email": "byesinina@unc.edu",
+    "password": "hL9\"Ge3Vwd}K%Li",
+    "type": "Admin",
+    "avatar": "/images/avatars/tostada.jpg"
+  },
+  {
+    "user_id": 12,
+    "username": "jturbatb",
+    "email": "episcopiellob@shutterfly.com",
+    "password": "bE2,Wg#|vnhIY",
+    "type": "Customer",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "user_id": 13,
+    "username": "cchetwindc",
+    "email": "ghamptonc@usa.gov",
+    "password": "qT0{gKRLYAzpr",
+    "type": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "user_id": 14,
+    "username": "sdienesd",
+    "email": "jbonifaced@auda.org.au",
+    "password": "hG5+si&|(",
+    "type": "Customer",
+    "avatar": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "user_id": 15,
+    "username": "kmuriele",
+    "email": "moxtone@unesco.org",
+    "password": "rZ1*IY6A<\"",
+    "type": "Customer",
+    "avatar": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "user_id": 16,
+    "username": "onorvalf",
+    "email": "dburtwistlef@tinypic.com",
+    "password": "lY6<DlN`}4>ShR0x",
+    "type": "Admin",
+    "avatar": "/images/avatars/jala.jpg"
+  },
+  {
+    "user_id": 17,
+    "username": "jgiffautg",
+    "email": "ahearseyg@de.vu",
+    "password": "mH6@kDk#N?",
+    "type": "Admin",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "user_id": 18,
+    "username": "hkeuntjeh",
+    "email": "mlynetth@skyrock.com",
+    "password": "bK9.FE~v?.6Vmsv",
+    "type": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "user_id": 19,
+    "username": "asoni",
+    "email": "sreali@biblegateway.com",
+    "password": "wS4*xs6FbJR",
+    "type": "Admin",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "user_id": 20,
+    "username": "llockiej",
+    "email": "tdefrainej@who.int",
+    "password": "zD6%+a\"v=",
+    "type": "Admin",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "user_id": 21,
+    "username": "abasillk",
+    "email": "aaustonk@wp.com",
+    "password": "cY6$qZ(lv+",
+    "type": "Admin",
+    "avatar": "/images/avatars/tostada.jpg"
+  },
+  {
+    "user_id": 22,
+    "username": "wspringl",
+    "email": "cpinorl@amazonaws.com",
+    "password": "eI4')s_wdacoT/lL",
+    "type": "Customer",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "user_id": 23,
+    "username": "mborrettm",
+    "email": "zjoriom@about.me",
+    "password": "nY0*r8b#5",
+    "type": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "user_id": 24,
+    "username": "wosannen",
+    "email": "mwakelamn@prlog.org",
+    "password": "fY4`XD(ZS",
+    "type": "Admin",
+    "avatar": "/images/avatars/jala.jpg"
+  },
+  {
+    "user_id": 25,
+    "username": "ngautreyo",
+    "email": "smillso@qq.com",
+    "password": "nU4,uqN_ayMlq=",
+    "type": "Admin",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "user_id": 26,
+    "username": "erutherforthp",
+    "email": "coliphantp@addthis.com",
+    "password": "yE9\"S!|&!",
+    "type": "Customer",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "user_id": 27,
+    "username": "rgundryq",
+    "email": "lmorriartyq@csmonitor.com",
+    "password": "nY7@wekgQX",
+    "type": "Admin",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "user_id": 28,
+    "username": "nnewcomr",
+    "email": "kbowerbankr@facebook.com",
+    "password": "cL6+)sfe$1)%!9",
+    "type": "Customer",
+    "avatar": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "user_id": 29,
+    "username": "uneils",
+    "email": "mandreopoloss@sphinn.com",
+    "password": "aI6<5\"aum",
+    "type": "Customer",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "user_id": 30,
+    "username": "dminnockt",
+    "email": "mpaeckmeyert@t-online.de",
+    "password": "zE4?uB=Rg#*DXD",
+    "type": "Customer",
+    "avatar": ""
+  },
+  {
+    "user_id": 31,
+    "username": "Senior71",
+    "email": "email@email.com",
+    "password": "$2b$10$Gl/2Pw7X5uAIT/d4Bj4VQeQxjg5kg.0OWuvMJtLcyuqTUFP5dtckO",
+    "avatar": "default.png",
+    "role": "user"
+  }
+]
