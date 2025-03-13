@@ -1,0 +1,43 @@
+[
+    {
+      "id": "Fundamentos de la Ciberseguridad",
+      "name": "Fundamentos de la Ciberseguridad",
+      "subcategories": []
+    },
+    {
+      "id": "Seguridad Ofensiva",
+      "name": "Seguridad Ofensiva",
+      "subcategories": [
+        { "id": "Hacking de Aplicaciones Web", "name": "Hacking de Aplicaciones Web" },
+        { "id": "Pentesting", "name": "Pentesting" },
+        { "id": "Explotación de Vulnerabilidades", "name": "Explotación de Vulnerabilidades" }
+      ]
+    },
+    {
+        "id": "Seguridad Defensiva",
+        "name": "Seguridad Defensiva",
+        "subcategories": [
+          { "id": "Fortificación de Redes", "name": "Fortificación de Redes" },
+          { "id": "Respuesta a Incidentes", "name": "Respuesta a Incidentes" },
+          { "id": "Análisis de Malware", "name": "Análisis de Malware" }
+        ]
+      },
+      {
+        "id": "Seguridad de Nube",
+        "name": "Seguridad de Nube",
+        "subcategories": [
+          { "id": "Gestión de Identidades y Accesos (IAM)", "name": "Gestión de Identidades y Accesos (IAM)" },
+          { "id": "Arquitectura Segura en la Nube", "name": "Arquitectura Segura en la Nube" },
+          { "id": "Respuesta a Incidentes en Cloud", "name": "Respuesta a Incidentes en Cloud" }
+        ]
+      },
+      {
+        "id": "Ingeniería Social",
+        "name": "Ingeniería Social",
+        "subcategories": [
+          { "id": "Técnicas de Ingeniería Social", "name": "Técnicas de Ingeniería Social" },
+          { "id": "Concienciación y Educación", "name": "Concienciación y Educación" }
+        ]
+      }
+  ]
+  

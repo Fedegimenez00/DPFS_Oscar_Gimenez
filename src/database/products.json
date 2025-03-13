@@ -559,5 +559,16 @@
     "subcategory": "Respuesta a Incidentes",
     "courseimage": "course1739268070646.png",
     "price": "1240"
+  },
+  {
+    "courseid": 52,
+    "coursetitle": "Ejemplo de curso",
+    "coursesubtitle": "Lel",
+    "coursedescription": "LALALALALALA",
+    "lang": "Francés",
+    "category": "ingenieriaSocial",
+    "subcategory": "tecnicasIngenieriaSocial",
+    "courseimage": "course1740196498743.png",
+    "price": "100"
   }
 ]

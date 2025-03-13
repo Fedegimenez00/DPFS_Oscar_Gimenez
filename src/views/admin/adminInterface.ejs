@@ -45,25 +45,19 @@
        
         <div class="productListSearch__selectBar">
         <div class="productListSearch__selectContainer">
-            <label for=""></label>
-           <select name="" id="categoria" onchange="actualizarSubcategorias()">
-            <option class="catalog-grey" value="" selected disabled>Categorías</option>
-            <option value="">Fundamentos de la Ciberseguridad</option>
-            <option value="seguridadOfensiva">Seguridad Ofensiva</option>
-            <option value="seguridadDefensiva">Seguridad Defensiva</option>
-            <option value="seguridadNube">Seguridad de Nube</option>
-            <option value="ingenieriaSocial">Ingeniería Social</option>
-        
-        
-           </select>
+            <label for="category"></label>
+    
+            <select name="category" id="category">
+            <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
+
+</select>
         </div>
         
         <div class="productListSearch__selectContainer">
-            <label for=""></label>
-           <select name="" id="subcategoria">
-            <option class="catalog-grey" value="" selected disabled>Subcate...</option>
-        
-           </select>
+            <select name="subcategory" id="subcategory">
+                <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
+            
+               </select>
         </div>
         
         <button class="productListSearch__filterCategoriesButton"><i class="fa-solid fa-filter"></i></button>

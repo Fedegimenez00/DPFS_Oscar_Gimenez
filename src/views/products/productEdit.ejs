@@ -94,21 +94,14 @@
 <div class="forms--box__selectContainer">
     <label for="category"></label>
     
-   <select name="category" id="category" onchange="actualizarSubcategorias()" value="<%= productEdit.category%>">
+   <select name="category" id="category" value="">
     <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
-    <option value="Fundamentos de la Ciberseguridad" <%= productEdit.category === "Fundamentos de la Ciberseguridad" ? "selected" : "" %>>Fundamentos de la Ciberseguridad</option>
-    <option value="Seguridad Ofensiva" <%= productEdit.category === "Seguridad Ofensiva" ? "selected" : "" %>>Seguridad Ofensiva</option>
-    <option value="Seguridad Defensiva" <%= productEdit.category === "Seguridad Defensiva" ? "selected" : "" %>>Seguridad Defensiva</option>
-    <option value="Seguridad de Nube" <%= productEdit.category === "Seguridad de Nube" ? "selected" : "" %>>Seguridad de Nube</option>
-    <option value="Ingenieria Social" <%= productEdit.category === "Ingenieria Social" ? "selected" : "" %>>Ingeniería Social</option>
-
-
    </select>
 </div>
 
 <div class="forms--box__selectContainer">
     <label for="subcategory"></label>
-   <select name="subcategory" id="subcategory">
+   <select name="subcategory" id="subcategory" value="">
     <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
 
    </select>
@@ -121,7 +114,7 @@
     <h3 class="forms--box__inputTitle">Imagen del curso (WIP)</h3>
     <div class="previewContainer">
     <div class="previewBox">
-    <img src="/imgs/Images/photo preview.webp">
+    <img src="<%= productEdit.courseimage%>">
 </div>
 </div>
     <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>

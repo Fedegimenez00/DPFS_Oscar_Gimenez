@@ -11,6 +11,7 @@ const userRouter = require ('./routes/user.routes.js');
 const productRouter = require ('./routes/product.routes.js');
 const adminRouter = require ('./routes/admin.routes.js')
 
+
 //Configuración de motores estáticos
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
