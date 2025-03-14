@@ -5,7 +5,7 @@ const path = require('path')
 
 const {login, register, processRegister, profile, edit, processUpdate,} = require('../controllers/userControllers.js');
 
-//Subir el archivo usando multer y dónde guardarlo
+//Subir el archivo usando multer y su disposición como middleware
 const { uploadUser } = require("../middlewares/multer");
 
 

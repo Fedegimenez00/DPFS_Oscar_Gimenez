@@ -5,24 +5,15 @@ const path = require('path')
 
 const {show, create, cart, getPartial, catalog, save, edit, update, destroy} = require('../controllers/productControllers.js');
 
-//Subir el archivo usando multer y dónde guardarlo
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.resolve(__dirname, '../../public/database/images/courses'));
-    },
-    filename: function (req, file, cb) {
-      cb(null, 'course' + Date.now() + path.extname(file.originalname))
-    }
-  })
-  
-  const upload = multer({ storage })
+//Subir el archivo usando multer (Con su disposición como middleware)
+const { uploadProd } = require('../middlewares/multer')
 
 router 
 .get ('/products/detail/:courseid', show)
 .get ('/products/add', create)
-.post('/products/add', upload.single('courseimage'), save)
+.post('/products/add', uploadProd.single('courseimage'), save)
 .get('/products/edit/:courseid', edit)
-.put('/products/edit/:courseid', upload.single('courseimage'), update)
+.put('/products/edit/:courseid', uploadProd.single('courseimage'), update)
 .get('/products/delete/:courseid', destroy)
 
 .get('/cart', cart)

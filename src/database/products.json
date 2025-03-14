@@ -570,5 +570,15 @@
     "subcategory": "tecnicasIngenieriaSocial",
     "courseimage": "course1740196498743.png",
     "price": "100"
+  },
+  {
+    "courseid": 53,
+    "coursetitle": "Ejemplo de curso 2",
+    "coursesubtitle": "Subtitulo de curso",
+    "coursedescription": "Esta es una descripción",
+    "lang": "Italiano",
+    "category": "Fundamentos de la Ciberseguridad",
+    "courseimage": "course1741909221763.png",
+    "price": "1020"
   }
 ]

@@ -1,11 +1,12 @@
 const path = require('path');
 const fs = require('fs');
 
+const productsPath = path.resolve(__dirname, '../database/products.json');
 
 const productController = {
   //Muestra el detalle del producto dentro del JSON, usando de referencia el id
     show : (req, res) => {
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       let myProduct = products.find(product => product.courseid === parseInt(req.params.courseid, 10));
 
       
@@ -17,7 +18,7 @@ const productController = {
 
 
     create : (req, res) =>{
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
         return res.render('products/productAdd');
     },
@@ -25,7 +26,7 @@ const productController = {
 //Parsea el Json, extrae el último objeto, recibe el nuevo producto generado por el formulario de
 // create, pushea el nuevo producto y convierte el nuevo archivo en un JSON
     save : (req, res) =>{
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       let lastProduct = products.pop();
       products.push(lastProduct);
       let newProduct = {
@@ -42,21 +43,21 @@ const productController = {
            
     products.push(newProduct);
     let newProductSave = JSON.stringify(products, null, 2);
-    fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), newProductSave);
+    fs.writeFileSync(productsPath, 'utf-8', newProductSave);
     //redirecciona a una ruta deseada
     res.redirect('/admin');
     },
 
     //Muestra desde la página de edición, los datos del JSON
     edit : (req,res) =>{
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       const productId = req.params.courseid;
       let productEdit = products.find(product=> product.courseid == productId);
       res.render(path.resolve(__dirname, '../views/products/productEdit'), {productEdit});
     },
 
     update : (req, res) =>{
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       req.body.courseid = req.params.courseid;
       req.body.courseimage = req.file ? req.file.filename : req.body.oldImage;
       let productsUpdate = products.map(product =>{
@@ -66,14 +67,14 @@ const productController = {
         return product;
       })
       let productUpdate = JSON.stringify(productsUpdate, null, 2);
-      fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), productUpdate)
+      fs.writeFileSync(productsPath, 'utf-8', productUpdate)
       res.redirect('/admin');
       
   
     },
 
     destroy: (req, res) =>{
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let products = JSON.parse(productsPath, 'utf-8');
       const productDeleteId = req.params.courseid;
       //Se busca el elemento a eliminar y se obtiene el exacto en base a su id
       const productsFinal = products.filter(product => product.courseid != productDeleteId);
@@ -100,7 +101,7 @@ const productController = {
       },
       
     catalog: (req, res) => {
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
       return res.render('products/products', {products}); // Aquí enviamos "products" a la vista
 
