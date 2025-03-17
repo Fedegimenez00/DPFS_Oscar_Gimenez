@@ -47,7 +47,7 @@ const userController = {
 
        //Recordar usuario
        if (req.body.rememberme == 'on') {
-        res.cookie('email', userToLogin.email, 
+        res.cookie('username', userToLogin.username, 
         {maxAge: 60 * 1000 * 60}); //La cookie expira en 1 hora
        }
 
@@ -70,6 +70,12 @@ const userController = {
     profile: (req, res) => {
 
       res.render("users/profile", { user: req.session.userLogged });
+    },
+
+    logout: (req, res)  => {
+      res.clearCookie('username');
+      req.session.destroy();
+      res.redirect('/');
     },
 
     edit: (req, res) => {

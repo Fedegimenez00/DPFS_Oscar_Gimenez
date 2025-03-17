@@ -8,6 +8,7 @@ const session = require('express-session');
 
 const methodOverride = require('method-override');
 
+const userLogged = require('./middlewares/userLogged')
 const indexRouter = require("./routes/index.routes.js");
 const userRouter = require ('./routes/user.routes.js');
 const productRouter = require ('./routes/product.routes.js');
@@ -34,6 +35,9 @@ app.use(express.urlencoded({extended : false}));
 
 //Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
 app.use(methodOverride('_method'));
+
+// UserLogged
+app.use(userLogged);
 
 //Rutas de navegación
 app

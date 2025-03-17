@@ -6,9 +6,14 @@
              <li> <a href="/products">Cursos</a></li>
              <li>Recursos</li>
              <li><a href="/admin">Admin</a></li>
-         </ul>
-         <ul class="header--navbar__signup">
-             <li><a href="/login">Iniciar Sesión</a></li>
+         </ul>         
+         <ul class="header--navbar__signup" style="gap: 10px;">
+         <% if (locals.isLogged) { %>
+            <li><a href="/profile">Perfil de Usuario</a></li>
+            <li><a href="/logout">Cerrar sesión</a></li>
+        <% } else { %>
+            <li><a href="/login">Iniciar Sesión</a></li>
+          <% } %>
          </ul>
      </nav>
 

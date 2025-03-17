@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path')
 
-const {login, register, processRegister, processLogin, profile, edit, processUpdate,} = require('../controllers/userControllers.js');
+const {login, register, processRegister, processLogin, profile, logout, edit, processUpdate,} = require('../controllers/userControllers.js');
 
 //Subir el archivo usando multer y su disposición como middleware
 const { uploadUser } = require("../middlewares/multer");
@@ -18,7 +18,8 @@ router
 //Vista de perfil
 .get ('/profile', profile)
 
-
+//Logout process
+.get('/logout', logout)
 
 
 module.exports = router;
