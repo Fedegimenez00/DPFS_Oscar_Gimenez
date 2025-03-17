@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+
+    <main style="height: 1000px;">
+       
+        <h1>Vista de perfil de: 
+           <u> <%= user.username %></u></h1>
+           <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
+           <p style="text-align: center;"><u>Email</u>: <%= user.email %></p>
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

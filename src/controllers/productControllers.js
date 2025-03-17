@@ -37,7 +37,7 @@ const productController = {
         lang: req.body.lang,
         category: req.body.category,
         subcategory: req.body.subcategory,
-        courseimage: req.file.filename || 'default.png',
+        courseimage: req.file?.filename || 'default.png',
         price: req.body.price,
       }
            

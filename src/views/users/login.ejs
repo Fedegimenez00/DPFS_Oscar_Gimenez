@@ -15,7 +15,7 @@
             </div>
         
             <div class="loginCard--body">
-                <form action="POST">
+                <form action="/login" method="post">
                     <div class="loginCard__inside">
                     <div class="loginCard--bodyInputs">
                     <input  type="text" name="username" id="username" placeholder="Nombre de usuario">
@@ -28,13 +28,14 @@
                         
                     </div>
                     <div class="loginCard__checkBox">
-                        <input type="checkbox" name="remember" value="yes">
-                        <label for="remember">Recuérdame</label>
+                        <input type="checkbox" name="rememberme" id="rememberme">
+                        <label for="rememberme">Recuérdame</label>
 
                     </div>
                 </div>
+                <button type="submit" class="loginCard--body__button">Ingresar</button>
+
         </form>
-                    <button class="loginCard--body__button">Ingresar</button>
                     
                 
                 

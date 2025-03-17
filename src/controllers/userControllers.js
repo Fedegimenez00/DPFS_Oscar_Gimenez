@@ -6,7 +6,8 @@ const fs = require('fs');
 
 const userController = {
     login : (req, res) => {
-     res.render('users/login');
+     res.render('users/login'); 
+     let resultado = bcryptjs.compareSync('', 'hash');
     },
     register : (req, res) =>{
       res.render('users/register');
@@ -27,6 +28,36 @@ const userController = {
 
       fs.writeFileSync((path.resolve(__dirname, '../database/users.json')), JSON.stringify(users, null, '  '));
       res.redirect('/');
+    },
+
+    processLogin: (req, res) => {
+      //Verificar que el user exista
+      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+      
+      let userToLogin = users.find(user => user.username == req.body.username);
+      if (userToLogin) {
+        //Comparar contraseñas
+        let passOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+      if (passOk) {
+       //Borrar password previo a la creación de la sesión
+       delete userToLogin.password;     
+
+       //Generar una sesión
+       req.session.userLogged = userToLogin
+
+       //Recordar usuario
+       if (req.body.rememberme == 'on') {
+        res.cookie('email', userToLogin.email, 
+        {maxAge: 60 * 1000 * 60}); //La cookie expira en 1 hora
+       }
+
+       //Redireccione a la vista de perfil
+       res.redirect('/profile')
+
+      }
+      }
+      
+      //Validaciones PENDIENTES
     },
 
     profile: (req, res) => {

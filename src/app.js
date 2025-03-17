@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const PORT = 3000;
 const app = express();
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const methodOverride = require('method-override');
 
@@ -14,6 +16,13 @@ const adminRouter = require ('./routes/admin.routes.js')
 
 //Configuración de motores estáticos
 app.use(express.static(path.join(__dirname, '..', 'public')))
+
+// Session
+app.use(session({secret: 'ThisIsZeroTrust',
+    saveUninitialized: true, resave: true}))
+
+// Cookies
+app.use(cookieParser());
 
 //Configuración del motor de plantillas
 app.set("view engine", "ejs");
