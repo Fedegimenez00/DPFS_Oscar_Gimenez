@@ -55,9 +55,16 @@ const userController = {
        res.redirect('/profile')
 
       }
+      //Redirección en el caso que la contra es incorrecta
+      console.log('Las credenciales son incorrectas');
+      return res.redirect('/login')
+      } else {
+        //Si el usuario no lo encuentra        
+        console.log('El usuario no existe en nuestra base de datos');
+        return res.redirect('/login')
       }
       
-      //Validaciones PENDIENTES
+      
     },
 
     profile: (req, res) => {
