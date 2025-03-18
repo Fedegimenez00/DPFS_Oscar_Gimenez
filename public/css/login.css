@@ -160,12 +160,17 @@ font-size: 1.5rem;
 /* Cuerpo del Ingreso */
 
 .registerCard {
-    width: 55%;
+    width: 45%;
     margin: 130px 0px 0px 0px;
     margin-bottom: 160px;
 
 }
-
+.registerCard--title{
+    width: 95%;
+}
+.registerCard--title h1{
+  
+}
 /* Pie del Ingreso */
 
 
