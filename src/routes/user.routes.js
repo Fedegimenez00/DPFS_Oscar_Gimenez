@@ -7,19 +7,20 @@ const {login, register, processRegister, processLogin, profile, logout, edit, pr
 
 //Subir el archivo usando multer y su disposición como middleware
 const { uploadUser } = require("../middlewares/multer");
-
+const loggedAuth = require("../middlewares/loggedAuth.js");
+const guestAuth = require('../middlewares/guestAuth.js')
 
 router 
-.get ('/login', login)
+.get ('/login', loggedAuth, login) //Redireccionamiento para usuarios ya logueados
 .post('/login', processLogin)
-.get ('/register', register)
+.get ('/register', loggedAuth, register)
 .post('/register', uploadUser.single("avatar"), processRegister)
 
 //Vista de perfil
-.get ('/profile', profile)
+.get ('/profile', guestAuth, profile) //Redireccionamiento para visitantes no logueados
 
 //Logout process
-.get('/logout', logout)
+.get('/logout', guestAuth, logout)
 
 
 module.exports = router;

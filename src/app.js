@@ -5,15 +5,20 @@ const PORT = 3000;
 const app = express();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const userLogged = require('./middlewares/userLogged');
+
 
 const methodOverride = require('method-override');
 
-const userLogged = require('./middlewares/userLogged')
 const indexRouter = require("./routes/index.routes.js");
 const userRouter = require ('./routes/user.routes.js');
 const productRouter = require ('./routes/product.routes.js');
 const adminRouter = require ('./routes/admin.routes.js')
 
+/* Sirve para ver logs de las peticiones
+const morgan = require('morgan');
+app.use(morgan('tiny'))
+*/
 
 //Configuración de motores estáticos
 app.use(express.static(path.join(__dirname, '..', 'public')))
@@ -49,6 +54,9 @@ app
 
 .use ('/', adminRouter)
 
+.use(function(req,res) {
+    res.status(404).render('not-found.ejs', {title: 'No encontrado'});
+})
 
 app.listen(PORT, () =>
 console.log("Server is running in: " + "http://localhost:" + PORT));

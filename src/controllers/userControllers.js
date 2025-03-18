@@ -22,7 +22,7 @@ const userController = {
         email,
         password: bcryptjs.hashSync(password, 10),
         avatar: req.file?.filename || "default.png",
-        role: "user",
+        role: "user"
       };
       users.push(newUser);
 
@@ -50,17 +50,20 @@ const userController = {
         res.cookie('username', userToLogin.username, 
         {maxAge: 60 * 1000 * 60}); //La cookie expira en 1 hora
        }
-
        //Redireccione a la vista de perfil
-       res.redirect('/profile')
+       if (userToLogin.role == 'user') {
+         res.redirect('/profile')
+       } else if (userToLogin.role == 'admin'){
+        res.redirect('/admin')
+       }
+       
+      
 
       }
       //Redirección en el caso que la contra es incorrecta
-      console.log('Las credenciales son incorrectas');
       return res.redirect('/login')
       } else {
         //Si el usuario no lo encuentra        
-        console.log('El usuario no existe en nuestra base de datos');
         return res.redirect('/login')
       }
       
