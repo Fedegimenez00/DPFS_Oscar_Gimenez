@@ -82,6 +82,7 @@ const userController = {
     },
 
     edit: (req, res) => {
+     
       let userFound = User.findById(req.params.user_id);
       if (userFound) {
         return res.render("users/edit", { user: userFound });

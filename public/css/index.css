@@ -1050,6 +1050,7 @@ display: none;
     margin-top: 7px;
     margin-left: 15px;
     width: 0px;
+    color: var(--color-blancoApagado);
 }
 
 
