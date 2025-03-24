@@ -62,6 +62,7 @@
     margin-bottom: 15px;
     width: 70%;
     color: black;
+    border-radius: 7px;
 }
 
 
@@ -87,6 +88,7 @@ height: 16px;
     margin-top: 30px;
     margin-bottom: 15px;
     align-self: center;
+    border-radius: 7px;
 }
 
 /* Pie del Ingreso */
