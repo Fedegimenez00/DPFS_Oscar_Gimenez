@@ -6,12 +6,42 @@
     <%- include('../partials/header') %>
 
 
-    <main style="height: 1000px;">
-       
-        <h1>Vista de perfil de: 
-           <u> <%= user.username %></u></h1>
+    <main class="main--profile">
+        <section class="userTitle--section">
+            <div class="userTitle--card">
+                <h1><%= user.username %></h1>
+                <h2>Titular</h2>
+            </div>
+        </section>
+
+        <section class="userAvatar--section">
+            <div class="userAvatar--card">
            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
-           <p style="text-align: center;"><u>Email</u>: <%= user.email %></p>
+            </div>
+
+            <button class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
+        </section>
+       <section class="profileBody--section">
+        <div class="profileBody--description">
+        <h3>Sobre mi:</h3>
+        <p>Descripción</p>
+    </div>
+
+    <div class="profileBody--ownCourses">
+        <h3>Mis cursos:</h3>
+        <div class="ownCourses--container">
+            <article class="ownCourses--containerCard">
+                <img src="/imgs/Images/materializacion-de-las-ventajas-de-la-tecnologia-en-la-educacion 3.png" alt="">
+                <div class="ownCourses--containerCard__contents"> 
+                <h4>Nombre del curso</h4>
+                <div class="ownCourses--containerCard__contentsInside"><i class="fa-solid fa-star"></i><p>4.0</p></div> <div class="ownCourses--containerCard__contentsInside"> <i class="fa-solid fa-users"></i><p>1245</p></div>
+                </div>
+
+            </article>
+        </div>
+    </div>
+       </section>
+        
     </main>
 
     <%- include('../partials/footer') %>

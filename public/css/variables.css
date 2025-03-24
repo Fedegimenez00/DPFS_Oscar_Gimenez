@@ -3,6 +3,7 @@
     --color-negroCarbon : #1B1B1B;
     --color-grisOscuro : #2C2C2C;
     --color-grisOscuroNiebla: rgba(44, 44, 44, 0.3);
+    --color-grisOscuroTranslucido: rgba(44, 44, 44, 0.55);
     --color-negroRojizo : #0C0202;
     --color-negroRojizoTranslucido: rgba(12, 2, 2, 0.5);
     --color-blancoApagadoTranslucido: rgba(229, 229, 229, 0.1);

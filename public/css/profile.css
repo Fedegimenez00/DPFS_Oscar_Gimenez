@@ -1,0 +1,122 @@
+.main--profile{
+
+}
+
+/* Nombre de usuario y Titular */
+
+.userTitle--section{
+    justify-items: center;
+    margin-top: 45px;
+}
+
+.userTitle--card{
+    border: solid 1px var(--color-blancoApagado);
+    background-color: var(--color-grisOscuroTranslucido);
+    padding-left: 15px;
+    padding-top: 7px;
+    padding-bottom: 13px;
+        width: 90%;
+}
+
+.userTitle--card h1{
+    font-size: 2.6rem;
+    margin-left: 0px;
+    margin-bottom: 2px;
+}
+
+.userTitle--card h2{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+/* Avatar de usuario */
+
+.userAvatar--section{
+
+}
+
+.userAvatar--card{
+
+}
+
+.userAvatar--card img{
+
+}
+
+/* Editar Usuario */
+
+.editUser--button{
+
+}
+
+.editUser--button i{
+
+}
+
+.editUser--button{
+
+}
+
+/* Cuerpo del Perfil */
+
+.profileBody--section{
+
+}
+
+/* Descripción de perfil */
+
+.profileBody--description{
+
+}
+
+.profileBody--description h3{
+
+}
+
+.profileBody--description p{
+
+}
+
+/* Contenedor de tarjetas de Cursos del Usuario */
+
+.profileBody--ownCourses{
+
+}
+
+.profileBody--ownCourses h3{
+
+}
+
+.ownCourses--container{
+
+}
+
+/* Tarjeta de Cursos del Usuario */
+
+.ownCourses--containerCard{
+
+}
+
+.ownCourses--containerCard img{
+
+}
+
+.ownCourses--containerCard__contents{
+
+}
+
+.ownCourses--containerCard__contents h4{
+
+}
+
+.ownCourses--containerCard__contentsInside{
+
+}
+
+.ownCourses--containerCard__contentsInside i{
+
+}
+
+.ownCourses--containerCard__contentsInside p {
+
+}
