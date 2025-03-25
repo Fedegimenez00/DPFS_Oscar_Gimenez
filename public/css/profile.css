@@ -32,25 +32,36 @@
 /* Avatar de usuario */
 
 .userAvatar--section{
-
+    justify-items: center;
+    margin-top: 45px;
 }
 
 .userAvatar--card{
-
+    width: 90%;
 }
 
 .userAvatar--card img{
-
+    width: 100%;
+    border: solid var(--color-blancoApagado) 1px;
+    border-radius: 5px;
 }
 
 /* Editar Usuario */
 
 .editUser--button{
-
+    background-color: var(--color-purpuraClaroTranslucido);
+    border: solid 1px var(--color-purpuraClaro);
+    color: var(--color-blancoApagado);
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 12px 0px;
+    border-radius: 5px;
+    margin-top: 15px;
+   
 }
 
 .editUser--button i{
-
+    margin-right: 6px;
 }
 
 .editUser--button{
@@ -60,7 +71,14 @@
 /* Cuerpo del Perfil */
 
 .profileBody--section{
+    justify-items: center;
+    margin-top: 30px;
 
+}
+.profileBody--sectionInside{
+    width: 90%;
+    border: solid var(--color-blancoApagado) 1px;
+    padding: 13px 15px;
 }
 
 /* Descripción de perfil */

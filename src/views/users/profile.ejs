@@ -17,11 +17,13 @@
         <section class="userAvatar--section">
             <div class="userAvatar--card">
            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
+           <button class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
+
             </div>
 
-            <button class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
         </section>
        <section class="profileBody--section">
+        <div class="profileBody--sectionInside">
         <div class="profileBody--description">
         <h3>Sobre mi:</h3>
         <p>Descripción</p>
@@ -40,6 +42,7 @@
             </article>
         </div>
     </div>
+</div>
        </section>
         
     </main>
