@@ -34,6 +34,7 @@
 .userAvatar--section{
     justify-items: center;
     margin-top: 45px;
+    
 }
 
 .userAvatar--card{
@@ -56,7 +57,7 @@
     font-size: 1.5rem;
     padding: 12px 0px;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 10px;
    
 }
 
@@ -72,11 +73,12 @@
 
 .profileBody--section{
     justify-items: center;
-    margin-top: 30px;
+    margin-top: 45px;
+    margin-bottom: 205px;
 
 }
 .profileBody--sectionInside{
-    width: 90%;
+    width: 86%;
     border: solid var(--color-blancoApagado) 1px;
     padding: 13px 15px;
 }
@@ -84,11 +86,11 @@
 /* Descripción de perfil */
 
 .profileBody--description{
-
+    min-height: 240px;
 }
 
 .profileBody--description h3{
-
+    font-size: 1.5rem;
 }
 
 .profileBody--description p{
@@ -98,11 +100,11 @@
 /* Contenedor de tarjetas de Cursos del Usuario */
 
 .profileBody--ownCourses{
-
+    min-height: 355px;
 }
 
 .profileBody--ownCourses h3{
-
+    font-size: 1.3rem;
 }
 
 .ownCourses--container{
@@ -112,29 +114,62 @@
 /* Tarjeta de Cursos del Usuario */
 
 .ownCourses--containerCard{
-
+    border-top: solid var(--color-blancoApagado) 1px;
+    margin-top: 15px;
 }
 
-.ownCourses--containerCard img{
+.ownCourses--containerCardInside{
+    margin: 5px;
+    display: flex;
+    margin: 10px 0px;
+    }
 
+.ownCourses--containerCard img{
+    width: 140px;
+    border-radius: 5px;
 }
 
 .ownCourses--containerCard__contents{
-
+    margin-left: 10px;
 }
+
+
 
 .ownCourses--containerCard__contents h4{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.ownCourses--containerCard__contentsDown{
+    display: flex
+;
+    gap: 10px;
+}
+
+.ownCourses--containerCard__contentsRating{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.ownCourses--containerCard__contentsRating i{
+color: var(--color-amarilloDorado);
+}
+
+.ownCourses--containerCard__contentsRating p {
 
 }
 
-.ownCourses--containerCard__contentsInside{
+.ownCourses--containerCard__contentsReview{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.ownCourses--containerCard__contentsReview i{
 
 }
 
-.ownCourses--containerCard__contentsInside i{
-
-}
-
-.ownCourses--containerCard__contentsInside p {
+.ownCourses--containerCard__contentsReview p{
 
 }
