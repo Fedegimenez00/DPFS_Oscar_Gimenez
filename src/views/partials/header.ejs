@@ -1,6 +1,21 @@
 <header class="header--body"><div class="header--body_card">
     <button id="burgerMenu" class="burger-menu"><i class="fa-solid fa-bars"></i></button> 
      <nav class="header--navbar" id="nav">
+        <% if (locals.isAdmin) { %>
+
+            <% } else if (locals.isLogged) {%>
+        <div class="userMenu--box">
+            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
+            <div class="userMenu--box__text">
+                <div class="userMenu--box__textInside">
+            <p>Hola, <%= user.username %></p>
+            <small>Bienvenido de vuelta!</small>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+         <% } else { %>
+            <% } %>
+    </div>
          <ul class="header--navbar__hub"> 
              <li><a href="/">Inicio</a></li>
              <li> <a href="/products">Cursos</a></li>
