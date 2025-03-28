@@ -18,7 +18,8 @@ router
 
 //Vista de perfil
 .get ('/profile', guestAuth, profile) //Redireccionamiento para visitantes no logueados
-
+.get('/profile/edit', guestAuth, edit)
+.post('/profile/edit', guestAuth, uploadUser.single("avatar"), processUpdate)
 //Logout process
 .get('/logout', guestAuth, logout)
 

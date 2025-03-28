@@ -1,6 +1,16 @@
-<header class="header--body"><div class="header--body_card">
-    <button id="burgerMenu" class="burger-menu"><i class="fa-solid fa-bars"></i></button> 
+<header class="header--body">
+    <div class="header--body_card">
+        <button id="burgerMenu" class="burger-menu"><i class="fa-solid fa-bars"></i></button> 
+
+        <a class="logo--image" href="/">
+   <img src="/imgs/pageLogo/Logo_Completo.png" alt="ZeroTrust Logo"></a>
+   
+   <div class="cart--pending">
+       <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+   <p>1</p>
+   </div>
      <nav class="header--navbar" id="nav">
+       
         <% if (locals.isAdmin) { %>
 
             <% } else if (locals.isLogged) {%>
@@ -11,38 +21,48 @@
             <p>Hola, <%= user.username %></p>
             <small>Bienvenido de vuelta!</small>
             </div>
-            <i class="fa-solid fa-chevron-right"></i>
+           <button class="userButton" id="userButton"> <i class="fa-solid fa-chevron-right"></i>
+        </button>
         </div>
+        
+        <nav class="userMenu" id="userMenu">
+            <ul class="userMenu--list">
+            <div class="returnButton--">
+            <button type="button" class="returnMenuButton" id="returnMenuButton">Volver al menú principal</button>
+            </div>
+            <hr class="userMenu--list__line">
+            <li><a href="/profile">Mi perfil</a></li>
+            <hr class="userMenu--list__line">
+            <li><a href="#">Mis Cursos</a></li>
+            <li><a href="#">Creación de Cursos</a></li>
+            <li><a href="/profile/edit">Configuración</a></li>
+            <hr class="userMenu--list__line">
+            <li><a href="/logout">Cerrar sesión</a></li>
+        </ul>
+        </nav>
          <% } else { %>
+            <ul class="header--navbar__hub"> 
+                <li><a href="/login">Iniciar Sesión</a></li>
+            </ul>       
             <% } %>
     </div>
-         <ul class="header--navbar__hub"> 
-             <li><a href="/">Inicio</a></li>
-             <li> <a href="/products">Cursos</a></li>
-             <li>Recursos</li>
-             
-         </ul>         
+    <ul class="header--navbar__hub"> 
+        <li><a href="/">Inicio</a></li>
+        <li> <a href="/products">Cursos</a></li>
+        <li>Recursos</li>
+        </ul> 
          <ul class="header--navbar__signup" style="gap: 10px;">
             <% if (locals.isAdmin) { %>
                 <li><a href="/admin">Administrador</a></li>
                 <li><a href="/logout">Cerrar sesión</a></li>
            <% } else if (locals.isLogged) {%>
-            <li><a href="/profile">Perfil de Usuario</a></li>
-            <li><a href="/logout">Cerrar sesión</a></li>
+            
            
         <% } else { %>
-            <li><a href="/login">Iniciar Sesión</a></li>
           <% } %>
          </ul>
      </nav>
-
-     <a class="logo--image" href="/">
-<img src="/imgs/pageLogo/Logo_Completo.png" alt="ZeroTrust Logo"></a>
-
-<div class="cart--pending">
-    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-<p>1</p>
-</div>
+ 
 </div>
 
  </header>
