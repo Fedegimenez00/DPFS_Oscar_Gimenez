@@ -7,7 +7,49 @@
 
 <main>
 
+    <section>
+        <div><h1>Seguridad de Cuenta</h1></div>
     
+    <form action='/users/edit-security' method="POST" enctype="multipart/form-data">
+
+        <div>
+            <div>
+                <h3>Usuario:</h3>
+                <div>
+                <label for="username"></label>
+                <input type="text" name="username" id="username" placeholder="Nombre de Usuario"> </input>
+            </div>
+            </div>
+             <div>
+                <h3>Email:</h3>
+                <div>
+                <label for="email"></label>
+                <input type="text" name="email" id="email" placeholder="Correo electrónico"> </input>
+            </div>
+            </div>
+
+         <hr>
+
+         <div>
+            <h3>Contraseña:</h3>
+            <div>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Ingresa la nueva contraseña"> </input>
+        </div>
+        </div>
+        <div>
+            <div>
+            <label for="password2"></label>
+            <input type="password" name="password2" id="password2" placeholder="Reingresa la nueva contraseña"> </input>
+            </div>
+        </div>
+
+    </div>
+
+    <button type="submit">Guardar</button>
+
+    </form>
+    </section>
 </main>
 
     <%- include('../partials/footer') %>

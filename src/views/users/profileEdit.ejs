@@ -3,11 +3,60 @@
     <%- include('../partials/head') %>
 
 <body>
-    <%- include('../partials/header') %>
-
+    
+        <%- include('../partials/header') %>
+    
 <main>
 
+<section>
+    <div><h1>Perfil Personal</h1></div>
+
+<form action='/users/edit' method="POST" enctype="multipart/form-data">
+   <div>
+    <div>
+        <h3>Básico:</h3>
+        <div>
+        <label for="user_firstname"></label>
+        <input type="text" name="user_firstname" id="user_firstname" placeholder="Nombre"> </input>
+    </div>
+    <div>
+        <label for="user_surname"></label>
+        <input type="text" name="user_surname" id="user_surname" placeholder="Apellido"> </input>
+    </div>
     
+    </div>
+     <div>
+        <h3>Titular:</h3>
+        <div>
+        <label for="user_headline"></label>
+        <input type="text" name="user_headline" id="user_headline" placeholder="Titular"> </input>
+    </div>
+     <div>
+        <h3>Descripción:</h3>
+        <div>
+        <label for="user_description"></label>
+        <textarea name="user_description" id="user_description" cols="30" rows="10" placeholder="Descripción personal"></textarea>
+    </div>
+    <div>
+        <h3>Imagen de perfil</h3>
+        <div>
+            <img src="" alt="">
+        <p>Agregar / Cambiar imagen de perfil</p>
+    </div>
+<div>
+    <input type="file" name="avatar" id="avatar">
+    <div class="pseudoButton">
+        <p class="pseudoButton--title">Subir archivo</p>
+    </div>
+</div>
+    </div>
+    
+    </div>
+</div>
+<button type="submit">Guardar</button>
+</form>
+
+</section>    
 </main>
 
     <%- include('../partials/footer') %>

@@ -22,6 +22,10 @@ const userController = {
         email,
         password: bcryptjs.hashSync(password, 10),
         avatar: req.file?.filename || "default.png",
+        user_firstname: "",
+        user_surname: "",
+        user_headline: "",
+        user_description: "",
         role: "user"
       };
       users.push(newUser);
@@ -83,13 +87,20 @@ const userController = {
 
     edit: (req, res) => {
      
-      let userFound = User.findById(req.params.user_id);
+      res.render('users/profileEdit')
+     /* let userFound = User.findById(req.params.user_id);
       if (userFound) {
         return res.render("users/edit", { user: userFound });
       }
       return res
         .status(404)
         .render("not-found.ejs", { title: "Usuario encontrado" });
+        */
+      },
+
+    securityEdit: (req, res) => {
+     
+      res.render('users/profileEditSecurity')
     },
 
     processUpdate: (req, res) => {

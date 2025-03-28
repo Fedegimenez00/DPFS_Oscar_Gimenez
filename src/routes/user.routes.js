@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path')
 
-const {login, register, processRegister, processLogin, profile, logout, edit, processUpdate,} = require('../controllers/userControllers.js');
+const {login, register, processRegister, processLogin, profile, logout, edit, securityEdit, processUpdate,} = require('../controllers/userControllers.js');
 
 //Subir el archivo usando multer y su disposición como middleware
 const { uploadUser } = require("../middlewares/multer");
@@ -17,9 +17,9 @@ router
 .post('/register', uploadUser.single("avatar"), processRegister)
 
 //Vista de perfil
-.get ('/profile', guestAuth, profile) //Redireccionamiento para visitantes no logueados
-.get('/profile/edit', guestAuth, edit)
-.post('/profile/edit', guestAuth, uploadUser.single("avatar"), processUpdate)
+.get ('/profile', /*guestAuth,*/ profile) //Redireccionamiento para visitantes no logueados
+.get('/profile/edit', edit)
+.get('/profile/edit-security', securityEdit)
 //Logout process
 .get('/logout', guestAuth, logout)
 
