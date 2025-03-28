@@ -103,6 +103,11 @@ const userController = {
       res.render('users/profileEditSecurity')
     },
 
+    destroy: (req, res) => {
+
+      res.render("users/userDeleteAccount");
+    },
+
     processUpdate: (req, res) => {
       let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
       const { username, email, password } = req.body;
