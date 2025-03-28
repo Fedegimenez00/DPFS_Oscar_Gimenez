@@ -24,6 +24,12 @@
            <button class="userButton" id="userButton"> <i class="fa-solid fa-chevron-right"></i>
         </button>
         </div>
+
+        <ul class="header--navbar__hub"> 
+            <li><a href="/">Inicio</a></li>
+            <li> <a href="/products">Cursos</a></li>
+            <li>Recursos</li>
+            </ul> 
         
         <nav class="userMenu" id="userMenu">
             <ul class="userMenu--list">
@@ -42,15 +48,13 @@
         </nav>
          <% } else { %>
             <ul class="header--navbar__hub"> 
-                <li><a href="/login">Iniciar Sesión</a></li>
-            </ul>       
+                <li><a href="/">Inicio</a></li>
+                <li> <a href="/products">Cursos</a></li>
+                <li>Recursos</li>
+                </ul>       
             <% } %>
     </div>
-    <ul class="header--navbar__hub"> 
-        <li><a href="/">Inicio</a></li>
-        <li> <a href="/products">Cursos</a></li>
-        <li>Recursos</li>
-        </ul> 
+   
          <ul class="header--navbar__signup" style="gap: 10px;">
             <% if (locals.isAdmin) { %>
                 <li><a href="/admin">Administrador</a></li>

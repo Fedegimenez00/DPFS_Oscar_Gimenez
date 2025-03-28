@@ -173,3 +173,165 @@ color: var(--color-amarilloDorado);
 .ownCourses--containerCard__contentsReview p{
 
 }
+
+/* ProfileEdit view */
+
+/* ProfileEdit section & title */
+
+.profileEdit--section{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 105px;
+}
+
+.profileEdit--sectionContainer{
+width: 90%;
+}
+
+.profileEdit__title{
+    background-color: var(--color-grisOscuroTranslucido2);
+    border: solid 1px var(--color-blancoApagado);
+    border-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0px;
+}
+
+.profileEdit__title h1{
+    margin-left: 0px;
+    font-size: 2rem;
+}
+
+
+/* ProfileEdit body */
+
+.profileEdit__forms{
+    
+}
+
+.profileEdit__formsContainer{
+padding-left: 15px;
+    padding-right: 15px;
+        border: solid 1px var(--color-blancoApagado);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* ProfileEdit Inputs */
+
+.profileEdit--inputContainer{
+    margin-top: 15px;
+}
+
+.profileEdit--inputContainer h3{
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.profileEdit--inputContainer__inside{
+    margin-bottom: 10px;
+}
+
+.profileEdit--inputContainer__inside label{
+
+}
+
+.profileEdit--inputContainer__inside input{
+    border-radius: 5px;
+    width: 98%;
+    font-size: 1rem;
+    padding: 12px 0px;
+    border: none;
+    color: black;
+    padding-left: 5px;
+}
+
+.profileEdit--inputContainer__inside textarea{
+    border-radius: 5px;
+    width: 98%;
+    height: 90px;
+    font-size: 1rem;
+    padding: 12px 0px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border: none;
+    color: black;
+    padding-left: 5px;
+    resize: none;
+}
+
+/* ProfileEdit Avatar image & input */
+
+.profileEdit--avatarContainer{
+    margin-top: 30px;
+}
+
+.profileEdit--avatarContainer h3{
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.profileEdit--avatarImage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileEdit--avatarImage__inside{
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border: solid var(--color-azulGrisaceo) 1px;
+}
+
+.profileEdit--avatarImage img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.profileEdit--avatarImage p{
+    margin-bottom: 10px;
+}
+
+.profileEdit--avatarInputContainer__input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.profileEdit--avatarInputContainer__input input{
+    width: 40%;
+    padding: 14px 0px;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0%;
+}
+
+/* ProfileEdit submit button */
+
+.profileEdit__buttonContainer{
+    display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+        margin-top: 50px;
+}
+
+.profileEdit__button{
+    border: none;
+    color: var(--color-blancoApagado);
+    background-color: var(--color-purpuraOscuro);
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+

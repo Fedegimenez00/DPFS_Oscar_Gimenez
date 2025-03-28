@@ -1,6 +1,6 @@
 const defaultImagePreview = '/imgs/Images/photo preview.webp';
 const imageFile = document.getElementById('courseimage');
-
+//Agregar los elementos del ProfileEdit
 const imagePreview = document.getElementById('imgPreview')
 imageFile.addEventListener('change', e  =>{
     if( e.target.files[0] ){

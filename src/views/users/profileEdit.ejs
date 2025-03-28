@@ -8,42 +8,47 @@
     
 <main>
 
-<section>
-    <div><h1>Perfil Personal</h1></div>
+<section class="profileEdit--section">
 
-<form action='/users/edit' method="POST" enctype="multipart/form-data">
-   <div>
-    <div>
+<div class="profileEdit--sectionContainer">
+
+    <div class="profileEdit__title"><h1>Perfil Personal</h1></div>
+
+<form class="profileEdit__forms" action='/users/edit' method="POST" enctype="multipart/form-data">
+   <div class="profileEdit__formsContainer">
+    <div class="profileEdit--inputContainer">
         <h3>Básico:</h3>
-        <div>
+        <div class="profileEdit--inputContainer__inside">
         <label for="user_firstname"></label>
         <input type="text" name="user_firstname" id="user_firstname" placeholder="Nombre"> </input>
     </div>
-    <div>
+    <div class="profileEdit--inputContainer__inside">
         <label for="user_surname"></label>
         <input type="text" name="user_surname" id="user_surname" placeholder="Apellido"> </input>
     </div>
     
     </div>
-     <div>
+     <div class="profileEdit--inputContainer">
         <h3>Titular:</h3>
-        <div>
+        <div class="profileEdit--inputContainer__inside">
         <label for="user_headline"></label>
         <input type="text" name="user_headline" id="user_headline" placeholder="Titular"> </input>
     </div>
-     <div>
+     <div class="profileEdit--inputContainer">
         <h3>Descripción:</h3>
-        <div>
+        <div class="profileEdit--inputContainer__inside">
         <label for="user_description"></label>
-        <textarea name="user_description" id="user_description" cols="30" rows="10" placeholder="Descripción personal"></textarea>
+        <textarea name="user_description" id="user_description" placeholder="Descripción personal"></textarea>
     </div>
-    <div>
+    <div class="profileEdit--avatarContainer">
         <h3>Imagen de perfil</h3>
-        <div>
-            <img src="" alt="">
+        <div class="profileEdit--avatarImage">
+            <div class="profileEdit--avatarImage__inside">
+            <img src="/imgs/Images/photo preview.webp" alt="Avatar de usuario">
+        </div>
         <p>Agregar / Cambiar imagen de perfil</p>
     </div>
-<div>
+<div class="profileEdit--avatarInputContainer__input">
     <input type="file" name="avatar" id="avatar">
     <div class="pseudoButton">
         <p class="pseudoButton--title">Subir archivo</p>
@@ -53,13 +58,18 @@
     
     </div>
 </div>
-<button type="submit">Guardar</button>
+<div class="profileEdit__buttonContainer">
+<button class="profileEdit__button" type="submit">Guardar</button>
+</div>
 </form>
 
+</div>
 </section>    
 </main>
 
     <%- include('../partials/footer') %>
-
+    
+    <!-- Agregar los elementos del profileEdit -->
+    <script src="/js/previewImage.js"></script>
 </body>
 </html>
