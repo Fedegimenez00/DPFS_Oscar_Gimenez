@@ -335,3 +335,31 @@ padding-left: 15px;
     font-weight: 500;
 }
 
+/* ProfileEdit-security view */
+
+.profileEditSecurity--section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 105px;
+}
+
+.profileEditSecurity__formsContainer{
+   padding: 0px;
+    border: solid 1px var(--color-blancoApagado);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.EditSecurity--divisionContainer{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.profileEdit--divisorLine{
+    border-top: solid var(--color-blancoApagado) 1px;
+    border-bottom: 0px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
