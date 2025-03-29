@@ -64,21 +64,17 @@ top: 79px;
 
 .userMenu{
     opacity: 0;
-    visibility: hidden;
+    display: none;
 display: flex;
 flex-direction: column;
-position: absolute;
-top: 85px;
     left: 0;
     background-color: var(--color-grisOscuro);
-    
-    padding-bottom: 156%;
     width: 100%;
 }
 
 .userMenu.visible{
     opacity: 1;
-    visibility: visible;
+    display: block;
 }
 
 .userMenu--list{
@@ -114,14 +110,19 @@ list-style-type: none;
 flex-direction: column ;
 padding-left: 20px;
 margin-bottom: 15px;
+margin-top: 10px;
 
+}
+
+.header--navbar__hub.hidden{
+display: none;
 }
 
 .header--navbar__signup{
 display: flex;
 list-style-type: none;
-padding-left: 20px;
-
+padding-left: 0px;
+flex-direction: column;
 }
 
 .header--body img{
@@ -156,7 +157,7 @@ border-bottom: 1px solid var(--color-blancoApagado);
     padding-left: 5px;
     padding-right: 10px;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .userMenu--box img{
@@ -200,7 +201,7 @@ border-bottom: 1px solid var(--color-blancoApagado);
     flex-direction: column;
     align-items: center;
     margin-bottom: 7px;
-    margin-top: 4px;
+    margin-top: 7px;
 }
 
 .returnMenuButton{
@@ -313,9 +314,16 @@ font-weight: 500;
         top: 84px;
         padding-bottom: 100%;
         width: 50%;
+        max-width: 290px;
     }
 
-  
+    .userMenu--box img{
+        width: 120px;
+    }
+
+    .userMenu{
+        top: 145px;
+    }
     /* Footer */
     .footer--info{
         display: flex;

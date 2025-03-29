@@ -395,3 +395,16 @@ font-weight: 600;
     border-radius: 5px;
     font-weight: 500;
 }
+
+/* My courses view */
+
+.coursesListSearch--box {
+    background-color: var(--color-moradoTranslucido2);
+    border: solid var(--color-morado) 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}

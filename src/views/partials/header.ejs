@@ -10,7 +10,7 @@
    <p>1</p>
    </div>
      <nav class="header--navbar" id="nav">
-       
+        
         <% if (locals.isAdmin) { %>
 
             <% } else if (locals.isLogged) {%>
@@ -25,18 +25,45 @@
         </button>
         </div>
 
-        <ul class="header--navbar__hub"> 
-            <li><a href="/">Inicio</a></li>
-            <li> <a href="/products">Cursos</a></li>
-            <li>Recursos</li>
-            </ul> 
+      
         
-        <nav class="userMenu" id="userMenu">
+        
+         <% } else { %>
+            <ul class="header--navbar__hub"> 
+                <li><a href="/">Inicio</a></li>
+                <li> <a href="/products">Cursos</a></li>
+                <li>Recursos</li>
+                
+
+                </ul>       
+                <div>
+                <ul class="header--navbar__signup">
+                    <li><a href="/login">Iniciar sesión</a></li>
+                </ul>
+            </div>
+            <% } %>
+    </div>
+   
+         <ul class="header--navbar__signup" style="gap: 10px;">
+            <% if (locals.isAdmin) { %>
+                <li><a href="/admin">Administrador</a></li>
+                <li><a href="/logout">Cerrar sesión</a></li>
+           <% } else if (locals.isLogged) {%>
+            <ul class="header--navbar__hub" id="header--navbar__hub"> 
+                <li><a href="/">Inicio</a></li>
+                <li> <a href="/products">Cursos</a></li>
+                <li>Recursos</li>
+                </ul> 
+                <nav class="userMenu" id="userMenu">
+
             <ul class="userMenu--list">
-            <div class="returnButton--">
+            <div class="returnButton--container">
             <button type="button" class="returnMenuButton" id="returnMenuButton">Volver al menú principal</button>
             </div>
             <hr class="userMenu--list__line">
+
+            
+
             <li><a href="/profile">Mi perfil</a></li>
             <hr class="userMenu--list__line">
             <li><a href="#">Mis Cursos</a></li>
@@ -46,21 +73,6 @@
             <li><a href="/logout">Cerrar sesión</a></li>
         </ul>
         </nav>
-         <% } else { %>
-            <ul class="header--navbar__hub"> 
-                <li><a href="/">Inicio</a></li>
-                <li> <a href="/products">Cursos</a></li>
-                <li>Recursos</li>
-                </ul>       
-            <% } %>
-    </div>
-   
-         <ul class="header--navbar__signup" style="gap: 10px;">
-            <% if (locals.isAdmin) { %>
-                <li><a href="/admin">Administrador</a></li>
-                <li><a href="/logout">Cerrar sesión</a></li>
-           <% } else if (locals.isLogged) {%>
-            
            
         <% } else { %>
           <% } %>

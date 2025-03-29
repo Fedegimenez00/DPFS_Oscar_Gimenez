@@ -103,9 +103,23 @@ const userController = {
       res.render('users/profileEditSecurity')
     },
 
+     securityEdit: (req, res) => {
+     
+      res.render('users/profileEditSecurity')
+    },
     destroy: (req, res) => {
 
       res.render("users/userDeleteAccount");
+    },
+
+    courseList: (req, res) => {
+     
+      res.render('users/userMyCourses')
+    },
+
+    courseCreate: (req, res) => {
+     
+      res.render('users/userAddCourses')
     },
 
     processUpdate: (req, res) => {

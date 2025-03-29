@@ -7,7 +7,72 @@
 
 <main>
 
+    <section class="profileEdit--section">
+
+        <div class="profileEdit--sectionContainer">
+        
+            <div class="profileEdit__title"><h1>Cursos</h1></div>
+            <div class="profileEdit__formsContainer">
+
+            <article class="coursesListSearch--box">
+                <div class="productListSearch__searchBar">
+                    <label for=""></label>
+                    <input placeholder="Buscar cualquier cosa" type="text" name="" id="">
+                    <button class="productListSearch__searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+               
+                <div class="productListSearch__selectBar">
+                <div class="productListSearch__selectContainer">
+                    <label for="category"></label>
+            
+                    <select name="category" id="category">
+                    <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
+        
+        </select>
+                </div>
+                
+                <div class="productListSearch__selectContainer">
+                    <select name="subcategory" id="subcategory">
+                        <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
+                    
+                       </select>
+                </div>
+                
+                <button class="productListSearch__filterCategoriesButton"><i class="fa-solid fa-filter"></i></button>
+            </div>
+            </article>
+
+            <div class="profileEdit--inputContainer">
+                <h3>Lista de cursos:</h3>
+                </div>
+
+                <div class="productList--inside">
+
+                    <article class="productList--card">
     
+
+                        <img src="/imgs/Images/3850850_5754_2 2.png" alt="imagen del curso"> 
+                        <div class="productList--cardStructure">
+                        <div class="productList--cardStructureInside">
+                        <h3 class="productList--card__title">Título del curso </h3>
+                        <small class="productList--card__author">Author's name</small>
+                        <div class="productList--card__tag">
+                            <p class="productList--card__tagTitle">Categoría del Curso</p>
+                        </div>
+                        </div>
+                        
+                        <div class="productList--card__optionsContainer">
+                         <a href="/products/detail/"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button></a>
+                        <a href="products/edit/"><button><i class="fa-solid fa-pen"></i></button></a>
+                        <a href="/products/delete/"><button><i class="fa-solid fa-trash"></i></button> </a>
+                    </div>
+                    </div>
+                    </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        </section>    
 </main>
 
     <%- include('../partials/footer') %>
