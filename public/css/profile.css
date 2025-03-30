@@ -446,3 +446,85 @@ font-weight: 600;
     width: 30px;
 }
 
+/* userAddCourses view */
+
+.addNewProduct--button{
+    background-color: var(--color-purpuraOscuro);
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--color-blancoApagado);
+    padding: 7px 5px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.addNewProduct--button i{
+    font-size: 1.3rem;
+}
+
+.productList--userAdd__salesContainer{
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+}
+
+.coursesSales--container{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    align-items: flex-end;
+}
+
+.numberSales{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.coursesSales--container i{
+    font-size: 1.2rem;
+    color: limegreen;
+}
+
+.ratingProductList--container{
+    display: flex;
+        gap: 12px;
+}
+
+.recommendationsProductList--card__rating-Stars{
+    font-size: 0.9rem;
+    align-content: flex-end;
+}
+
+.recommendationsProductList--card__rating-Stars span{
+    color: var(--color-amarilloDorado);
+    font-weight: 500;
+}
+
+.recommendationsProductList--card__rating-Stars i{
+
+}
+
+.recommendationsProductList--card__rating-Reviews{
+    font-size: 0.9rem;
+    align-content: flex-end;
+}
+
+.recommendationsProductList--card__rating-Reviews i{
+
+}
+
+.recommendationsProductList--card__rating-Reviews span{
+    font-weight: 500;
+}
+
+.productListAddCourses--inside{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
