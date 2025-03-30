@@ -5,8 +5,30 @@
 <body>
     <%- include('../partials/header') %>
 
-<main>
+<main class="profileEdit--main">
 
+    <section class="profileUserMenu--section">
+        <div class="profileUserMenu--sectionContainer">
+            <div class="profileMenu--imageContainer">
+            <img src="/imgs/Images/pngegg 7.png" alt="">
+            <h2>Nombre de usuario</h2>
+        </div>
+        
+        <div class="profileUserMenu--options">
+        
+        <a href="/profile/edit"><h3>Perfil</h3></a>
+        
+        <a href="/profile/edit-security"><h3>Seguridad de Cuenta</h3></a>
+        
+        <a href="/profile/my-courses"><h3>Cursos</h3></a>
+        
+        <div class="profileUserMenu--selected"> <a href="/profile/create"><h3>Creación de Cursos</h3></a></div>
+        
+        <a href="/profile/delete-account"><h3>Cerrar Cuenta</h3></a> 
+        </div>
+        
+        </div>
+        </section>
     
 <section class="profileEdit--section">
 

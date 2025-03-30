@@ -178,6 +178,10 @@ color: var(--color-amarilloDorado);
 
 /* ProfileEdit section & title */
 
+.profileUserMenu--section{
+    display: none;
+}
+
 .profileEdit--section{
     display: flex;
         flex-direction: column;
@@ -505,7 +509,7 @@ font-weight: 600;
 }
 
 .recommendationsProductList--card__rating-Stars i{
-
+    color: var(--color-amarilloDorado);
 }
 
 .recommendationsProductList--card__rating-Reviews{
@@ -527,4 +531,89 @@ font-weight: 600;
     flex-direction: column;
     margin-top: 10px;
     margin-bottom: 50px;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) {
+
+/* ProfileEdit view */
+
+/* ProfileUserMenu section */
+
+.profileEdit--main{
+    display: flex;
+        flex-direction: row;
+        padding: 0px 20px;
+        gap: 15px;
+        justify-content: center;
+}
+
+.profileUserMenu--section{
+    display: block;
+    width: 30%;
+    margin-top: 40px;
+}
+
+.profileUserMenu--sectionContainer{
+    border: solid 1px var(--color-blancoApagado);
+}
+
+.profileMenu--imageContainer{
+    border-bottom: solid 1px var(--color-blancoApagado);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileMenu--imageContainer img{
+    width: 75%;
+    border-radius: 30px;
+}
+
+.profileMenu--imageContainer h2{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profileUserMenu--options{
+    
+}
+
+.profileUserMenu--options h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.profileUserMenu--sectionContainer a{
+
+}
+
+.profileUserMenu--selected{
+    background-color: var(--color-grisOscuro);
+}
+
+
+
+/* ProfileEdit section & title */
+
+
+.profileEdit--sectionContainer {
+    width: 725px;
+}
+
+
+/* userMyCourses view */
+
+
+.profileEdit--sectionContainer {
+    width: 725px;
+}
+
 }
