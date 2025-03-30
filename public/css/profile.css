@@ -408,3 +408,41 @@ font-weight: 600;
     margin-top: 25px;
     margin-bottom: 20px;
 }
+
+.productListMyCourses--inside{
+    display: flex;
+        gap: 10px;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 50px;
+}
+
+.productProgress--container{
+    display: flex;
+    gap: 7px;
+}
+
+.progress__product{
+
+}
+
+.progress__product i{
+    font-size: 1.3rem;
+}
+
+.progress__inProcess{
+    color:orange;
+}
+
+.progress__Completed{
+    color: green;
+}
+
+.progress__Empty{
+    color: var(--color-blancoApagado);
+}
+
+.viewCourse--image img{
+    width: 30px;
+}
+

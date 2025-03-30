@@ -39,6 +39,10 @@ const productController = {
         subcategory: req.body.subcategory,
         courseimage: req.file?.filename || 'default.png',
         price: req.body.price,
+        rating: 0,
+        reviews: 0,
+        created: Date.now(),
+        author: req.session.userLogged
       }
            
     products.push(newProduct);
