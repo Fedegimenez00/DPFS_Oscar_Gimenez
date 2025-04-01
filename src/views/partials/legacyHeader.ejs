@@ -1,0 +1,33 @@
+<header class="header--body"><div class="header--body_card">
+    <button id="burgerMenu" class="burger-menu"><i class="fa-solid fa-bars"></i></button> 
+     <nav class="header--navbar" id="nav">
+         <ul class="header--navbar__hub"> 
+             <li><a href="/">Inicio</a></li>
+             <li> <a href="/products">Cursos</a></li>
+             <li>Recursos</li>
+             
+         </ul>         
+         <ul class="header--navbar__signup" style="gap: 10px;">
+            <% if (locals.isAdmin) { %>
+                <li><a href="/admin">Administrador</a></li>
+                <li><a href="/logout">Cerrar sesión</a></li>
+           <% } else if (locals.isLogged) {%>
+            <li><a href="/profile">Perfil de Usuario</a></li>
+            <li><a href="/logout">Cerrar sesión</a></li>
+           
+        <% } else { %>
+            <li><a href="/login">Iniciar Sesión</a></li>
+          <% } %>
+         </ul>
+     </nav>
+
+     <a class="logo--image" href="/">
+<img src="/imgs/pageLogo/Logo_Completo.png" alt="ZeroTrust Logo"></a>
+
+<div class="cart--pending">
+    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+<p>1</p>
+</div>
+</div>
+
+ </header>

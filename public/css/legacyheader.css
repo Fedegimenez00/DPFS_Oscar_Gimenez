@@ -1,0 +1,93 @@
+/* Header */
+.header--body{
+    background-color: rgba(44, 44, 44, 0.8);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position:sticky;
+    top: 0;
+    z-index: 3;
+
+    
+}
+.header--body_card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 20px;
+    
+}
+
+
+
+.header--navbar{
+    opacity: 0;
+    visibility: hidden;
+display: flex;
+flex-direction: column;
+position: absolute;
+top: 79px;
+    left: 0;
+    background-color: var(--color-grisOscuro);
+    padding-top: 20px;
+    padding-bottom: 156%;
+    padding-right: 10%;
+    /* box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5); */
+}
+
+.header--navbar.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+.header--navbar li{
+    
+}
+
+.header--navbar li a{
+    text-decoration: none;
+    color: var(--color-blancoApagado);
+}
+
+.header--navbar__hub{
+display: flex;
+gap: 15px;
+list-style-type: none;
+flex-direction: column ;
+padding-left: 20px;
+margin-bottom: 15px;
+
+}
+
+.header--navbar__signup{
+display: flex;
+list-style-type: none;
+padding-left: 20px;
+
+}
+
+.header--body img{
+    width: 220px;
+}
+
+.burger-menu{
+    background: none;
+    border: none;
+    color: var(--color-blancoApagado);
+}
+
+.fa-bars{
+    font-size: 38px;
+    margin-right: 10px;
+
+}
+.fa-cart-shopping{
+    
+    font-size: 33px;
+}
