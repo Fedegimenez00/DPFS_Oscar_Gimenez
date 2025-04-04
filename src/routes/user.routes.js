@@ -9,6 +9,7 @@ const {login, register, processRegister, processLogin, profile, logout, edit, co
 const { uploadUser } = require("../middlewares/multer");
 const loggedAuth = require("../middlewares/loggedAuth.js");
 const guestAuth = require('../middlewares/guestAuth.js')
+//const userLogged = require('../middlewares/userLogged.js')
 
 router 
 .get ('/login', loggedAuth, login) //Redireccionamiento para usuarios ya logueados
