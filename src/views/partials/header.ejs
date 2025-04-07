@@ -27,6 +27,11 @@
   <div class="leftHeader--container">
           <a class="logo--imageMobile" href="/">
             <img src="/imgs/pageLogo/Logo_Completo.png" alt="ZeroTrust Logo"></a>
+            
+            <div class="bellNotif--pending">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            <p>1</p>
+            </div>
             <% } %> 
 
 
@@ -66,8 +71,8 @@
 
             <li><a href="/profile">Mi perfil</a></li>
             <hr class="userMenu--list__line">
-            <li><a href="#">Mis Cursos</a></li>
-            <li><a href="#">Creación de Cursos</a></li>
+            <li><a href="/profile/my-courses">Mis Cursos</a></li>
+            <li><a href="/profile/create">Creación de Cursos</a></li>
             <li><a href="/profile/edit">Configuración</a></li>
             <hr class="userMenu--list__line">
             <li><a href="/logout">Cerrar sesión</a></li>
@@ -107,12 +112,55 @@
         
      </nav>
 
+ <% if (locals.isAdmin) { %>
+
+<% } else if (locals.isLogged) {%>
+    <div class="bellNotif--pending">
+        <a href="#"><i class="fa-solid fa-bell"></i></a>
+    <p>1</p>
+    </div>
+
+    <div class="userDestkopMenu--container">
+<span class="userHeaderMenu--desktopContainer">
+    <div class="userHeaderMenu--desktopContainerInside">             
+    <p><%= user.username %></p>
+    <button class="userMenuCollapsable" data-target="userMenuDesktop" type="button"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+    <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
+</span>
+
+<nav class="userMenuDesktop" id="userMenuDesktop">
+
+    <ul class="userMenu--listDesktop">
+    <div class="returnButton--container">
+    <button type="button" class="returnMenuButton" id="returnMenuButton">Volver al menú principal</button>
+    </div>
+    <hr class="userMenu--list__line">
+
     
+
+    <li><a href="/profile">Mi perfil</a></li>
+    <hr class="userMenu--list__line">
+    <li><a href="/profile/my-courses">Mis Cursos</a></li>
+    <li><a href="/profile/create">Creación de Cursos</a></li>
+    <li><a href="/profile/edit">Configuración</a></li>
+    <hr class="userMenu--list__line">
+    <li><a href="/logout">Cerrar sesión</a></li>
+</ul>
+</nav>
+</div>
+<% } else { %>
+
+ <% } %>   
 
 <div class="cart--pending">
     <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
 <p>1</p>
 </div>
+
+
+
+
 </div>
 </div>
 

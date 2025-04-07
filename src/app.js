@@ -1,5 +1,7 @@
 const express = require('express');
 
+// 1:00:00   C31 login-register.mkv
+
 const path = require('path');
 const PORT = 3000;
 const app = express();
@@ -26,6 +28,13 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 // Session
 app.use(session({secret: 'ThisIsZeroTrust',
     saveUninitialized: true, resave: true}))
+
+// Sesión global a todas las vistas
+app.use((req, res, next) => {
+    res.locals.user = req.session.userLogged || null;
+    res.locals.isLogged = !!req.session.userLogged;
+    next();
+  });
 
 // Cookies
 app.use(cookieParser());

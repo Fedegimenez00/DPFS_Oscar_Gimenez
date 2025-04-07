@@ -580,5 +580,20 @@
     "category": "Fundamentos de la Ciberseguridad",
     "courseimage": "course1741909221763.png",
     "price": "1020"
+  },
+  {
+    "courseid": 54,
+    "coursetitle": "Ejemplo11",
+    "coursesubtitle": "SubEjemplo",
+    "coursedescription": "Ejemplo de descripción",
+    "lang": "Portugués",
+    "category": "Seguridad Defensiva",
+    "subcategory": "Análisis de Malware",
+    "courseimage": "default.png",
+    "price": "660",
+    "rating": 0,
+    "reviews": 0,
+    "dateCreated": 1743984987001,
+    "author": "Example1"
   }
 ]
