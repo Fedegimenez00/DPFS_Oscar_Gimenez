@@ -583,17 +583,18 @@
   },
   {
     "courseid": 54,
-    "coursetitle": "Ejemplo11",
-    "coursesubtitle": "SubEjemplo",
-    "coursedescription": "Ejemplo de descripción",
-    "lang": "Portugués",
-    "category": "Seguridad Defensiva",
-    "subcategory": "Análisis de Malware",
-    "courseimage": "default.png",
-    "price": "660",
+    "coursetitle": "Formas de cocinar arroz",
+    "coursesubtitle": "Las desconocidas maravillas de este súper-alimento",
+    "coursedescription": "El arroz se puede cocinar de un montón de maneras. Son tantas que uno no sabría cómo empezar a reconocerlas.",
+    "lang": "Español",
+    "category": "Ingeniería Social",
+    "subcategory": "Concienciación y Educación",
+    "courseimage": "course1743999742324.png",
+    "price": "499",
     "rating": 0,
     "reviews": 0,
-    "dateCreated": 1743984987001,
+    "timesBought": 0,
+    "dateCreated": 1743999742355,
     "author": "Example1"
   }
 ]

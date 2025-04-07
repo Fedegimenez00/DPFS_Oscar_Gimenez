@@ -42,6 +42,7 @@ const productController = {
         price: req.body.price,
         rating: 0,
         reviews: 0,
+        timesBought: 0,
         dateCreated: Date.now(),
         author: user.username
       }
@@ -61,34 +62,75 @@ const productController = {
       res.render(path.resolve(__dirname, '../views/products/productEdit'), {productEdit});
     },
 
-    update : (req, res) =>{
+    update: (req, res) => {
       let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-      req.body.courseid = req.params.courseid;
-      req.body.courseimage = req.file ? req.file.filename : req.body.oldImage;
-      let productsUpdate = products.map(product =>{
-        if(product.courseid == req.body.courseid){
-          return product = req.body;
-        }
-        return product;
-      })
-      let productUpdate = JSON.stringify(productsUpdate, null, 2);
-      fs.writeFileSync(productsPath, 'utf-8', productUpdate)
+      let courseid = parseInt(req.params.courseid);
+    
+      // Buscamos el producto original
+      let productToUpdate = products.find(product => product.courseid === courseid);
+    
+      if (!productToUpdate) {
+        return res.status(404).send("Producto no encontrado");
+      }
+    
+      // Imagen: si no hay nueva, se mantiene la anterior
+      let oldImage = req.file ? req.file.filename : productToUpdate.courseimage;
+    
+      // Creamos el objeto actualizado manteniendo lo que no viene del form
+      let updatedProduct = {
+        ...productToUpdate, // trae todo: author, reviews, etc.
+        coursetitle: req.body.coursetitle,
+        coursesubtitle: req.body.coursesubtitle,
+        coursedescription: req.body.coursedescription,
+        lang: req.body.lang,
+        category: req.body.category,
+        subcategory: req.body.subcategory,
+        courseimage: oldImage,
+        price: req.body.price
+        // no tocamos rating, reviews, author ni dateCreated
+      };
+    
+      // Reemplazamos el producto viejo con el nuevo en el array
+      let updatedProducts = products.map(product =>
+        product.courseid === courseid ? updatedProduct : product
+      );
+    
+      fs.writeFileSync(productsPath, JSON.stringify(updatedProducts, null, 2), 'utf-8');
+    
       res.redirect('/');
-      
+    },
+    
+
+    destroy: (req, res) => {
   
-    },
-
-    destroy: (req, res) =>{
-      let products = JSON.parse(productsPath, 'utf-8');
-      const productDeleteId = req.params.courseid;
-      //Se busca el elemento a eliminar y se obtiene el exacto en base a su id
-      const productsFinal = products.filter(product => product.courseid != productDeleteId);
+      // 1. Leer productos
+      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+  
+      // 2. Convertir ID a número
+      const productDeleteId = Number(req.params.courseid);
+  
+      // 3. Buscar el producto a eliminar
+      const productToDelete = products.find(product => product.courseid === productDeleteId);
+  
+      // 4. Si existe y su imagen no es "default.png", la eliminamos del sistema
+      if (productToDelete && productToDelete.courseimage !== 'default.png') {
+          const imagePath = path.join(__dirname, '../public/database/images/courses', productToDelete.courseimage);
+          if (fs.existsSync(imagePath)) {
+              fs.unlinkSync(imagePath);
+          }
+      }
+  
+      // 5. Filtrar el curso fuera del array
+      const productsFinal = products.filter(product => product.courseid !== productDeleteId);
+  
+      // 6. Guardar la nueva versión del JSON
       let productsSaved = JSON.stringify(productsFinal, null, 2);
-      fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), productsSaved);
-      res.redirect('/admin');
-
-    },
-
+      fs.writeFileSync(productsPath, productsSaved);
+  
+      // 7. Redirigir
+      res.redirect('/profile/create');
+  },
+  
 
     cart : (req, res) =>{
         return res.render('products/productCart');

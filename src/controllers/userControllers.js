@@ -75,11 +75,17 @@ const userController = {
     },
 
     profile: (req, res) => {
+      let user = req.session.userLogged;
+      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+  
+      // Filtrar solo los productos cuyo autor coincide con el usuario logueado
+      let userProducts = products.filter(product => product.author === user.username);
+      
       //let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
       //let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
 
       
-        res.render(path.resolve(__dirname, '../views/users/profile')/*, {myUser},*/);
+        res.render(path.resolve(__dirname, '../views/users/profile'), { products: userProducts }/*, {myUser},*/);
     },
     
 
@@ -122,8 +128,13 @@ const userController = {
     },
 
     courseCreate: (req, res) => {
-     
-      res.render('users/userAddCourses')
+      let user = req.session.userLogged;
+      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+  
+      // Filtrar solo los productos cuyo autor coincide con el usuario logueado
+      let userProducts = products.filter(product => product.author === user.username);
+  
+      res.render(path.resolve(__dirname, '../views/users/userAddCourses'), { products: userProducts });
     },
 
     processUpdate: (req, res) => {
