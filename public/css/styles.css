@@ -215,6 +215,15 @@ width: 100%;
     display: none;
 }
 
+.userMenuDesktop {
+    display: none;
+    opacity: 0;
+flex-direction: column;
+    left: 0;
+    background-color: var(--color-grisOscuro);
+    width: 100%;
+}
+
 .userMenu--box{
 background-color: rgba(47, 79, 255, 0.4);
 /* background-color: rgba(71, 52, 129, 0.4) */
@@ -281,6 +290,32 @@ border-bottom: 1px solid var(--color-blancoApagado);
     padding: 0px;
 }
 
+
+.userHeaderMenu--desktopContainer{
+    display: none;
+}
+
+/* Notificaciones de usuario */
+
+.bellNotif--pending{
+    position: relative;
+    display: none;
+}
+
+.bellNotif--pending p{
+    padding: 0px;
+    background-color: red;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 600;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -8px;
+    left: 16px;
+   /* visibility: hidden; */
+}
 
 /* Footers */
 
@@ -506,6 +541,80 @@ font-weight: 500;
         display: none;
         }
 
+/* Botón o container que refleja al usuario logueado */
+
+    .userHeaderMenu--desktopContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2px;
+        border: solid var(--color-morado) 1px;
+        border-radius: 10px;
+        padding: 0px 10px;
+    }
+
+    .userHeaderMenu--desktopContainerInside{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .userHeaderMenu--desktopContainerInside p{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .userHeaderMenu--desktopContainerInside button{
+        background: none;
+        border: none;
+        color: var(--color-blancoApagado);
+        font-size: 0.9rem;
+    }
+
+    .userHeaderMenu--desktopContainer img{
+        width: 40px;
+    }
+
+    .userDestkopMenu--container{
+        position: relative;
+    }
+    .userMenu--list{
+        display: none;
+    }
+
+    .userMenu--listDesktop{
+        list-style-type: none;
+    width: 100%;
+    padding-left: 0px;
+    }
+
+    .userMenu--listDesktop li{
+        padding-left: 20px;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .userMenuDesktop{
+        position: absolute;
+        display: flex;
+    width: 144px;
+    left: 8px;
+    top: 43px;
+    padding-bottom: 5px;
+    border: solid var(--color-blancoApagado) 1px;
+    border-top: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    }
+
+    .returnButton--container{
+        display: none;
+    }
+
+    .userMenu--list__line{
+        margin-bottom: 6px;
+    }
     /* Footer */
 
     .footer--up{

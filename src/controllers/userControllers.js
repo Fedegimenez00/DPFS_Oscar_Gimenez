@@ -13,7 +13,7 @@ const userController = {
       res.render('users/register');
       },
     processRegister: (req, res) => {
-      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')), "utf-8");
       const { username, email, password } = req.body;
 
       let newUser = {
@@ -47,7 +47,7 @@ const userController = {
        delete userToLogin.password;     
 
        //Generar una sesión
-       req.session.userLogged = userToLogin
+       req.session.userLogged = userToLogin;
 
        //Recordar usuario
        if (req.body.rememberme == 'on') {
@@ -56,9 +56,9 @@ const userController = {
        }
        //Redireccione a la vista de perfil
        if (userToLogin.role == 'user') {
-         res.redirect('/profile')
+        return res.redirect('/profile')
        } else if (userToLogin.role == 'admin'){
-        res.redirect('/admin')
+        return res.redirect('/admin')
        }
        
       
@@ -75,9 +75,13 @@ const userController = {
     },
 
     profile: (req, res) => {
+      //let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
+      //let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
 
-      res.render("users/profile", { user: req.session.userLogged });
+      
+        res.render(path.resolve(__dirname, '../views/users/profile')/*, {myUser},*/);
     },
+    
 
     logout: (req, res)  => {
       res.clearCookie('username');

@@ -18,12 +18,12 @@ router
 .post('/register', uploadUser.single("avatar"), processRegister)
 
 //Vista de perfil
-.get ('/profile', /*guestAuth,*/ profile) //Redireccionamiento para visitantes no logueados
-.get('/profile/edit', edit)
-.get('/profile/edit-security', securityEdit)
-.get ('/profile/delete-account', destroy)
-.get ('/profile/my-courses', courseList)
-.get ('/profile/create', courseCreate)
+.get ('/profile/', guestAuth, profile) //Redireccionamiento para visitantes no logueados
+.get('/profile/edit', guestAuth, edit)
+.get('/profile/edit-security', guestAuth, securityEdit)
+.get ('/profile/delete-account', guestAuth, destroy)
+.get ('/profile/my-courses', guestAuth, courseList)
+.get ('/profile/create', guestAuth, courseCreate)
 //Logout process
 .get('/logout', guestAuth, logout)
 

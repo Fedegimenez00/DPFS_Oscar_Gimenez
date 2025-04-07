@@ -13,7 +13,7 @@ const productController = {
     if (!myProduct) {
       return res.status(404).send("Producto no encontrado");
   }
-        res.render(path.resolve(__dirname, '../views/products/productDetail'), {myProduct});
+        res.render(path.resolve(__dirname, '../views/products/productDetail'), {myProduct},);
     },
 
 
@@ -26,6 +26,7 @@ const productController = {
 //Parsea el Json, extrae el último objeto, recibe el nuevo producto generado por el formulario de
 // create, pushea el nuevo producto y convierte el nuevo archivo en un JSON
     save : (req, res) =>{
+      let user = req.session.userLogged;
       let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       let lastProduct = products.pop();
       products.push(lastProduct);
@@ -41,15 +42,15 @@ const productController = {
         price: req.body.price,
         rating: 0,
         reviews: 0,
-        created: Date.now(),
-        author: req.session.userLogged
+        dateCreated: Date.now(),
+        author: user.username
       }
            
     products.push(newProduct);
     let newProductSave = JSON.stringify(products, null, 2);
-    fs.writeFileSync(productsPath, 'utf-8', newProductSave);
+    fs.writeFileSync(productsPath, newProductSave, 'utf-8');
     //redirecciona a una ruta deseada
-    res.redirect('/admin');
+    res.redirect('/');
     },
 
     //Muestra desde la página de edición, los datos del JSON
@@ -72,7 +73,7 @@ const productController = {
       })
       let productUpdate = JSON.stringify(productsUpdate, null, 2);
       fs.writeFileSync(productsPath, 'utf-8', productUpdate)
-      res.redirect('/admin');
+      res.redirect('/');
       
   
     },
