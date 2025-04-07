@@ -95,11 +95,11 @@
 <article class="productList--card">
     
 
-    <img src="/database/images/courses/<%= products.courseimage %>" alt="imagen del curso"> 
+    <img src="/database/images/courses/<%= products?.courseimage %>" alt="imagen del curso"> 
     <div class="productList--cardStructure">
     <div class="productList--cardStructureInside">
     <h3 class="productList--card__title"><%= products.coursetitle%> </h3>
-    <small class="productList--card__author">Author's name</small>
+    <small class="productList--card__author"> <%= products?.author %></small>
     <div class="productList--card__tag">
         <p class="productList--card__tagTitle"><%= products.category %></p>
     </div>

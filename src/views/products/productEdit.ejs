@@ -123,13 +123,12 @@
 </div>
     <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
     <div class="forms--box__fileInput">
-        <label for=""></label>
+        <label for="courseimage"></label>    
+        <input type="file" name="courseimage">
+
         <div class="pseudoButton">
             <p class="pseudoButton--title">Subir archivo</p>
         </div>
-<!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-        <input type="hidden"  name="oldImage"  value="<%= productEdit.courseimage%>">
-    <input type="file" name="courseimage">
 
     </div>
 </div>

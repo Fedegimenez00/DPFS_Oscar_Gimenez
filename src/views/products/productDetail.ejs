@@ -272,7 +272,7 @@
     <div class="productDetail--description__title">
     <h2>Descripción</h2><hr>
 </div>
-<p><%= myProduct.coursedescription %></p>
+<p><%= myProduct.coursedescription.replace(/\r\n|\r|\n/g, '<br>') %></p>
 </p>
 </article>
 </div>

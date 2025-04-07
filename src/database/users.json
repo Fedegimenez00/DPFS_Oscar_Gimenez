@@ -278,5 +278,17 @@
     "password": "$2b$10$I2huBnqv8cFp/fx0b4sPO.nsbylCQ5AoSpf/9BVF2DhN/wFlMxE3a",
     "avatar": "default.png",
     "role": "admin"
+  },
+  {
+    "user_id": 36,
+    "username": "Perruno",
+    "email": "mail@mail.com",
+    "password": "$2b$10$JShIaOMkSF1SmcK5y3m3gutfZB/NODRowmDs5SoX325aDLISgD3wm",
+    "avatar": "default.png",
+    "user_firstname": "",
+    "user_surname": "",
+    "user_headline": "",
+    "user_description": "",
+    "role": "user"
   }
 ]

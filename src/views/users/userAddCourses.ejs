@@ -70,189 +70,49 @@
 
             <div class="productListAddCourses--inside">
 
+                <% products.forEach(products => { %>
                 <article class="productList--card">
-                    <img src="/imgs/Images/photo preview.webp" alt=""> 
+                    <img src="/database/images/courses/<%= products?.courseimage %>" alt="imagen del curso"> 
                     <div class="productList--cardStructure">
                     <div class="productList--cardStructureInside">
-                    <h3 class="productList--card__title">Nombre del curso</h3>
+                    <h3 class="productList--card__title"><%= products.coursetitle%> </h3>
                     <div class="ratingProductList--container">
                     <div class="recommendationsProductList--card__rating-Stars">
-                        <span>4,5</span> 
+                        <span><%= products.rating %></span> 
                         <i class="fa-solid fa-star"></i>
                     </div>
             
                     <div class="recommendationsProductList--card__rating-Reviews">
                         <i class="fa-solid fa-users"></i>
-                        <span>1245</span> 
+                        <span><%= products.reviews %></span> 
                     </div>
                 </div>
                     
                     <div class="productList--card__tag">
                         
-                        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
+                        <p class="productList--card__tagTitle"><%= products.category %></p>
                     </div>
                      
                 </div>
                    
                     <div class="productList--userAdd__salesContainer">  
                     <div class="productList--card__optionsContainer">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button><i class="fa-solid fa-pen"></i></button>
-                    <button><i class="fa-solid fa-trash"></i></button>
+                        <a href="/products/detail/<%= products.courseid %>"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button> </a>
+                        <a href="/products/edit/<%= products.courseid  %>"> <button type="button"><i class="fa-solid fa-pen"></i></button> </a>
+                        <a href="/products/delete/<%= products.courseid  %>"><button type="button" ><i class="fa-solid fa-trash"></i></button></a>
                 </div>
                  
-                    <span class="coursesSales--container"><span class="numberSales"> 12</span> <i class="fa-solid fa-sack-dollar"></i></span>
+                    <span class="coursesSales--container"><span class="numberSales"> <%= products.timesBought %> </span> <i class="fa-solid fa-sack-dollar"></i></span>
                     </div>
                 </div>
                 </article>
+                <% }); %>
 
-                <article class="productList--card">
-                    <img src="/imgs/Images/photo preview.webp" alt=""> 
-                    <div class="productList--cardStructure">
-                    <div class="productList--cardStructureInside">
-                    <h3 class="productList--card__title">Nombre del curso</h3>
-                    <div class="ratingProductList--container">
-                    <div class="recommendationsProductList--card__rating-Stars">
-                        <span>4,5</span> 
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-            
-                    <div class="recommendationsProductList--card__rating-Reviews">
-                        <i class="fa-solid fa-users"></i>
-                        <span>1245</span> 
-                    </div>
-                </div>
-                    
-                    <div class="productList--card__tag">
-                        
-                        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
-                    </div>
-                     
-                </div>
-                   
-                    <div class="productList--userAdd__salesContainer">  
-                    <div class="productList--card__optionsContainer">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button><i class="fa-solid fa-pen"></i></button>
-                    <button><i class="fa-solid fa-trash"></i></button>
-                </div>
-                 
-                    <span class="coursesSales--container"><span class="numberSales"> 12</span> <i class="fa-solid fa-sack-dollar"></i></span>
-                    </div>
-                </div>
-                </article>
-
-                <article class="productList--card">
-                    <img src="/imgs/Images/photo preview.webp" alt=""> 
-                    <div class="productList--cardStructure">
-                    <div class="productList--cardStructureInside">
-                    <h3 class="productList--card__title">Nombre del curso</h3>
-                    <div class="ratingProductList--container">
-                    <div class="recommendationsProductList--card__rating-Stars">
-                        <span>4,5</span> 
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-            
-                    <div class="recommendationsProductList--card__rating-Reviews">
-                        <i class="fa-solid fa-users"></i>
-                        <span>1245</span> 
-                    </div>
-                </div>
-                    
-                    <div class="productList--card__tag">
-                        
-                        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
-                    </div>
-                     
-                </div>
-                   
-                    <div class="productList--userAdd__salesContainer">  
-                    <div class="productList--card__optionsContainer">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button><i class="fa-solid fa-pen"></i></button>
-                    <button><i class="fa-solid fa-trash"></i></button>
-                </div>
-                 
-                    <span class="coursesSales--container"><span class="numberSales"> 12</span> <i class="fa-solid fa-sack-dollar"></i></span>
-                    </div>
-                </div>
-                </article>
-
-                <article class="productList--card">
-                    <img src="/imgs/Images/photo preview.webp" alt=""> 
-                    <div class="productList--cardStructure">
-                    <div class="productList--cardStructureInside">
-                    <h3 class="productList--card__title">Nombre del curso</h3>
-                    <div class="ratingProductList--container">
-                    <div class="recommendationsProductList--card__rating-Stars">
-                        <span>4,5</span> 
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-            
-                    <div class="recommendationsProductList--card__rating-Reviews">
-                        <i class="fa-solid fa-users"></i>
-                        <span>1245</span> 
-                    </div>
-                </div>
-                    
-                    <div class="productList--card__tag">
-                        
-                        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
-                    </div>
-                     
-                </div>
-                   
-                    <div class="productList--userAdd__salesContainer">  
-                    <div class="productList--card__optionsContainer">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button><i class="fa-solid fa-pen"></i></button>
-                    <button><i class="fa-solid fa-trash"></i></button>
-                </div>
-                 
-                    <span class="coursesSales--container"><span class="numberSales"> 12</span> <i class="fa-solid fa-sack-dollar"></i></span>
-                    </div>
-                </div>
-                </article>
-
-                <article class="productList--card">
-                    <img src="/imgs/Images/photo preview.webp" alt=""> 
-                    <div class="productList--cardStructure">
-                    <div class="productList--cardStructureInside">
-                    <h3 class="productList--card__title">Nombre del curso</h3>
-                    <div class="ratingProductList--container">
-                    <div class="recommendationsProductList--card__rating-Stars">
-                        <span>4,5</span> 
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-            
-                    <div class="recommendationsProductList--card__rating-Reviews">
-                        <i class="fa-solid fa-users"></i>
-                        <span>1245</span> 
-                    </div>
-                </div>
-                    
-                    <div class="productList--card__tag">
-                        
-                        <p class="productList--card__tagTitle">Seguridad Ofensiva</p>
-                    </div>
-                     
-                </div>
-                   
-                    <div class="productList--userAdd__salesContainer">  
-                    <div class="productList--card__optionsContainer">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button><i class="fa-solid fa-pen"></i></button>
-                    <button><i class="fa-solid fa-trash"></i></button>
-                </div>
-                 
-                    <span class="coursesSales--container"><span class="numberSales"> 12</span> <i class="fa-solid fa-sack-dollar"></i></span>
-                    </div>
-                </div>
-                </article>
+               
 
 </div>
                 <!-- Paginador -->
-
+<!--
 <div class="adminListPaginator--box"> 
     <div class="paginator--boxInside">
     <button class="paginator__buttonLeft" disabled><i class="fa-solid fa-chevron-left"></i></button>
@@ -265,6 +125,7 @@
             </div>
 
     </div>
+-->
 </section>    
     
 </main>
