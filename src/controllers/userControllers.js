@@ -76,19 +76,12 @@ const userController = {
 
     profile: (req, res) => {
       let user = req.session.userLogged;
-
-      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
-      let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
       
       let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
       let userProducts = products.filter(product => product.author === user.username);
 
       
-    if (!myUser) {
-      return res.status(404).send("Usuario no encontrado");
-  } else
-        res.render(path.resolve(__dirname, '../views/users/profile'), {myUser}, { products: userProducts }/*, {myUser},*/);
-      
+    return res.render(path.resolve(__dirname, '../views/users/profile'), { products: userProducts }/*, {myUser},*/);
     },
 
 
@@ -109,15 +102,23 @@ const userController = {
     },
 
     edit: (req, res) => {
-     
-      res.render('users/profileEdit')
+     const { user_id } = req.params
+     let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
+     let userFound = users.find((user) => user.user_id == user_id);
+
+     if (userFound) {
+      res.render('users/profileEdit', {user: userFound});
+     }
+
+     res.render("not-found.ejs", { title: "Usuario no encontrado" });
+
      /* let userFound = User.findById(req.params.user_id);
       if (userFound) {
         return res.render("users/edit", { user: userFound });
       }
       return res
         .status(404)
-        .render("not-found.ejs", { title: "Usuario encontrado" });
+        .render("not-found.ejs", { title: "Usuario no encontrado" });
         */
       },
 

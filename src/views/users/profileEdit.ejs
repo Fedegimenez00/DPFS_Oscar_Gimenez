@@ -41,17 +41,17 @@
 
     <div class="profileEdit__title"><h1>Perfil Personal</h1></div>
 
-<form class="profileEdit__forms" action='/users/edit?_method=PUT' method="POST" enctype="multipart/form-data">
+<form class="profileEdit__forms" action='/profile/<%= user_id %>/edit?_method=PUT' method="POST" enctype="multipart/form-data">
    <div class="profileEdit__formsContainer">
     <div class="profileEdit--inputContainer">
         <h3>Básico:</h3>
         <div class="profileEdit--inputContainer__inside">
         <label for="user_firstname"></label>
-        <input type="text" name="user_firstname" id="user_firstname" placeholder="Nombre"> </input>
+        <input type="text" name="user_firstname" id="user_firstname" placeholder="Nombre" value="<%= user.user_firstname %>"> </input>
     </div>
     <div class="profileEdit--inputContainer__inside">
         <label for="user_surname"></label>
-        <input type="text" name="user_surname" id="user_surname" placeholder="Apellido"> </input>
+        <input type="text" name="user_surname" id="user_surname" placeholder="Apellido" value="<%= user.user_surname %>"> </input>
     </div>
     
     </div>
@@ -59,20 +59,23 @@
         <h3>Titular:</h3>
         <div class="profileEdit--inputContainer__inside">
         <label for="user_headline"></label>
-        <input type="text" name="user_headline" id="user_headline" placeholder="Titular"> </input>
+        <input type="text" name="user_headline" id="user_headline" placeholder="Titular" value="<%= user.user_headline %>"> </input>
     </div>
      <div class="profileEdit--inputContainer">
         <h3>Descripción:</h3>
         <div class="profileEdit--inputContainer__inside">
         <label for="user_description"></label>
-        <textarea name="user_description" id="user_description" placeholder="Descripción personal"></textarea>
+        <textarea name="user_description" id="user_description" placeholder="Descripción personal">value="<%= user.user_description %>"</textarea>
     </div>
     <div class="profileEdit--avatarContainer">
         <h3>Imagen de perfil</h3>
         <div class="profileEdit--avatarImage">
             <div class="profileEdit--avatarImage__inside">
-            <img src="/imgs/Images/photo preview.webp" alt="Avatar de usuario">
-        </div>
+                <div class="previewBox">
+                <img src="/database/images/courses/<%= user.avatar%>">
+                </div>
+
+            </div>
         <p>Agregar / Cambiar imagen de perfil</p>
     </div>
 <div class="profileEdit--avatarInputContainer__input">
