@@ -50,8 +50,14 @@ const productController = {
     products.push(newProduct);
     let newProductSave = JSON.stringify(products, null, 2);
     fs.writeFileSync(productsPath, newProductSave, 'utf-8');
-    //redirecciona a una ruta deseada
-    res.redirect('/');
+
+    //Redirecciona a una ruta deseada
+    if (user.role =='admin') {
+      return res.redirect('/admin');
+    } else {
+      return res.redirect('/profile/create');
+    }
+
     },
 
     //Muestra desde la página de edición, los datos del JSON
@@ -63,22 +69,23 @@ const productController = {
     },
 
     update: (req, res) => {
+      let user = req.session.userLogged;
       let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       let courseid = parseInt(req.params.courseid);
     
-      // Buscamos el producto original
+      // Se busca el producto original por id
       let productToUpdate = products.find(product => product.courseid === courseid);
     
       if (!productToUpdate) {
         return res.status(404).send("Producto no encontrado");
       }
     
-      // Imagen: si no hay nueva, se mantiene la anterior
+      // Variable que mantiene la imagen: si no hay nueva, se mantiene la anterior
       let oldImage = req.file ? req.file.filename : productToUpdate.courseimage;
     
-      // Creamos el objeto actualizado manteniendo lo que no viene del form
+      // Se crea el objeto actualizado
       let updatedProduct = {
-        ...productToUpdate, // trae todo: author, reviews, etc.
+        ...productToUpdate, // Spread Operator para traer elementos que no se deben modificar
         coursetitle: req.body.coursetitle,
         coursesubtitle: req.body.coursesubtitle,
         coursedescription: req.body.coursedescription,
@@ -87,48 +94,59 @@ const productController = {
         subcategory: req.body.subcategory,
         courseimage: oldImage,
         price: req.body.price
-        // no tocamos rating, reviews, author ni dateCreated
+        
       };
     
-      // Reemplazamos el producto viejo con el nuevo en el array
+      // Reemplazo del producto/objeto viejo con el nuevo en el array
       let updatedProducts = products.map(product =>
         product.courseid === courseid ? updatedProduct : product
       );
     
       fs.writeFileSync(productsPath, JSON.stringify(updatedProducts, null, 2), 'utf-8');
     
-      res.redirect('/');
+      //Redirecciona a una ruta deseada
+    if (user.role =='admin') {
+      return res.redirect('/admin');
+    } else {
+      return res.redirect('/profile/create');
+    }
     },
     
 
     destroy: (req, res) => {
-  
-      // 1. Leer productos
+      let user = req.session.userLogged;
+
       let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
   
-      // 2. Convertir ID a número
+      // Convierte el ID a número
       const productDeleteId = Number(req.params.courseid);
   
-      // 3. Buscar el producto a eliminar
+      // Busca el producto a eliminar
       const productToDelete = products.find(product => product.courseid === productDeleteId);
   
-      // 4. Si existe y su imagen no es "default.png", la eliminamos del sistema
+      /*
+      // Eliminación de la imagen en el caso de no ser default.png
       if (productToDelete && productToDelete.courseimage !== 'default.png') {
           const imagePath = path.join(__dirname, '../public/database/images/courses', productToDelete.courseimage);
           if (fs.existsSync(imagePath)) {
+            console.log(imagePath);
               fs.unlinkSync(imagePath);
           }
       }
-  
-      // 5. Filtrar el curso fuera del array
+  */
+      // Filtra el curso fuera del array
       const productsFinal = products.filter(product => product.courseid !== productDeleteId);
   
-      // 6. Guardar la nueva versión del JSON
+      // Guarda la nueva versión del JSON
       let productsSaved = JSON.stringify(productsFinal, null, 2);
       fs.writeFileSync(productsPath, productsSaved);
   
-      // 7. Redirigir
-      res.redirect('/profile/create');
+      // Redirige según el rol
+    if (user.role =='admin') {
+      return res.redirect('/admin');
+    } else {
+      return res.redirect('/profile/create');
+    }
   },
   
 

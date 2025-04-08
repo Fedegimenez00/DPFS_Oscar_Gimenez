@@ -18,7 +18,7 @@ router
 .post('/register', uploadUser.single("avatar"), processRegister)
 
 //Vista de perfil
-.get ('/profile/', guestAuth, profile) //Redireccionamiento para visitantes no logueados
+.get ('/profile/:user_id', /*guestAuth,*/ profile) //Redireccionamiento para visitantes no logueados
 .get('/profile/edit', guestAuth, edit)
 .get('/profile/edit-security', guestAuth, securityEdit)
 .get ('/profile/delete-account', guestAuth, destroy)
