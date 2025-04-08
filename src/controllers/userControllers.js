@@ -76,17 +76,30 @@ const userController = {
 
     profile: (req, res) => {
       let user = req.session.userLogged;
+
+      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
+      let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
+      
       let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      let userProducts = products.filter(product => product.author === user.username);
+
+      
+    if (!myUser) {
+      return res.status(404).send("Usuario no encontrado");
+  } else
+        res.render(path.resolve(__dirname, '../views/users/profile'), {myUser}, { products: userProducts }/*, {myUser},*/);
+      
+    },
+
+
   
       // Filtrar solo los productos cuyo autor coincide con el usuario logueado
-      let userProducts = products.filter(product => product.author === user.username);
       
       //let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
       //let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
 
       
-        res.render(path.resolve(__dirname, '../views/users/profile'), { products: userProducts }/*, {myUser},*/);
-    },
+    
     
 
     logout: (req, res)  => {
