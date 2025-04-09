@@ -77,9 +77,9 @@ const userController = {
     profile: (req, res) => {
       let user = req.session.userLogged;
 
-      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
+      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
       let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
-      
+
       let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
       let userProducts = products.filter(product => product.author === user.username);
 
