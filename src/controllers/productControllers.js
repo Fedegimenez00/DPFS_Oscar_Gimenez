@@ -55,7 +55,7 @@ const productController = {
     if (user.role =='admin') {
       return res.redirect('/admin');
     } else {
-      return res.redirect('/profile/create');
+      return res.redirect('/profile/' + user.user_id + '/create');
     }
 
     },
@@ -80,8 +80,19 @@ const productController = {
         return res.status(404).send("Producto no encontrado");
       }
     
-      // Variable que mantiene la imagen: si no hay nueva, se mantiene la anterior
-      let oldImage = req.file ? req.file.filename : productToUpdate.courseimage;
+    // Comprueba si hay una nueva imagen
+  let oldImage = productToUpdate.courseimage;
+  let newImage = req.file ? req.file.filename : oldImage;
+
+  // Si se subió una nueva imagen y la vieja no es la default, se elimina
+  if (req.file && oldImage !== 'default.png') {
+    const imagePath = path.join(__dirname, '../../public/database/images/courses/', oldImage);
+    if (fs.existsSync(imagePath)) {
+
+        fs.unlinkSync(imagePath);
+       
+    }
+  }
     
       // Se crea el objeto actualizado
       let updatedProduct = {
@@ -92,7 +103,7 @@ const productController = {
         lang: req.body.lang,
         category: req.body.category,
         subcategory: req.body.subcategory,
-        courseimage: oldImage,
+        courseimage: newImage,
         price: req.body.price
         
       };
@@ -108,7 +119,7 @@ const productController = {
     if (user.role =='admin') {
       return res.redirect('/admin');
     } else {
-      return res.redirect('/profile/create');
+      return res.redirect('/profile/' + user.user_id + '/create');
     }
     },
     
@@ -133,7 +144,13 @@ const productController = {
               fs.unlinkSync(imagePath);
           }
       }
-  */
+      */
+      if (productToDelete.courseimage !== 'default.png') {
+        const imagePath = path.join(__dirname, '../../public/database/images/courses', productToDelete.courseimage);
+        if (fs.existsSync(imagePath)) {
+          fs.unlinkSync(imagePath);
+        }
+      }
       // Filtra el curso fuera del array
       const productsFinal = products.filter(product => product.courseid !== productDeleteId);
   
@@ -145,7 +162,7 @@ const productController = {
     if (user.role =='admin') {
       return res.redirect('/admin');
     } else {
-      return res.redirect('/profile/create');
+      return res.redirect('/profile/' + user.user_id + '/create');
     }
   },
   

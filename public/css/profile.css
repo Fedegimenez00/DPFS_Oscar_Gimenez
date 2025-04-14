@@ -292,8 +292,8 @@ padding-left: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
-    border: solid var(--color-azulGrisaceo) 1px;
+    width: 70%;
+   
 }
 
 .profileEdit--avatarImage img{

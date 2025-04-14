@@ -56,7 +56,7 @@ const userController = {
        }
        //Redireccione a la vista de perfil
        if (userToLogin.role == 'user') {
-        return res.redirect('/profile')
+        return res.redirect('/profile/' + userToLogin.user_id)
        } else if (userToLogin.role == 'admin'){
         return res.redirect('/admin')
        }
@@ -75,18 +75,32 @@ const userController = {
     },
 
     profile: (req, res) => {
-      let user = req.session.userLogged;
-
-      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
-      let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
-
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
-      let userProducts = products.filter(product => product.author === user.username);
-
+      const users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+      const products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
       
-    return res.render(path.resolve(__dirname, '../views/users/profile'), { products: userProducts }/*, {myUser},*/);
-    },
+      const userToLogin = req.session.userLogged;
 
+
+
+
+      // Se busca el usuario del perfil según el ID
+      const myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
+    
+      // Si no existe el usuario, devuelve un error
+      if (!myUser) {
+        return res.status(404).send('Usuario no encontrado');
+      }
+    
+      // Se muestran los productos creados por el usuario
+      const userProducts = products.filter(product => product.author === myUser.username);
+    
+      return res.render(path.resolve(__dirname, '../views/users/profile'), {
+        products: userProducts,
+        myUser,
+        userToLogin
+      });
+    },
+    
 
   
       // Filtrar solo los productos cuyo autor coincide con el usuario logueado
@@ -111,9 +125,11 @@ const userController = {
 
      if (userFound) {
       res.render('users/profileEdit', {user: userFound});
+     } else {
+      res.render("not-found.ejs", { title: "Usuario no encontrado" });
      }
 
-     res.render("not-found.ejs", { title: "Usuario no encontrado" });
+     
 
      /* let userFound = User.findById(req.params.user_id);
       if (userFound) {
@@ -125,19 +141,182 @@ const userController = {
         */
       },
 
+      editUpdate: (req, res) => {
+        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
+      
+        const { user_id } = req.params;
+        const { user_firstname, user_surname, user_headline, user_description } = req.body;
+      
+        let userFound = users.find(user => user.user_id === parseInt(user_id));
+      
+        if (!userFound) {
+          return res.status(404).send("Usuario no encontrado");
+        }
+      
+      
+         // Comprueba si hay una nueva imagen
+  let oldAvatar = userFound.avatar;
+  let newAvatar = req.file ? req.file.filename : oldAvatar;
+
+  // Si se subió una nueva imagen y la vieja no es la default, se elimina
+  if (req.file && oldAvatar !== 'default.png') {
+    const imagePath = path.join(__dirname, '../../public/database/images/users', oldAvatar);
+    if (fs.existsSync(imagePath)) {
+
+        fs.unlinkSync(imagePath);
+       
+    }
+  }
+        let updateUser = {
+          ...userFound,
+          user_firstname,
+          user_surname,
+          user_headline,
+          user_description,
+          avatar: newAvatar
+        };
+      
+        let updatedUsers = users.map(user =>
+          user.user_id === parseInt(user_id) ? updateUser : user
+        );
+      
+        fs.writeFileSync(
+          path.resolve(__dirname, '../database/users.json'),
+          JSON.stringify(updatedUsers, null, 2),
+          'utf-8'
+        );
+      
+        req.session.userLogged = updateUser;
+      
+        if (updateUser.role === 'admin') {
+          return res.redirect('/admin');
+        } else {
+          return res.redirect('/profile/' + updateUser.user_id + '/edit');
+        }
+      },
+      
+
     securityEdit: (req, res) => {
-     
-      res.render('users/profileEditSecurity')
-    },
+      const { user_id } = req.params
+      let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
+      let userFound = users.find(user => user.user_id == user_id);
+ 
+      if (userFound) {
+       res.render('users/profileEditSecurity', {user: userFound});
+      } else {
+       res.render("not-found.ejs", { title: "Usuario no encontrado" });
+      }
+     },
 
-     securityEdit: (req, res) => {
-     
-      res.render('users/profileEditSecurity')
+     securityEditUpdate: (req, res) => {
+      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
+      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json'), 'utf-8'));
+    
+      const { user_id } = req.params;
+      const { username, email, password } = req.body;
+    
+      let userFound = users.find(user => user.user_id === parseInt(user_id));
+      if (!userFound) return res.status(404).send("Usuario no encontrado");
+    
+      const oldUsername = userFound.username; // Guardamos el anterior
+    
+      // Actualización segura
+      if (password && password.trim() !== '') {
+        userFound.password = bcryptjs.hashSync(password, 10);
+      }
+      if (username && username.trim() !== '') {
+        userFound.username = username;
+      }
+      if (email && email.trim() !== '') {
+        userFound.email = email;
+      }
+    
+      // Actualizar productos asociados si cambió el nombre de usuario
+      if (username && username.trim() !== '' && username !== oldUsername) {
+        products = products.map(product => {
+          if (product.author === oldUsername) {
+            return { ...product, author: username };
+          }
+          return product;
+        });
+    
+        fs.writeFileSync(
+          path.resolve(__dirname, '../database/products.json'),
+          JSON.stringify(products, null, 2),
+          'utf-8'
+        );
+      }
+    
+      let updatedUsers = users.map(user =>
+        user.user_id === parseInt(user_id) ? userFound : user
+      );
+    
+      fs.writeFileSync(
+        path.resolve(__dirname, '../database/users.json'),
+        JSON.stringify(updatedUsers, null, 2),
+        'utf-8'
+      );
+    
+      req.session.userLogged = userFound;
+    
+      if (userFound.role === 'admin') {
+        return res.redirect('/admin');
+      } else {
+        return res.redirect('/profile/' + userFound.user_id + '/edit-security');
+      }
     },
+    
     destroy: (req, res) => {
-
-      res.render("users/userDeleteAccount");
+      const { user_id } = req.params
+      let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
+      let userFound = users.find((user) => user.user_id == user_id);
+ 
+      if (userFound) {
+       res.render('users/userDeleteAccount', {user: userFound});
+      } else {
+       res.render("not-found.ejs", { title: "Usuario no encontrado" });
+      }
+ 
     },
+    processDestroy: (req, res) => {
+      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), "utf-8"));
+    
+      // Convertir user_id a número por si en JSON es un número
+      const userId = parseInt(req.params.user_id);
+    
+      // Buscar al usuario por user_id
+      let userToDelete = users.find(user => user.user_id === userId);
+    
+      if (!userToDelete) {
+        return res.status(404).send("Usuario no encontrado");
+      }
+    
+      // Eliminar imagen si no es la default
+      if (userToDelete.avatar !== 'default.png') {
+        const avatarPath = path.join(__dirname, '../../public/database/images/users', userToDelete.avatar);
+        if (fs.existsSync(avatarPath)) {
+          fs.unlinkSync(avatarPath);
+        }
+      }
+
+
+      // Filtrar el usuario
+      users = users.filter(user => user.user_id !== userId);
+    
+      // Sobrescribir JSON
+      fs.writeFileSync(
+        path.resolve(__dirname, '../database/users.json'),
+        JSON.stringify(users, null, 2),
+        'utf-8'
+      );
+    
+      // Limpiar sesión y cookies
+      req.session.destroy(() => {
+        res.clearCookie('username');
+        res.redirect('/');
+      });
+    },
+    
 
     courseList: (req, res) => {
      
@@ -154,21 +333,7 @@ const userController = {
       res.render(path.resolve(__dirname, '../views/users/userAddCourses'), { products: userProducts });
     },
 
-    processUpdate: (req, res) => {
-      let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
-      const { username, email, password } = req.body;
-      let userFound = User.findById(req.params.user_id);
-  
-      userFound.username = username;
-      userFound.email = email;
-      userFound.password =
-        password == "" ? userFound.password : bcryptjs.hashSync(password, 10);
-      userFound.avatar = req.file?.filename || userFound.avatar;
-  
-      fs.writeFileSync((path.resolve(__dirname, '../database/users.json')), JSON.stringify(users, null, "  "));
-      req.session.userLogged = userFound;
-      res.redirect("/");
-    },
+    
 
 
 }

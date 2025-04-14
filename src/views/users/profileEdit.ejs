@@ -19,15 +19,15 @@
 
 <div class="profileUserMenu--options">
 
-<div class="profileUserMenu--selected"><a href="/profile/edit"><h3>Perfil</h3></a></div> 
+<div class="profileUserMenu--selected"><a href="/profile/<%=user.user_id %>/edit"><h3>Perfil</h3></a></div> 
 
-<a href="/profile/edit-security"><h3>Seguridad de Cuenta</h3></a>
+<a href="/profile/<%=user.user_id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
 
-<a href="/profile/my-courses"><h3>Cursos (WIP)</h3></a>
+<a href="/profile/<%=user.user_id %>/my-courses"><h3>Cursos (WIP)</h3></a>
 
-<a href="/profile/create"><h3>Creación de Cursos</h3></a>
+<a href="/profile/<%=user.user_id %>/create"><h3>Creación de Cursos</h3></a>
 
-<a href="/profile/delete-account"><h3>Cerrar Cuenta</h3></a>
+<a href="/profile/<%=user.user_id %>/delete-account"><h3>Cerrar Cuenta</h3></a>
 </div>
 
 </div>
@@ -41,7 +41,7 @@
 
     <div class="profileEdit__title"><h1>Perfil Personal</h1></div>
 
-<form class="profileEdit__forms" action='/profile/<%= user_id %>/edit?_method=PUT' method="POST" enctype="multipart/form-data">
+<form class="profileEdit__forms" action='/profile/<%= user.user_id %>/edit?_method=PUT' method="POST" enctype="multipart/form-data">
    <div class="profileEdit__formsContainer">
     <div class="profileEdit--inputContainer">
         <h3>Básico:</h3>
@@ -65,14 +65,14 @@
         <h3>Descripción:</h3>
         <div class="profileEdit--inputContainer__inside">
         <label for="user_description"></label>
-        <textarea name="user_description" id="user_description" placeholder="Descripción personal">value="<%= user.user_description %>"</textarea>
+        <textarea name="user_description" id="user_description" placeholder="Descripción personal"><%= user.user_description %></textarea>
     </div>
     <div class="profileEdit--avatarContainer">
         <h3>Imagen de perfil</h3>
         <div class="profileEdit--avatarImage">
             <div class="profileEdit--avatarImage__inside">
                 <div class="previewBox">
-                <img src="/database/images/courses/<%= user.avatar%>">
+                <img id="imgPreview" src="/database/images/users/<%= user.avatar%>">
                 </div>
 
             </div>
@@ -100,6 +100,6 @@
     <%- include('../partials/footer') %>
     
     <!-- Agregar los elementos del profileEdit -->
-    <script src="/js/previewImage.js"></script>
+
 </body>
 </html>
