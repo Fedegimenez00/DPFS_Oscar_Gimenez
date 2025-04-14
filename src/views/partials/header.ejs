@@ -69,11 +69,11 @@
 
             
 
-            <li><a href="/profile">Mi perfil</a></li>
+            <li><a href="/profile/<%=user.user_id %>/">Mi perfil</a></li>
             <hr class="userMenu--list__line">
-            <li><a href="/profile/my-courses">Mis Cursos</a></li>
-            <li><a href="/profile/create">Creación de Cursos</a></li>
-            <li><a href="/profile/edit">Configuración</a></li>
+            <li><a href="/profile/<%=user.user_id %>/my-courses">Mis Cursos</a></li>
+            <li><a href="/profile/<%=user.user_id %>/create">Creación de Cursos</a></li>
+            <li><a href="/profile/<%=user.user_id %>/edit">Configuración</a></li>
             <hr class="userMenu--list__line">
             <li><a href="/logout">Cerrar sesión</a></li>
         </ul>
@@ -139,11 +139,11 @@
 
     
 
-    <li><a href="/profile">Mi perfil</a></li>
+    <li><a href="/profile/<%=user.user_id %>/">Mi perfil</a></li>
     <hr class="userMenu--list__line">
-    <li><a href="/profile/my-courses">Mis Cursos</a></li>
-    <li><a href="/profile/create">Creación de Cursos</a></li>
-    <li><a href="/profile/edit">Configuración</a></li>
+    <li><a href="/profile/<%=user.user_id %>/my-courses">Mis Cursos</a></li>
+    <li><a href="/profile/<%=user.user_id %>/create">Creación de Cursos</a></li>
+    <li><a href="/profile/<%=user.user_id %>/edit">Configuración</a></li>
     <hr class="userMenu--list__line">
     <li><a href="/logout">Cerrar sesión</a></li>
 </ul>

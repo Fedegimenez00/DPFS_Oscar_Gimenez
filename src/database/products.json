@@ -585,16 +585,16 @@
     "courseid": 54,
     "coursetitle": "Formas de cocinar arroz",
     "coursesubtitle": "Las desconocidas maravillas de este súper-alimento",
-    "coursedescription": "El arroz se puede cocinar de un montón de maneras. Son tantas que uno no sabría cómo empezar a reconocerlas.",
+    "coursedescription": "El arroz se puede cocinar de un montón de maneras. Son tantas que uno no sabría cómo empezar a reconocerlas. \r\n     \r\n    ",
     "lang": "Español",
-    "category": "Ingeniería Social",
-    "subcategory": "Concienciación y Educación",
-    "courseimage": "course1743999742324.png",
+    "category": "Seguridad Defensiva",
+    "subcategory": "Fortificación de Redes",
+    "courseimage": "course1744594828633.png",
     "price": "499",
     "rating": 0,
     "reviews": 0,
     "timesBought": 0,
     "dateCreated": 1743999742355,
-    "author": "Example1"
+    "author": "Example10"
   }
 ]

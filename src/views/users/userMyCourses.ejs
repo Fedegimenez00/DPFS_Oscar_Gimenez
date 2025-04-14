@@ -16,15 +16,15 @@
         
         <div class="profileUserMenu--options">
         
-        <a href="/profile/edit"><h3>Perfil</h3></a>
+        <a href="/profile/<%=user.user_id %>/edit"><h3>Perfil</h3></a>
         
-        <a href="/profile/edit-security"><h3>Seguridad de Cuenta</h3></a>
+        <a href="/profile/<%=user.user_id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
         
-        <div class="profileUserMenu--selected"><a href="/profile/my-courses"><h3>Cursos (WIP)</h3></a></div>
+        <div class="profileUserMenu--selected"><a href="/profile/<%=user.user_id %>/my-courses"><h3>Cursos (WIP)</h3></a></div>
         
-        <a href="/profile/create"><h3>Creación de Cursos</h3></a>
+        <a href="/profile/<%=user.user_id %>/create"><h3>Creación de Cursos</h3></a>
         
-         <a href="/profile/delete-account"><h3>Cerrar Cuenta</h3></a> 
+         <a href="/profile/<%=user.user_id %>/delete-account"><h3>Cerrar Cuenta</h3></a> 
         
         </div>
         </section>

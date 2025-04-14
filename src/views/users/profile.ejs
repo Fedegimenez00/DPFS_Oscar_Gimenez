@@ -9,17 +9,17 @@
     <main class="main--profile">
         <section class="userTitle--section">
             <div class="userTitle--card">
-                <h1><%= user.username %></h1>
-                <h2><%= user?.user_headline %></h2>
+                <h1><%= myUser.username %></h1>
+                <h2><%= myUser?.user_headline %></h2>
             </div>
         </section>
 
         <section class="userAvatar--section">
             <div class="userAvatar--card">
-           <img src="/database/images/users/<%=user?.avatar %>" alt="Avatar de <%= user.username%>">
+           <img src="/database/images/users/<%=myUser?.avatar %>" alt="Avatar de <%= myUser.username%>">
           
-           <% if (locals.isLogged){ %> 
-           <button type="button" onclick="location.href='/profile/edit'" class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
+           <% if ( userToLogin && myUser.username === userToLogin.username){ %> 
+           <button type="button" onclick="location.href='/profile/<%=user.user_id %>/edit'" class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
            <% } %>
             </div>
 
@@ -28,8 +28,9 @@
         <div class="profileBody--sectionInside">
         <div class="profileBody--description">
         <h3>Sobre mi:</h3>
-        <p><%= user?.user_description %></p>
+        <p><%= myUser?.user_description %></p>
     </div>
+
 
     <div class="profileBody--ownCourses">
         <h3>Mis cursos:</h3>

@@ -265,11 +265,15 @@
   },
   {
     "user_id": 34,
-    "username": "Example1",
+    "username": "Example10",
     "email": "example@gmail.com",
-    "password": "$2b$10$QkDZP7ZVL1WoV8Xg.N.Fv.2d7CqxQM2q8rqseIMbVpTrb8Dc6rxBC",
-    "avatar": "avatar-1742233435755.png",
-    "role": "user"
+    "password": "$2b$10$VNvJPy9LvwhiLlBI6FsEUeQnzqKcypJu9vDmMVXxBd77n0APOA/Se",
+    "avatar": "avatar-1744596042893.svg",
+    "role": "user",
+    "user_firstname": "Jonas",
+    "user_surname": "Smithers",
+    "user_headline": "Experto en milanesas",
+    "user_description": "Habíase una vez en un reino en muy muy lejano..."
   },
   {
     "user_id": 35,
@@ -278,17 +282,5 @@
     "password": "$2b$10$I2huBnqv8cFp/fx0b4sPO.nsbylCQ5AoSpf/9BVF2DhN/wFlMxE3a",
     "avatar": "default.png",
     "role": "admin"
-  },
-  {
-    "user_id": 36,
-    "username": "Perruno",
-    "email": "mail@mail.com",
-    "password": "$2b$10$JShIaOMkSF1SmcK5y3m3gutfZB/NODRowmDs5SoX325aDLISgD3wm",
-    "avatar": "default.png",
-    "user_firstname": "",
-    "user_surname": "",
-    "user_headline": "",
-    "user_description": "",
-    "role": "user"
   }
 ]
