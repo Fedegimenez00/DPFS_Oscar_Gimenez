@@ -19,7 +19,9 @@ router
 
 //Vista de perfil
 .get ('/profile/:user_id', /*guestAuth,*/ profile) //Redireccionamiento para visitantes no logueados
-.get('/profile/edit', guestAuth, edit)
+
+//Actualización del perfil
+.get('/profile/:user_id/edit', guestAuth, edit)
 .get('/profile/edit-security', guestAuth, securityEdit)
 .get ('/profile/delete-account', guestAuth, destroy)
 .get ('/profile/my-courses', guestAuth, courseList)
