@@ -225,7 +225,7 @@ flex-direction: column;
 }
 
 .userMenu--box{
-background-color: rgba(47, 79, 255, 0.4);
+background-color:  var(--color-moradoTranslucido3);
 /* background-color: rgba(71, 52, 129, 0.4) */
 border-bottom: 1px solid var(--color-blancoApagado);
     display: flex;
