@@ -7,7 +7,7 @@ function userLogged(req, res, next) {
     if (req.session && req.session?.userLogged) { //Se usa el ? para preguntar si existe
         res.locals.isLogged = true;
         res.locals.userLogged = req.session.userLogged;
-        req.session?.userLogged.role == 'admin' ? (res.locals.isAdmin = true) : null;
+        req.session?.userLogged.role == 1 ? (res.locals.isAdmin = true) : null;
     }
 
     

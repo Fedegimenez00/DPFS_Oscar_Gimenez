@@ -10,21 +10,21 @@
     <section class="profileUserMenu--section">
         <div class="profileUserMenu--sectionContainer">
             <div class="profileMenu--imageContainer">
-            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
-            <h2><%= user.username %></h2>
+            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.name%>">
+            <h2><%= user.name %></h2>
         </div>
         
         <div class="profileUserMenu--options">
         
-        <a href="/profile/<%=user.user_id %>/edit"><h3>Perfil</h3></a>
+        <a href="/profile/<%=user.id %>/edit"><h3>Perfil</h3></a>
         
-        <a href="/profile/<%=user.user_id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
+        <a href="/profile/<%=user.id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
         
-        <a href="/profile/<%=user.user_id %>/my-courses"><h3>Cursos (WIP)</h3></a>
+        <a href="/profile/<%=user.id %>/my-courses"><h3>Cursos (WIP)</h3></a>
         
-        <div class="profileUserMenu--selected"> <a href="/profile/<%=user.user_id %>/create"><h3>Creación de Cursos</h3></a></div>
+        <div class="profileUserMenu--selected"> <a href="/profile/<%=user.id %>/create"><h3>Creación de Cursos</h3></a></div>
         
-        <a href="/profile/<%=user.user_id %>/delete-account"><h3>Cerrar Cuenta</h3></a> 
+        <a href="/profile/<%=user.id %>/delete-account"><h3>Cerrar Cuenta</h3></a> 
         </div>
         
         </div>
@@ -72,10 +72,10 @@
 
                 <% products.forEach(products => { %>
                 <article class="productList--card">
-                    <img src="/database/images/courses/<%= products?.courseimage %>" alt="imagen del curso"> 
+                    <img src="/database/images/courses/<%= products?.image %>" alt="imagen del curso"> 
                     <div class="productList--cardStructure">
                     <div class="productList--cardStructureInside">
-                    <h3 class="productList--card__title"><%= products.coursetitle%> </h3>
+                    <h3 class="productList--card__title"><%= products.title%> </h3>
                     <div class="ratingProductList--container">
                     <div class="recommendationsProductList--card__rating-Stars">
                         <span><%= products.rating %></span> 
@@ -97,9 +97,9 @@
                    
                     <div class="productList--userAdd__salesContainer">  
                     <div class="productList--card__optionsContainer">
-                        <a href="/products/detail/<%= products.courseid %>"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button> </a>
-                        <a href="/products/edit/<%= products.courseid  %>"> <button type="button"><i class="fa-solid fa-pen"></i></button> </a>
-                        <a href="/products/delete/<%= products.courseid  %>"><button type="button" ><i class="fa-solid fa-trash"></i></button></a>
+                        <a href="/products/detail/<%= products.id %>"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button> </a>
+                        <a href="/products/edit/<%= products.id %>"> <button type="button"><i class="fa-solid fa-pen"></i></button> </a>
+                        <a href="/products/delete/<%= products.id %>"><button type="button" ><i class="fa-solid fa-trash"></i></button></a>
                 </div>
                  
                     <span class="coursesSales--container"><span class="numberSales"> <%= products.timesBought %> </span> <i class="fa-solid fa-sack-dollar"></i></span>

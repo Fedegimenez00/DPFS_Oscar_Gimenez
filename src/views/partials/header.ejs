@@ -39,7 +39,7 @@
         
         <% if (locals.isLogged){ %> 
         <div class="userMenu--box">
-            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
+            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.name%>">
             <div class="userMenu--box__text">
                 <div class="userMenu--box__textInside">
             <p>Hola, <%= user.username %></p>
@@ -69,11 +69,11 @@
 
             
 
-            <li><a href="/profile/<%=user.user_id %>/">Mi perfil</a></li>
+            <li><a href="/profile/<%=user.id %>/">Mi perfil</a></li>
             <hr class="userMenu--list__line">
-            <li><a href="/profile/<%=user.user_id %>/my-courses">Mis Cursos</a></li>
-            <li><a href="/profile/<%=user.user_id %>/create">Creación de Cursos</a></li>
-            <li><a href="/profile/<%=user.user_id %>/edit">Configuración</a></li>
+            <li><a href="/profile/<%=user.id %>/my-courses">Mis Cursos</a></li>
+            <li><a href="/profile/<%=user.id %>/create">Creación de Cursos</a></li>
+            <li><a href="/profile/<%=user.id %>/edit">Configuración</a></li>
             <hr class="userMenu--list__line">
             <li><a href="/logout">Cerrar sesión</a></li>
         </ul>
@@ -123,10 +123,10 @@
     <div class="userDestkopMenu--container">
 <span class="userHeaderMenu--desktopContainer">
     <div class="userHeaderMenu--desktopContainerInside">             
-    <p><%= user.username %></p>
+    <p><%= user.name %></p>
     <button class="userMenuCollapsable" data-target="userMenuDesktop" type="button"><i class="fa-solid fa-chevron-down"></i></button>
     </div>
-    <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
+    <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.name%>">
 </span>
 
 <nav class="userMenuDesktop" id="userMenuDesktop">
@@ -139,11 +139,11 @@
 
     
 
-    <li><a href="/profile/<%=user.user_id %>/">Mi perfil</a></li>
+    <li><a href="/profile/<%=user.id %>/">Mi perfil</a></li>
     <hr class="userMenu--list__line">
-    <li><a href="/profile/<%=user.user_id %>/my-courses">Mis Cursos</a></li>
-    <li><a href="/profile/<%=user.user_id %>/create">Creación de Cursos</a></li>
-    <li><a href="/profile/<%=user.user_id %>/edit">Configuración</a></li>
+    <li><a href="/profile/<%=user.id %>/my-courses">Mis Cursos</a></li>
+    <li><a href="/profile/<%=user.id %>/create">Creación de Cursos</a></li>
+    <li><a href="/profile/<%=user.id %>/edit">Configuración</a></li>
     <hr class="userMenu--list__line">
     <li><a href="/logout">Cerrar sesión</a></li>
 </ul>

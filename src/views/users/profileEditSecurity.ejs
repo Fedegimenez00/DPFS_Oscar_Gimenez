@@ -12,21 +12,21 @@
         <section class="profileUserMenu--section">
         <div class="profileUserMenu--sectionContainer">
             <div class="profileMenu--imageContainer">
-            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
-            <h2><%= user.username %></h2>
+            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.name%>">
+            <h2><%= user.name %></h2>
         </div>
         
         <div class="profileUserMenu--options">
         
-        <a href="/profile/<%=user.user_id %>/edit"><h3>Perfil</h3></a>
+        <a href="/profile/<%=user.id %>/edit"><h3>Perfil</h3></a>
         
-      <div class="profileUserMenu--selected">  <a href="/profile/<%=user.user_id %>/edit-security"><h3>Seguridad de Cuenta</h3></a> </div> 
+      <div class="profileUserMenu--selected">  <a href="/profile/<%=user.id %>/edit-security"><h3>Seguridad de Cuenta</h3></a> </div> 
         
-        <a href="/profile/<%=user.user_id %>/my-courses"><h3>Cursos (WIP)</h3></a>
+        <a href="/profile/<%=user.id %>/my-courses"><h3>Cursos (WIP)</h3></a>
         
-        <a href="/profile/<%=user.user_id %>/create"><h3>Creación de Cursos</h3></a>
+        <a href="/profile/<%=user.id %>/create"><h3>Creación de Cursos</h3></a>
         
-        <a href="/profile/<%=user.user_id %>/delete-account"><h3>Cerrar Cuenta</h3></a>
+        <a href="/profile/<%=user.id %>/delete-account"><h3>Cerrar Cuenta</h3></a>
         </div>
         
         </div>
@@ -35,7 +35,7 @@
         <div class="profileEdit--sectionContainer">
         <div class="profileEdit__title"><h1>Seguridad de Cuenta</h1></div>
     
-    <form class="profileEdit__forms" action='/profile/<%= user.user_id %>/edit-security?_method=PUT' method="POST">
+    <form class="profileEdit__forms" action='/profile/<%= user.id %>/edit-security?_method=PUT' method="POST">
 
         
         <div class="profileEditSecurity__formsContainer">
@@ -43,8 +43,8 @@
             <div class="profileEdit--inputContainer">
                 <h3>Usuario:</h3>
                 <div class="profileEdit--inputContainer__inside">
-                <label for="username"></label>
-                <input type="text" name="username" id="username" placeholder="Nombre de Usuario" value="<%= user.username %>"> </input>
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Nombre de Usuario" value="<%= user.name %>"> </input>
             </div>
             </div>
              <div class="profileEdit--inputContainer">

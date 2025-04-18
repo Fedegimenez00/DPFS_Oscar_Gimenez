@@ -14,5 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
     const Language = sequelize.define(alias, cols, config)
 
+    Language.associate = (model) => {
+        Language.hasMany(model.Product, { //Un idioma tiene muchos productos
+            as: 'products',
+            foreignKey: 'language_id' 
+        })
+    }
+
     return Language;
 }
