@@ -5,21 +5,33 @@ const productsPath = path.resolve(__dirname, '../database/products.json');
 const db = require('../database/models');
 
 const productController = {
-  //Muestra el detalle del producto dentro del JSON, usando de referencia el id
-    show : (req, res) => {
-      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-      let myProduct = products.find(product => product.courseid === parseInt(req.params.courseid, 10));
+  //Mostraba el detalle del producto dentro del JSON, usando de referencia el id
+  //Ahora muestra el producto dentro de JSON
+    show: async (req, res) => {
+      try
+      { //Productos de la base de datos de SQL
+        const products = await db.Product.findAll() //Trae el producto de la base de datos
+      
+        let myProduct = db.Product.findByPk(req.params.id) //Filtra por la id
+    //  let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+      //let myProduct = products.find(product => product.id /*courseid*/ === parseInt(req.params.id /*courseid*/, 10));
 
       
     if (!myProduct) {
       return res.status(404).send("Producto no encontrado");
   }
+  //Renderiza el producto
         res.render(path.resolve(__dirname, '../views/products/productDetail'), {myProduct},);
-    },
+     
+      } catch (error){
+        console.log(error);
+      }
+    
+      },
 
 
     create : (req, res) =>{
-      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+    //  let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
         return res.render('products/productAdd');
     },
@@ -62,11 +74,17 @@ const productController = {
     },
 
     //Muestra desde la página de edición, los datos del JSON
-    edit : (req,res) =>{
-      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-      const productId = req.params.courseid;
+    edit : async (req,res) =>{
+      
+      const products = await db.Product.findAll()
+      
+        let productId = db.Product.findByPk(req.params.id)
+      //let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+      //const productId = req.params.courseid;
+      
       let productEdit = products.find(product=> product.courseid == productId);
       res.render(path.resolve(__dirname, '../views/products/productEdit'), {productEdit});
+    
     },
 
     update: (req, res) => {
@@ -125,40 +143,47 @@ const productController = {
     },
     
 
-    destroy: (req, res) => {
+    destroy: async (req, res) => {
+      //[Borrado suave, lo saca de la vista de consulta]
       let user = req.session.userLogged;
 
-      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+      //let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
   
       // Convierte el ID a número
-      const productDeleteId = Number(req.params.courseid);
+      //const productDeleteId = Number(req.params.courseid);
   
       // Busca el producto a eliminar
-      const productToDelete = products.find(product => product.courseid === productDeleteId);
-  
-      /*
-      // Eliminación de la imagen en el caso de no ser default.png
-      if (productToDelete && productToDelete.courseimage !== 'default.png') {
-          const imagePath = path.join(__dirname, '../public/database/images/courses', productToDelete.courseimage);
-          if (fs.existsSync(imagePath)) {
-            console.log(imagePath);
-              fs.unlinkSync(imagePath);
-          }
-      }
-      */
-      if (productToDelete.courseimage !== 'default.png') {
-        const imagePath = path.join(__dirname, '../../public/database/images/courses', productToDelete.courseimage);
+      
+      //const productToDelete = products.find(product => product.courseid === productDeleteId);
+
+    /* 
+    [Opcional para otr caso]
+    let productToDelete = await db.products.findByPk(req.params.id);
+    
+     //Elimina imagen
+      if (productToDelete.image  !== 'default.png') {
+        const imagePath = path.join(__dirname, '../../public/database/images/courses', productToDelete.image);
         if (fs.existsSync(imagePath)) {
           fs.unlinkSync(imagePath);
         }
       }
+     */
+
+      //Elimina el curso en base al id
+
+   const productDelete = await  db.Product.destroy({
+       where : { 
+        id: req.params.id 
+      },
+      });
+      /*
       // Filtra el curso fuera del array
       const productsFinal = products.filter(product => product.courseid !== productDeleteId);
   
       // Guarda la nueva versión del JSON
       let productsSaved = JSON.stringify(productsFinal, null, 2);
       fs.writeFileSync(productsPath, productsSaved);
-  
+  */
       // Redirige según el rol
     if (user.role =='admin') {
       return res.redirect('/admin');
@@ -183,11 +208,17 @@ const productController = {
         res.render(`partials/${type}`, { id }); // Renderizado del partial específico
       },
       
-    catalog: (req, res) => {
-      let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+    catalog: async (req, res) => {
+      //let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
+      try
+      { //Productos de la base de datos de SQL
+        const products = await db.Product.findAll()
+      
 
       return res.render('products/products', {products}); // Aquí enviamos "products" a la vista
-
+      } catch {
+        console.log('Error');
+      }
       
     }
       

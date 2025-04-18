@@ -13,21 +13,21 @@
 <section class="profileUserMenu--section">
 <div class="profileUserMenu--sectionContainer">
     <div class="profileMenu--imageContainer">
-    <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
-    <h2><%= user.username %></h2>
+    <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.name%>">
+    <h2><%= user.name %></h2>
 </div>
 
 <div class="profileUserMenu--options">
 
-<div class="profileUserMenu--selected"><a href="/profile/<%=user.user_id %>/edit"><h3>Perfil</h3></a></div> 
+<div class="profileUserMenu--selected"><a href="/profile/<%=user.id %>/edit"><h3>Perfil</h3></a></div> 
 
-<a href="/profile/<%=user.user_id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
+<a href="/profile/<%=user.id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
 
-<a href="/profile/<%=user.user_id %>/my-courses"><h3>Cursos (WIP)</h3></a>
+<a href="/profile/<%=user.id %>/my-courses"><h3>Cursos (WIP)</h3></a>
 
-<a href="/profile/<%=user.user_id %>/create"><h3>Creación de Cursos</h3></a>
+<a href="/profile/<%=user.id %>/create"><h3>Creación de Cursos</h3></a>
 
-<a href="/profile/<%=user.user_id %>/delete-account"><h3>Cerrar Cuenta</h3></a>
+<a href="/profile/<%=user.id %>/delete-account"><h3>Cerrar Cuenta</h3></a>
 </div>
 
 </div>
@@ -41,31 +41,31 @@
 
     <div class="profileEdit__title"><h1>Perfil Personal</h1></div>
 
-<form class="profileEdit__forms" action='/profile/<%= user.user_id %>/edit?_method=PUT' method="POST" enctype="multipart/form-data">
+<form class="profileEdit__forms" action='/profile/<%= user.id %>/edit?_method=PUT' method="POST" enctype="multipart/form-data">
    <div class="profileEdit__formsContainer">
     <div class="profileEdit--inputContainer">
         <h3>Básico:</h3>
         <div class="profileEdit--inputContainer__inside">
         <label for="user_firstname"></label>
-        <input type="text" name="user_firstname" id="user_firstname" placeholder="Nombre" value="<%= user.user_firstname %>"> </input>
+        <input type="text" name="firstName" id="firstName" placeholder="Nombre" value="<%= user.firstName %>"> </input>
     </div>
     <div class="profileEdit--inputContainer__inside">
-        <label for="user_surname"></label>
-        <input type="text" name="user_surname" id="user_surname" placeholder="Apellido" value="<%= user.user_surname %>"> </input>
+        <label for="secondName"></label>
+        <input type="text" name="secondName" id="secondName" placeholder="Apellido" value="<%= user.secondName %>"> </input>
     </div>
     
     </div>
      <div class="profileEdit--inputContainer">
         <h3>Titular:</h3>
         <div class="profileEdit--inputContainer__inside">
-        <label for="user_headline"></label>
-        <input type="text" name="user_headline" id="user_headline" placeholder="Titular" value="<%= user.user_headline %>"> </input>
+        <label for="headline"></label>
+        <input type="text" name="headline" id="headline" placeholder="Titular" value="<%= user.headline %>"> </input>
     </div>
      <div class="profileEdit--inputContainer">
         <h3>Descripción:</h3>
         <div class="profileEdit--inputContainer__inside">
-        <label for="user_description"></label>
-        <textarea name="user_description" id="user_description" placeholder="Descripción personal"><%= user.user_description %></textarea>
+        <label for="description"></label>
+        <textarea name="description" id="description" placeholder="Descripción personal"><%= user.description %></textarea>
     </div>
     <div class="profileEdit--avatarContainer">
         <h3>Imagen de perfil</h3>

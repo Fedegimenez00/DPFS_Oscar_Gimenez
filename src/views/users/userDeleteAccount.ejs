@@ -12,27 +12,27 @@
         <section class="profileUserMenu--section">
         <div class="profileUserMenu--sectionContainer">
             <div class="profileMenu--imageContainer">
-            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.username%>">
-            <h2><%= user.username %></h2>
+            <img src="/database/images/users/<%=user.avatar %>" alt="Avatar de <%= user.name%>">
+            <h2><%= user.name %></h2>
         </div>
         
         <div class="profileUserMenu--options">
         
-        <a href="/profile/<%=user.user_id %>/edit"><h3>Perfil</h3></a>
+        <a href="/profile/<%=user.id %>/edit"><h3>Perfil</h3></a>
         
-        <a href="/profile/<%=user.user_id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
+        <a href="/profile/<%=user.id %>/edit-security"><h3>Seguridad de Cuenta</h3></a>
         
-        <a href="/profile/<%=user.user_id %>/my-courses"><h3>Cursos (WIP)</h3></a>
+        <a href="/profile/<%=user.id %>/my-courses"><h3>Cursos (WIP)</h3></a>
         
-        <a href="/profile/<%=user.user_id %>/create"><h3>Creación de Cursos</h3></a>
+        <a href="/profile/<%=user.id %>/create"><h3>Creación de Cursos</h3></a>
         
-        <div class="profileUserMenu--selected"> <a href="/profile/<%=user.user_id %>/delete-account"><h3>Cerrar Cuenta</h3></a> </div>
+        <div class="profileUserMenu--selected"> <a href="/profile/<%=user.id %>/delete-account"><h3>Cerrar Cuenta</h3></a> </div>
         </div>
         
         </div>
         </section>
     <section class="profileEdit--section">
-<form action = 'users/<%= user.user_id %>/delete?_method=DELETE' method="post">
+<form action = 'users/<%= user.id %>/delete?_method=DELETE' method="post">
         <div class="profileEdit--sectionContainer">
         
             <div class="profileEdit__title">
@@ -45,7 +45,7 @@
         a ella para siempre.</p>
     </div>
     <div class="profileDestroy__buttonContainer">
-        <button class="profileDestroy__button" onclick="location.href='/profile/<%=user.user_id %>/destroy'"  type="button">Cerrar Cuenta</button>
+        <button class="profileDestroy__button" onclick="location.href='/profile/<%=user.id %>/destroy'"  type="button">Cerrar Cuenta</button>
         </div>
         </div>
     </div>

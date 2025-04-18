@@ -1,8 +1,11 @@
 const bcryptjs = require('bcryptjs')
 const path = require('path');
 const fs = require('fs');
+const { validationResult } = require('express-validator');
+const User = require('../services/User');
 
 
+const db =  require('../database/models')
 
 const userController = {
     login : (req, res) => {
@@ -12,34 +15,62 @@ const userController = {
     register : (req, res) =>{
       res.render('users/register');
       },
-    processRegister: (req, res) => {
-      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')), "utf-8");
-      const { username, email, password } = req.body;
+    processRegister: async (req, res) => {
+      try {
+       // let users = User.findAll();
+       const resultValidation = validationResult(req);
+        //let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')), "utf-8");
+        const { name, email, password } = req.body;
 
-      let newUser = {
-        user_id: users.length + 1,
-        username,
-        email,
-        password: bcryptjs.hashSync(password, 10),
-        avatar: req.file?.filename || "default.png",
-        user_firstname: "",
-        user_surname: "",
-        user_headline: "",
-        user_description: "",
-        role: "user"
-      };
-      users.push(newUser);
-
-      fs.writeFileSync((path.resolve(__dirname, '../database/users.json')), JSON.stringify(users, null, '  '));
-      res.redirect('/');
+        if (resultValidation.isEmpty()) {
+        let newUser = {
+         // user_id: users.length + 1,
+          name,
+          email,
+          password: bcryptjs.hashSync(password, 10),
+          avatar: req.file?.filename || "default.png",
+          description: "",
+          firstName: "",
+          secondName: "",
+          headline: "",
+          role: 0
+        };
+        //users.push(newUser);
+        //fs.writeFileSync((path.resolve(__dirname, '../database/users.json')), JSON.stringify(users, null, '  '));
+        
+        await db.User.create(newUser)
+          res.redirect('/');
+        } else {
+          return res.render("users/register", {
+            errors: resultValidation.mapped(),
+            old: req.body,
+          });
+        }
+        
+      } catch (error) {
+        console.log(error);
+      }
+      
+     
     },
 
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
       //Verificar que el user exista
-      let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+      try {
+      const resultValidation = validationResult(req);
+     // let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
       
-      let userToLogin = users.find(user => user.username == req.body.username);
-      if (userToLogin) {
+     // let userToLogin = users.find(user => user.username == req.body.username);
+     if (resultValidation.isEmpty()){ 
+     
+      let userToLogin = await db.User.findOne({
+        where: 
+        {
+          name: req.body.name,
+        }
+      });
+
+     if (userToLogin) {
         //Comparar contraseñas
         let passOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
       if (passOk) {
@@ -51,54 +82,82 @@ const userController = {
 
        //Recordar usuario
        if (req.body.rememberme == 'on') {
-        res.cookie('username', userToLogin.username, 
+        res.cookie('name', userToLogin.name, 
         {maxAge: 60 * 1000 * 60}); //La cookie expira en 1 hora
        }
        //Redireccione a la vista de perfil
-       if (userToLogin.role == 'user') {
-        return res.redirect('/profile/' + userToLogin.user_id)
-       } else if (userToLogin.role == 'admin'){
+       if (userToLogin.role == 0) {
+        return res.redirect('/profile/' + userToLogin.id)
+       } else if (userToLogin.role == 1){
         return res.redirect('/admin')
        }
        
       
 
-      }
-      //Redirección en el caso que la contra es incorrecta
-      return res.redirect('/login')
-      } else {
-        //Si el usuario no lo encuentra        
-        return res.redirect('/login')
-      }
+       return res.render("users/login", {
+        errors: {
+          password: {
+            msg: "Credenciales inválidas PASSWORD",
+          },
+        },
+        old: req.body,
+      });
+    } else {
+      // Si el username no lo encuentra
+      return res.render("users/login", {
+        errors: {
+          password: {
+            msg: "Credenciales inválidas",
+          },
+          old: req.body,
+        },
+      });
+    }
+  } else {
+    return res.render("users/login", {
+      errors: resultValidation.mapped(),
+      old: req.body,
+    });
+  }} 
+} catch (error) {
+  console.log(error);
+}},
+
+    profile: async (req, res) => {
+      //const users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+      //const products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+      try {
+        
       
-      
-    },
-
-    profile: (req, res) => {
-      const users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
-      const products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
-      
-      const userToLogin = req.session.userLogged;
+      const users = await db.User.findAll()
+      let myUser = db.User.findByPk(req.params.id) //Cerca de que 
+      const userToLogin = req.session.userLogged;funcione
 
 
-
+     // res.render("users/profile", { user: req.session.userLogged });
 
       // Se busca el usuario del perfil según el ID
-      const myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
+    //  const myUser = users.find(user => user.id === parseInt(req.params.id, 10));
     
       // Si no existe el usuario, devuelve un error
-      if (!myUser) {
+     /* if (!myUser) {
         return res.status(404).send('Usuario no encontrado');
-      }
+      }*/
     
       // Se muestran los productos creados por el usuario
-      const userProducts = products.filter(product => product.author === myUser.username);
+      //const userProducts = products.filter(product => product.user_id === myUser.id);
     
       return res.render(path.resolve(__dirname, '../views/users/profile'), {
-        products: userProducts,
-        myUser,
+       // products: userProducts,
+       myUser,
+      user: req.session.userLogged,
         userToLogin
       });
+
+    } catch (error) {
+      console.log(error);
+    }
+    
     },
     
 
@@ -119,9 +178,9 @@ const userController = {
     },
 
     edit: (req, res) => {
-     const { user_id } = req.params
+     const { id } = req.params
      let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
-     let userFound = users.find((user) => user.user_id == user_id);
+     let userFound = users.find((user) => user.id == id);
 
      if (userFound) {
       res.render('users/profileEdit', {user: userFound});
@@ -141,14 +200,19 @@ const userController = {
         */
       },
 
-      editUpdate: (req, res) => {
-        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
+      editUpdate: async (req, res) => {
+     //   let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
       
-        const { user_id } = req.params;
-        const { user_firstname, user_surname, user_headline, user_description } = req.body;
+      //  const { id } = req.params;
+        const { firstName, secondName, headline, description } = req.body;
       
-        let userFound = users.find(user => user.user_id === parseInt(user_id));
-      
+       // let userFound = users.find(user => user.user_id === parseInt(user_id));
+      await db.User.update({
+        //Aquí van los datos nuevos
+      }, {
+        //Aquí va la condición
+        where: {id: req.params.id}
+      })
         if (!userFound) {
           return res.status(404).send("Usuario no encontrado");
         }
@@ -169,10 +233,10 @@ const userController = {
   }
         let updateUser = {
           ...userFound,
-          user_firstname,
-          user_surname,
-          user_headline,
-          user_description,
+          firstName,
+          secondName,
+          headline,
+          description,
           avatar: newAvatar
         };
       
@@ -188,7 +252,7 @@ const userController = {
       
         req.session.userLogged = updateUser;
       
-        if (updateUser.role === 'admin') {
+        if (updateUser.role === '1') {
           return res.redirect('/admin');
         } else {
           return res.redirect('/profile/' + updateUser.user_id + '/edit');

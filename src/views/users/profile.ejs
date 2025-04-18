@@ -9,17 +9,17 @@
     <main class="main--profile">
         <section class="userTitle--section">
             <div class="userTitle--card">
-                <h1><%= myUser.username %></h1>
-                <h2><%= myUser?.user_headline %></h2>
+                <h1><%= myUser.name %></h1>
+                <h2><%= myUser?.headline %></h2>
             </div>
         </section>
 
         <section class="userAvatar--section">
             <div class="userAvatar--card">
-           <img src="/database/images/users/<%=myUser?.avatar %>" alt="Avatar de <%= myUser.username%>">
+           <img src="/database/images/users/<%=myUser?.avatar %>" alt="Avatar de <%= myUser.name%>">
           
-           <% if ( userToLogin && myUser.username === userToLogin.username){ %> 
-           <button type="button" onclick="location.href='/profile/<%=user.user_id %>/edit'" class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
+           <% if ( userToLogin && myUser.name === userToLogin.name){ %> 
+           <button type="button" onclick="location.href='/profile/<%=myUser.id %>/edit'" class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
            <% } %>
             </div>
 
@@ -28,7 +28,7 @@
         <div class="profileBody--sectionInside">
         <div class="profileBody--description">
         <h3>Sobre mi:</h3>
-        <p><%= myUser?.user_description %></p>
+        <p><%= myUser?.description %></p>
     </div>
 
 
@@ -36,21 +36,21 @@
         <h3>Mis cursos:</h3>
         <div class="ownCourses--container">
 
-            <% products.forEach(products => { %>
+            <% //products.forEach(products => { %>
             <article class="ownCourses--containerCard">
                 <div class="ownCourses--containerCardInside">
-                <img src="/database/images/courses/<%= products?.courseimage %>" alt="imagen del curso"> 
+                <img src="/database/images/courses/<%= //products?.image %>" alt="imagen del curso"> 
                 <div class="ownCourses--containerCard__contents"> 
-                <h4><%= products.coursetitle%></h4>
+                <h4><%=// products.title%></h4>
                 <div class="ownCourses--containerCard__contentsDown" >
-                <div class="ownCourses--containerCard__contentsRating "><i class="fa-solid fa-star"></i><p><%= products.rating %></p></div> 
-                <div class="ownCourses--containerCard__contentsReview"> <i class="fa-solid fa-users"></i><p><%= products.reviews %></p></div>
+                <div class="ownCourses--containerCard__contentsRating "><i class="fa-solid fa-star"></i><p><%= //products.rating %></p></div> 
+                <div class="ownCourses--containerCard__contentsReview"> <i class="fa-solid fa-users"></i><p><%= //products.reviews %></p></div>
                 
             </div>
         </div>
     </div>
             </article>
-            <% }); %>
+            <%// }); %>
 
             
 
