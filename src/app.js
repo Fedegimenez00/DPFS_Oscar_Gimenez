@@ -68,9 +68,9 @@ app
 })
 
 app.listen(PORT, async () => {
- await db.sequelize.sync({ force: true}); //(Permanece comentado hasta que nos haga falta)
+/* await db.sequelize.sync({ force: true}); //(Permanece comentado hasta que nos haga falta)
     console.log('All models were synchronized succesfully');
-
+*/
 
     console.log("Server is running in: " + "http://localhost:" + PORT);
 });
