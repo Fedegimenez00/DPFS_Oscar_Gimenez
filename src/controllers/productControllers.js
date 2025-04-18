@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 const productsPath = path.resolve(__dirname, '../database/products.json');
+const db = require('../database/models');
 
 const productController = {
   //Muestra el detalle del producto dentro del JSON, usando de referencia el id
