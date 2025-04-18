@@ -8,7 +8,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const userLogged = require('./middlewares/userLogged');
-
+const db = require('./database/models');
 
 const methodOverride = require('method-override');
 
@@ -67,5 +67,10 @@ app
     res.status(404).render('not-found.ejs', {title: 'No encontrado'});
 })
 
-app.listen(PORT, () =>
-console.log("Server is running in: " + "http://localhost:" + PORT));
+app.listen(PORT, async () => {
+ await db.sequelize.sync({ force: true}); //(Permanece comentado hasta que nos haga falta)
+    console.log('All models were synchronized succesfully');
+
+
+    console.log("Server is running in: " + "http://localhost:" + PORT);
+});
