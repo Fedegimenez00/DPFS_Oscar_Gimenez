@@ -12,7 +12,7 @@ const db = require('./database/models');
 
 //temporal
 const sqlite3 = require('sqlite3').verbose();
-const dataBase = new sqlite3.Database(path.resolve(__dirname, '../database/db.sqlite'));
+const dataBase = new sqlite3.Database(path.resolve(__dirname, './databaseSQLite/zerotrust_db.sqlite'));
 
 const methodOverride = require('method-override');
 
