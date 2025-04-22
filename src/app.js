@@ -12,7 +12,7 @@ const db = require('./database/models');
 
 //temporal
 const sqlite3 = require('sqlite3').verbose();
-const dataBase = new sqlite3.Database(path.resolve(__dirname, './databaseSQLite/zerotrust_db.sqlite'));
+const dataBase = new sqlite3.Database(path.resolve(__dirname, '../databaseSQLite/zerotrust_db.sqlite'));
 
 const methodOverride = require('method-override');
 
@@ -72,10 +72,16 @@ app
 })
 
 app.listen(PORT, async () => {
-    db.sequelize.sync({ force: true }) // o { alter: true } si no querés borrar nada
+  // db.sequelize.sync({ alter: true }) // o { alter: true } si no querés borrar nada
 /* await db.sequelize.sync({ force: true}); //(Permanece comentado hasta que nos haga falta)
     console.log('All models were synchronized succesfully');
 */
-
+/*.then(() => {
+    console.log('All models were synchronized successfully');
+  })
+  .catch(err => {
+    console.error('Error synchronizing models:', err);
+  });
+*/
     console.log("Server is running in: " + "http://localhost:" + PORT);
 });
