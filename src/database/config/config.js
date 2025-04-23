@@ -29,4 +29,4 @@ module.exports = {
     },
   };
 
-  // npx sequelize-cli db:create --config src/database/config/config.cjs (Creación de base de datos)
+  // npx sequelize-cli db:create --config src/database/config/config.js (Creación de base de datos)
