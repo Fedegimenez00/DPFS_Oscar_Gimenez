@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         firstName: {
             type: DataTypes.STRING(255)
         },
-        secondName: {
+        lastName: {
            type: DataTypes.STRING(255)
         },
         headline: {
