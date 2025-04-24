@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
        title: {
         type: DataTypes.STRING(255),
         validate: {
-            min: 3 //Mínimo de 3 caracteres
-        }
+            len: [3, 255] // mínimo 3 carácteres y máximo 255
+          }
     },
         subtitle: {
             type: DataTypes.STRING
@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         available: {
             type: DataTypes.BOOLEAN,
+            defaultValue: true,
             
         },
         image: {
@@ -34,16 +35,19 @@ module.exports = (sequelize, DataTypes) => {
         },
         rating: {
             type: DataTypes.INTEGER(3),
-            toDefaultValue: 0
+            defaultValue: 0
         },
         reviews: {
             type: DataTypes.INTEGER,
-            toDefaultValue: 0
+            defaultValue: 0
         },
         timesBought: {
             type: DataTypes.INTEGER,
-            toDefaultValue: 0
+            defaultValue: 0
         },
+        user_id: {
+            type: DataTypes.INTEGER
+          },
        }
     
     const config = {

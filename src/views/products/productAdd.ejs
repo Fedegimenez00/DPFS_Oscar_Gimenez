@@ -41,14 +41,14 @@
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Título del curso</h3>
     <label for="coursetitle"></label>
-    <input type="text" placeholder="Inserta el nombre de tu curso." name="coursetitle" id="coursetitle">
+    <input type="text" placeholder="Inserta el nombre de tu curso." name="title" id="title">
 
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Subtítulo del curso</h3>
     <label for="coursesubtitle"></label>
-    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="coursesubtitle" id="coursesubtitle">
+    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="subtitle" id="subtitle">
 
 </div>
 
@@ -70,41 +70,47 @@
 
     Input oculto para enviar el contenido 
 -->
-    <textarea id="coursedescription" name="coursedescription" class="enrichedTexarea" style="display: block;"></textarea>
+    <textarea id="coursedescription" name="description" class="enrichedTexarea" style="display: block;"></textarea>
 </div>
 </div>
+
+<!-- Necesita corregirse algunas cosas del controlador y el .ejs-->
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Información básica</h3>
     <div class="box--selects">
     <div class="forms--box__selectContainer">
-    <label for="lang"></label>
-   <select  name="lang" id="lang">
-    <option class="selectGrey" selected disabled>-- Selecciona idioma --</option>
-    <option value="Español">Español</option>
-    <option value="Inglés">Inglés</option>
-    <option value="Portugués">Portugués</option>
-    <option value="Italiano">Italiano</option>
-    <option value="Francés">Francés</option>
+    <label for="language"></label>
+    <select name="language" id="language">
+        <option class="selectGrey" selected disabled>-- Seleccionar lenguaje --</option>
+        <% languages.forEach(language => { %>
+            <option value="<%= language.id %>"><%= language.name %> </option>
+            <% }) %>
 
-   </select>
+</select>
 </div>
 
 <div class="forms--box__selectContainer">
     <label for="category"></label>
     
-   <select name="category" id="category">
-    <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
- 
-   </select>
+    <select name="category" id="category">
+        <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
+        <% categories.forEach(category => { %>
+            <option value="<%= category.id %>"><%= category.name %> </option>
+            <% }) %>
+
+</select>
 </div>
 
 <div class="forms--box__selectContainer">
     <label for="subcategory"></label>
-   <select name="subcategory" id="subcategory">
-    <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
+    <select name="subcategory" id="subcategory">
+        <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
+        <% subcategories.forEach(subcategory => { %>
+            <option value="<%= subcategory.id %>"><%= subcategory.name %> </option>
+            <% }) %>
 
-   </select>
+</select>
 </div>
 </div>
 </div>
@@ -123,7 +129,7 @@
         <div class="pseudoButton">
             <p class="pseudoButton--title">Subir archivo</p>
         </div>
-    <input type="file" name="courseimage" id="courseimage">
+    <input type="file" name="image" id="image">
     </div>
 </div>
 
@@ -444,7 +450,7 @@ estudiantes deseen adquirir tus cursos.
 </main>
 
     <%- include('../partials/footer') %>
-    <script src="/js/subcategories.js"></script>
+  
 
     <script src="/js/toolBarDescription.js"></script>
     <script src="/js/toggle.js"></script>

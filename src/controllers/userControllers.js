@@ -446,12 +446,21 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
 
     courseCreate: async (req, res) => {
       let user = req.session.userLogged;
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+
+      const userProducts = await db.Product.findAll({
+        where: {
+          user_id: user.id
+        },
+        include: ["categories", "subcategories", "languages", 'users']
+      });
+
+     // let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
   
       // Filtrar solo los productos cuyo autor coincide con el usuario logueado
-      let userProducts = products.filter(product => product.author === user.username);
-  
-      res.render(path.resolve(__dirname, '../views/users/userAddCourses'), { products: userProducts });
+      //let userProducts = products.filter(product => product.author === user.username);
+      
+      res.render(path.resolve(__dirname, '../views/users/userAddCourses'), {  userProducts });
+
     },
 
     
