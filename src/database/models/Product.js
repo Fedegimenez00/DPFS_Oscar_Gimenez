@@ -26,19 +26,23 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER(11)
         },
         available: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+            
         },
         image: {
             type: DataTypes.STRING
         },
         rating: {
-            type: DataTypes.INTEGER(3)
+            type: DataTypes.INTEGER(3),
+            toDefaultValue: 0
         },
         reviews: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            toDefaultValue: 0
         },
         timesBought: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            toDefaultValue: 0
         },
        }
     
