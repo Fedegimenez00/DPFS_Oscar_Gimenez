@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 */
+/*
 async function loadCategories() {
     try {
         const response = await fetch('/database/data/categories.json');  //Ruta del JSON
@@ -87,3 +88,4 @@ async function loadCategories() {
 
 // Cargar al iniciar la página
 document.addEventListener('DOMContentLoaded', loadCategories);
+*/

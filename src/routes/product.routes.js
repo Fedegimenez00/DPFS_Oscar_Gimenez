@@ -15,6 +15,7 @@ router
 .post('/products/add', uploadProd.single('image'), save)
 .get('/products/edit/:id', guestAuth, edit)
 .put('/products/edit/:id', uploadProd.single('image'), update)
+
 .delete('/products/delete/:id', guestAuth, destroy)
 
 .get('/cart', cart)

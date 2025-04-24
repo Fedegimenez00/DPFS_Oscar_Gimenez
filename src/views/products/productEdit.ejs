@@ -40,15 +40,15 @@
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Título del curso</h3>
-    <label for="coursetitle"></label>
-    <input type="text" placeholder="Inserta el nombre de tu curso." name="coursetitle" id="coursetitle" value="<%= productEdit.coursetitle%>">
+    <label for="title"></label>
+    <input type="text" placeholder="Inserta el nombre de tu curso." name="title" id="title" value="<%= productEdit.title%>">
 
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Subtítulo del curso</h3>
-    <label for="coursesubtitle"></label>
-    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="coursesubtitle" id="coursesubtitle" value="<%= productEdit.coursesubtitle%>">
+    <label for="subtitle"></label>
+    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="subtitle" id="subtitle" value="<%= productEdit.subtitle%>">
 
 </div>
 
@@ -70,7 +70,7 @@
 
     Input oculto para enviar el contenido 
 -->
-    <textarea id="coursedescription" name="coursedescription" class="enrichedTexarea" style="display: block;"><%= productEdit.coursedescription%> 
+    <textarea id="description" name="description" class="enrichedTexarea" style="display: block;"><%= productEdit.description%> 
     </textarea>
 </div>
 </div>
@@ -79,8 +79,8 @@
     <h3 class="forms--box__inputTitle">Información básica</h3>
     <div class="box--selects">
     <div class="forms--box__selectContainer">
-    <label for="lang"></label>
-   <select  name="lang" id="lang" defaultValue="<%= productEdit.lang%>">
+    <label for="language"></label>
+   <select  name="language" id="language" defaultValue="<%= productEdit.lang%>">
     <option class="selectGrey" selected disabled>-- Selecciona idioma --</option>
     <option value="Español" <%= productEdit.lang === "Español" ? "selected" : "" %>>Español</option>
     <option value="Inglés" <%= productEdit.lang === "Inglés" ? "selected" : "" %>>Inglés</option>
@@ -118,13 +118,13 @@
     <h3 class="forms--box__inputTitle">Imagen del curso (WIP)</h3>
     <div class="previewContainer">
     <div class="previewBox">
-    <img src="/database/images/courses/<%= productEdit.courseimage%>">
+    <img src="/database/images/courses/<%= productEdit.image%>">
 </div>
 </div>
     <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
     <div class="forms--box__fileInput">
-        <label for="courseimage"></label>    
-        <input type="file" name="courseimage">
+        <label for="image"></label>    
+        <input type="file" name="image">
 
         <div class="pseudoButton">
             <p class="pseudoButton--title">Subir archivo</p>

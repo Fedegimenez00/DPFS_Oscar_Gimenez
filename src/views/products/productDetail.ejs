@@ -11,13 +11,13 @@
         <section class="section--productDetail__Desktop">
 
             <div class="productDetail--categoryDesktop">
-                <p><%= myProduct.category %> > <%= myProduct.subcategory %></p>
+                <p><%= myProduct.categories?.name %> > <%= myProduct.subcategories?.name %></p>
                 <hr>
             </div>
 
-            <h1 class="productDetail--title"><%= myProduct.coursetitle %></h1>
+            <h1 class="productDetail--title"><%= myProduct.title %></h1>
 <hr class="productDetail--title__underLine">
-<p class="productDetail--quickDescription"><%= myProduct.coursesubtitle %></p>
+<p class="productDetail--quickDescription"><%= myProduct.subtitle %></p>
 
 <div class="productDetail--score">
 <div class="productDetail--rating">
@@ -39,7 +39,7 @@
     </div>
     <div class="productDetail--propertiesTexts">
         <p>Ultima actualización 11.2024</p>
-        <p><%= myProduct.lang %></p>
+        <p><%= myProduct.languages?.name %></p>
     </div>
     </div>
         </section>
@@ -47,13 +47,13 @@
         <section class="section--productDetail">
             
             <div class="productDetail--category">
-                <small><%= myProduct.category %> > <%= myProduct.subcategory %></small>
+                <small><%= myProduct.categories?.name %> > <%= myProduct.subcategories?.name %></small>
                 <hr>
             </div>
 
             <div class="section--productDetail__inside">
             <div class="productDetail--preview">
-<img src="/database/images/courses/<%= myProduct.courseimage %>" alt="Imagen del curso">
+<img src="/database/images/courses/<%= myProduct.image %>" alt="Imagen del curso">
 <div class="productDetail--preview__Items">
 <!--   <i class="fa-solid fa-circle-play"></i>
 <p>(Vista previa de este curso)</p>--> 
@@ -62,9 +62,9 @@
 
 <div class="productDetail__justUpperInside">
 <article class="productDetail__upperInside">
-<h1 class="productDetail--title"> <%= myProduct.coursetitle %></h1>
+<h1 class="productDetail--title"> <%= myProduct.title %></h1>
 <hr class="productDetail--title__underLine">
-<p class="productDetail--quickDescription"><%= myProduct.coursesubtitle%></p>
+<p class="productDetail--quickDescription"><%= myProduct.subtitle%></p>
 
 <div class="productDetail--score">
 <div class="productDetail--rating">
@@ -86,7 +86,7 @@
     </div>
     <div class="productDetail--propertiesTexts">
         <p>Ultima actualización 11.2024</p>
-        <p><%= myProduct.lang %></p>
+        <p><%= myProduct.languages?.name %></p>
     </div>
     </div>
 </article>
@@ -272,7 +272,7 @@
     <div class="productDetail--description__title">
     <h2>Descripción</h2><hr>
 </div>
-<p><%= myProduct.coursedescription.replace(/\r\n|\r|\n/g, '<br>') %></p>
+<p><%= myProduct.description %></p>
 </p>
 </article>
 </div>

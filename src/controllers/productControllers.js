@@ -12,7 +12,9 @@ const productController = {
       try
       { //Productos de la base de datos de SQL
       
-        let myProduct = db.Product.findByPk(req.params.id) //Filtra por la id
+        let myProduct = await db.Product.findByPk(req.params.id, {     //Filtra por la id
+          include: ["categories", "subcategories", "languages", "users"],
+        }); 
     //  let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       //let myProduct = products.find(product => product.id /*courseid*/ === parseInt(req.params.id /*courseid*/, 10));
 
@@ -30,17 +32,36 @@ const productController = {
       },
 
 
-    create : (req, res) =>{
+    create : async (req, res) =>{
     //  let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-
-        return res.render('products/productAdd');
+     const categories = await db.Category.findAll()
+     const subcategories = await db.Subcategory.findAll();
+     const languages = await db.Language.findAll();
+        return res.render('products/productAdd', {categories, subcategories, languages});
     },
 
 //Parsea el Json, extrae el último objeto, recibe el nuevo producto generado por el formulario de
 // create, pushea el nuevo producto y convierte el nuevo archivo en un JSON
-    save : (req, res) =>{
+    save : async (req, res) =>{
       let user = req.session.userLogged;
 
+      let newProduct = {
+        title: req.body.title,
+        subtitle: req.body.subtitle,
+        description: req.body.description,
+        language_id: req.body.language,
+        category_id: req.body.category,
+        subcategory_id: req.body.subcategory,
+        image: req.file?.filename || 'default.png',
+        price: req.body.price,
+        rating: 0,
+        reviews: 0,
+        timesBought: 0,
+        available: true, // o ajustar si tenés un checkbox tipo "disponible"
+        user_id: user.id
+      };
+
+      await db.Product.create(newProduct);
       /*
       let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       let lastProduct = products.pop();

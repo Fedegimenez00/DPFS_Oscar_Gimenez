@@ -51,6 +51,7 @@
             
                     <select name="category" id="category">
                     <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
+                    
         
         </select>
                 </div>
@@ -70,39 +71,39 @@
 
             <div class="productListAddCourses--inside">
 
-                <% products.forEach(products => { %>
+                <% userProducts.forEach(userProduct => { %>
                 <article class="productList--card">
-                    <img src="/database/images/courses/<%= products?.image %>" alt="imagen del curso"> 
+                    <img src="/database/images/courses/<%= userProduct?.image %>" alt="imagen del curso"> 
                     <div class="productList--cardStructure">
                     <div class="productList--cardStructureInside">
-                    <h3 class="productList--card__title"><%= products.title%> </h3>
+                    <h3 class="productList--card__title"><%= userProduct.title %> </h3>
                     <div class="ratingProductList--container">
                     <div class="recommendationsProductList--card__rating-Stars">
-                        <span><%= products.rating %></span> 
+                        <span><%= userProduct.rating %></span> 
                         <i class="fa-solid fa-star"></i>
                     </div>
             
                     <div class="recommendationsProductList--card__rating-Reviews">
                         <i class="fa-solid fa-users"></i>
-                        <span><%= products.reviews %></span> 
+                        <span><%= userProduct.reviews %></span> 
                     </div>
                 </div>
                     
                     <div class="productList--card__tag">
                         
-                        <p class="productList--card__tagTitle"><%= products.category %></p>
+                        <p class="productList--card__tagTitle"><%= userProduct.categories?.name %></p>
                     </div>
                      
                 </div>
                    
                     <div class="productList--userAdd__salesContainer">  
                     <div class="productList--card__optionsContainer">
-                        <a href="/products/detail/<%= products.id %>"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button> </a>
-                        <a href="/products/edit/<%= products.id %>"> <button type="button"><i class="fa-solid fa-pen"></i></button> </a>
-                        <a href="/products/delete/<%= products.id %>"><button type="button" ><i class="fa-solid fa-trash"></i></button></a>
+                        <a href="/products/detail/<%= userProduct.id %>"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button> </a>
+                        <a href="/products/edit/<%= userProduct.id %>"> <button type="button"><i class="fa-solid fa-pen"></i></button> </a>
+                        <a href="/products/delete/<%= userProduct.id %>"><button type="button" ><i class="fa-solid fa-trash"></i></button></a>
                 </div>
                  
-                    <span class="coursesSales--container"><span class="numberSales"> <%= products.timesBought %> </span> <i class="fa-solid fa-sack-dollar"></i></span>
+                    <span class="coursesSales--container"><span class="numberSales"> <%= userProduct.timesBought %> </span> <i class="fa-solid fa-sack-dollar"></i></span>
                     </div>
                 </div>
                 </article>
