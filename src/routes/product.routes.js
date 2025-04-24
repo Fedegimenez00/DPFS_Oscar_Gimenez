@@ -10,12 +10,12 @@ const { uploadProd } = require('../middlewares/multer')
 const guestAuth = require('../middlewares/guestAuth.js')
 
 router 
-.get ('/products/detail/:courseid', show)
+.get ('/products/detail/:id', show)
 .get ('/products/add', guestAuth, create)
-.post('/products/add', uploadProd.single('courseimage'), save)
-.get('/products/edit/:courseid', guestAuth, edit)
-.put('/products/edit/:courseid', uploadProd.single('courseimage'), update)
-.get('/products/delete/:courseid', guestAuth, destroy)
+.post('/products/add', uploadProd.single('image'), save)
+.get('/products/edit/:id', guestAuth, edit)
+.put('/products/edit/:id', uploadProd.single('image'), update)
+.delete('/products/delete/:id', guestAuth, destroy)
 
 .get('/cart', cart)
 .get('/partial', getPartial)

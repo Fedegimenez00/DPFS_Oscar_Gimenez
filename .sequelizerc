@@ -1,5 +1,7 @@
 const path = require('path');
+/*
 
+//Sequelize para xampp
 module.exports = {
     config: path.resolve('database', 'config', 'config.js'),
     'models-path': path.resolve('database', 'models'),
@@ -7,3 +9,12 @@ module.exports = {
     'migrations-path': path.resolve('database', 'migrations'),
 
 };
+*/
+
+//Sequelize para sqlite3
+module.exports = {
+    config: path.resolve(__dirname, 'src', 'database', 'config', 'config.js'),
+    'models-path': path.resolve(__dirname, 'src', 'database', 'models'),
+    'seeders-path': path.resolve(__dirname, 'src', 'database', 'seeders'),
+    'migrations-path': path.resolve(__dirname, 'src', 'database', 'migrations')
+  };

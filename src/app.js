@@ -10,9 +10,10 @@ const userLogged = require('./middlewares/userLogged');
 const db = require('./database/models');
 
 //temporal
-/*const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('sqlite3').verbose();
 const dataBase = new sqlite3.Database(path.resolve(__dirname, '../databaseSQLite/zerotrust_db.sqlite'));
-*/
+//temporal
+
 const methodOverride = require('method-override');
 
 const indexRouter = require("./routes/index.routes.js");
@@ -71,7 +72,10 @@ app
 })
 
 app.listen(PORT, async () => {
-  // db.sequelize.sync({ alter: true }) // o { alter: true } si no querés borrar nada (sqlite3)
+  //sqlite3
+ // await db.sequelize.sync({ force: true }) // o { alter: true } si no querés borrar nada (sqlite3)
+  //sqlite3
+
 /*
  await db.sequelize.sync({ force: true}); //(Permanece comentado hasta que nos haga falta) (xampp)
     console.log('All models were synchronized succesfully');

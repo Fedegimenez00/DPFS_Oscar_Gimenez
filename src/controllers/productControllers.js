@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 const productsPath = path.resolve(__dirname, '../database/products.json');
+
 const db = require('../database/models');
 
 const productController = {
@@ -10,7 +11,6 @@ const productController = {
     show: async (req, res) => {
       try
       { //Productos de la base de datos de SQL
-        const products = await db.Product.findAll() //Trae el producto de la base de datos
       
         let myProduct = db.Product.findByPk(req.params.id) //Filtra por la id
     //  let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
@@ -40,6 +40,8 @@ const productController = {
 // create, pushea el nuevo producto y convierte el nuevo archivo en un JSON
     save : (req, res) =>{
       let user = req.session.userLogged;
+
+      /*
       let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       let lastProduct = products.pop();
       products.push(lastProduct);
@@ -63,12 +65,12 @@ const productController = {
     products.push(newProduct);
     let newProductSave = JSON.stringify(products, null, 2);
     fs.writeFileSync(productsPath, newProductSave, 'utf-8');
-
+*/
     //Redirecciona a una ruta deseada
-    if (user.role =='admin') {
+    if (user.role == 1) {
       return res.redirect('/admin');
     } else {
-      return res.redirect('/profile/' + user.user_id + '/create');
+      return res.redirect('/profile/' + user.id + '/create');
     }
 
     },
@@ -76,13 +78,13 @@ const productController = {
     //Muestra desde la página de edición, los datos del JSON
     edit : async (req,res) =>{
       
-      const products = await db.Product.findAll()
-      
-        let productId = db.Product.findByPk(req.params.id)
+     // const products = await db.Product.findAll()
+    
+        let productEdit = await db.Product.findByPk(req.params.id)
       //let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       //const productId = req.params.courseid;
       
-      let productEdit = products.find(product=> product.courseid == productId);
+     // let productEdit = products.find(product=> product.courseid == productId);
       res.render(path.resolve(__dirname, '../views/products/productEdit'), {productEdit});
     
     },
@@ -146,7 +148,24 @@ const productController = {
     destroy: async (req, res) => {
       //[Borrado suave, lo saca de la vista de consulta]
       let user = req.session.userLogged;
+/*
+      (Opcional para otro caso)
 
+      let productToDelete = await db.Product.findByPk(req.params.id)
+
+      //Elimina imagen 
+      if (productToDelete.image  !== 'default.png') {
+        const imagePath = path.join(__dirname, '../../public/database/images/courses', productToDelete.image);
+        if (fs.existsSync(imagePath)) {
+          fs.unlinkSync(imagePath);
+        }
+      }
+*/
+      const productDelete = await  db.Product.destroy({
+          where : { 
+           id: req.params.id 
+         },
+         });
       //let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
   
       // Convierte el ID a número
@@ -156,26 +175,14 @@ const productController = {
       
       //const productToDelete = products.find(product => product.courseid === productDeleteId);
 
-    /* 
-    [Opcional para otr caso]
-    let productToDelete = await db.products.findByPk(req.params.id);
+    /*
     
-     //Elimina imagen
-      if (productToDelete.image  !== 'default.png') {
-        const imagePath = path.join(__dirname, '../../public/database/images/courses', productToDelete.image);
-        if (fs.existsSync(imagePath)) {
-          fs.unlinkSync(imagePath);
-        }
+     
       }
      */
 
       //Elimina el curso en base al id
-
-   const productDelete = await  db.Product.destroy({
-       where : { 
-        id: req.params.id 
-      },
-      });
+   
       /*
       // Filtra el curso fuera del array
       const productsFinal = products.filter(product => product.courseid !== productDeleteId);
@@ -185,10 +192,10 @@ const productController = {
       fs.writeFileSync(productsPath, productsSaved);
   */
       // Redirige según el rol
-    if (user.role =='admin') {
+    if (user.role == 1) {
       return res.redirect('/admin');
     } else {
-      return res.redirect('/profile/' + user.user_id + '/create');
+      return res.redirect('/profile/' + user.id + '/create');
     }
   },
   
@@ -217,7 +224,7 @@ const productController = {
 
       return res.render('products/products', {products}); // Aquí enviamos "products" a la vista
       } catch {
-        console.log('Error');
+        console.log(error);
       }
       
     }
