@@ -9,11 +9,11 @@ const session = require('express-session');
 const userLogged = require('./middlewares/userLogged');
 const db = require('./database/models');
 
-//temporal
+/*//temporal
 const sqlite3 = require('sqlite3').verbose();
 const dataBase = new sqlite3.Database(path.resolve(__dirname, '../databaseSQLite/zerotrust_db.sqlite'));
 //temporal
-
+*/
 const methodOverride = require('method-override');
 
 const indexRouter = require("./routes/index.routes.js");
@@ -80,12 +80,6 @@ app.listen(PORT, async () => {
  await db.sequelize.sync({ force: true}); //(Permanece comentado hasta que nos haga falta) (xampp)
     console.log('All models were synchronized succesfully');
 */
-/*.then(() => {
-    console.log('All models were synchronized successfully');
-  })
-  .catch(err => {
-    console.error('Error synchronizing models:', err);
-  });
-*/
+
     console.log("Server is running in: " + "http://localhost:" + PORT);
 });

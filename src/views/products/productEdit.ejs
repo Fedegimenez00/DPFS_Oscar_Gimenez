@@ -30,7 +30,7 @@
 </section>
 
 <section class="section--forms">
-<form  action='/products/edit/<%= productEdit.courseid %>?_method=PUT' method="POST" enctype="multipart/form-data">
+<form  action='/products/edit/<%= productEdit.id %>?_method=PUT' method="POST" enctype="multipart/form-data">
 
 <!-- Página de inicio del curso -->
 
@@ -80,35 +80,51 @@
     <div class="box--selects">
     <div class="forms--box__selectContainer">
     <label for="language"></label>
+
+    <select name="language" id="language">
+        <option class="selectGrey" selected disabled>-- Seleccionar idioma --</option>
+        <% languages.forEach(language => { %>
+            <option value="<%= language.id %>"  <%= language.id == language.id ? "selected" : "" %>><%= language.name %> </option>
+            <% }) %>
+
+</select>
+        <!--
+
    <select  name="language" id="language" defaultValue="<%= productEdit.lang%>">
-    <option class="selectGrey" selected disabled>-- Selecciona idioma --</option>
-    <option value="Español" <%= productEdit.lang === "Español" ? "selected" : "" %>>Español</option>
-    <option value="Inglés" <%= productEdit.lang === "Inglés" ? "selected" : "" %>>Inglés</option>
-    <option value="Portugués" <%= productEdit.lang === "Portugués" ? "selected" : "" %>>Portugués</option>
-    <option value="Italiano" <%= productEdit.lang === "Italiano" ? "selected" : "" %>>Italiano</option>
-    <option value="Francés" <%= productEdit.lang === "Francés" ? "selected" : "" %>>Francés</option>
+    
+    <select name="language" id="language">
+        <option class="selectGrey" selected disabled>-- Selecciona idioma --</option>
+        <% languages.forEach(language => { %>
+          <option value="<%= language.id %>" <%= language.language_id == language.id ? "selected" : "" %>><%= language.name %></option>             
+        <% }) %>
+      </select>
 
    </select>
 </div>
+-->
 
 <div class="forms--box__selectContainer">
     <label for="category"></label>
     
-   <select name="category" id="category" value="">
-    <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
-    <option value="Fundamentos de la Ciberseguridad" <%= productEdit.category === "Fundamentos de la Ciberseguridad" ? "selected" : "" %>>Fundamentos de la Ciberseguridad</option>
-    <option value="Seguridad Ofensiva" <%= productEdit.category === "Seguridad Ofensiva" ? "selected" : "" %>>Seguridad Ofensiva</option>
-    <option value="Seguridad Defensiva" <%= productEdit.category === "Seguridad Defensiva" ? "selected" : "" %>>Seguridad Defensiva</option>
-    <option value="Seguridad de Nube" <%= productEdit.category === "Seguridad de Nube" ? "selected" : "" %>>Seguridad de Nube</option>
-    <option value="Ingeniería Social" <%= productEdit.category === "Ingeniería Social" ? "selected" : "" %>>Ingeniería Social</option>
-   </select>
+    <select name="category" id="category">
+        <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
+        <% categories.forEach(category => { %>
+            <option value="<%= category.id %>"  <%= category.id == category.id ? "selected" : "" %>><%= category.name %> </option>
+            <% }) %>
+
+</select>
+      
 </div>
 
 <div class="forms--box__selectContainer">
     <label for="subcategory"></label>
-   <select name="subcategory" id="subcategory" value="">
+   <select name="subcategory" id="subcategory">
     <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
-   </select>
+    <% subcategories.forEach(subcategory => { %>
+        <option value="<%= subcategory.id %>"  <%= subcategory.id == subcategory.id ? "selected" : "" %>><%= subcategory.name %> </option>
+        <% }) %>
+
+</select>
 </div>
 </div>
 </div>

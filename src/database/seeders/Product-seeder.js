@@ -1,11 +1,10 @@
-'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
       "products",
       [
-        { 
+        {
           id: 1,
           title: "Producto de experimento",
           subtitle: "Subtítulo ejemplar",
@@ -19,16 +18,14 @@ module.exports = {
           rating: 0,
           reviews: 0,
           timesBought: 0,
-          user_id: null,
-
+          user_id: 1,
         },
-      
       ],
       {}
     );
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete("products", null, {});
-  }
+  },
 };
