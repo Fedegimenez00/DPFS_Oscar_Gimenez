@@ -98,7 +98,9 @@ const productController = {
 
     //Muestra desde la página de edición, los datos del JSON
     edit : async (req,res) =>{
-      
+      const categories = await db.Category.findAll()
+      const subcategories = await db.Subcategory.findAll();
+      const languages = await db.Language.findAll();
      // const products = await db.Product.findAll()
     
         let productEdit = await db.Product.findByPk(req.params.id)
@@ -106,63 +108,56 @@ const productController = {
       //const productId = req.params.courseid;
       
      // let productEdit = products.find(product=> product.courseid == productId);
-      res.render(path.resolve(__dirname, '../views/products/productEdit'), {productEdit});
+      res.render(path.resolve(__dirname, '../views/products/productEdit'), {productEdit, languages, categories, subcategories });
     
     },
   
   update: async (req, res) => {
-  try {
     const user = req.session.userLogged;
-    const productId = req.params.id;
-
-    // Buscar producto original
-    const productToUpdate = await db.Product.findByPk(productId);
+   // const { title, subtitle, description, language, category , subcategory, price} = req.body;
+    // Se busca el producto original por id
+    let productToUpdate = await db.Product.findByPk(req.params.id);
+    
     if (!productToUpdate) {
       return res.status(404).send("Producto no encontrado");
     }
 
-    // Manejo de imagen
-    const oldImage = productToUpdate.image;
-    const newImage = req.file ? req.file.filename : oldImage;
+    // Comprueba si hay una nueva imagen
+    let oldImage = productToUpdate.image;
+    let newImage = req.file ? req.file.filename : oldImage;
 
-    // Si se subió una nueva imagen y la anterior no era la default, se borra
+    // Si se subió una nueva imagen y la vieja no es la default, se elimina
     if (req.file && oldImage !== 'default.png') {
-      const imagePath = path.join(__dirname, '../../public/database/images/courses/', oldImage);
+      let imagePath = path.join(__dirname, '../../public/database/images/courses/', oldImage);
       if (fs.existsSync(imagePath)) {
         fs.unlinkSync(imagePath);
       }
     }
 
-    // Actualizar los datos
-    const updatedProduct = {
-      title: req.body.coursetitle,
-      subtitle: req.body.coursesubtitle,
-      description: req.body.coursedescription,
-      language_id: req.body.lang,
+    // Actualizan los datos del objeto
+       
+    await db.Product.update( {
+      title: req.body.title,
+      subtitle: req.body.subtitle,
+      description: req.body.description,
+      language_id: req.body.language,
       category_id: req.body.category,
       subcategory_id: req.body.subcategory,
       image: newImage,
-      price: req.body.price,
-    };
-
-    await db.Product.update(updatedProduct, {
-      where: { id: productId }
+      price: req.body.price, 
+      }, {
+      where: { id: productToUpdate.id }
     });
 
     // Redirección según el rol
-    if (user.role === 'admin' || user.role === 1) {
+    if (user.role == 1) {
       return res.redirect('/admin');
     } else {
       return res.redirect('/profile/' + user.id + '/create');
     }
-
-  } catch (error) {
-    console.log(error);
-    res.status(500).send("Ocurrió un error al actualizar el producto.");
-  }
 },
 
-
+/*
     update: (req, res) => {
       let user = req.session.userLogged;
       let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
@@ -217,7 +212,7 @@ const productController = {
       return res.redirect('/profile/' + user.user_id + '/create');
     }
     },
-    
+    */
 
     destroy: async (req, res) => {
       //[Borrado suave, lo saca de la vista de consulta]
@@ -237,9 +232,11 @@ const productController = {
 */
       const productDelete = await  db.Product.destroy({
           where : { 
-           id: req.params.id 
+           id: req.params.id,
          },
          });
+
+         console.log("prodBorrado", productDelete);
       //let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
   
       // Convierte el ID a número
