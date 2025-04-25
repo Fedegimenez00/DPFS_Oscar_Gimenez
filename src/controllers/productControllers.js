@@ -109,6 +109,59 @@ const productController = {
       res.render(path.resolve(__dirname, '../views/products/productEdit'), {productEdit});
     
     },
+  
+  update: async (req, res) => {
+  try {
+    const user = req.session.userLogged;
+    const productId = req.params.id;
+
+    // Buscar producto original
+    const productToUpdate = await db.Product.findByPk(productId);
+    if (!productToUpdate) {
+      return res.status(404).send("Producto no encontrado");
+    }
+
+    // Manejo de imagen
+    const oldImage = productToUpdate.image;
+    const newImage = req.file ? req.file.filename : oldImage;
+
+    // Si se subió una nueva imagen y la anterior no era la default, se borra
+    if (req.file && oldImage !== 'default.png') {
+      const imagePath = path.join(__dirname, '../../public/database/images/courses/', oldImage);
+      if (fs.existsSync(imagePath)) {
+        fs.unlinkSync(imagePath);
+      }
+    }
+
+    // Actualizar los datos
+    const updatedProduct = {
+      title: req.body.coursetitle,
+      subtitle: req.body.coursesubtitle,
+      description: req.body.coursedescription,
+      language_id: req.body.lang,
+      category_id: req.body.category,
+      subcategory_id: req.body.subcategory,
+      image: newImage,
+      price: req.body.price,
+    };
+
+    await db.Product.update(updatedProduct, {
+      where: { id: productId }
+    });
+
+    // Redirección según el rol
+    if (user.role === 'admin' || user.role === 1) {
+      return res.redirect('/admin');
+    } else {
+      return res.redirect('/profile/' + user.id + '/create');
+    }
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Ocurrió un error al actualizar el producto.");
+  }
+},
+
 
     update: (req, res) => {
       let user = req.session.userLogged;
