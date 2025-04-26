@@ -10,10 +10,15 @@ const { uploadUser } = require("../middlewares/multer");
 const loggedAuth = require("../middlewares/loggedAuth.js");
 const guestAuth = require('../middlewares/guestAuth.js')
 //const userLogged = require('../middlewares/userLogged.js')
+const {
+    loginValidator,
+    registerValidator,
+  } = require("../middlewares/validator.js");
 
 router 
 .get ('/login', loggedAuth, login) //Redireccionamiento para usuarios ya logueados
-.post('/login', processLogin)
+.post('/login',  processLogin)
+
 .get ('/register', loggedAuth, register)
 .post('/register', uploadUser.single("avatar"), processRegister)
 

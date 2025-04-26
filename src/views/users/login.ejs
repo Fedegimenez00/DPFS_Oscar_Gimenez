@@ -12,20 +12,34 @@
                 <div class="loginCard--title">
                 <h1>Inicia Sesión</h1>
                 <hr>
+                <!--
+                <ul class="errors">
+
+                </ul>-->
             </div>
         
             <div class="loginCard--body">
                 <form action="/login" method="post">
                     <div class="loginCard__inside">
                     <div class="loginCard--bodyInputs">
-                    <input  type="text" name="name" id="name" placeholder="Nombre de usuario">
+                    <input  type="text" name="name" id="name" placeholder="Nombre de usuario"
+                    value="<%= locals.old?.name ? old.name : ''  %>">
                     <label for="name"></label>
+
+                    <% if (locals.errors?.name) { %>
+                        <p class="display-error"><%= locals.errors.name.msg %></p>
+                        <% } %>
                     </div>
-        
+
+                    
                     <div class="loginCard--bodyInputs">
-                        <input  type="password" name="password" id="password" placeholder="Contraseña">
+                        <input  type="password" name="password" id="password" placeholder="Contraseña"
+                        value="<%= locals.old?.password ? old.password : ''  %>">
                         <label for="password"></label>
                         
+                        <% if (locals.errors?.password) { %>
+                            <p class="display-error"><%= locals.errors.password.msg %></p>
+                            <% } %>
                     </div>
                     <div class="loginCard__checkBox">
                         <input type="checkbox" name="rememberme" id="rememberme">
@@ -49,6 +63,10 @@
     </main>
 
     <%- include('../partials/footer') %>
-
+    <!-- Validator JS: para validaciones del lado del front -->
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    
+    <!-- Script JS -->
+    <script src="/js/validations/login.js"></script>
 </body>
 </html>

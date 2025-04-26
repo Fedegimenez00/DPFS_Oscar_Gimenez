@@ -46,3 +46,17 @@ select{
   background-position: calc(100% - 8px) center; /*Lo posicionamos a la derecha*/
   padding-right: 24px; /*le damos algo de espacio para que el caret no se superponga al texto*/
 }
+
+.display-error{
+    color: red;
+    font-weight: 400;
+    background-color: rgba(233, 11, 48, 0.12);
+    padding: 2px;
+    width: 80%;
+    margin-top: 2px;
+
+}
+
+ul {
+    list-style-type: none;  
+}
