@@ -55,12 +55,13 @@ const userController = {
     },
 
     processLogin: async (req, res) => {
-      //Verificar que el user exista
+      //Verificar que el user exista 
       try {
+    
       const resultValidation = validationResult(req);
-     // let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
-      
+     // let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));      
      // let userToLogin = users.find(user => user.username == req.body.username);
+     
      if (resultValidation.isEmpty()){ 
      
       let userToLogin = await db.User.findOne({
@@ -70,7 +71,7 @@ const userController = {
         }
       });
 
-     if (userToLogin) {
+      if (userToLogin) {
         //Comparar contraseñas
         let passOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
       if (passOk) {
@@ -83,21 +84,23 @@ const userController = {
        //Recordar usuario
        if (req.body.rememberme == 'on') {
         res.cookie('name', userToLogin.name, 
-        {maxAge: 60 * 1000 * 60}); //La cookie expira en 1 hora
+        {maxAge: 60 * 1000 * 60,
+        }); //La cookie expira en 1 hora
        }
+      
        //Redireccione a la vista de perfil
        if (userToLogin.role == 0) {
         return res.redirect('/profile/' + userToLogin.id)
        } else if (userToLogin.role == 1){
         return res.redirect('/admin')
        }
-       
-      
+      }
 
        return res.render("users/login", {
+        //Si el error viene de la contraseña
         errors: {
           password: {
-            msg: "Credenciales inválidas PASSWORD",
+            msg: "Credenciales inválidas",
           },
         },
         old: req.body,
@@ -106,22 +109,26 @@ const userController = {
       // Si el username no lo encuentra
       return res.render("users/login", {
         errors: {
-          password: {
-            msg: "Credenciales inválidas",
+          name: {
+            msg: "Usuario no existente",
           },
           old: req.body,
         },
       });
     }
   } else {
+        
+    //Si hay errores, se vuelve al formulario con los mensajes
     return res.render("users/login", {
       errors: resultValidation.mapped(),
       old: req.body,
     });
-  }} 
+  }
 } catch (error) {
-  console.log(error);
-}},
+      console.log(error);
+        
+}
+},
 
     profile: async (req, res) => {
       //const users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));

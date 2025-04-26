@@ -1,18 +1,23 @@
+/*
 const {check} = require('express-validator');
 
 const loginValidator = [
-    check('email')
+    //Nombre de usuario
+    check('name')
     .notEmpty()
-    .withMessage('Debes ingresar un email')
-    .bail()
-    .isEmail()
-    .withMessage('El dato ingresado no corresponde a un email'),
+    .withMessage('Debes ingresar un nombre de usuario')
+    .bail(),
+
+    //Contraseña
     check('password')
     .notEmpty()
-    .withMessage('Debes ingresar un password')
+    .withMessage('Debes ingresar una contraseña')
     .bail()
     .isLength({ min: 5})
-    .withMessage('La contraseña debe tener al menos 5 carácteres'),
-];
+    .withMessage('La contraseña debe tener al menos 5 caracteres'),];
 
-module.exports = { loginValidator };
+const registerValidator = [
+
+]
+
+module.exports = { loginValidator, registerValidator }; */

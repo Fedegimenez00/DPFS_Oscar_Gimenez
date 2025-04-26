@@ -45,13 +45,14 @@
 
 .loginCard--bodyInputs{
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .loginCard--bodyInputs input{
     padding: 15px 65px 15px 5px;
     font-size: 1rem;
     border: none;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     width: 70%;
     color: black;
     border-radius: 7px;
