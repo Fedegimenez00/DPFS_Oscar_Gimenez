@@ -20,7 +20,7 @@ router
 .post('/login', loginValidator, processLogin)
 
 .get ('/register', loggedAuth, register)
-.post('/register', uploadUser.single("avatar"), processRegister)
+.post('/register', uploadUser.single("avatar"), registerValidator, processRegister)
 
 //Vista de perfil
 .get ('/profile/:id', profile) //Redireccionamiento para visitantes no logueados

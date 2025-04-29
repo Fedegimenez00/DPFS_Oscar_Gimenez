@@ -17,7 +17,20 @@ const loginValidator = [
     .withMessage('La contraseña debe tener al menos 5 caracteres'),];
 
 const registerValidator = [
+    check("name")
+    .notEmpty()
+    .withMessage("Debes ingresar un nombre"),
 
+    check("email")
+      .notEmpty()
+      .withMessage("Debes ingresar un email")
+      .bail()
+      .isEmail()
+      .withMessage("El dato ingresado no corresponde a un email"),
+
+    check("password")
+    .notEmpty()
+    .withMessage("Debes ingresar un password"),
 ]
 
 module.exports = { loginValidator, registerValidator }; 
