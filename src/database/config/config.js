@@ -1,10 +1,10 @@
 const path = require('path')
 module.exports = {
     development: {
-      username: "root", //xampp
-      password: null,
-      database: "zerotrust_db",
-      host: "127.0.0.1",
+      username: "gimenez", //xampp
+      password: 'DigitalHouse1234',
+      database: "gimenez_zerotrustdb",
+      host: "mysql-gimenez.alwaysdata.net",
        dialect: "mysql",  
     /*  dialect: "sqlite", //Elemento temporal de desarrollo (sqlite3)
       storage: path.resolve(__dirname, '../../../databaseSQLite/zerotrust_db.sqlite')
