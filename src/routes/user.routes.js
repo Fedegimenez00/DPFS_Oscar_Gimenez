@@ -17,7 +17,7 @@ const {
 
 router 
 .get ('/login', loggedAuth, login) //Redireccionamiento para usuarios ya logueados
-.post('/login',  processLogin)
+.post('/login', loginValidator, processLogin)
 
 .get ('/register', loggedAuth, register)
 .post('/register', uploadUser.single("avatar"), processRegister)

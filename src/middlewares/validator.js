@@ -1,4 +1,4 @@
-/*
+
 const {check} = require('express-validator');
 
 const loginValidator = [
@@ -20,4 +20,4 @@ const registerValidator = [
 
 ]
 
-module.exports = { loginValidator, registerValidator }; */
+module.exports = { loginValidator, registerValidator }; 
