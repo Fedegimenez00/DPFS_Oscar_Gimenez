@@ -14,7 +14,7 @@ module.exports = {
             description: "Esta es una descripción",
             price: 150,
             available: 1,
-            image: 'course1744594828633',
+            image: 'course1744594828633.png',
             rating: 0,
             reviews: 0,
             timesBought: 0,
