@@ -290,11 +290,14 @@ const productController = {
       //let products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
       try
       { //Productos de la base de datos de SQL
-        const products = await db.Product.findAll()
+        const products = await db.Product.findAll({
+          include: ["categories", "subcategories", "languages", "users"]
+        }
+        )
       
 
       return res.render('products/products', {products}); // Aquí enviamos "products" a la vista
-      } catch {
+      } catch (error) {
         console.log(error);
       }
       

@@ -7,6 +7,7 @@ const adminAuth = require('../middlewares/adminAuth.js');
 const guestAuth = require('../middlewares/guestAuth.js');
 
 router 
-.get ('/admin', guestAuth, index);
+.get ('/admin', guestAuth, index)
+
 
 module.exports = router;
