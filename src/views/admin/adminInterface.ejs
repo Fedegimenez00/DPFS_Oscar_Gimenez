@@ -95,20 +95,23 @@
 <article class="productList--card">
     
 
-    <img src="/database/images/courses/<%= products?.courseimage %>" alt="imagen del curso"> 
+    <img src="/database/images/courses/<%= products?.image %>" alt="imagen del curso"> 
     <div class="productList--cardStructure">
     <div class="productList--cardStructureInside">
     <h3 class="productList--card__title"><%= products.title%> </h3>
-   <!-- <small class="productList--card__author"> <%= products?.author %></small> -->
-    <div class="productList--card__tag">
-      <!--  <p class="productList--card__tagTitle"><%= products.category %></p> -->
+   <small class="productList--card__author"> <%= products.users?.name %> </small>
+    <div class="productList--card__tag"
+    style="border: solid <%- products.categories?.borderColor %> 1px;
+           background-color: <%- products.categories?.backgroundColor %> ">
+       <p class="productList--card__tagTitle"><%= products.categories?.name %></p>
     </div>
     </div>
     
     <div class="productList--card__optionsContainer">
      <a href="/products/detail/<%= products.id  %>"><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button></a>
     <a href="products/edit/<%= products.id  %>"><button><i class="fa-solid fa-pen"></i></button></a>
-    <a href="/products/delete/<%= products.courseid  %>"><button><i class="fa-solid fa-trash"></i></button> </a>
+    <form action="/products/delete/<%= products.id %>?_method=DELETE" method="post">
+        <button ><i class="fa-solid fa-trash"></i> </button></form>
 </div>
 </div>
 </div>

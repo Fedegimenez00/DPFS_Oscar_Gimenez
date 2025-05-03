@@ -92,9 +92,9 @@
         
 <article class="course--card">
    
-    <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
-    <h3><%= products[i].coursetitle %></h3>
-    <small>Author's name</small>
+    <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
+    <h3><%= products[i].title %></h3>
+    <small><%= products[i].users.name %></small>
     <div class="course--card__rating">
     <p>4.0</p> 
     <i class="fa-solid fa-star"></i>
@@ -105,8 +105,7 @@
 </div>
     <p class="course--card__price">$<%= products[i].price %></p>
     <div class="course--cardDown">
-        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
-
+        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].id %>'">Ver más</button>
 
 </div>
 </article>
@@ -114,6 +113,7 @@
 
 <% }  %>
 
+<p><%- JSON.stringify(products, null, 2) %></p>
 
 
 </div>
@@ -135,9 +135,9 @@
         
 <article class="course--card">
    
-    <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
-    <h3><%= products[i].coursetitle %></h3>
-    <small>Author's name</small>
+    <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
+    <h3><%= products[i].title %></h3>
+    <small><%= products[i].users.name %></small>
     <div class="course--card__rating">
     <p>4.0</p> 
     <i class="fa-solid fa-star"></i>
@@ -148,7 +148,7 @@
 </div>
     <p class="course--card__price">$<%= products[i].price %></p>
     <div class="course--cardDown">
-        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
+        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].id %>'">Ver más</button>
 
 
 </div>
@@ -178,7 +178,7 @@
         
                             <article class="course--card">
                                
-                                <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
+                                <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
                                 <h3><%= products[i].coursetitle %></h3>
                                 <small>Author's name</small>
                                 <div class="course--card__rating">
@@ -222,16 +222,17 @@
 </div>
 </div>
 
-<!-- (Browsing) Búsqueda Encontrada -->
+<!-- (Browsing) Búsqueda Encontrada (Catálogo principal, de momento)-->
 <div class="browsingCatalog__foundContainer">
    
     <%  for (let i = 0; i < Math.min(products.length, 7); i++) { %>    
         
-        <article class="course--card">
+        <article class="course--card"
+        >
            
-            <img class="course--card__photo" src="<%= products[i].courseimage %>" alt="Imagen de Curso">
-            <h3><%= products[i].coursetitle %></h3>
-            <small>Author's name</small>
+            <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
+            <h3><%= products[i].title %></h3>
+            <small><%= products[i].users.name %></small>
             <div class="course--card__rating">
             <p>4.0</p> 
             <i class="fa-solid fa-star"></i>
@@ -242,7 +243,7 @@
         </div>
             <p class="course--card__price">$<%= products[i].price %></p>
             <div class="course--cardDown">
-                <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
+                <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].id %>'">Ver más</button>
         
         
         </div>
