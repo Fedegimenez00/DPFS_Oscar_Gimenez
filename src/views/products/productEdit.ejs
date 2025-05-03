@@ -84,24 +84,12 @@
     <select name="language" id="language">
         <option class="selectGrey" selected disabled>-- Seleccionar idioma --</option>
         <% languages.forEach(language => { %>
-            <option value="<%= language.id %>"  <%= language.id == language.id ? "selected" : "" %>><%= language.name %> </option>
+            <option value="<%= language.id %>"  <%= language.id == productEdit.language_id ? "selected" : "" %>><%= language.name %> </option>
             <% }) %>
 
 </select>
-        <!--
+        
 
-   <select  name="language" id="language" defaultValue="<%= productEdit.lang%>">
-    
-    <select name="language" id="language">
-        <option class="selectGrey" selected disabled>-- Selecciona idioma --</option>
-        <% languages.forEach(language => { %>
-          <option value="<%= language.id %>" <%= language.language_id == language.id ? "selected" : "" %>><%= language.name %></option>             
-        <% }) %>
-      </select>
-
-   </select>
-</div>
--->
 
 <div class="forms--box__selectContainer">
     <label for="category"></label>
@@ -109,7 +97,7 @@
     <select name="category" id="category">
         <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
         <% categories.forEach(category => { %>
-            <option value="<%= category.id %>"  <%= category.id == category.id ? "selected" : "" %>><%= category.name %> </option>
+            <option value="<%= category.id %>"  <%= category.id == productEdit.category_id ? "selected" : "" %>><%= category.name %> </option>
             <% }) %>
 
 </select>
@@ -121,9 +109,12 @@
    <select name="subcategory" id="subcategory">
     <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
     <% subcategories.forEach(subcategory => { %>
-        <option value="<%= subcategory.id %>"  <%= subcategory.id == subcategory.id ? "selected" : "" %>><%= subcategory.name %> </option>
+        <option value="<%= subcategory.id %>"
+            data-category-id="<%= subcategory.category_id %>"
+            style="display: none"
+              <%= subcategory.id == productEdit.subcategory_id ? "selected" : "" %>><%= subcategory.name %> </option>
         <% }) %>
-
+      
 </select>
 </div>
 </div>

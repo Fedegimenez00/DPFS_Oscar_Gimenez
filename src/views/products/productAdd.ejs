@@ -105,12 +105,16 @@
 <div class="forms--box__selectContainer">
     <label for="subcategory"></label>
     <select name="subcategory" id="subcategory">
-        <option class="selectGrey" selected disabled>-- Seleccionar subcategoría --</option>
+        <option class="selectGrey" disabled selected>-- Seleccionar subcategoría --</option>
         <% subcategories.forEach(subcategory => { %>
-            <option value="<%= subcategory.id %>"><%= subcategory.name %> </option>
-            <% }) %>
-
-</select>
+          <option 
+            value="<%= subcategory.id %>" 
+            data-category-id="<%= subcategory.category_id %>"
+            style="display: none">
+            <%= subcategory.name %>
+          </option>
+        <% }) %>
+      </select>
 </div>
 </div>
 </div>
@@ -451,7 +455,7 @@ estudiantes deseen adquirir tus cursos.
 
     <%- include('../partials/footer') %>
   
-
+    <script src="/js/subcategories.js"></script>
     <script src="/js/toolBarDescription.js"></script>
     <script src="/js/toggle.js"></script>
     <script src="/js/subToggle.js"></script>

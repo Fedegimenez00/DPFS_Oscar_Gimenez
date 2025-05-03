@@ -134,7 +134,12 @@ const userController = {
       let myUser = await db.User.findByPk(req.params.id) //Cerca de que 
       const userToLogin = req.session.userLogged; //funcione
 
-
+      const userProducts = await db.Product.findAll({
+        where: {
+          user_id: myUser.id
+        },
+        include: ["categories", "subcategories", "languages", 'users']
+      });
      // res.render("users/profile", { user: req.session.userLogged });
 
       // Se busca el usuario del perfil según el ID
@@ -149,7 +154,7 @@ const userController = {
       //const userProducts = products.filter(product => product.user_id === myUser.id);
     
       return res.render(path.resolve(__dirname, '../views/users/profile'), {
-       // products: userProducts,
+       products: userProducts,
        myUser,
       user: req.session.userLogged,
         userToLogin,
