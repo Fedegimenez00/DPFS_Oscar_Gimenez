@@ -17,6 +17,10 @@
     --color-blancoApagado : #E5E5E5;
     --color-rojoAviso: #E90B0F;
     --color-rosaClaro : #FF75E3;
+    --color-rojoClaro : #ff4a68;
+    --color-celesteClaro: #63f5ff;
+    --color-amarilloClaro: #fff268;
+    --color-verdeClaro: #9cff6e;
 
      /* Botones y links*/
      --color-morado: #8462EB ;
@@ -43,11 +47,14 @@
      --color-magentaMuyTranslucido : rgba(255, 0, 204, 0.05);
      --color-rojoAtaque : #E90B30;
      --color-rojoAtaqueTranslucido: rgba(233, 11, 48, 0.35);
+     --color-rojoAtaqueMuyTranslucido: rgba(233, 11, 48, 0.05);
      --color-celesteDefensa : #00D4E3;
      --color-celesteDefensaTranslucido :rgba(0, 212, 227, 0.35);
+     --color-celesteDefensaMuyTranslucido :rgba(0, 212, 227, 0.05);
      --color-amarilloNube : #E8D610;
      --color-amarilloNubeTranslucido: rgba(232, 214, 16, 0.35);
+     --color-amarilloNubeMuyTranslucido: rgba(232, 214, 16, 0.05);
      --color-verdeSocial : #5DD227;
      --color-verdeSocialTranslucido: rgba(93, 210, 39, 0.35);
-
+     --color-verdeSocialMuyTranslucido: rgba(93, 210, 39, 0.05);
 }

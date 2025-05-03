@@ -13,24 +13,36 @@
         <div class="registerCard--title">
         <h1>Regístrate antes de continuar</h1>
         <hr>
+        <ul class="display-error"></ul>
     </div>
 
     <div class="registerCard--body">
         <form action='/register' method="POST" enctype="multipart/form-data">
             <div class="registerCard--bodyInputs">
-            <input  type="text" name="name" id="name" placeholder="Nombre de usuario">
+            <input  type="text" name="name" id="name" placeholder="Nombre de usuario"
+            value="<%= locals.old?.email ? old.email : '' %>">
             <label for="name"></label>
+            <% if (locals.errors?.name) { %>
+                <p class="display-error"><%= locals.errors.name.msg %></p>
+                <% } %>
             </div>
 
             <div class="registerCard--bodyInputs">
-                <input  type="email" name="email" id="email" placeholder="Correo Electrónico">
+                <input  type="email" name="email" id="email" placeholder="Correo Electrónico"
+                value="<%= locals.old?.email ? old.email : '' %>">
                 <label for="email"></label>
+                <% if (locals.errors?.email) { %>
+                    <p class="display-error"><%= locals.errors.email.msg %></p>
+                    <% } %>
             </div>
 
             <div class="registerCard--bodyInputs">
-                <input  type="password" name="password" id="password" placeholder="Contraseña">
+                <input  type="password" name="password" id="password" placeholder="Contraseña"
+                value="<%= locals.old?.password ? old.password : '' %>">
                 <label for="password"></label>
-
+                <% if (locals.errors?.password) { %>
+                    <p class="display-error"><%= locals.errors.password.msg %></p>
+                    <% } %>
             </div>
 
             <div class="registerCard--bodyInputs">
@@ -56,6 +68,10 @@
   
     <%- include('../partials/footer') %>
 
-
+ <!-- Validator JS: para validaciones del lado del front -->
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    
+    <!-- Script JS -->
+    <script src="/js/validations/register.js"></script>
 </body>
 </html>

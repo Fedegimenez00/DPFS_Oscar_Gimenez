@@ -12,11 +12,14 @@
 
             <div class="productDetail--categoryDesktop">
                 <p><%= myProduct.categories?.name %> > <%= myProduct.subcategories?.name %></p>
-                <hr>
+                <hr style="border-color: <%- myProduct.categories?.borderColor %>">
+                
+                
+
             </div>
 
             <h1 class="productDetail--title"><%= myProduct.title %></h1>
-<hr class="productDetail--title__underLine">
+<hr class="productDetail--title__underLine" style="border-color: <%- myProduct.categories?.borderColor %>">
 <p class="productDetail--quickDescription"><%= myProduct.subtitle %></p>
 
 <div class="productDetail--score">
@@ -30,7 +33,7 @@
 </div>
 <span class="productDetail--rating__votes">(11.000 Calificaciones)</span>
 </div>
-<small class="productDetail--author">Creado por </small> <span class="productDetail--authorName">Author's name</span>
+<small class="productDetail--author">Creado por </small> <span class="productDetail--authorName" style="color: <%- myProduct.categories?.fontColor %>">Author's name</span>
 
 <div class="productDetail--properties">
     <div class="productDetail--propertiesIcons">
@@ -48,11 +51,13 @@
             
             <div class="productDetail--category">
                 <small><%= myProduct.categories?.name %> > <%= myProduct.subcategories?.name %></small>
-                <hr>
+                <hr style="border-color: <%- myProduct.categories?.borderColor %>">
             </div>
 
-            <div class="section--productDetail__inside">
-            <div class="productDetail--preview">
+            <div class="section--productDetail__inside"
+              style=" border-color: <%- myProduct.categories?.borderColor %>;
+            background-color: <%- myProduct.categories?.detailBackgroundColor %>">
+            <div class="productDetail--preview" style="border-bottom:  solid <%- myProduct.categories?.borderColor %> 1px">
 <img src="/database/images/courses/<%= myProduct.image %>" alt="Imagen del curso">
 <div class="productDetail--preview__Items">
 <!--   <i class="fa-solid fa-circle-play"></i>
@@ -111,7 +116,8 @@
 </div>
 </article>
 
-    <article class="productDetail--priceCard">
+    <article class="productDetail--priceCard"
+    style="border-top: solid <%- myProduct.categories?.borderColor %> 1px">
         <p class="priceCard__price">$<%= myProduct.price %></p>
 
         <div class="priceCard--buttons">
@@ -119,7 +125,7 @@
         <button class="priceCard__buttonBuy">Comprar ahora</button>
     </div>
 </div>
-        <hr class="priceCard--line">
+        <hr class="priceCard--line" style="border-color: <%- myProduct.categories?.borderColor %>">
         <div class="priceCard--shareBox">
             <div class="priceCard--shareBox__Sub-container">
             <i class="fa-solid fa-share-nodes"></i> <p>Compartir</p>
@@ -150,7 +156,9 @@
 
 <section class="productDetail--learning">
     <div class="productDetail--learning__Inside">
-<article class="learningBox">
+<article class="learningBox"
+style=" border: solid <%- myProduct.categories?.borderColor %> 1px;
+        background-color: <%- myProduct.categories?.detailBackgroundColor %>">
     <div class="learningBox__Inside">
 <h2 class="learningBox--title">Lo que aprenderás</h2>
 <div class="learningBox__Inside--Inside">
@@ -185,12 +193,14 @@
     <div class="productDetail--contents__inside">
     <div class="productDetail--contents__titles">
 <h2>Contenido del curso</h2>
-<hr>
+<hr style="border-color: <%- myProduct.categories?.borderColor %>">
 <p>14 secciones | 20 clases | 5h 20 minutos de duración total</p>
 </div>
 
-<article class="productDetail--contentsCard">
-    <div class="contentsCard--section">
+<article class="productDetail--contentsCard" style="border: solid <%- myProduct.categories?.borderColor %> 1px">
+    <div class="contentsCard--section"
+    style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> ">
         <div>
             <button type="button" class="productDetail__collapsible"  data-target="Content-1"><i class="fa-solid fa-chevron-down"></i></button>
         <h3>Introducción al curso</h3>
@@ -198,11 +208,15 @@
         <p class="contentsCard--section__contents">1 clase | 1 min</p>
         
     </div>
-    <div id="Content-1" class="productDetail__collapsibleContents"> 
+    <div id="Content-1" class="productDetail__collapsibleContents"
+    style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> "> 
        <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
        <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
     </div>
-    <div class="contentsCard--section">
+    <div class="contentsCard--section"
+    style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> ">
         <div>
             <button type="button" class="productDetail__collapsible"  data-target="Content-2"><i class="fa-solid fa-chevron-down"></i></button>
 
@@ -212,11 +226,15 @@
         <p class="contentsCard--section__contents">5 clases | 10 min</p>
     </div>
 
-    <div id="Content-2" class="productDetail__collapsibleContents"> 
+    <div id="Content-2" class="productDetail__collapsibleContents"
+    style="border-bottom: solid <%- myProduct.categories?.borderColour %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> "> 
         <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
         <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
      </div>
-    <div class="contentsCard--section">
+    <div class="contentsCard--section"
+    style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> ">
         <div>
             <button type="button" class="productDetail__collapsible"  data-target="Content-3"><i class="fa-solid fa-chevron-down"></i></button>
 
@@ -226,11 +244,15 @@
         <p class="contentsCard--section__contents">4 clases | 15 min</p>
         
     </div>
-    <div id="Content-3" class="productDetail__collapsibleContents"> 
+    <div id="Content-3" class="productDetail__collapsibleContents"
+    style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> "> 
         <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
         <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
      </div>
-    <div class="contentsCard--section">
+    <div class="contentsCard--section"
+    style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> ">
         <div>
             <button type="button" class="productDetail__collapsible"  data-target="Content-4"><i class="fa-solid fa-chevron-down"></i></button>
 
@@ -240,13 +262,18 @@
         <p class="contentsCard--section__contents">2 clases | 5 min</p>
         
     </div>
-    <div id="Content-4" class="productDetail__collapsibleContents"> 
+    <div id="Content-4" class="productDetail__collapsibleContents"
+    style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> "> 
         <div class="productDetail__collapsibleContents__inside"> <i class="fa-brands fa-youtube"></i> <p>Lorem ipsum dolor sit...</p></div>
         <div class="productDetail__collapsibleContents__inside"> <i class="fa-regular fa-lightbulb"></i> <p>Lorem ipsum dolor sit...</p></div>
      </div>
 </article>
 
-<button class="contentsCard--sections__Button" type="button">10 Secciones más</button>
+<button class="contentsCard--sections__Button" 
+style="border: solid <%- myProduct.categories?.borderColor %> 1px;
+      background-color: <%- myProduct.categories?.detailBackgroundColor %> "
+type="button">10 Secciones más</button>
 </div>
 </section>
 
@@ -254,13 +281,15 @@
 
 <section class="productDetail--description">
     <div class="productDetail--description__inside">
-        <article class="productDetail--requirementCard">
+        <article class="productDetail--requirementCard"
+        style="border-bottom: solid <%- myProduct.categories?.borderColor %> 1px;
+           border-top: solid <%- myProduct.categories?.borderColor %> 1px">
             <div class="requirementCard--title">
             <div class="requirementCard--titleInside"><h2>Requisitos</h2> 
                 <button type="button" class="productDetail__collapsible"  data-target="requirementContent-1"><i class="fa-solid fa-chevron-down"></i></button>
 
             </div>
-            <hr>
+            <hr style="border-color: <%- myProduct.categories?.borderColor %>">
             <div id="requirementContent-1" class="productDetail__requirementCollapsibleContents">
                 <div class="requirementCollapsible__inside"> <i class="fa-solid fa-circle"></i> <p>Conceptos básicos de redes</p></div>
                 <div class="requirementCollapsible__inside"> <i class="fa-solid fa-circle"></i> <p>Tener ganas de aprender</p></div>
@@ -270,7 +299,9 @@
 
         <article class="productDetail--descriptionBox">
     <div class="productDetail--description__title">
-    <h2>Descripción</h2><hr>
+    <h2>Descripción</h2>
+    <hr
+    style="border-color: <%- myProduct.categories?.borderColor %>">
 </div>
 <p><%= myProduct.description %></p>
 </p>
@@ -279,7 +310,9 @@
 </section>
 <section class="productDetail--mentor">
     <div class="productDetail--mentor_inside">
-    <article class="productDetail--mentorCard">
+    <article class="productDetail--mentorCard"
+    style="border: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> ">
         <div class="productDetail--mentorCard__inside">
         <h2>Mentor</h2>
         <div class="mentorCard--identity">
@@ -314,7 +347,8 @@
     <div class="productDetail--review__inside">
     <div class="productDetail--review__totalScore"><i class="fa-solid fa-star"></i><h2 class="review__totalScore--title">4,5 | 3k Valoraciones</h2> <h2 class="review__totalScore--titleDesktop">4,5 Valoración del Curso | 3k Valoraciones</h2>
     </div>
-    <article class="review--card">
+    <article class="review--card"
+    style="border-top: solid <%- myProduct.categories?.borderColor %> 1px">
         <div class="review--card__insideMargins">
     <div class="review--card__inside">
         <div class="review--card__inside__title">
@@ -326,10 +360,13 @@
     <p class="review--card__description">Hasta el momento, ha sido un buen curso.</p>
 </div>
     </article>
-    <button class="review__buttonMore">Mostrar todas las Reseñas</button>
+    <button class="review__buttonMore"
+    style="border: solid <%- myProduct.categories?.borderColor %> 1px;
+           background-color: <%- myProduct.categories?.detailBackgroundColor %> ">Mostrar todas las Reseñas</button>
 </div>
 </section>
-<hr class="productDetail--separationLine">
+<hr class="productDetail--separationLine"
+style="border-color: <%- myProduct.categories?.borderColor %>">
 
 <section class="productDetail--recommendations">
     <div class=" productDetail--recommendations__inside">

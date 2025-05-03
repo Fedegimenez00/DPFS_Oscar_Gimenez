@@ -58,13 +58,13 @@
 .registerCard--bodyInputs{
     text-align: center;
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .registerCard--bodyInputs input{
     padding: 15px 50px 15px 5px;
     font-size: 1rem;
     border: none;
-    margin-bottom: 15px;
     width: 60%;
     color: black;
     border-radius: 7px;

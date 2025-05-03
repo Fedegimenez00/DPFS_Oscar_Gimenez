@@ -5,6 +5,9 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING(255),
       },
+      description: {
+        type: DataTypes.STRING,
+      },
       category_id: {
         type: DataTypes.INTEGER,
         references: {
