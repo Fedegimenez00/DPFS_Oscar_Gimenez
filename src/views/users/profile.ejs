@@ -36,21 +36,21 @@
         <h3>Mis cursos:</h3>
         <div class="ownCourses--container">
 
-            <% //products.forEach(products => { %>
+            <% products.forEach(products => { %>
             <article class="ownCourses--containerCard">
                 <div class="ownCourses--containerCardInside">
-                <img src="/database/images/courses/<%= //products?.image %>" alt="imagen del curso"> 
+                <img src="/database/images/courses/<%= products?.image %>" alt="imagen del curso"> 
                 <div class="ownCourses--containerCard__contents"> 
-                <h4><%=// products.title%></h4>
+                <h4><%= products.title%></h4>
                 <div class="ownCourses--containerCard__contentsDown" >
-                <div class="ownCourses--containerCard__contentsRating "><i class="fa-solid fa-star"></i><p><%= //products.rating %></p></div> 
-                <div class="ownCourses--containerCard__contentsReview"> <i class="fa-solid fa-users"></i><p><%= //products.reviews %></p></div>
+                <div class="ownCourses--containerCard__contentsRating "><i class="fa-solid fa-star"></i><p><%= products.rating %></p></div> 
+                <div class="ownCourses--containerCard__contentsReview"> <i class="fa-solid fa-users"></i><p><%= products.reviews %></p></div>
                 
             </div>
         </div>
     </div>
             </article>
-            <%// }); %>
+            <% }); %>
 
             
 
