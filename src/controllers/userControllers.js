@@ -17,14 +17,12 @@ const userController = {
       },
     processRegister: async (req, res) => {
       try {
-       // let users = User.findAll();
-       const resultValidation = validationResult(req);
-        //let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')), "utf-8");
+
+        const resultValidation = validationResult(req);
         const { name, email, password } = req.body;
 
         if (resultValidation.isEmpty()) {
         let newUser = {
-         // user_id: users.length + 1,
           name,
           email,
           password: bcryptjs.hashSync(password, 10),
@@ -35,9 +33,8 @@ const userController = {
           headline: "",
           role: 0
         };
-        //users.push(newUser);
-        //fs.writeFileSync((path.resolve(__dirname, '../database/users.json')), JSON.stringify(users, null, '  '));
-        
+      
+
         await db.User.create(newUser)
           res.redirect('/');
         } else {
@@ -59,8 +56,6 @@ const userController = {
       try {
     
       const resultValidation = validationResult(req);
-     // let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));      
-     // let userToLogin = users.find(user => user.username == req.body.username);
      
      if (resultValidation.isEmpty()){ 
      
@@ -131,8 +126,7 @@ const userController = {
 },
 
     profile: async (req, res) => {
-      //const users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
-      //const products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
+  
       try {
         
       
@@ -189,10 +183,7 @@ const userController = {
       let userFound = await db.User.findByPk(req.params.id)
     
 
-     /*const { id } = req.params
-     let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
-     let userFound = users.find((user) => user.id == id);
-*/
+
      if (userFound) {
       res.render('users/profileEdit', {user: userFound});
      } else {
@@ -200,20 +191,9 @@ const userController = {
      }
 
      
-
-     /* let userFound = User.findById(req.params.user_id);
-      if (userFound) {
-        return res.render("users/edit", { user: userFound });
-      }
-      return res
-        .status(404)
-        .render("not-found.ejs", { title: "Usuario no encontrado" });
-        */
       },
 
       editUpdate: async (req, res) => {
-
-     //   let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
       
        const { id } = req.params;
         const { firstName, lastName, headline, description } = req.body;
@@ -236,7 +216,6 @@ const userController = {
       }
      }
 
-       // let userFound = users.find(user => user.user_id === parseInt(user_id));
        //Actualiza el usuario en la base de datos
       await db.User.update({
         //Aquí van los datos nuevos
@@ -261,26 +240,6 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
 
   
 
-
-      /*  let updateUser = {
-          ...userFound,
-          firstName,
-          secondName,
-          headline,
-          description,
-          avatar: newAvatar
-        };
-      
-        let updatedUsers = users.map(user =>
-          user.user_id === parseInt(user_id) ? updateUser : user
-        );
-      
-        fs.writeFileSync(
-          path.resolve(__dirname, '../database/users.json'),
-          JSON.stringify(updatedUsers, null, 2),
-          'utf-8'
-        );
-      */
         req.session.userLogged = updateUser;
       
         if (updateUser.role === '1') {
@@ -292,11 +251,9 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
       
 
     securityEdit: async (req, res) => {
-      let userFound = await db.User.findByPk(req.params.id)
-     /* const { user_id } = req.params
-      let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
-      let userFound = users.find(user => user.user_id == user_id);
- */
+      const { id } = req.params;
+      let userFound = await db.User.findByPk( id )
+   
       if (userFound) {
        res.render('users/profileEditSecurity', {user: userFound});
       } else {
@@ -305,18 +262,13 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
      },
 
      securityEditUpdate: async (req, res) => {
-     /* let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), 'utf-8'));
-      let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json'), 'utf-8'));
-    */
+     
       const { id } = req.params;
       const { name, email, password } = req.body;
-      let userFound = await db.User.findByPk(req.params.id)
+      let userFound = await db.User.findByPk( id )
 
       if (!userFound) return res.status(404).send("Usuario no encontrado");
 
-     /* let userFound = users.find(user => user.user_id === parseInt(user_id));
-      if (!userFound) return res.status(404).send("Usuario no encontrado");
-    */
       const oldName = userFound.name; // Guardamos el anterior
 
       // Actualización segura
@@ -349,33 +301,7 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
   const updatedUser = await db.User.findByPk(id);
   req.session.userLogged = updatedUser;
 }
-    /*
-      // Actualizar productos asociados si cambió el nombre de usuario
-      if (username && username.trim() !== '' && username !== oldUsername) {
-        products = products.map(product => {
-          if (product.author === oldUsername) {
-            return { ...product, author: username };
-          }
-          return product;
-        });
     
-        fs.writeFileSync(
-          path.resolve(__dirname, '../database/products.json'),
-          JSON.stringify(products, null, 2),
-          'utf-8'
-        );
-      }
-    
-      let updatedUsers = users.map(user =>
-        user.user_id === parseInt(user_id) ? userFound : user
-      );
-    
-      fs.writeFileSync(
-        path.resolve(__dirname, '../database/users.json'),
-        JSON.stringify(updatedUsers, null, 2),
-        'utf-8'
-      );
-    */
       req.session.userLogged = userFound;
     
       if (userFound.role == 1) {
@@ -386,7 +312,8 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
     },
     
     destroy: async (req, res) => {
-      let userFound = await db.User.findByPk(req.params.id)
+      const { id } = req.params;
+      let userFound = await db.User.findByPk( id )
 /*
       const { user_id } = req.params
       let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
@@ -400,15 +327,14 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
  
     },
     processDestroy: async (req, res) => {
-      let userToDelete = await db.User.findByPk(req.params.id); 
-     /* let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'), "utf-8"));
+      const { id } = req.params;
+      let userToDelete = await db.User.findByPk(id); 
     
       // Convertir user_id a número por si en JSON es un número
-      const userId = parseInt(req.params.user_id);
+      //const userId = parseInt(req.params.user_id);
     
       // Buscar al usuario por user_id
-      let userToDelete = users.find(user => user.user_id === userId);
-    */
+      
       if (!userToDelete) {
         return res.status(404).send("Usuario no encontrado");
       }
@@ -428,16 +354,7 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
       });
 
       
-    /*  // Filtrar el usuario
-      users = users.filter(user => user.user_id !== userId);
-    
-      // Sobrescribir JSON
-      fs.writeFileSync(
-        path.resolve(__dirname, '../database/users.json'),
-        JSON.stringify(users, null, 2),
-        'utf-8'
-      );
-    */
+ 
       // Limpiar sesión y cookies
       req.session.destroy(() => {
         res.clearCookie('name');
