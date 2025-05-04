@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       },
       icon: {
         type: DataTypes.STRING
-      }
+      },
+      catalogWallpaper: {
+        type: DataTypes.STRING,
+      },
         
        }
     
