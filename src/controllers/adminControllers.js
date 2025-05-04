@@ -6,8 +6,7 @@ const db = require('../database/models');
 const adminController = {
     index : async (req, res) => {
 
-        /*let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
-        res.render(path.resolve(__dirname, '../views/admin/adminInterface'), {products});*/
+      
          try
               { //Productos de la base de datos de SQL
                 const products = await db.Product.findAll({
@@ -17,12 +16,12 @@ const adminController = {
                 });
               
         
-              return res.render('admin/adminInterface', {products}); // Aquí enviamos "products" a la vista
+              return res.render('admin/adminInterface', {products}); // Se envía "products" a la vista
               } catch (error){
                 console.log(error);
               }
 
-        // return res.render('admin/adminInterface');
+      
         
     }
 }

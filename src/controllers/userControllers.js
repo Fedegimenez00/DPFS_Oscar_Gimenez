@@ -128,30 +128,26 @@ const userController = {
     profile: async (req, res) => {
   
       try {
-        
-      
       const users = await db.User.findAll()
-      let myUser = await db.User.findByPk(req.params.id) //Cerca de que 
-      const userToLogin = req.session.userLogged; //funcione
 
+      // Se busca el usuario del perfil según el ID
+      let myUser = await db.User.findByPk(req.params.id) //Cerca de que funcione
+      const userToLogin = req.session.userLogged;
+
+      
+      // Se muestran los productos creados por el usuario
       const userProducts = await db.Product.findAll({
         where: {
           user_id: myUser.id
         },
         include: ["categories", "subcategories", "languages", 'users']
       });
-     // res.render("users/profile", { user: req.session.userLogged });
 
-      // Se busca el usuario del perfil según el ID
-    //  const myUser = users.find(user => user.id === parseInt(req.params.id, 10));
-    
       // Si no existe el usuario, devuelve un error
-     /* if (!myUser) {
+       if (!myUser) {
         return res.status(404).send('Usuario no encontrado');
-      }*/
+      }
     
-      // Se muestran los productos creados por el usuario
-      //const userProducts = products.filter(product => product.user_id === myUser.id);
     
       return res.render(path.resolve(__dirname, '../views/users/profile'), {
        products: userProducts,
@@ -167,15 +163,6 @@ const userController = {
     
     },
     
-
-  
-      // Filtrar solo los productos cuyo autor coincide con el usuario logueado
-      
-      //let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
-      //let myUser = users.find(user => user.user_id === parseInt(req.params.user_id, 10));
-
-      
-    
     
 
     logout: (req, res)  => {
@@ -186,8 +173,6 @@ const userController = {
 
     edit: async (req, res) => {
       let userFound = await db.User.findByPk(req.params.id)
-    
-
 
      if (userFound) {
       res.render('users/profileEdit', {user: userFound});
@@ -208,7 +193,7 @@ const userController = {
           return res.status(404).send("Usuario no encontrado");
         }
 
-             // Comprueba si hay una nueva imagen
+         // Comprueba si hay una nueva imagen
         let oldAvatar = userFound.avatar;
         let newAvatar = req.file ? req.file.filename : oldAvatar;
 
@@ -237,24 +222,22 @@ const userController = {
       
       
    // Refrescar sesión si es el usuario logueado
-   let updateUser;
-if (req.session.userLogged && req.session.userLogged.id == id) {
-  updateUser = await db.User.findByPk(id);
-  req.session.userLogged = updateUser;
-}
+    let updateUser;
+   if (req.session.userLogged && req.session.userLogged.id == id) {
+    updateUser = await db.User.findByPk(id);
+    req.session.userLogged = updateUser;
+    }
 
-  
+    req.session.userLogged = updateUser;
 
-        req.session.userLogged = updateUser;
-      
-        if (updateUser.role === '1') {
+    if (updateUser.role === '1') {
           return res.redirect('/admin');
         } else {
           return res.redirect('/profile/' + updateUser.id + '/edit');
         }
-      },
+      },    
       
-
+        
     securityEdit: async (req, res) => {
       const { id } = req.params;
       let userFound = await db.User.findByPk( id )
@@ -274,7 +257,7 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
 
       if (!userFound) return res.status(404).send("Usuario no encontrado");
 
-      const oldName = userFound.name; // Guardamos el anterior
+      const oldName = userFound.name; // Se guarda el anterior
 
       // Actualización segura
     
@@ -288,8 +271,8 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
         userFound.email = email;
       }
       
-      // Ejecutamos el update con Sequelize
-await db.User.update(
+    // Ejecutamos el update con Sequelize
+   await db.User.update(
   {
     name,
     email,
@@ -319,11 +302,7 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
     destroy: async (req, res) => {
       const { id } = req.params;
       let userFound = await db.User.findByPk( id )
-/*
-      const { user_id } = req.params
-      let users = JSON.parse(fs.readFileSync((path.resolve(__dirname, '../database/users.json')), "utf-8"));
-      let userFound = users.find((user) => user.user_id == user_id);
- */
+
       if (userFound) {
        res.render('users/userDeleteAccount', {user: userFound});
       } else {
@@ -333,12 +312,11 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
     },
     processDestroy: async (req, res) => {
       const { id } = req.params;
+
+      // Busca al usuario por id
       let userToDelete = await db.User.findByPk(id); 
     
-      // Convertir user_id a número por si en JSON es un número
-      //const userId = parseInt(req.params.user_id);
     
-      // Buscar al usuario por user_id
       
       if (!userToDelete) {
         return res.status(404).send("Usuario no encontrado");
@@ -376,17 +354,13 @@ if (req.session.userLogged && req.session.userLogged.id == id) {
     courseCreate: async (req, res) => {
       let user = req.session.userLogged;
 
+      // Filtra solo los productos cuyo autor coincide con el id del usuario logueado
       const userProducts = await db.Product.findAll({
         where: {
           user_id: user.id
         },
         include: ["categories", "subcategories", "languages", 'users']
       });
-
-     // let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
-  
-      // Filtrar solo los productos cuyo autor coincide con el usuario logueado
-      //let userProducts = products.filter(product => product.author === user.username);
       
       res.render(path.resolve(__dirname, '../views/users/userAddCourses'), {  userProducts });
 
