@@ -28,12 +28,46 @@
         <section class="catalogSearch">
             <article class="catalogSearch--box">
                 <div class="catalogSearch__searchBar">
+                    <form action="/products/search" method="GET">
+                        <input type="text" name="query" placeholder="Busca un curso..." />
+                        <button class="catalogSearch__searchButton" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 
+                        <div class="catalogSearch__selectBar">
+                            <div class="catalogSearch__selectContainer">
+                        <select name="category" id="category">
+                          <option class="selectGrey" value="">-- Seleccionar categoría --</option>
+                          <% categories.forEach(category => { %>
+                            <option value="<%= category.id %>"><%= category.name %> </option>
+                            <% }) %>
+                        </select>
+                        </div>
+
+                        <div class="catalogSearch__selectContainer">
+                        <select name="subcategory" id="subcategory">
+                          <option value="" class="selectGrey">-- Seleccionar subcategoría --</option>
+                          <% subcategories.forEach(subcategory => { %>
+                            <option 
+                              value="<%= subcategory.id %>" 
+                              data-category-id="<%= subcategory.category_id %>"
+                              style="display: none">
+                              <%= subcategory.name %>
+                            </option>
+                          <% }) %>
+                        </select>
+                    </div>
+                
+                    <button class="catalogSearch__filterCategoriesButton"><i class="fa-solid fa-filter"></i></button>
+                </div>
+
+                      </form>
+                      
+<!--
                     <form action="/products/results" method="get">
                     <label for=""></label>
                     <input placeholder="Buscar cualquier cosa" type="text" name="search" id="" value="">
                     <button class="catalogSearch__searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
+
             </div>
                
                 <div class="catalogSearch__selectBar">
@@ -54,248 +88,32 @@
                 </div>
                 
                 <button class="catalogSearch__filterCategoriesButton"><i class="fa-solid fa-filter"></i></button>
-            </div>
+            </div>-->
             </article>
         </section>
 
-<!-- Caja de filtros (Para el Catálogo Browsing)-->
 
-<section class="browsingFilters">
-<div class="browsingFilters__inside">
-    <div class="browsingFilter--box">
-    <button class="browsingFilter__button"><i class="fa-solid fa-sliders"></i>Filtrar</button> <span>(0)</span> 
-</div>
-
-<div class="browsingFilterSelection"><h3>Ordenar por</h3>
-    <select name="" id="">
-        <option value="">Más populares</option>
-        <option value="">Más recientes</option>
-    </select></div>
-</div>
-</section>
-
-<!-- Catálogo de Inicio -->
-
-        <section class="startCatalog">
-        <div class="startCatalog--Box">
-            <div class="startCatalog--Box__title"><h2>Clases destacadas</h2> <button>Ver todo</button></div>
-            <div class="startCatalog--featuredBox__container">
-                <!-- Carosel de productos-->
-
-<div class="productCourses--container">
-    <button class="nav-button prev disabled">&#9664;</button>
-
-    <div class="productCourses__carousel">
+                            
+<% if (!isSearch) { %>
+        <!-- Muestra el catálogo de inicio -->
+    <%- include('../partials/startCatalog') %>
+    <% } else if (products.length === 0) { %>
+         <!-- Muestra el mensaje de "No encontrado" -->
+    <%- include('../partials/noResults') %>
     
-
-<%  for (let i = 0; i < Math.min(products.length, 10); i++) { %>    
-        
-<article class="course--card">
-   
-    <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
-    <h3><%= products[i].title %></h3>
-    <small><%= products[i].users.name %></small>
-    <div class="course--card__rating">
-    <p>4.0</p> 
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-</div>
-    <p class="course--card__price">$<%= products[i].price %></p>
-    <div class="course--cardDown">
-        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].id %>'">Ver más</button>
-
-</div>
-</article>
-
-
-<% }  %>
-
-<p><%- JSON.stringify(products, null, 2) %></p>
-
-
-</div>
-
-<button class="nav-button next">&#9654;</button>
-
-</div>
-            </div>
-        </div>
-        
-
-        
-        <div class="startCatalog--Box">
-            <div class="startCatalog--Box__title"><h2>Clases populares</h2> <button>Ver todo</button></div>
-            <div class="startCatalog--popularBox__container">
-                
-                
-<%  for (let i = 0; i < Math.min(products.length, 4); i++) { %>    
-        
-<article class="course--card">
-   
-    <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
-    <h3><%= products[i].title %></h3>
-    <small><%= products[i].users.name %></small>
-    <div class="course--card__rating">
-    <p>4.0</p> 
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-</div>
-    <p class="course--card__price">$<%= products[i].price %></p>
-    <div class="course--cardDown">
-        <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].id %>'">Ver más</button>
-
-
-</div>
-</article>
-
-
-<% }  %>
-
-               
-                
-                
-                
-            </div>
-        </div>
-        
-        
-        <div class="startCatalog--Box">
-            <div class="startCatalog--Box__title"><h2>Clases más recientes</h2></div>
-            <div class="startCatalog--recentBox__container">
-                <div class="productCourses--container">
-                    <button class="nav-button prev disabled">&#9664;</button>
-                
-                    <div class="productCourses__carousel">
-                
-                
-                        <%  for (let i = 0; i < Math.min(products.length, 10); i++) { %>    
-        
-                            <article class="course--card">
-                               
-                                <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
-                                <h3><%= products[i].coursetitle %></h3>
-                                <small>Author's name</small>
-                                <div class="course--card__rating">
-                                <p>4.0</p> 
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                                <p class="course--card__price">$<%= products[i].price %></p>
-                                <div class="course--cardDown">
-                                    <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
-                            
-                            
-                            </div>
-                            </article>
-                            
-                            
-                            <% }  %>
-                            
-                
-                </div>
-                
-                <button class="nav-button next">&#9654;</button>
-                
-                </div>
-            </div>
-        </div>
-        </section>
-
-<!-- Catálogo en Búsqueda/Browsing -->
-
-
-        <section class="browsingCatalog">
-
-            <div class="browsingCatalog--titleBox">
-<h2>Hacking de Aplicaciones Web</h2>
-<div class="resultsContainer">
-<p class="browsingCatalog__results">18.000</p> <span>Resultados</span>
-</div>
-</div>
-
-<!-- (Browsing) Búsqueda Encontrada (Catálogo principal, de momento)-->
-<div class="browsingCatalog__foundContainer">
-   
-    <%  for (let i = 0; i < Math.min(products.length, 7); i++) { %>    
-        
-        <article class="course--card"
-        >
+    <% } else { %>
+ <!-- Muestra los productos encontrados -->
+    <%- include('../partials/searchResults') %>
+            <% } %>
+                              
            
-            <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
-            <h3><%= products[i].title %></h3>
-            <small><%= products[i].users.name %></small>
-            <div class="course--card__rating">
-            <p>4.0</p> 
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </div>
-            <p class="course--card__price">$<%= products[i].price %></p>
-            <div class="course--cardDown">
-                <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].id %>'">Ver más</button>
-        
-        
-        </div>
-        </article>
-        
-        
-        <% }  %>
-        
-    
-    
-
-    
-</div>
-
-<!-- (Browsing) Búsqueda No Encontrada -->
-
-<div class="browsingCatalog--notFoundBox">
-    <div class="notFoundBox--inside">
-    <p>En el caso de no haber resultado, aparecería esto:</p>
-    <h2 class="notFoundContainer__title">Ups, no pudimos encontrar lo que buscabas</h2>
-    <img src="/imgs/Images/pixel_art 1 cropped.png" alt="">
-
-    <ul class="notFoundBox--list">
-        <li>Asegúrate de que todas las palabras estés <b>escritas correctamente</b>.</li>
-        <li>Utiliza <b>palabras más genéricas</b> o menos palabras.</li>
-        <li><b>Navega por las categorías</b> para encontrar un curso similar.</li>
-    </ul>
-</div>
-
-<div class="notFound--recommendationsBox">
-<h3>Podría interesarte</h3>
-
-<div class="notFound--recommendationsBox__container">
-    <p>Aquí estaría las tarjetas de la recomendación</p>
-</div>
-
-</div>
-</div>
-
-<!-- Paginador -->
 
 
-<div class="paginator--box"> 
-    <div class="paginator--boxInside">
-    <button class="paginator__buttonLeft" disabled><i class="fa-solid fa-chevron-left"></i></button>
-    <div class="paginator--numbersContainer">
-     <p class="selectedNumber">1</p> <p>2</p> <p>3</p> 
-    </div>
-     <button class="paginator__buttonRight"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-</div>
-        </section>
+
+
+
+
+
     </main>
     
 <%- include('../partials/footer') %>

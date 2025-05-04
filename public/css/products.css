@@ -142,7 +142,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 45px;
-    display: none;
+    
 }
 
 .browsingFilters__inside{
@@ -170,7 +170,6 @@
     font-size: 0.9rem;
     font-weight: 600;
     margin-left: 3px;
-    display: none;
 }
 
 .browsingFilter__button{
@@ -224,7 +223,7 @@
 /* Catálogo de Inicio  */
 
 .startCatalog{
-    display: none;
+   
 }
 
 .startCatalog--Box{
@@ -322,7 +321,7 @@
 /* (Browsing) Búsqueda No Encontrada */
 
 .browsingCatalog--notFoundBox{
-    display: none;
+ 
 }
 
 .notFoundBox--inside{

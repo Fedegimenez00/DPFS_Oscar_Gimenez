@@ -4,6 +4,7 @@ const fs = require('fs');
 const productsPath = path.resolve(__dirname, '../database/products.json');
 
 const db = require('../database/models');
+const { Op } = require("sequelize");
 
 const productController = {
   
@@ -175,23 +176,77 @@ const productController = {
         res.render(`partials/${type}`, { id }); // Renderizado del partial específico
       },
       
-    catalog: async (req, res) => {
-      try{
-      //Productos de la base de datos de SQL
-        const products = await db.Product.findAll({
-          include: ["categories", "subcategories", "languages", "users"]
-        }
-        )
+      catalog: async (req, res) => {
+        try {
+          // Se obtienen los productos
+          const products = await db.Product.findAll({
+            include: ["categories", "subcategories", "languages", "users"]
+          });
       
+          // Se obtienen las categorías
+          const categories = await db.Category.findAll();
+      
+          // Se obtienen las subcategorías
+          const subcategories = await db.Subcategory.findAll();
+      
+          //Se envian a la vista estas variables
+          return res.render('products/products', {
+            products,
+            categories,
+            subcategories,
+            isSearch: false
+          });
+        } catch (error) {
+          console.log(error);
+          res.status(500).send("Error cargando catálogo");
+        }
+      },
 
-      return res.render('products/products', {products}); // Se envía "products" a la vista
-      } catch (error) {
-        console.log(error);
+    
+
+      search: async (req, res) => {
+        try {
+          const { query, category, subcategory } = req.query;
+          let filters = {};
+      
+          if (query) {
+            filters.title = { [Op.like]: `%${query}%` };
+          }
+          if (category) {
+            filters.category_id = category;
+          }
+          if (subcategory) {
+            filters.subcategory_id = subcategory;
+          }
+      
+          const products = await db.Product.findAll({
+            where: filters,
+            include: ["categories", "subcategories", "languages", "users"]
+          });
+      
+          const categories = await db.Category.findAll();
+          const subcategories = await db.Subcategory.findAll();
+          const isSearch = Boolean(query || category || subcategory);
+
+      
+          res.render('products/products', {
+            products,
+            categories,
+            subcategories,
+            searchQuery: query,
+            selectedCategory: category,
+            selectedSubcategory: subcategory,
+            isSearch
+          });
+        } catch (error) {
+          console.log(error);
+        }
       }
+
       
     }
       
     
-};
+
 
 module.exports = productController;

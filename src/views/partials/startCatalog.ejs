@@ -1,0 +1,104 @@
+                                <!-- Catálogo de Inicio -->
+
+<section class="startCatalog">
+    <div class="startCatalog--Box">
+        <div class="startCatalog--Box__title"><h2>Clases destacadas</h2> <button>Ver todo</button></div>
+        <div class="startCatalog--featuredBox__container">
+            <!-- Carosel de productos-->
+</div>
+<div class="productCourses--container">
+<button class="nav-button prev disabled">&#9664;</button>
+
+<div class="productCourses__carousel">
+
+
+
+
+<button class="nav-button next">&#9654;</button>
+
+</div>
+        </div>
+    </div>
+    
+
+    
+    <div class="startCatalog--Box">
+        <div class="startCatalog--Box__title"><h2>Clases populares</h2> <button>Ver todo</button></div>
+        <div class="startCatalog--popularBox__container">
+            
+            
+<%  for (let i = 0; i < Math.min(products.length, 4); i++) { %>    
+    
+<article class="course--card">
+
+<img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
+<h3><%= products[i].title %></h3>
+<small><%= products[i].users.name %></small>
+<div class="course--card__rating">
+<p>4.0</p> 
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-regular fa-star"></i>
+</div>
+<p class="course--card__price">$<%= products[i].price %></p>
+<div class="course--cardDown">
+    <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].id %>'">Ver más</button>
+
+
+</div>
+</article>
+
+
+<% }  %>
+
+           
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="startCatalog--Box">
+        <div class="startCatalog--Box__title"><h2>Clases más recientes</h2></div>
+        <div class="startCatalog--recentBox__container">
+            <div class="productCourses--container">
+                <button class="nav-button prev disabled">&#9664;</button>
+            
+                <div class="productCourses__carousel">
+            
+            
+                    <%  for (let i = 0; i < Math.min(products.length, 10); i++) { %>    
+    
+                        <article class="course--card">
+                           
+                            <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
+                            <h3><%= products[i].coursetitle %></h3>
+                            <small>Author's name</small>
+                            <div class="course--card__rating">
+                            <p>4.0</p> 
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                            <p class="course--card__price">$<%= products[i].price %></p>
+                            <div class="course--cardDown">
+                                <button class="course--card__previewButton" onclick="location.href='/products/detail/<%= products[i].courseid %>'">Ver más</button>
+                        
+                        
+                        </div>
+                        </article>
+                        <% }  %>
+
+                    </div>
+                
+                    <button class="nav-button next">&#9654;</button>
+                    
+                    </div>
+                </div>
+            </div>
+            </section>

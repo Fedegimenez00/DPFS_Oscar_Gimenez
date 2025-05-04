@@ -1,0 +1,54 @@
+<!-- Caja de filtros (Para el Catálogo Browsing)-->
+
+<section class="browsingFilters">
+    <div class="browsingFilters__inside">
+        <div class="browsingFilter--box">
+        <button class="browsingFilter__button"><i class="fa-solid fa-sliders"></i>Filtrar</button> <span>(0)</span> 
+    </div>
+    
+    <div class="browsingFilterSelection"><h3>Ordenar por</h3>
+        <select name="" id="">
+            <option value="">Más populares</option>
+            <option value="">Más recientes</option>
+        </select></div>
+    </div>
+    </section>
+    
+<!-- (Browsing) Búsqueda No Encontrada -->
+<div class="browsingCatalog--titleBox">
+       
+    <h2><% if (searchQuery) { %>
+        <%= searchQuery %>
+      <% } else if (selectedCategory) { %>
+        <%= categories.find(category => category.id == selectedCategory)?.name %>
+      <% } %></h2>
+    <div class="resultsContainer">
+    <p class="browsingCatalog__results">
+        <%= products.length %> 
+    </p> 
+    <span>Resultado<%= products.length === 1 ? '' : 's' %></span>
+    
+    </div>
+    </div>
+    
+<div class="browsingCatalog--notFoundBox">
+    <div class="notFoundBox--inside">
+    <h2 class="notFoundContainer__title">Ups, no pudimos encontrar lo que buscabas</h2>
+    <img src="/imgs/Images/pixel_art 1 cropped.png" alt="">
+
+    <ul class="notFoundBox--list">
+        <li>Asegúrate de que todas las palabras estés <b>escritas correctamente</b>.</li>
+        <li>Utiliza <b>palabras más genéricas</b> o menos palabras.</li>
+        <li><b>Navega por las categorías</b> para encontrar un curso similar.</li>
+    </ul>
+</div>
+
+<div class="notFound--recommendationsBox">
+<h3>Podría interesarte</h3>
+
+<div class="notFound--recommendationsBox__container">
+    <p>Aquí estaría las tarjetas de la recomendación</p>
+</div>
+
+</div>
+</div>
