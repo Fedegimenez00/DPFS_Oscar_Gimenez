@@ -29,7 +29,8 @@
             
 <%  for (let i = 0; i < Math.min(products.length, 4); i++) { %>    
     
-<article class="course--card">
+<article class="course--card"
+style="border: solid <%- products[i].categories?.borderColor %> 1px">
 
 <img class="course--card__photo" src="/database/images/courses/<%= products[i]?.image %>" alt="Imagen de Curso">
 <h3><%= products[i].title %></h3>
