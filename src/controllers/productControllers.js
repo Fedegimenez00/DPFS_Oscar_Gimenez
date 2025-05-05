@@ -185,7 +185,7 @@ const productController = {
       
           // Se obtienen las categorías
           const categories = await db.Category.findAll();
-      
+
           // Se obtienen las subcategorías
           const subcategories = await db.Subcategory.findAll();
       
@@ -194,7 +194,9 @@ const productController = {
             products,
             categories,
             subcategories,
-            isSearch: false
+            isSearch: false,
+            selectedCategory: null,
+            selectedSubcategory: null 
           });
         } catch (error) {
           console.log(error);
@@ -224,7 +226,9 @@ const productController = {
             include: ["categories", "subcategories", "languages", "users"]
           });
       
-          const categories = await db.Category.findAll();
+          const categories = await db.Category.findAll({
+            attributes: ['id', 'name', 'catalogWallpaper']
+          });
           const subcategories = await db.Subcategory.findAll();
           const isSearch = Boolean(query || category || subcategory);
 

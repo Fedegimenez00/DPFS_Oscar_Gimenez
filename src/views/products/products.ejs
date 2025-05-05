@@ -14,11 +14,19 @@
 <section class="catalogHeader">
     <article class="catalogHeader--box">
         <div class="catalogHeader--boxInside">
-<img src="/imgs/Images/Catalogo Header.png">
-<div class="catalogHeader__titleContainer">
-    <h1 class="catalogHeader--title">Explora nuestros diversos cursos en Ciberseguridad</h1>
-</div>
-
+            <% const activeCategory = categories.find(category => category.id == selectedCategory); %>
+            <% if (activeCategory && activeCategory.catalogWallpaper) { %>
+                <img src="/imgs/Wallpapers/categories/<%= activeCategory.catalogWallpaper %>" alt="Banner de <%= activeCategory.name %>">
+                <div class="catalogHeader__titleContainer">
+                  <h1 class="catalogHeader--title">Cursos de <%= activeCategory.name %></h1>
+                </div>
+              <% } else { %>
+                <img src="/imgs/Wallpapers/cyberSecurityCoursesBanner.jpg" alt="Banner del catálogo">
+                <div class="catalogHeader__titleContainer">
+                  <h1 class="catalogHeader--title">Explora nuestros diversos cursos en Ciberseguridad</h1>
+                </div>
+              <% } %>
+            
 </div>
     </article>
 </section>
