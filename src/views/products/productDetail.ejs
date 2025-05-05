@@ -11,15 +11,13 @@
         <section class="section--productDetail__Desktop">
 
             <div class="productDetail--categoryDesktop">
-                <p><%= myProduct.categories?.name %> > <%= myProduct.subcategories?.name %></p>
-                <hr style="border-color: <%- myProduct.categories?.borderColor %>">
+                <p> <u style="border-bottom: 1px solid <%- myProduct.categories?.borderColor %>; text-decoration: none;"><%= myProduct.categories?.name %></u> > <%= myProduct.subcategories?.name %></p>
                 
                 
 
             </div>
 
-            <h1 class="productDetail--title"><%= myProduct.title %></h1>
-<hr class="productDetail--title__underLine" style="border-color: <%- myProduct.categories?.borderColor %>">
+            <h1 class="productDetail--title"><u style="border-bottom: 1px solid <%- myProduct.categories?.borderColor %>; text-decoration: none;"><%= myProduct.title %></u></h1>
 <p class="productDetail--quickDescription"><%= myProduct.subtitle %></p>
 
 <div class="productDetail--score">
@@ -50,8 +48,7 @@
         <section class="section--productDetail">
             
             <div class="productDetail--category">
-                <small><%= myProduct.categories?.name %> > <%= myProduct.subcategories?.name %></small>
-                <hr style="border-color: <%- myProduct.categories?.borderColor %>">
+                <small> <u style="border-bottom: 1px solid <%- myProduct.categories?.borderColor %>; text-decoration: none;"><%= myProduct.categories?.name %></u> > <%= myProduct.subcategories?.name %></small>
             </div>
 
             <div class="section--productDetail__inside"
@@ -67,8 +64,7 @@
 
 <div class="productDetail__justUpperInside">
 <article class="productDetail__upperInside">
-<h1 class="productDetail--title"> <%= myProduct.title %></h1>
-<hr class="productDetail--title__underLine">
+<h1 class="productDetail--title"><u style="border-bottom: 1px solid <%- myProduct.categories?.borderColor %>; text-decoration: none;"><%= myProduct.title %></u> </h1>
 <p class="productDetail--quickDescription"><%= myProduct.subtitle%></p>
 
 <div class="productDetail--score">
@@ -192,8 +188,8 @@ style=" border: solid <%- myProduct.categories?.borderColor %> 1px;
 <section class="productDetail--contents">
     <div class="productDetail--contents__inside">
     <div class="productDetail--contents__titles">
-<h2>Contenido del curso</h2>
-<hr style="border-color: <%- myProduct.categories?.borderColor %>">
+<h2 style="margin-bottom: 15px"> 
+    <u style="border-bottom: 1px solid <%- myProduct.categories?.borderColor %>; text-decoration: none; ">Contenido del curso</u></h2>
 <p>14 secciones | 20 clases | 5h 20 minutos de duración total</p>
 </div>
 
