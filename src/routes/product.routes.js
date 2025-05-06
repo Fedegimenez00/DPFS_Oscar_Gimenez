@@ -8,13 +8,15 @@ const {show, create, cart, getPartial, catalog, search, save, edit, update, dest
 //Subir el archivo usando multer (Con su disposición como middleware)
 const { uploadProd } = require('../middlewares/multer')
 const guestAuth = require('../middlewares/guestAuth.js')
-
+const {
+    productAddValidator,
+  } = require("../middlewares/validator.js");
 router 
 .get ('/products/detail/:id', show)
 .get ('/products/add', guestAuth, create)
-.post('/products/add', uploadProd.single('image'), save)
+.post('/products/add', uploadProd.single('image'), productAddValidator, save)
 .get('/products/edit/:id', guestAuth, edit)
-.put('/products/edit/:id', uploadProd.single('image'), update)
+.put('/products/edit/:id', uploadProd.single('image'), productAddValidator, update)
 
 .delete('/products/delete/:id', guestAuth, destroy)
 

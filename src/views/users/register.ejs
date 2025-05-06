@@ -50,9 +50,12 @@
                 <label for="password2"></label>
             </div>
             
-            <div class="Hidden_avatar" style="display: none;">
+            <div class="Hidden_avatar">
                 <label for="avatar">User Profile</label>
-                <input type="file" name="avatar" id="avatar" value="Images/user.png">
+                <input type="file" name="avatar" id="avatar">
+                <% if (locals.errors?.avatar) { %>
+                    <p class="display-error"><%= locals.errors.avatar.msg %></p>
+                    <% } %>
             </div>
             <button type="submit" class="registerCard--body__button">Regístrate</button>
         </form>

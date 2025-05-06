@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const { validationResult } = require('express-validator');
 const productsPath = path.resolve(__dirname, '../database/products.json');
 
 const db = require('../database/models');
@@ -39,7 +39,13 @@ const productController = {
 
     save : async (req, res) =>{
       let user = req.session.userLogged;
+      const resultValidation = validationResult(req);
 
+      const categories = await db.Category.findAll()
+      const subcategories = await db.Subcategory.findAll();
+      const languages = await db.Language.findAll();
+      
+      if (resultValidation.isEmpty()) {
       let newProduct = {
         title: req.body.title,
         subtitle: req.body.subtitle,
@@ -65,7 +71,15 @@ const productController = {
     } else {
       return res.redirect('/profile/' + user.id + '/create');
     }
-
+  } else {
+    return res.render("products/productAdd", {
+      errors: resultValidation.mapped(),
+      old: req.body,
+      categories,
+      subcategories,
+      languages
+    });
+  }
     },
 
     edit : async (req,res) =>{
@@ -82,7 +96,13 @@ const productController = {
   
   update: async (req, res) => {
     const user = req.session.userLogged;
+    const resultValidation = validationResult(req);
 
+    const categories = await db.Category.findAll()
+    const subcategories = await db.Subcategory.findAll();
+    const languages = await db.Language.findAll();
+    
+    if (resultValidation.isEmpty()) {
     // Se busca el producto original por id
     let productToUpdate = await db.Product.findByPk(req.params.id);
     
@@ -123,7 +143,17 @@ const productController = {
     } else {
       return res.redirect('/profile/' + user.id + '/create');
     }
-},
+
+  } else {
+    return res.render("products/productAdd", {
+      errors: resultValidation.mapped(),
+      old: req.body,
+      categories,
+      subcategories,
+      languages
+    });
+}
+ },
 
 
     destroy: async (req, res) => {

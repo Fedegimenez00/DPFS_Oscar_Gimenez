@@ -38,18 +38,27 @@
     <div class="forms--box__title">
 <h1>Página de inicio del curso</h1></div>
 
+<ul class="display-error"></ul>
+
+
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Título del curso</h3>
-    <label for="coursetitle"></label>
-    <input type="text" placeholder="Inserta el nombre de tu curso." name="title" id="title">
-
+    <label for="title"></label>
+    <input type="text" placeholder="Inserta el nombre de tu curso." name="title" id="title"
+    value="<%= locals.old?.title ? old.title : '' %>">
+    <% if (locals.errors?.title) { %>
+        <p class="display-error"><%= locals.errors.title.msg %></p>
+        <% } %>
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Subtítulo del curso</h3>
-    <label for="coursesubtitle"></label>
-    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="subtitle" id="subtitle">
-
+    <label for="subtitle"></label>
+    <input type="text" placeholder="Introduce el subtítulo de tu curso." name="subtitle" id="subtitle"
+    value="<%= locals.old?.subtitle ? old.subtitle : '' %>">
+    <% if (locals.errors?.subtitle) { %>
+        <p class="display-error"><%= locals.errors.subtitle.msg %></p>
+        <% } %>
 </div>
 
 <div class="forms--box__inputContainer">
@@ -70,7 +79,13 @@
 
     Input oculto para enviar el contenido 
 -->
-    <textarea id="coursedescription" name="description" class="enrichedTexarea" style="display: block;"></textarea>
+    <textarea id="coursedescription" name="description" class="enrichedTexarea" style="display: block;">
+        <%= locals.old?.description ? old.description : '' %>
+    </textarea>
+   <label for="description"></label>
+    <% if (locals.errors?.description) { %>
+        <p class="display-error"><%= locals.errors.description.msg %></p>
+        <% } %>
 </div>
 </div>
 
@@ -82,30 +97,36 @@
     <div class="forms--box__selectContainer">
     <label for="language"></label>
     <select name="language" id="language">
-        <option class="selectGrey" selected disabled>-- Seleccionar lenguaje --</option>
+        <option value="" class="selectGrey" selected disabled>-- Seleccionar lenguaje --</option>
         <% languages.forEach(language => { %>
             <option value="<%= language.id %>"><%= language.name %> </option>
             <% }) %>
 
 </select>
+<% if (locals.errors?.language) { %>
+    <p class="display-error"><%= locals.errors.language.msg %></p>
+    <% } %>
 </div>
 
 <div class="forms--box__selectContainer">
     <label for="category"></label>
     
     <select name="category" id="category">
-        <option class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
+        <option value="" class="selectGrey" selected disabled>-- Seleccionar categoría --</option>
         <% categories.forEach(category => { %>
             <option value="<%= category.id %>"><%= category.name %> </option>
             <% }) %>
 
 </select>
+<% if (locals.errors?.category) { %>
+    <p class="display-error"><%= locals.errors.category.msg %></p>
+    <% } %>
 </div>
 
 <div class="forms--box__selectContainer">
     <label for="subcategory"></label>
-    <select name="subcategory" id="subcategory">
-        <option class="selectGrey" disabled selected>-- Seleccionar subcategoría --</option>
+    <select  name="subcategory" id="subcategory">
+        <option value="" class="selectGrey" value="0" disabled selected>-- Seleccionar subcategoría --</option>
         <% subcategories.forEach(subcategory => { %>
           <option 
             value="<%= subcategory.id %>" 
@@ -116,6 +137,7 @@
         <% }) %>
       </select>
 </div>
+
 </div>
 </div>
 
@@ -134,7 +156,10 @@
             <p class="pseudoButton--title">Subir archivo</p>
         </div>
     <input type="file" name="image" id="image">
-    </div>
+  
+    <% if (locals.errors?.image) { %>
+        <p class="display-error"><%= locals.errors.image.msg %></p>
+        <% } %>
 </div>
 
 
@@ -160,10 +185,15 @@
     <div class="box--priceInput"> 
         <div class="box--priceInput__Inside">
         <label for="price"></label>
-    <input type="number" value="0" min="0" max="100000" step="0" name="price" id="price">
+    <input type="number" min="0" value="<%= locals.old?.price ? old.price : '0' %>"  name="price" id="price">
+    
 <p>$</p>
 </div>
+      
 </div>
+<% if (locals.errors?.price) { %>
+    <p class="display-error"><%= locals.errors.price.msg %></p>
+    <% } %>
 </div>
 </article>
 
@@ -461,5 +491,11 @@ estudiantes deseen adquirir tus cursos.
     <script src="/js/subToggle.js"></script>
     <script src="/js/addItems.js"></script>
     <script src="/js/previewImage.js"></script>
+
+     <!-- Validator JS: para validaciones del lado del front -->
+     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    
+     <!-- Script JS -->
+     <script src="/js/validations/productAdd.js"></script>
 </body>
 </html>

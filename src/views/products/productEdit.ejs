@@ -38,18 +38,24 @@
     <div class="forms--box__title">
 <h1>Página de inicio del curso</h1></div>
 
+
+
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Título del curso</h3>
     <label for="title"></label>
     <input type="text" placeholder="Inserta el nombre de tu curso." name="title" id="title" value="<%= productEdit.title%>">
-
+    <% if (locals.errors?.title) { %>
+        <p class="display-error"><%= locals.errors.title.msg %></p>
+        <% } %>
 </div>
 
 <div class="forms--box__inputContainer">
     <h3 class="forms--box__inputTitle">Subtítulo del curso</h3>
     <label for="subtitle"></label>
     <input type="text" placeholder="Introduce el subtítulo de tu curso." name="subtitle" id="subtitle" value="<%= productEdit.subtitle%>">
-
+    <% if (locals.errors?.subtitle) { %>
+        <p class="display-error"><%= locals.errors.subtitle.msg %></p>
+        <% } %>
 </div>
 
 <div class="forms--box__inputContainer">
@@ -72,6 +78,10 @@
 -->
     <textarea id="description" name="description" class="enrichedTexarea" style="display: block;"><%= productEdit.description%> 
     </textarea>
+    <label for="description"></label>
+    <% if (locals.errors?.description) { %>
+        <p class="display-error"><%= locals.errors.description.msg %></p>
+        <% } %>
 </div>
 </div>
 
@@ -88,7 +98,10 @@
             <% }) %>
 
 </select>
-        
+<% if (locals.errors?.language) { %>
+    <p class="display-error"><%= locals.errors.language.msg %></p>
+    <% } %>
+</div>
 
 
 <div class="forms--box__selectContainer">
@@ -101,7 +114,9 @@
             <% }) %>
 
 </select>
-      
+<% if (locals.errors?.category) { %>
+    <p class="display-error"><%= locals.errors.category.msg %></p>
+    <% } %>
 </div>
 
 <div class="forms--box__selectContainer">
@@ -131,11 +146,14 @@
     <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
     <div class="forms--box__fileInput">
         <label for="image"></label>    
+       <div class="pseudoButton">
+            <p class="pseudoButton--title">Subir archivo</p>
+        </div> 
         <input type="file" name="image">
 
-        <div class="pseudoButton">
-            <p class="pseudoButton--title">Subir archivo</p>
-        </div>
+        <% if (locals.errors?.image) { %>
+            <p class="display-error"><%= locals.errors.image.msg %></p>
+            <% } %>
 
     </div>
 </div>
@@ -464,6 +482,12 @@ estudiantes deseen adquirir tus cursos.
     <script src="/js/subToggle.js"></script>
     <script src="/js/addItems.js"></script>
     <script src="/js/previewImage.js"></script>
+
+     <!-- Validator JS: para validaciones del lado del front -->
+     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    
+     <!-- Script JS -->
+     <script src="/js/validations/productAdd.js"></script>
 
 </body>
 </html>
