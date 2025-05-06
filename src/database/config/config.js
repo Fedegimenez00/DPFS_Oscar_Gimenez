@@ -10,22 +10,33 @@ module.exports = {
       storage: path.resolve(__dirname, '../../../databaseSQLite/zerotrust_db.sqlite')
    */ },
     test: {
+        username: "gimenez", //xampp
+      password: 'DigitalHouse1234',
+      database: "gimenez_zerotrustdb",
+      host: "mysql-gimenez.alwaysdata.net",
+       dialect: "mysql",  
+        /*
       username: "root", //xamp
       password: null,
       database: "database_test",
       host: "127.0.0.1",
-      dialect: "mysql", 
+      dialect: "mysql", */
      /* dialect: "sqlite", //Elemento temporal de desarrollo
       storage: path.resolve(__dirname, '../../../databaseSQLite/zerotrust_db.sqlite')
     */
       },
     production: {
-      username: "root", //xampp
+        username: "gimenez", //xampp
+      password: 'DigitalHouse1234',
+      database: "gimenez_zerotrustdb",
+      host: "mysql-gimenez.alwaysdata.net",
+       dialect: "mysql",  
+     /* username: "root", //xampp
       password: null,
       database: "database_production",
       host: "127.0.0.1",
       dialect: "mysql", 
-      
+      */
      /* dialect: "sqlite", //Elemento temporal de desarrollo
       storage: path.resolve(__dirname, '../../../databaseSQLite/zerotrust_db.sqlite') 
     */
