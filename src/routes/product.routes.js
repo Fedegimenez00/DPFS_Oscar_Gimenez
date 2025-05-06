@@ -10,13 +10,14 @@ const { uploadProd } = require('../middlewares/multer')
 const guestAuth = require('../middlewares/guestAuth.js')
 const {
     productAddValidator,
+    productEditValidator,
   } = require("../middlewares/validator.js");
 router 
 .get ('/products/detail/:id', show)
 .get ('/products/add', guestAuth, create)
 .post('/products/add', uploadProd.single('image'), productAddValidator, save)
 .get('/products/edit/:id', guestAuth, edit)
-.put('/products/edit/:id', uploadProd.single('image'), productAddValidator, update)
+.put('/products/edit/:id', uploadProd.single('image'), productEditValidator, update)
 
 .delete('/products/delete/:id', guestAuth, destroy)
 
