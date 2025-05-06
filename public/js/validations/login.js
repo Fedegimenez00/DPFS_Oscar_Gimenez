@@ -17,8 +17,8 @@ window.onload = () => {
      //Validación de contraseña
      if (validator.isEmpty(password)) {
         errors.push('Ingrese una contraseña')
-     } else if (!validator.isLength(password, {min: 5})){
-        errors.push('La contraseña debe tener al menos 5 carácteres ')
+     } else if (!validator.isLength(password, {min: 8})){
+        errors.push('La contraseña debe tener al menos 8 carácteres ')
      }
      
 
