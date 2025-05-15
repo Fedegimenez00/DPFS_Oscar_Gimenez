@@ -5,8 +5,9 @@
 /* Nombre de usuario y Titular */
 
 .userTitle--section{
-    justify-items: center;
     margin-top: 45px;
+    display: flex;
+    justify-content: center;
 }
 
 .userTitle--card{
@@ -32,8 +33,9 @@
 /* Avatar de usuario */
 
 .userAvatar--section{
-    justify-items: center;
     margin-top: 45px;
+    display: flex;
+    justify-content: center;
     
 }
 
@@ -72,9 +74,11 @@
 /* Cuerpo del Perfil */
 
 .profileBody--section{
-    justify-items: center;
     margin-top: 45px;
     margin-bottom: 205px;
+    display: flex;
+    justify-content: center;
+    
 
 }
 .profileBody--sectionInside{
@@ -188,6 +192,12 @@ color: var(--color-amarilloDorado);
         align-items: center;
         margin-top: 40px;
         margin-bottom: 105px;
+}
+
+.profileEdit--DeleteForm{
+  flex-direction: column;
+  align-items: center;
+  display: flex;
 }
 
 .profileEdit--sectionContainer{
