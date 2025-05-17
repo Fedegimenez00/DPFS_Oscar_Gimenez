@@ -1,2 +1,4 @@
 /node_modules
 public/js/e.js
+src/database/models/ProgramsContent
+.vscode
