@@ -1,4 +1,4 @@
-const fileInput = document.getElementById("avatar");
+const fileInput = document.getElementById("image");
 const fileNameDisplay = document.getElementById("file-name");
 
 fileInput.addEventListener("change", () => {

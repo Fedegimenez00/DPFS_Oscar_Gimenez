@@ -6,7 +6,7 @@
 <body>
     <%- include('../partials/header') %>
     
-<main>
+<main class="main--productAdd">
 
 <section class="section--selectForms">
 
@@ -26,6 +26,12 @@
         <button class="toggle-button" data-target="contentForm5">Promociones (WIP)</button>
         </div>
     </div>
+    <div class="publish__insideDesktop"> 
+            <form class="publish__insideDesktop" action='/products/add' method="POST" enctype="multipart/form-data">
+             <button type="submit" class="publish--send" style="background-color: var(--color-azulVioleta);">Publicar</button>
+            <button type="reset" class="publish--cancel" style="background-color: var(--color-blancoApagadoTranslucido2)">Cancelar</button>
+    </form>
+        </div>
 </article>
 </section>
 
@@ -38,7 +44,7 @@
     <div class="forms--box__title">
 <h1>Página de inicio del curso</h1></div>
 
-<ul class="display-error"></ul>
+<ul class="errors"></ul>
 
 
 <div class="forms--box__inputContainer">
@@ -139,36 +145,46 @@
 
 <div class="forms--box__previewContainer">
     <h3 class="forms--box__inputTitle">Imagen del curso (WIP)</h3>
+    <div class="forms--box__previewContainerInside">
     <div class="previewContainer">
     <div class="previewBox">
     <img id="imgPreview" src="/database/images/courses/<%= productEdit.image%>">
 </div>
 </div>
+    <div class="imageInputContainer">
     <p class="previewDescription">Carga la imagen de tu curso aquí. Se recomienda que tenga los formatos: .jpg, .jpeg, .gif, o .png; Y sin texto en la imagen</p>
+    <div class="imageInputContainerInside">
+    <span id="file-name">No has seleccionado ...</span>
     <div class="forms--box__fileInput">
         <label for="image"></label>    
        <div class="pseudoButton">
             <p class="pseudoButton--title">Subir archivo</p>
         </div> 
         <input type="file" name="image">
-
+        </div>
         <% if (locals.errors?.image) { %>
             <p class="display-error"><%= locals.errors.image.msg %></p>
             <% } %>
 
     </div>
 </div>
+</div>
 
+</div>
 
 <div class="forms--box__previewContainer">
     <h3 class="forms--box__inputTitle">Video promocional (WIP)</h3>
+    <div class="forms--box__previewContainerInside">
     <div class="previewContainer">
         <div class="previewBox">
         <img src="/imgs/Images/video preview.png">
     </div>
     </div>
+        <div class="imageInputContainer">
 <p class="previewDescription">Carga el video promocional de tu curso, un buen video servirá como un adelanto de lo que se aprenderá.</p>
-    <div class="forms--box__fileInput">
+    <div class="imageInputContainerInside">
+    <span id="file">No has seleccionado ...</span>
+<div class="forms--box__fileInput">
     <label for=""></label>
     <div class="pseudoButton">
         <p class="pseudoButton--title">Subir archivo</p>
@@ -176,6 +192,8 @@
 <input type="file" name="" id="" disabled>
 </div>
 </div>
+</div>
+    </div>
 
 <div class="forms--box__priceContainer">
     <h3 class="forms--box__inputTitle">Precio</h3>
