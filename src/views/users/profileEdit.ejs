@@ -69,6 +69,7 @@
     </div>
     <div class="profileEdit--avatarContainer">
         <h3>Imagen de perfil</h3>
+        <div class="avatarInputsContainerInside">
         <div class="profileEdit--avatarImage">
             <div class="profileEdit--avatarImage__inside">
                 <div class="previewBox">
@@ -76,16 +77,23 @@
                 </div>
 
             </div>
-        <p>Agregar / Cambiar imagen de perfil</p>
     </div>
+    <div class="avatarInputContainer">
+        <p class="avatarInputRecommendations">Aquí puedes cargar tu imagen de perfil. Se recomienda usar los formatos: .jpg, .jpeg, .png</p>
+        <p class="avatarInputInsert">Agregar / Cambiar imagen de perfil</p>
+        <div class="avatarInputContainerInside">
+    <span id="file-name">No has seleccionado ...</span>
 <div class="profileEdit--avatarInputContainer__input">
+    
     <input type="file" name="avatar" id="avatar">
     <div class="pseudoButton">
         <p class="pseudoButton--title">Subir archivo</p>
     </div>
 </div>
+</div>
+</div>
     </div>
-    
+</div>
     </div>
 </div>
 <div class="profileEdit__buttonContainer">
@@ -100,6 +108,8 @@
     <%- include('../partials/footer') %>
     
     <script src="/js/previewAvatar.js"></script>
+    <script src="/js/avatarInput.js"></script>
+
     <!-- Agregar los elementos del profileEdit -->
 
 </body>

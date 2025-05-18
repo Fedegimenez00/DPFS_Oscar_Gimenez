@@ -1,80 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
+  <%- include('../partials/head') %>
 
-<body class="main--register-login">
+  <body class="main--register-login">
     <%- include('../partials/header') %>
 
-
     <main class="main--register-login">
+      <section class="register--section">
+        <article class="registerCard">
+          <div class="registerCard--title">
+            <h1>Regístrate antes de continuar</h1>
+            <hr />
+            <ul class="errors"></ul>
+          </div>
 
-<section class="register--section">
-    <article class="registerCard">
-        <div class="registerCard--title">
-        <h1>Regístrate antes de continuar</h1>
-        <hr>
-        <ul class="display-error"></ul>
-    </div>
-
-    <div class="registerCard--body">
-        <form action='/register' method="POST" enctype="multipart/form-data">
-            <div class="registerCard--bodyInputs">
-            <input  type="text" name="name" id="name" placeholder="Nombre de usuario"
-            value="<%= locals.old?.email ? old.email : '' %>">
-            <label for="name"></label>
-            <% if (locals.errors?.name) { %>
+          <div class="registerCard--body">
+            <form
+              action="/register"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <div class="registerCard--bodyInputs">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Nombre de usuario"
+                  value="<%= locals.old?.email ? old.email : '' %>"
+                />
+                <label for="name"></label>
+                <% if (locals.errors?.name) { %>
                 <p class="display-error"><%= locals.errors.name.msg %></p>
                 <% } %>
-            </div>
+              </div>
 
-            <div class="registerCard--bodyInputs">
-                <input  type="email" name="email" id="email" placeholder="Correo Electrónico"
-                value="<%= locals.old?.email ? old.email : '' %>">
+              <div class="registerCard--bodyInputs">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Correo Electrónico"
+                  value="<%= locals.old?.email ? old.email : '' %>"
+                />
                 <label for="email"></label>
                 <% if (locals.errors?.email) { %>
-                    <p class="display-error"><%= locals.errors.email.msg %></p>
-                    <% } %>
-            </div>
+                <p class="display-error"><%= locals.errors.email.msg %></p>
+                <% } %>
+              </div>
 
-            <div class="registerCard--bodyInputs">
-                <input  type="password" name="password" id="password" placeholder="Contraseña"
-                value="<%= locals.old?.password ? old.password : '' %>">
+              <div class="registerCard--bodyInputs">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Contraseña"
+                  value="<%= locals.old?.password ? old.password : '' %>"
+                />
                 <label for="password"></label>
                 <% if (locals.errors?.password) { %>
-                    <p class="display-error"><%= locals.errors.password.msg %></p>
-                    <% } %>
-            </div>
+                <p class="display-error"><%= locals.errors.password.msg %></p>
+                <% } %>
+              </div>
 
-            <div class="registerCard--bodyInputs">
-                <input  type="password" name="password2" id="password2" placeholder="Confirmar contraseña">
+              <div class="registerCard--bodyInputs">
+                <input
+                  type="password"
+                  name="password2"
+                  id="password2"
+                  placeholder="Confirmar contraseña"
+                />
                 <label for="password2"></label>
-            </div>
-            
-            <div class="Hidden_avatar">
-                <label for="avatar">User Profile</label>
-                <input type="file" name="avatar" id="avatar">
-                <% if (locals.errors?.avatar) { %>
-                    <p class="display-error"><%= locals.errors.avatar.msg %></p>
-                    <% } %>
-            </div>
-            <button type="submit" class="registerCard--body__button">Regístrate</button>
-        </form>
-    </div>
-    <div class="registerCard--footer">
-    <small>¿Ya tienes una cuenta?</small>
-    <a href="/login">Inicia Sesión</a>
-</div>
-    </article>
-</section>
+              </div>
 
+              <div class="Hidden_avatar">
+                <label for="avatar">User Profile</label>
+                <input type="file" name="avatar" id="avatar" />
+                <% if (locals.errors?.avatar) { %>
+                <p class="display-error"><%= locals.errors.avatar.msg %></p>
+                <% } %>
+              </div>
+              <button type="submit" class="registerCard--body__button">
+                Regístrate
+              </button>
+            </form>
+          </div>
+          <div class="registerCard--footer">
+            <small>¿Ya tienes una cuenta?</small>
+            <a href="/login">Inicia Sesión</a>
+          </div>
+        </article>
+      </section>
     </main>
-  
+
     <%- include('../partials/footer') %>
 
- <!-- Validator JS: para validaciones del lado del front -->
+    <!-- Validator JS: para validaciones del lado del front -->
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-    
+
     <!-- Script JS -->
     <script src="/js/validations/register.js"></script>
-</body>
+  </body>
 </html>

@@ -1,629 +1,711 @@
-.main--profile{
+.main--profile {
+}
 
+.UserProfileContainer {
 }
 
 /* Nombre de usuario y Titular */
 
-.userTitle--section{
-    margin-top: 45px;
-    display: flex;
-    justify-content: center;
+.userTitle--section {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
 }
 
-.userTitle--card{
-    border: solid 1px var(--color-blancoApagado);
-    background-color: var(--color-grisOscuroTranslucido);
-    padding-left: 15px;
-    padding-top: 7px;
-    padding-bottom: 13px;
-        width: 90%;
+.userTitle--card {
+  border: solid 1px var(--color-blancoApagado);
+  background-color: var(--color-grisOscuroTranslucido);
+  padding-left: 15px;
+  padding-top: 7px;
+  padding-bottom: 13px;
+  width: 90%;
 }
 
-.userTitle--card h1{
-    font-size: 2.6rem;
-    margin-left: 0px;
-    margin-bottom: 2px;
+.userTitle--card h1 {
+  font-size: 2.6rem;
+  margin-left: 0px;
+  margin-bottom: 2px;
 }
 
-.userTitle--card h2{
-    font-size: 1.8rem;
-    font-weight: 300;
+.userTitle--card h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
 }
 
 /* Avatar de usuario */
 
-.userAvatar--section{
-    margin-top: 45px;
-    display: flex;
-    justify-content: center;
-    
+.userAvatar--section {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
 }
 
-.userAvatar--card{
-    width: 90%;
+.userAvatar--card {
+  width: 90%;
 }
 
-.userAvatar--card img{
-    width: 100%;
-    border: solid var(--color-blancoApagado) 1px;
-    border-radius: 5px;
+.userAvatar--card img {
+  width: 100%;
+  border: solid var(--color-blancoApagado) 1px;
+  border-radius: 5px;
+}
+
+.userAvatar--cardDesktop {
+  display: none;
 }
 
 /* Editar Usuario */
 
-.editUser--button{
-    background-color: var(--color-purpuraClaroTranslucido);
-    border: solid 1px var(--color-purpuraClaro);
-    color: var(--color-blancoApagado);
-    width: 100%;
-    font-size: 1.5rem;
-    padding: 12px 0px;
-    border-radius: 5px;
-    margin-top: 10px;
-   
+.editUser--button {
+  background-color: var(--color-purpuraClaroTranslucido);
+  border: solid 1px var(--color-purpuraClaro);
+  color: var(--color-blancoApagado);
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 12px 0px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
-.editUser--button i{
-    margin-right: 6px;
+.editUser--button i {
+  margin-right: 6px;
 }
 
-.editUser--button{
-
+.editUser--button {
 }
 
 /* Cuerpo del Perfil */
 
-.profileBody--section{
-    margin-top: 45px;
-    margin-bottom: 205px;
-    display: flex;
-    justify-content: center;
-    
-
+.profileBody--section {
+  margin-top: 45px;
+  margin-bottom: 205px;
+  display: flex;
+  justify-content: center;
 }
-.profileBody--sectionInside{
-    width: 86%;
-    border: solid var(--color-blancoApagado) 1px;
-    padding: 13px 15px;
+.profileBody--sectionInside {
+  width: 86%;
+  border: solid var(--color-blancoApagado) 1px;
+  padding: 13px 15px;
 }
 
 /* Descripción de perfil */
 
-.profileBody--description{
-    min-height: 240px;
+.profileBody--description {
+  min-height: 240px;
 }
 
-.profileBody--description h3{
-    font-size: 1.5rem;
+.profileBody--description h3 {
+  font-size: 1.5rem;
 }
 
-.profileBody--description p{
-
+.profileBody--description p {
 }
 
 /* Contenedor de tarjetas de Cursos del Usuario */
 
-.profileBody--ownCourses{
-    min-height: 355px;
+.profileBody--ownCourses {
+  min-height: 355px;
 }
 
-.profileBody--ownCourses h3{
-    font-size: 1.3rem;
+.profileBody--ownCourses h3 {
+  font-size: 1.3rem;
 }
 
-.ownCourses--container{
-
+.ownCourses--container {
 }
 
 /* Tarjeta de Cursos del Usuario */
 
-.ownCourses--containerCard{
-    border-top: solid var(--color-blancoApagado) 1px;
-    margin-top: 15px;
+.ownCourses--containerCard {
+  border-top: solid var(--color-blancoApagado) 1px;
+  margin-top: 15px;
 }
 
-.ownCourses--containerCardInside{
-    margin: 5px;
-    display: flex;
-    margin: 10px 0px;
-    }
-
-.ownCourses--containerCard img{
-    width: 140px;
-    border-radius: 5px;
+.ownCourses--containerCardInside {
+  margin: 5px;
+  display: flex;
+  margin: 10px 0px;
 }
 
-.ownCourses--containerCard__contents{
-    margin-left: 10px;
+.ownCourses--containerCard img {
+  width: 140px;
+  border-radius: 5px;
 }
 
-
-
-.ownCourses--containerCard__contents h4{
-    font-size: 1.3rem;
-    font-weight: 500;
+.ownCourses--containerCard__contents {
+  margin-left: 10px;
 }
 
-.ownCourses--containerCard__contentsDown{
-    display: flex
-;
-    gap: 10px;
+.ownCourses--containerCard__contents h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-.ownCourses--containerCard__contentsRating{
-    display: flex;
-    gap: 5px;
-    align-items: center;
+.ownCourses--containerCard__contentsDown {
+  display: flex;
+  gap: 10px;
 }
 
-.ownCourses--containerCard__contentsRating i{
-color: var(--color-amarilloDorado);
+.ownCourses--containerCard__contentsRating {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.ownCourses--containerCard__contentsRating i {
+  color: var(--color-amarilloDorado);
 }
 
 .ownCourses--containerCard__contentsRating p {
-
 }
 
-.ownCourses--containerCard__contentsReview{
-    display: flex;
-    gap: 5px;
-    align-items: center;
+.ownCourses--containerCard__contentsReview {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
-.ownCourses--containerCard__contentsReview i{
-
+.ownCourses--containerCard__contentsReview i {
 }
 
-.ownCourses--containerCard__contentsReview p{
-
+.ownCourses--containerCard__contentsReview p {
 }
 
 /* ProfileEdit view */
 
 /* ProfileEdit section & title */
 
-.profileUserMenu--section{
-    display: none;
+.profileUserMenu--section {
+  display: none;
 }
 
-.profileEdit--section{
-    display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 40px;
-        margin-bottom: 105px;
+.profileEdit--section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 105px;
 }
 
-.profileEdit--DeleteForm{
+.profileEdit--DeleteForm {
   flex-direction: column;
   align-items: center;
   display: flex;
 }
 
-.profileEdit--sectionContainer{
-width: 90%;
+.profileEdit--sectionContainer {
+  width: 90%;
 }
 
-.profileEdit__title{
-    background-color: var(--color-grisOscuroTranslucido2);
-    border: solid 1px var(--color-blancoApagado);
-    border-bottom: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px 0px;
+.profileEdit__title {
+  background-color: var(--color-grisOscuroTranslucido2);
+  border: solid 1px var(--color-blancoApagado);
+  border-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0px;
 }
 
-.profileEdit__title h1{
-    margin-left: 0px;
-    font-size: 2rem;
+.profileEdit__title h1 {
+  margin-left: 0px;
+  font-size: 2rem;
 }
-
 
 /* ProfileEdit body */
 
-.profileEdit__forms{
-    
+.profileEdit__forms {
 }
 
-.profileEdit__formsContainer{
-padding-left: 15px;
-    padding-right: 15px;
-        border: solid 1px var(--color-blancoApagado);
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+.profileEdit__formsContainer {
+  padding-left: 15px;
+  padding-right: 15px;
+  border: solid 1px var(--color-blancoApagado);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 /* ProfileEdit Inputs */
 
-.profileEdit--inputContainer{
-    margin-top: 15px;
+.profileEdit--inputContainer {
+  margin-top: 15px;
 }
 
-.profileEdit--inputContainer h3{
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 5px;
+.profileEdit--inputContainer h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
-.profileEdit--inputContainer__inside{
-    margin-bottom: 10px;
+.profileEdit--inputContainer__inside {
+  margin-bottom: 10px;
 }
 
-.profileEdit--inputContainer__inside label{
-
+.profileEdit--inputContainer__inside label {
 }
 
-.profileEdit--inputContainer__inside input{
-    border-radius: 5px;
-    width: 98%;
-    font-size: 1rem;
-    padding: 12px 0px;
-    border: none;
-    color: black;
-    padding-left: 5px;
+.profileEdit--inputContainer__inside input {
+  border-radius: 5px;
+  width: 98%;
+  font-size: 1rem;
+  padding: 12px 0px;
+  border: none;
+  color: black;
+  padding-left: 5px;
 }
 
-.profileEdit--inputContainer__inside textarea{
-    border-radius: 5px;
-    width: 98%;
-    height: 90px;
-    font-size: 1rem;
-    padding: 12px 0px;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    border: none;
-    color: black;
-    padding-left: 5px;
-    resize: none;
+.profileEdit--inputContainer__inside textarea {
+  border-radius: 5px;
+  width: 98%;
+  height: 90px;
+  font-size: 1rem;
+  padding: 12px 0px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border: none;
+  color: black;
+  padding-left: 5px;
+  resize: none;
 }
 
 /* ProfileEdit Avatar image & input */
 
-.profileEdit--avatarContainer{
-    margin-top: 30px;
+.profileEdit--avatarContainer {
+  margin-top: 30px;
 }
 
-.profileEdit--avatarContainer h3{
-    margin-bottom: 15px;
-    font-weight: 600;
-    font-size: 1rem;
+.profileEdit--avatarContainer h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.profileEdit--avatarImage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.profileEdit--avatarImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.profileEdit--avatarImage__inside{
-    border-radius: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%;
-   
+.profileEdit--avatarImage__inside {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
 }
 
-.profileEdit--avatarImage img{
-    width: 100%;
-    border-radius: 10px;
+.profileEdit--avatarImage img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-.profileEdit--avatarImage p{
-    margin-bottom: 10px;
+.profileEdit--avatarImage p {
+  margin-bottom: 10px;
 }
 
-.profileEdit--avatarInputContainer__input{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+.avatarInputContainer {
 }
 
-.profileEdit--avatarInputContainer__input input{
-    width: 40%;
-    padding: 14px 0px;
-    border-radius: 10px;
-    position: absolute;
-    opacity: 0%;
+.avatarInputRecommendations {
+  display: none;
+}
+.avatarInputInsert {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.avatarInputContainer span {
+  display: none;
+}
+.profileEdit--avatarInputContainer__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.profileEdit--avatarInputContainer__input input {
+  width: 40%;
+  padding: 14px 0px;
+  border-radius: 10px;
+  position: absolute;
+  opacity: 0%;
 }
 
 /* ProfileEdit submit button */
 
-.profileEdit__buttonContainer{
-    display: flex;
-        justify-content: flex-end;
-        margin-bottom: 20px;
-        margin-top: 50px;
+.profileEdit__buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
-.profileEdit__button{
-    border: none;
-    color: var(--color-blancoApagado);
-    background-color: var(--color-purpuraOscuro);
-    font-size: 1.2rem;
-    padding: 10px 30px;
-    border-radius: 5px;
-    font-weight: 500;
+.profileEdit__button {
+  border: none;
+  color: var(--color-blancoApagado);
+  background-color: var(--color-purpuraOscuro);
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 /* ProfileEdit-security view */
 
-.profileEditSecurity--section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 105px;
+.profileEditSecurity--section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 105px;
 }
 
-.profileEditSecurity__formsContainer{
-   padding: 0px;
-    border: solid 1px var(--color-blancoApagado);
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+.profileEditSecurity__formsContainer {
+  padding: 0px;
+  border: solid 1px var(--color-blancoApagado);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-.EditSecurity--divisionContainer{
-    padding-left: 15px;
-    padding-right: 15px;
+.EditSecurity--divisionContainer {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.profileEdit--divisorLine{
-    border-top: solid var(--color-blancoApagado) 1px;
-    border-bottom: 0px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+.profileEdit--divisorLine {
+  border-top: solid var(--color-blancoApagado) 1px;
+  border-bottom: 0px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 /* Destroy account */
 
-.profileDestroy--announce{
-    margin-top: 10px;
+.profileDestroy--announce {
+  margin-top: 10px;
 }
 
-.profileDestroy__text{
-
+.profileDestroy__text {
 }
 
-.destroy__text{
-color: var(--color-rojoAviso);
-font-weight: 600;
+.destroy__text {
+  color: var(--color-rojoAviso);
+  font-weight: 600;
 }
 
-.profileDestroy__buttonContainer{
-    display: flex;
-        justify-content: flex-start;
-        margin-bottom: 350px;
-        margin-top: 50px;
+.profileDestroy__buttonContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 350px;
+  margin-top: 50px;
 }
 
-.profileDestroy__button{
-    border: none;
-    color: var(--color-blancoApagado);
-    background-color: var(--color-purpuraOscuro);
-    font-size: 1.1rem;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: 500;
+.profileDestroy__button {
+  border: none;
+  color: var(--color-blancoApagado);
+  background-color: var(--color-purpuraOscuro);
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 /* My courses view */
 
 .coursesListSearch--box {
-    background-color: var(--color-moradoTranslucido2);
-    border: solid var(--color-morado) 1px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 25px;
-    margin-bottom: 20px;
+  background-color: var(--color-moradoTranslucido2);
+  border: solid var(--color-morado) 1px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
-.productListMyCourses--inside{
-    display: flex;
-        gap: 10px;
-        flex-direction: column;
-        margin-top: 10px;
-        margin-bottom: 50px;
+.productListMyCourses--inside {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
-.productProgress--container{
-    display: flex;
-    gap: 7px;
+.productProgress--container {
+  display: flex;
+  gap: 7px;
 }
 
-.progress__product{
-
+.progress__product {
 }
 
-.progress__product i{
-    font-size: 1.3rem;
+.progress__product i {
+  font-size: 1.3rem;
 }
 
-.progress__inProcess{
-    color:orange;
+.progress__inProcess {
+  color: orange;
 }
 
-.progress__Completed{
-    color: green;
+.progress__Completed {
+  color: green;
 }
 
-.progress__Empty{
-    color: var(--color-blancoApagado);
+.progress__Empty {
+  color: var(--color-blancoApagado);
 }
 
-.viewCourse--image img{
-    width: 30px;
+.viewCourse--image img {
+  width: 30px;
 }
 
 /* userAddCourses view */
 
-.addNewProduct--button{
-    background-color: var(--color-purpuraOscuro);
-    border: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    color: var(--color-blancoApagado);
-    padding: 7px 5px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    display: flex;
-    gap: 5px;
-    align-items: center;
+.addNewProduct--button {
+  background-color: var(--color-purpuraOscuro);
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: var(--color-blancoApagado);
+  padding: 7px 5px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
-.addNewProduct--button i{
-    font-size: 1.3rem;
+.addNewProduct--button i {
+  font-size: 1.3rem;
 }
 
-.productList--userAdd__salesContainer{
-    display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+.productList--userAdd__salesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.coursesSales--container{
-    display: flex;
-    justify-content: flex-end;
-    gap: 5px;
-    align-items: flex-end;
+.coursesSales--container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  align-items: flex-end;
 }
 
-.numberSales{
-    font-size: 0.9rem;
-    font-weight: 600;
+.numberSales {
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.coursesSales--container i{
-    font-size: 1.2rem;
-    color: limegreen;
+.coursesSales--container i {
+  font-size: 1.2rem;
+  color: limegreen;
 }
 
-.ratingProductList--container{
-    display: flex;
-        gap: 12px;
+.ratingProductList--container {
+  display: flex;
+  gap: 12px;
 }
 
-.recommendationsProductList--card__rating-Stars{
-    font-size: 0.9rem;
-    align-content: flex-end;
+.recommendationsProductList--card__rating-Stars {
+  font-size: 0.9rem;
+  align-content: flex-end;
 }
 
-.recommendationsProductList--card__rating-Stars span{
-    color: var(--color-amarilloDorado);
-    font-weight: 500;
+.recommendationsProductList--card__rating-Stars span {
+  color: var(--color-amarilloDorado);
+  font-weight: 500;
 }
 
-.recommendationsProductList--card__rating-Stars i{
-    color: var(--color-amarilloDorado);
+.recommendationsProductList--card__rating-Stars i {
+  color: var(--color-amarilloDorado);
 }
 
-.recommendationsProductList--card__rating-Reviews{
-    font-size: 0.9rem;
-    align-content: flex-end;
+.recommendationsProductList--card__rating-Reviews {
+  font-size: 0.9rem;
+  align-content: flex-end;
 }
 
-.recommendationsProductList--card__rating-Reviews i{
-
+.recommendationsProductList--card__rating-Reviews i {
 }
 
-.recommendationsProductList--card__rating-Reviews span{
-    font-weight: 500;
+.recommendationsProductList--card__rating-Reviews span {
+  font-weight: 500;
 }
 
-.productListAddCourses--inside{
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 50px;
+.productListAddCourses--inside {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
-
 }
 
 @media (min-width: 1025px) {
+  /* ProfileEdit view */
 
-/* ProfileEdit view */
-
-/* ProfileUserMenu section */
-
-.profileEdit--main{
+  .main--profile {
     display: flex;
-        flex-direction: row;
-        padding: 0px 20px;
-        gap: 15px;
-        justify-content: center;
-}
+    gap: 35px;
+    justify-content: center;
+  }
 
-.profileUserMenu--section{
+  .UserProfileContainer {
+    width: 65%;
+  }
+  .userAvatar--card {
+    display: none;
+  }
+
+  .userAvatar--cardDesktop {
+    display: block;
+    width: 25%;
+    margin-top: 45px;
+  }
+  .userAvatar--cardDesktop img {
+    width: 100%;
+    border: solid var(--color-blancoApagado) 1px;
+    border-radius: 5px;
+  }
+
+  .userAvatar--section {
+    margin-top: 0px;
+  }
+
+  .profileBody--section {
+    margin-top: 0px;
+  }
+
+  .userTitle--card {
+    width: 100%;
+    border-bottom: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .profileBody--sectionInside {
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  /* ProfileUserMenu section */
+
+  .profileEdit--main {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .profileUserMenu--section {
     display: block;
     width: 30%;
     margin-top: 40px;
-}
+  }
 
-.profileUserMenu--sectionContainer{
+  .profileUserMenu--sectionContainer {
     border: solid 1px var(--color-blancoApagado);
-}
+  }
 
-.profileMenu--imageContainer{
+  .profileMenu--imageContainer {
     border-bottom: solid 1px var(--color-blancoApagado);
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 
-.profileMenu--imageContainer img{
+  .profileMenu--imageContainer img {
     width: 75%;
     border-radius: 30px;
-}
+  }
 
-.profileMenu--imageContainer h2{
+  .profileMenu--imageContainer h2 {
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 15px;
-}
+  }
 
-.profileUserMenu--options{
-    
-}
+  .profileUserMenu--options {
+  }
 
-.profileUserMenu--options h3{
+  .profileUserMenu--options h3 {
     font-size: 1.3rem;
     font-weight: 500;
     padding-left: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-}
+  }
 
-.profileUserMenu--sectionContainer a{
+  .profileUserMenu--sectionContainer a {
+  }
 
-}
-
-.profileUserMenu--selected{
+  .profileUserMenu--selected {
     background-color: var(--color-grisOscuro);
-}
+  }
 
+  /* ProfileEdit section & title */
 
-
-/* ProfileEdit section & title */
-
-
-.profileEdit--sectionContainer {
+  .profileEdit--sectionContainer {
     width: 725px;
-}
+  }
 
+  .avatarInputsContainerInside {
+    display: flex;
+  }
+  .avatarInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .avatarInputContainerInside {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+  }
 
-/* userMyCourses view */
+  .avatarInputInsert {
+    text-align: left;
+  }
+  .avatarInputRecommendations {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 
+  .profileEdit--avatarImage {
+    width: 35%;
+  }
 
-.profileEdit--sectionContainer {
+  .profileEdit--avatarImage__inside {
+    width: 100%;
+  }
+
+  .avatarInputContainer span {
+    display: block;
+    color: var(--color-grisMetalico);
+    font-weight: 500;
+    background-color: var(--color-blancoApagado);
+    border-radius: 10px;
+    padding: 14px 10px;
+    padding-left: 10px;
+  }
+
+  .profileEdit--avatarInputContainer__input input {
+    width: 110%;
+  }
+
+  .pseudoButton {
+    width: 110%;
+  }
+  /* userMyCourses view */
+
+  .profileEdit--sectionContainer {
     width: 725px;
-}
-
+  }
 }

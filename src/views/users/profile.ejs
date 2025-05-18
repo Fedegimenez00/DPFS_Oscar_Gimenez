@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
+  <%- include('../partials/head') %>
 
-<body>
+  <body>
     <%- include('../partials/header') %>
 
-
     <main class="main--profile">
+      <div class="UserProfileContainer">
         <section class="userTitle--section">
-            <div class="userTitle--card">
-                <h1><%= myUser.name %></h1>
-                <h2><%= myUser?.headline %></h2>
-            </div>
+          <div class="userTitle--card">
+            <h1><%= myUser.name %></h1>
+            <h2><%= myUser?.headline %></h2>
+          </div>
         </section>
 
         <section class="userAvatar--section">
-            <div class="userAvatar--card">
-           <img src="/database/images/users/<%=myUser?.avatar %>" alt="Avatar de <%= myUser.name%>">
-          
-           <% if ( userToLogin && myUser.name === userToLogin.name){ %> 
-           <button type="button" onclick="location.href='/profile/<%=myUser.id %>/edit'" class="editUser--button"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
-           <% } %>
-            </div>
+          <div class="userAvatar--card">
+            <img
+              src="/database/images/users/<%=myUser?.avatar %>"
+              alt="Avatar de <%= myUser.name%>"
+            />
 
+            <% if ( userToLogin && myUser.name === userToLogin.name){ %>
+            <button
+              type="button"
+              onclick="location.href='/profile/<%=myUser.id %>/edit'"
+              class="editUser--button"
+            >
+              <i class="fa-solid fa-pen"></i> Editar Perfil
+            </button>
+            <% } %>
+          </div>
         </section>
-       <section class="profileBody--section">
-        <div class="profileBody--sectionInside">
-        <div class="profileBody--description">
-        <h3>Sobre mi:</h3>
-        <p><%= myUser?.description %></p>
-    </div>
-
-
-    <div class="profileBody--ownCourses">
-        <h3>Mis cursos:</h3>
-        <div class="ownCourses--container">
-
-            <% products.forEach(products => { %>
-            <article class="ownCourses--containerCard">
-                <div class="ownCourses--containerCardInside">
-                <img src="/database/images/courses/<%= products?.image %>" alt="imagen del curso"> 
-                <div class="ownCourses--containerCard__contents"> 
-                <h4><%= products.title%></h4>
-                <div class="ownCourses--containerCard__contentsDown" >
-                <div class="ownCourses--containerCard__contentsRating "><i class="fa-solid fa-star"></i><p><%= products.rating %></p></div> 
-                <div class="ownCourses--containerCard__contentsReview"> <i class="fa-solid fa-users"></i><p><%= products.reviews %></p></div>
-                
+        <section class="profileBody--section">
+          <div class="profileBody--sectionInside">
+            <div class="profileBody--description">
+              <h3>Sobre mi:</h3>
+              <p><%= myUser?.description %></p>
             </div>
-        </div>
-    </div>
-            </article>
-            <% }); %>
 
-            
+            <div class="profileBody--ownCourses">
+              <h3>Mis cursos:</h3>
+              <div class="ownCourses--container">
+                <% products.forEach(products => { %>
+                <article class="ownCourses--containerCard">
+                  <div class="ownCourses--containerCardInside">
+                    <img
+                      src="/database/images/courses/<%= products?.image %>"
+                      alt="imagen del curso"
+                    />
+                    <div class="ownCourses--containerCard__contents">
+                      <h4><%= products.title%></h4>
+                      <div class="ownCourses--containerCard__contentsDown">
+                        <div class="ownCourses--containerCard__contentsRating">
+                          <i class="fa-solid fa-star"></i>
+                          <p><%= products.rating %></p>
+                        </div>
+                        <div class="ownCourses--containerCard__contentsReview">
+                          <i class="fa-solid fa-users"></i>
+                          <p><%= products.reviews %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <% }); %>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="userAvatar--cardDesktop">
+        <img
+          src="/database/images/users/<%=myUser?.avatar %>"
+          alt="Avatar de <%= myUser.name%>"
+        />
 
-
-        </div>
-    </div>
-</div>
-       </section>
-        
+        <% if ( userToLogin && myUser.name === userToLogin.name){ %>
+        <button
+          type="button"
+          onclick="location.href='/profile/<%=myUser.id %>/edit'"
+          class="editUser--button"
+        >
+          <i class="fa-solid fa-pen"></i> Editar Perfil
+        </button>
+        <% } %>
+      </div>
     </main>
 
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>
