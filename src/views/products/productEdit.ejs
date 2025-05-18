@@ -7,8 +7,8 @@
     <%- include('../partials/header') %>
     
 <main class="main--productAdd">
-
-<section class="section--selectForms">
+<form class="productAdd--form" action='/products/edit/<%= productEdit.id %>?_method=PUT' method="POST" enctype="multipart/form-data">
+    <section class="section--selectForms">
 
 <!-- Menú de Navegación del formulario -->
 
@@ -27,16 +27,13 @@
         </div>
     </div>
     <div class="publish__insideDesktop"> 
-            <form class="publish__insideDesktop" action='/products/add' method="POST" enctype="multipart/form-data">
-             <button type="submit" class="publish--send" style="background-color: var(--color-azulVioleta);">Publicar</button>
+             <button type="submit" class="publish--send" style="background-color: var(--color-azulVioleta);">Guardar cambios</button>
             <button type="reset" class="publish--cancel" style="background-color: var(--color-blancoApagadoTranslucido2)">Cancelar</button>
-    </form>
         </div>
 </article>
 </section>
 
 <section class="section--forms">
-<form  action='/products/edit/<%= productEdit.id %>?_method=PUT' method="POST" enctype="multipart/form-data">
 
 <!-- Página de inicio del curso -->
 
@@ -83,7 +80,7 @@
 
     Input oculto para enviar el contenido 
 -->
-    <textarea id="description" name="description" class="enrichedTexarea" style="display: block;"><%= productEdit.description%> 
+    <textarea placeholder="Introduce la descripción de tu curso." id="description" name="description" class="enrichedTexarea" style="display: block;"><%= productEdit.description%> 
     </textarea>
     <label for="description"></label>
     <% if (locals.errors?.description) { %>
@@ -486,11 +483,11 @@ estudiantes deseen adquirir tus cursos.
 
 <div class="publish__inside"> <button type="reset" class="publish--cancel">Cancelar</button> <button type="submit" class="publish--send">Guardar cambios</button></div>
 
-</form>
 
 </section>
 
- 
+ </form>
+
 </main>
 
     <%- include('../partials/footer') %>

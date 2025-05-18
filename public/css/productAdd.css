@@ -699,6 +699,8 @@
 
 @media (min-width: 1025px) {
   .main--productAdd {
+  }
+  .productAdd--form {
     display: flex;
     padding: 45px 20px;
     gap: 20px;

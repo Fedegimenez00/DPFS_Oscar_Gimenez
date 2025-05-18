@@ -7,7 +7,7 @@
     <%- include('../partials/header') %>
     
 <main class="main--productAdd">
-
+<form class="productAdd--form" action='/products/add' method="POST" enctype="multipart/form-data">
 <section class="section--selectForms">
 
 <!-- Menú de Navegación del formulario -->
@@ -26,16 +26,13 @@
         <button class="toggle-button" data-target="contentForm5">Promociones (WIP)</button>
         </div>
         <div class="publish__insideDesktop"> 
-            <form class="publish__insideDesktop" action='/products/add' method="POST" enctype="multipart/form-data">
              <button type="submit" class="publish--send" style="background-color: var(--color-azulVioleta);">Publicar</button>
             <button type="reset" class="publish--cancel" style="background-color: var(--color-blancoApagadoTranslucido2)">Cancelar</button>
-    </form>
         </div>
 </article>
 </section>
 
 <section class="section--forms">
-<form action='/products/add' method="POST" enctype="multipart/form-data">
 
 <!-- Página de inicio del curso -->
 
@@ -85,11 +82,11 @@
 
     Input oculto para enviar el contenido 
 -->
-    <textarea id="description" name="description" class="enrichedTexarea" style="display: block;"><%= locals.old?.description ? old.description : '' %>
+    <textarea placeholder="Introduce la descripción de tu curso." id="description" name="description" class="enrichedTexarea" style="display: block;"><%= locals.old?.description ? old.description : '' %>
     </textarea>
    <label for="description"></label>
     <% if (locals.errors?.description) { %>
-        <p class="display-error"><%= locals.errors.description.msg %></p>
+     <p class="display-error"><%= locals.errors.description.msg %></p>
         <% } %>
 </div>
 </div>
@@ -493,9 +490,9 @@ estudiantes deseen adquirir tus cursos.
 
 <div class="publish__inside"> <button type="reset" class="publish--cancel">Cancelar</button> <button type="submit" class="publish--send">Publicar</button></div>
 
-</form>
 
 </section>
+</form>
 
  
 </main>

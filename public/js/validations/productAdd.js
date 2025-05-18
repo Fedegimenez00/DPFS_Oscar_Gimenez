@@ -1,5 +1,5 @@
 window.onload = () => {
-  const form = document.querySelector("form");
+  const form = document.querySelector(".productAdd--form");
   const errorList = document.querySelector(".errors");
 
   //Validación para la extensión de la imagen
